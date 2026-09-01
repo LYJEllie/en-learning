@@ -911,6 +911,61 @@ const BANK_KIDS = [
     takeaway:'See you tomorrow! → 把原句还回去就对了。'
   },
 
+  {
+    id:'kh-04', pack:'hello', level:1, type:'listening',
+    scene:'👋 老师问你好',
+    situation:'外教走到你桌子旁边，弯下腰笑着问：',
+    quote:'How are you?',
+    note:'你今天心情不错。',
+    ask:'该怎么回答？',
+    options:[
+      { text:'Fine, thank you. And you?', note:'最稳的标准答法', badge:'地道', kind:'native', ok:true,
+        why:'先说自己的状态，再把问题抛回去，一来一回，对话就接上了。' },
+      { text:"I'm nine years old.", note:'听成了"你几岁"', badge:'听岔了', kind:'trap', ok:false,
+        why:'How are you?（你好吗）和 How old are you?（你几岁）只差一个词，别听混。' },
+      { text:'How are you?', note:'原句还回去，这次不行', badge:'不能照抄', kind:'stiff', ok:false,
+        why:'Good morning 可以原句还回去，但被问"你好吗"要先回答，再反问才礼貌。' }
+    ],
+    explain:'💡 How are you? 的回答有好几种：Fine, thank you. / Good, thanks. / I\'m OK.。后面加一句 And you?（你呢），对话才能继续下去。',
+    takeaway:'How are you? → 先答状态，再问 And you?'
+  },
+  {
+    id:'kh-05', pack:'hello', level:1, type:'phrase',
+    scene:'👋 自我介绍',
+    situation:'第一节英语课，外教指着你，问全班同学：',
+    quote:"What's your name?",
+    note:'她正等你说出自己的名字。',
+    ask:'该怎么回答？',
+    options:[
+      { text:'This is Lily.', note:'这是介绍别人时说的', badge:'用错了', kind:'trap', ok:false,
+        why:'This is… 用来把别人介绍给大家，或者打电话时说"我是…"，当面介绍自己不用它。' },
+      { text:"My name is Lily. / I'm Lily.", note:'两种都行，后一种更口语', badge:'地道', kind:'native', ok:true,
+        why:'My name is… 是标准说法，日常里大家更爱说短的 I\'m Lily.' },
+      { text:'I am nine.', note:'答成了年龄', badge:'答偏了', kind:'stiff', ok:false,
+        why:'这句是回答 How old are you? 的，老师问的是名字。' }
+    ],
+    explain:'💡 记住这一组配对：What\'s your name?（你叫什么）→ I\'m Lily.；How old are you?（你几岁）→ I\'m nine.；Where are you from?（你从哪儿来）→ I\'m from China.',
+    takeaway:"What's your name? → I'm Lily."
+  },
+  {
+    id:'kh-06', pack:'hello', level:3, type:'listening',
+    scene:'👋 店员跟你道别',
+    situation:'跟妈妈在国外超市买完东西，收银员把小票递给你，笑着说：',
+    quote:'Have a nice day!',
+    note:'她在等你回一句。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'Thanks, you too!', note:'接住祝福，再还回去', badge:'地道', kind:'native', ok:true,
+        why:'先道谢，再把同一句祝福送回去，三个词就完成了一次漂亮的对话。' },
+      { text:'I have a nice day.', note:'把祝福说成了陈述句', badge:'直译', kind:'stiff', ok:false,
+        why:'Have a nice day 是"祝你今天愉快"，不是在陈述你今天过得怎么样。' },
+      { text:'OK.', note:'太冷淡了', badge:'冷场', kind:'trap', ok:false,
+        why:'别人送你一句祝福，只回一个 OK 会显得不太领情。' }
+    ],
+    explain:'💡 You too! 是英语里的偷懒神器：别人说 Have a nice day / Have a good weekend / Enjoy your meal，你一律可以回 Thanks, you too!',
+    takeaway:'Have a nice day! → Thanks, you too!'
+  },
+
   /* ---------- 🏫 课堂篇 ---------- */
   {
     id:'kc-01', pack:'class', level:1, type:'listening',
@@ -965,6 +1020,61 @@ const BANK_KIDS = [
     ],
     explain:'💡 没听懂说 Sorry, I don\'t understand.；没听清说 Sorry? 或 Could you say that again, please?（能再说一遍吗）。这两句是新手最该先背下来的救命句。',
     takeaway:'没听懂 → Sorry, I don\'t understand.'
+  },
+
+  {
+    id:'kc-04', pack:'class', level:2, type:'listening',
+    scene:'🏫 听懂课堂指令',
+    situation:'外教敲了敲黑板，对全班说：',
+    quote:'Open your books to page ten.',
+    note:'同学们都开始翻书了，你得赶紧跟上。',
+    ask:'老师让大家做什么？',
+    options:[
+      { text:'把书翻到第 10 页', note:'page ten = 第十页', badge:'翻页', kind:'stiff', ok:true,
+        why:'open … to page ten 就是"翻到第 10 页"，to 后面跟的是要翻到的地方。' },
+      { text:'打开十本书', note:'把 ten 当成了书的数量', badge:'数量', kind:'stiff', ok:false,
+        why:'如果是十本书，要说 ten books，ten 得放在 books 前面。' },
+      { text:'读第十行', note:'行是 line，不是 page', badge:'行数', kind:'stiff', ok:false,
+        why:'page 是页，line 是行，这两个词别记混。' }
+    ],
+    explain:'💡 课堂指令背下来就不会慌：Open your books（翻开书）、Close your books（合上书）、Stand up（起立）、Sit down（坐下）、Look at the blackboard（看黑板）。',
+    takeaway:'page ten = 第 10 页，翻书说 Open your books to…'
+  },
+  {
+    id:'kc-05', pack:'class', level:2, type:'phrase',
+    scene:'🏫 上学迟到了',
+    situation:'你跑到教室门口时，外教已经在讲课了。你站在门口，全班都看过来。',
+    quote:'',
+    note:'你得先说一句才好意思进去。',
+    ask:'这时候该说？',
+    options:[
+      { text:'May I come in?', note:'迟到进门的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'先请求再进门是基本礼貌，进去以后再补一句 Sorry I\'m late. 就更完整了。' },
+      { text:'Can I in?', note:'少了动词，句子不完整', badge:'语法错', kind:'trap', ok:false,
+        why:'in 是介词不是动词，必须说 come in（进来）。' },
+      { text:'I come in.', note:'像在通知老师', badge:'生硬', kind:'stiff', ok:false,
+        why:'陈述句听起来像"我要进来了"，完全没有征求老师同意。' }
+    ],
+    explain:'💡 敲门进屋的万能句就是 May I come in?。等老师说 Come in, please. 再进去，坐下前补一句 Sorry I\'m late.（对不起我迟到了）。',
+    takeaway:'迟到进教室 → May I come in?'
+  },
+  {
+    id:'kc-06', pack:'class', level:3, type:'phrase',
+    scene:'🏫 老师确认你懂没懂',
+    situation:'外教讲完一道题，转过头看着你问：',
+    quote:'Do you understand?',
+    note:'你这次是真的听懂了。',
+    ask:'怎么回答最自然？',
+    options:[
+      { text:'Yes, I do.', note:'英语里的标准短答', badge:'地道', kind:'native', ok:true,
+        why:'Do 开头的问句，用 Yes, I do. / No, I don\'t. 来短答，这是英语里最常见的回答方式。' },
+      { text:'Yes, I understand you.', note:'把整句重复一遍，很啰嗦', badge:'啰嗦', kind:'stiff', ok:false,
+        why:'意思没错但没人这么说，而且 understand you 更像"我理解你的心情"。' },
+      { text:'Of course.', note:'语气有点冲', badge:'太冲', kind:'trap', ok:false,
+        why:'Of course 带着"这还用问"的意思，回答老师容易显得不客气。' }
+    ],
+    explain:'💡 英语的短答要跟问句"配对"：Do you…? → Yes, I do.；Are you…? → Yes, I am.；Can you…? → Yes, I can.。助动词用错，一听就不对劲。',
+    takeaway:'Do you…? → Yes, I do. / No, I don\'t.'
   },
 
   /* ---------- 🏠 生活篇 ---------- */
@@ -1023,6 +1133,61 @@ const BANK_KIDS = [
     takeaway:'被夸就说 Thank you!，别急着否认。'
   },
 
+  {
+    id:'kl-04', pack:'life', level:1, type:'listening',
+    scene:'🏠 邻居阿姨问你',
+    situation:'在小区里遇到外国邻居，她蹲下来笑着问你：',
+    quote:'How old are you?',
+    note:'你今年九岁。',
+    ask:'她在问什么？该怎么答？',
+    options:[
+      { text:"I'm fine, thank you.", note:'听成了 How are you', badge:'听岔了', kind:'stiff', ok:false,
+        why:'fine 和 nine 听起来很像，但人家问的是年龄，不是心情。' },
+      { text:"I'm nine.", note:'问年龄，就回数字', badge:'答年龄', kind:'stiff', ok:true,
+        why:'完整说法是 I\'m nine years old.，日常里说 I\'m nine. 就够了。' },
+      { text:"It's nine o'clock.", note:'答成了时间', badge:'答时间', kind:'stiff', ok:false,
+        why:'问时间要说 What time is it?，和年龄是两回事。' }
+    ],
+    explain:'💡 三句话长得像，别搞混：How are you?（你好吗）→ I\'m fine.；How old are you?（你几岁）→ I\'m nine.；What time is it?（几点了）→ It\'s nine o\'clock.',
+    takeaway:"How old are you? → I'm nine."
+  },
+  {
+    id:'kl-05', pack:'life', level:3, type:'listening',
+    scene:'🏠 在同学家做客',
+    situation:'同学的妈妈端上一盘饼干放在你面前，笑着说了一句：',
+    quote:'Help yourself!',
+    note:'说完她就去厨房了，桌上只剩你和饼干。',
+    ask:'她的意思是？',
+    options:[
+      { text:'你自己随便吃，别客气', note:'招待客人的固定说法', badge:'请随意', kind:'stiff', ok:true,
+        why:'Help yourself 就是"自己动手拿"，主人用它表示不用等我给你端。' },
+      { text:'你要帮助你自己', note:'逐词直译，读不通', badge:'直译', kind:'stiff', ok:false,
+        why:'help 在这句里不是"帮助"，整句是固定说法，不能一个词一个词地翻。' },
+      { text:'你来帮我端一下', note:'主语反了', badge:'弄反了', kind:'stiff', ok:false,
+        why:'让你帮忙会说 Can you help me?，主语完全不一样。' }
+    ],
+    explain:'💡 去外国人家里做客常听到三句：Help yourself!（随便吃）、Make yourself at home.（别拘束，当自己家）、Would you like some more?（再来点吗）。听懂了就不会僵在那儿。',
+    takeaway:'Help yourself! = 别客气，自己拿。'
+  },
+  {
+    id:'kl-06', pack:'life', level:2, type:'culture',
+    scene:'🏠 打了个大喷嚏',
+    situation:'上课时你没忍住打了个响亮的喷嚏，外教立刻转过头对你说：',
+    quote:'Bless you!',
+    note:'全班都笑了，你有点懵。',
+    ask:'你应该怎么回应？',
+    options:[
+      { text:'Thank you.', note:'一句话就接住了', badge:'地道', kind:'native', ok:true,
+        why:'Bless you 是别人打喷嚏时送出的祝福，收到祝福说声谢谢就对了。' },
+      { text:'Sorry.', note:'不用道歉', badge:'没必要', kind:'stiff', ok:false,
+        why:'打喷嚏不是做错事。真想客气可以说 Excuse me.，但老师这句显然在等一句 Thank you。' },
+      { text:'Bless you!', note:'原句还回去，这次不行', badge:'不能照抄', kind:'trap', ok:false,
+        why:'这句是说给打喷嚏的人听的，还回去等于祝老师也打个喷嚏。' }
+    ],
+    explain:'💡 英语国家的人听到别人打喷嚏，几乎会条件反射地说一句 Bless you!（保佑你）。不用觉得奇怪，回一句 Thank you. 就好。',
+    takeaway:'别人说 Bless you! → 你说 Thank you.'
+  },
+
   /* ---------- 🎈 交朋友篇 ---------- */
   {
     id:'kf-01', pack:'friend', level:1, type:'phrase',
@@ -1077,6 +1242,60 @@ const BANK_KIDS = [
     ],
     explain:'💡 记住这条链：给东西的人说 Here you are.（给你）→ 收的人说 Thank you.（谢谢）→ 给的人再回 You\'re welcome.（不客气）。三句话一环扣一环，别插错位置。',
     takeaway:'Here you are → Thank you → You\'re welcome，顺序别搞反。'
+  },
+  {
+    id:'kf-04', pack:'friend', level:2, type:'manners',
+    scene:'🎈 同学摔倒了',
+    situation:'课间同学在走廊上跑，一下子摔倒了，书本撒了一地。',
+    quote:'',
+    note:'你第一个跑过去。',
+    ask:'想问一句"你还好吗"，该说？',
+    options:[
+      { text:"What's wrong with you?", note:'听起来像在责怪对方', badge:'伤人', kind:'trap', ok:false,
+        why:'这句常带着"你有毛病吧"的语气，关心人千万别用它。' },
+      { text:'Are you OK?', note:'关心人的第一句话', badge:'地道', kind:'native', ok:true,
+        why:'又短又暖。摔倒了、生病了、看起来不开心，都能用这一句。' },
+      { text:'You are OK?', note:'语序错了', badge:'语法错', kind:'stiff', ok:false,
+        why:'问句要把 are 提到最前面：Are you OK?' }
+    ],
+    explain:'💡 关心别人的三句话：Are you OK?（你还好吗）、Does it hurt?（疼吗）、Let me help you.（我来帮你）。注意 What\'s wrong with you? 语气很重，想问"怎么了"说 What\'s wrong? 就够。',
+    takeaway:'关心人 → Are you OK?'
+  },
+  {
+    id:'kf-05', pack:'friend', level:2, type:'phrase',
+    scene:'🎈 想分享零食',
+    situation:'课间你打开一包饼干，同桌的外国小朋友看了一眼又转开了。',
+    quote:'',
+    note:'你想请他吃一块。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'Would you like some?', note:'请人吃东西的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'不用说完整的句子，一句 Would you like some? 递过去，对方就懂了。' },
+      { text:'Do you want eat?', note:'两个动词挤在一起', badge:'语法错', kind:'stiff', ok:false,
+        why:'want 后面要加 to：Do you want to eat some?，不过还是没有 Would you like 客气。' },
+      { text:'Eat it.', note:'像在命令别人', badge:'太冲', kind:'trap', ok:false,
+        why:'祈使句听起来像"给我吃了它"，请客变成了下命令。' }
+    ],
+    explain:'💡 Would you like…? 是英语里最客气的邀请句：Would you like some water?（喝点水吗）、Would you like to play with us?（要一起玩吗）。对方要就说 Yes, please.，不要就说 No, thank you.',
+    takeaway:'请人吃东西 → Would you like some?'
+  },
+  {
+    id:'kf-06', pack:'friend', level:3, type:'listening',
+    scene:'🎈 轮流玩滑板',
+    situation:'你和几个外国小朋友排队玩滑板，前面那个同学玩完了，把滑板推给你说：',
+    quote:'Your turn!',
+    note:'大家都看着你。',
+    ask:'他的意思是？',
+    options:[
+      { text:'轮到你了', note:'turn = 轮次', badge:'轮流', kind:'stiff', ok:true,
+        why:'turn 在这里是"轮到谁"的意思，完整说法是 It\'s your turn.' },
+      { text:'你转个身', note:'把 turn 当成了"转身"', badge:'转身', kind:'stiff', ok:false,
+        why:'turn 确实有"转"的意思，但让人转身会说 Turn around.' },
+      { text:'你赢了', note:'和输赢没关系', badge:'输赢', kind:'stiff', ok:false,
+        why:'赢了会说 You win! 或 You won!，跟 turn 无关。' }
+    ],
+    explain:'💡 排队和轮流的高频句：It\'s your turn.（轮到你了）、It\'s my turn.（轮到我了）、Wait your turn.（排队等着）。听懂 turn，玩游戏就不会插错队。',
+    takeaway:'Your turn! = 轮到你了。'
   }
 
 ];
@@ -1183,6 +1402,9 @@ const MODES = {
     name:'小学生入门',
     sub:'打招呼 / 课堂 / 生活 / 交朋友',
     chip:'🧒 小学生入门',
+    /* 选项每次随机排序：题库写得越多，正解越容易扎堆在某个位置，
+       小朋友会摸出"点第一个准没错"。打乱之后位置彻底失效 */
+    shuffleOptions: true,
     BANK: BANK_KIDS,
     PACKS: {
       hello:  { label:'👋 打招呼篇', cn:'打招呼' },
@@ -1217,6 +1439,8 @@ const MODES = {
     name:'成人地道',
     sub:'点餐 / 旅途 / 职场 / 生活',
     chip:'🧑‍💼 成人地道',
+    /* 这里保持原顺序：w-01 的解析里写了"用 C 选项的 Yes, and 法则"，位置不能动 */
+    shuffleOptions: false,
     BANK: BANK_ADULT,
     PACKS: {
       order:  { label:'🏪 点餐生存篇', cn:'点餐生存' },
@@ -1276,7 +1500,7 @@ const MODES = {
 
   /* ========== 状态 ========== */
   let SET = [];   // 本局抽中的 3 道题
-  const state = { index:0, hp:MAX_HP, correct:0, log:[], locked:false };
+  const state = { index:0, hp:MAX_HP, correct:0, log:[], locked:false, opts:[] };
 
   /* ========== 洗牌抽题 ========== */
   /* Fisher–Yates：从后往前逐位与随机位置交换，每种排列等概率 */
@@ -1444,8 +1668,11 @@ const MODES = {
         <div id="verdict"></div>
       </div>`;
 
+    /* 本题实际显示的选项顺序（小学生模式每次打乱），判定也以它为准 */
+    state.opts = M.shuffleOptions ? shuffle(q.options) : q.options;
+
     const wrap = $("options");
-    q.options.forEach((opt, i) => {
+    state.opts.forEach((opt, i) => {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "option-card";
@@ -1470,9 +1697,9 @@ const MODES = {
     state.locked = true;
 
     const q = SET[state.index];
-    const picked = q.options[choice];
-    const rightIndex = q.options.findIndex(o => o.ok);
-    const right = q.options[rightIndex];
+    const picked = state.opts[choice];
+    const rightIndex = state.opts.findIndex(o => o.ok);
+    const right = state.opts[rightIndex];
     const ok = picked.ok;
 
     // 整张卡片换色：答对浅绿底绿边，答错浅红底红边
