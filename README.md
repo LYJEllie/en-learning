@@ -8,7 +8,7 @@
 
 | 模式 | 面向 | 题量 | 内容 |
 |---|---|---|---|
-| 🧒 小学生入门 | 刚学英语的小学生 | 75 题 | 打招呼 / 课堂 / 生活 / 交朋友 / 出门在外 |
+| 🧒 小学生入门 | 刚学英语的小学生 | 76 题 | 打招呼 / 课堂 / 生活 / 交朋友 / 出门在外 |
 | 🧑‍💼 成人地道 | 出国、外企、留学 | 4 题 | 点餐 / 旅途 / 职场 / 生活 |
 
 无依赖、无框架。仓库根目录的 `index.html` 是构建好的**单文件成品**，双击就能玩，拷走也能跑。
@@ -38,7 +38,7 @@
 
 小学生模式还会**把三个选项也洗一遍**（`shuffleOptions: true`）。题库越大，正解越容易扎堆在某个位置，小朋友就会摸出"点第一个准没错"；打乱之后位置彻底失效。成人模式关掉了这个开关，因为 `w-01` 的解析里写了"用 C 选项的 Yes, and 法则"，位置不能动。
 
-实测：小学生模式 75 题、5 个大类，可抽出 **33 750 种不同组合**（`C(5,3) × 15³`）。用 headless 浏览器跑 200 局 600 题，每题都点正解 → 判定错误 0 次，正解位置 A/B/C ≈ 214/207/179，五个大类出场次数 112~125，分布均匀。
+实测：小学生模式 76 题、5 个大类，可抽出 **35 100 种不同组合**（每类各取 1 道，把 5 类里选 3 类的所有组合数加起来）。用 headless 浏览器跑 200 局 600 题，每题都点正解 → 判定错误 0 次，正解位置 A/B/C ≈ 214/207/179，五个大类出场次数 112~125，分布均匀。
 
 ## 访问量统计
 
@@ -56,14 +56,14 @@
 
 ## 题库
 
-### 🧒 小学生入门（75 题，五大类各 15 题）
+### 🧒 小学生入门（76 题，五大类，除交朋友篇 16 题外各 15 题）
 
 | 大类 | key | id | 考什么 |
 |---|---|---|---|
 | 👋 打招呼篇 | `hello` | `kh-` | Good morning / Nice to meet you / How are you / What's your name / Have a nice day → You too / Where are you from / This is my friend / 电话里的 This is Lily / 老师不叫 teacher / Morning! / Bye-bye 偏幼 / What's up? / call me Anna / 别叫 aunt |
 | 🏫 课堂篇 | `class` | `kc-` | 点名答"到" Here! / May I …, please? / I don't understand / page ten / 迟到 May I come in? / 短答 Yes, I do. / Line up / 忘带作业 forgot / borrow 与 lend / Read after me / Work in pairs / Time's up / Are you with me? / Sure, here you are / Let me try |
 | 🏠 生活篇 | `life` | `kl-` | What color…? / Would you like…? / 被夸怎么回 / fine 与 nine / Help yourself! / Bless you! / For here or to go? / 天气 It's sunny / I have a headache / change 是零钱 / Dinner is ready / I'm full / Make a wish / Watch your step / How many |
-| 🎈 交朋友篇 | `friend` | `kf-` | Can I play with you? / Sorry 与 Excuse me / Here you are 三句链 / Are you OK? / Would you like some? / Your turn! / After you / 收礼物当场拆 / No problem / 委婉拒绝邀请 / Can you help me / 夸人 I like your… / Cool! / Good game / Same here |
+| 🎈 交朋友篇 | `friend` | `kf-` | Can I play with you? / Sorry 与 Excuse me / Here you are 三句链 / Are you OK? / Would you like some? / Your turn! / After you / 收礼物当场拆 / No problem / 委婉拒绝邀请 / Can you help me / 夸人 I like your… / Cool! / Good game / Same here / 🛹 街头俚语 That's sick! |
 | 🧳 出门在外篇 | `trip` | `kt-` | 问路先说 Excuse me / How much is it? / Wait in line / 听方向 turn left / Chicken or beef? / fasten your seat belt / One child ticket / take a picture of us / 让座 / Is this seat taken? / Take off your shoes / I'm lost / try it on / No photos / Can I have …, please |
 
 写小学生题的四条原则：
@@ -149,6 +149,7 @@ node build.mjs        # → 根目录 index.html
 | `level` | 难度 1~3，决定它在一局里的出场顺序 |
 | `type` | `listening` 听力 / `phrase` 说法 / `culture` 习惯 / `social` 情商 / `word` 单词 / `manners` 礼貌 |
 | `scene` | 场景名，显示在顶部黑胶囊里 |
+| `heat` | 选填，场景标签旁的红色热度激将文案（如 `🔥 10个做题家9个都翻车的地道俚语`）。**是氛围文案，不是真实统计**，不写就不显示 |
 | `situation` / `note` | 情景铺垫 / 灰色补充小字 |
 | `quote` | 老外说的原话；听力题必填，纯情景题可留空 |
 | `ask` | 设问 |
@@ -191,7 +192,7 @@ node build.mjs        # → 根目录 index.html
 | 小学生题量 | 单文件大小 | 可抽组合数 | 说明 |
 |---|---|---|---|
 | 40 题（4 类各 10） | 97 KB | 4 000 | 舒适区 |
-| **75 题（现在，5 类各 15）** | **143 KB** | **33 750** | 已拆成 data/*.js，编辑不再受体积影响 |
+| **76 题（现在，5 类）** | **145 KB** | **35 100** | 已拆成 data/*.js，编辑不再受体积影响 |
 | 150 题（5 类各 30） | ~230 KB | 270 000 | 单文件仍能秒开，靠拆分维持可维护性 |
 | 300 题以上 | 400 KB+ | 200 万+ | 考虑按需加载，或者拆成多个页面 |
 

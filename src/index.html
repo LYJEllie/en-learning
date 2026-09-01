@@ -324,6 +324,19 @@ body{
   border-radius:99px;
   padding:5px 14px;
 }
+/* 热度标签：激将文案，勾好胜心（题目里写 heat 字段才出现） */
+.heat-tag{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.5px;
+  color:var(--red-deep);
+  background-color:var(--red-soft);
+  border:2px solid var(--red);
+  border-radius:99px;
+  padding:4px 10px;
+  white-space:nowrap;
+}
+
 /* 题型：这题在考"听力/说法/习惯/情商" */
 .qtype{
   font-size:11px;
@@ -959,6 +972,7 @@ body{
       <div class="card" id="qcard">
         <div class="scene-row">
           <span class="scene">${q.scene}</span>
+          ${q.heat ? `<span class="heat-tag">${q.heat}</span>` : ""}
           <span class="qtype">${TYPES[q.type].label}</span>
           <span class="mode-chip">${M.chip}</span>
         </div>

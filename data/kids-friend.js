@@ -276,6 +276,25 @@
     ],
     explain:'💡 "我也是"有好几种说法：Me too. / Same here. / So do I.。但要注意：上课点名答"到"可不能用它们，那时候要说 Here!',
     takeaway:'Same here. = 我也一样（＝ Me too）。'
+  },
+  {
+    id:'kf-16', pack:'friend', level:3, type:'listening',
+    scene:'🛹 街头社交篇',
+    heat:'🔥 10个做题家9个都翻车的地道俚语',
+    situation:'放学后你在滑板公园玩，一个外国小朋友滑过来，盯着你的滑板喊了一句：',
+    quote:"That's sick!",
+    note:'他一脸兴奋，还冲你竖了个大拇指。',
+    ask:'他其实是在说什么？',
+    options:[
+      { text:'你的滑板生病了', note:'中式直译', badge:'直译', kind:'trap', ok:false,
+        why:'sick 在课本里是"生病的"，可滑板不会生病——一看就知道这里另有意思。' },
+      { text:'你的滑板太恶心了', note:'字面误区', badge:'误会', kind:'trap', ok:false,
+        why:'sick 确实有"恶心、想吐"的意思，但配上他兴奋的表情和大拇指，方向明显反了。' },
+      { text:'你的滑板太酷炫了！', note:'地道美式街头俚语', badge:'地道', kind:'native', ok:true,
+        why:'在美式口语里 sick 是高频夸奖词，等于 cool / awesome，滑板、球鞋、技术都能这么夸。' }
+    ],
+    explain:'💡 避坑：‘Sick’除了生病，在美式俚语里高频表示‘Cool / Awesome’（酷毙了）。千万别回‘It is healthy’哦！',
+    takeaway:"That's sick! = 太酷了！回一句 Thanks! 就行。"
   }
 
   ]);
