@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>课本英语 vs 地道英语</title>
+<meta name="description" content="英语情景答题小游戏：三条命，三个真实场面，说错一句气氛就凉一次。">
+<style>
+/* ============================================================
+   课本英语 vs 地道英语 —— 英语情景答题小游戏
+   复古扁平 / Neo-brutalism：米底 + 粗黑边 + 硬投影
+   红 #ff4757 = 踩雷    绿 #2ed573 = 地道    黄 #f1c40f = 生硬
+   单文件：CSS / 题库 / 引擎 全部在本文件内
+   ============================================================ */
+
+:root{
+  --bg:        #f7f1e3;
+  --card:      #fcfaf2;
+  --white:     #ffffff;
+  --ink:       #111111;
+  --dark:      #2f3542;
+  --muted:     #57606f;
+  --line:      #dfe4ea;
+  --red:       #ff4757;
+  --red-deep:  #c72c39;
+  --red-soft:  #fff0f1;
+  --green:     #2ed573;
+  --green-deep:#0b5d33;
+  --green-soft:#eefbf3;
+  --blue:      #1e90ff;
+  --yellow:    #f1c40f;
+  --yellow-deep:#8a6d00;
+  --shadow:    12px 12px 0px var(--ink);
+  --shadow-md: 6px 6px 0px var(--ink);
+  --shadow-sm: 3px 3px 0px var(--ink);
+  --cn: 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+  --en: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; font-family:var(--cn); }
+
+body{
+  background-color:var(--bg);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding:24px 20px 60px;
+  color:var(--dark);
+  overflow-x:hidden;
+}
+
+.app{
+  width:100%;
+  max-width:540px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.app.is-hit{ animation:shake .45s cubic-bezier(.36,.07,.19,.97) both; }
+@keyframes shake{
+  10%,90%{ transform:translate3d(-4px,0,0); }
+  20%,80%{ transform:translate3d(7px,0,0); }
+  30%,50%,70%{ transform:translate3d(-11px,0,0); }
+  40%,60%{ transform:translate3d(11px,0,0); }
+}
+
+/* ---------- 血量 + 进度 HUD ---------- */
+.hud{
+  background-color:var(--white);
+  border:4px solid var(--ink);
+  border-radius:12px;
+  box-shadow:var(--shadow-md);
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.hud[hidden]{ display:none; }
+
+.hearts{ display:flex; gap:6px; align-items:center; }
+.heart{ width:30px; height:30px; display:block; transform-origin:50% 60%; }
+.heart .shape{ fill:var(--red); stroke:var(--ink); stroke-width:9; }
+.heart.is-lost .shape{ fill:var(--line); stroke:#a4b0be; }
+.heart.is-lost{ transform:rotate(-16deg) scale(.85); opacity:.7; }
+.heart.is-breaking{ animation:breakHeart .55s ease-out both; }
+@keyframes breakHeart{
+  0%{ transform:scale(1) rotate(0); }
+  30%{ transform:scale(1.6) rotate(8deg); }
+  60%{ transform:scale(.78) rotate(-20deg); }
+  100%{ transform:rotate(-16deg) scale(.85); }
+}
+
+.progress{ display:flex; align-items:center; gap:10px; }
+.counter{
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  letter-spacing:1px;
+  font-variant-numeric:tabular-nums;
+}
+.counter b{ color:var(--red); font-size:20px; }
+.bar{
+  width:clamp(110px,30vw,170px);
+  height:16px;
+  border:3px solid var(--ink);
+  border-radius:99px;
+  background-color:var(--line);
+  overflow:hidden;
+}
+.bar__fill{
+  display:block;
+  height:100%;
+  width:0;
+  background-color:var(--blue);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 5px,transparent 5px 10px);
+  transition:width .45s cubic-bezier(.2,.9,.25,1);
+}
+
+/* ---------- 卡片 ---------- */
+.card{
+  background-color:var(--card);
+  border:4px solid var(--ink);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  padding:34px 28px;
+  position:relative;
+  transition:background-color .3s ease, border-color .3s ease;
+  animation:cardIn .28s ease-out both;
+}
+.card--center{ text-align:center; }
+/* 答对：浅绿底 + 绿边 / 答错：浅红底 + 红边 */
+.card.is-ok{ background-color:var(--green-soft); border-color:var(--green-deep); }
+.card.is-ng{ background-color:var(--red-soft);   border-color:var(--red); }
+@keyframes cardIn{ from{ transform:translateY(12px); opacity:0; } to{ transform:none; opacity:1; } }
+
+/* ---------- 封面 ---------- */
+.sub-lang-title{
+  font-family:var(--en);
+  font-size:14px;
+  color:var(--muted);
+  letter-spacing:4px;
+  margin-bottom:24px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.title-vs-box{ margin-bottom:24px; }
+.main-title{
+  font-size:clamp(32px,8.4vw,42px);
+  font-weight:900;
+  letter-spacing:3px;
+  line-height:1.2;
+}
+.red-title{ color:var(--red); text-shadow:2px 2px 0px rgba(0,0,0,.1); }
+.blue-title{ color:var(--dark); }
+.vs-text{
+  font-family:var(--en);
+  font-size:24px;
+  font-weight:900;
+  color:var(--red);
+  margin:8px 0;
+  font-style:italic;
+}
+.desc-text{
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:30px;
+  padding:0 10px;
+}
+
+/* 虚线规则卡 */
+.rules-card{
+  border:2px dashed var(--dark);
+  padding:20px;
+  text-align:left;
+  border-radius:6px;
+  display:grid;
+  gap:12px;
+}
+.rule-item{
+  font-size:14px;
+  color:var(--dark);
+  display:flex;
+  align-items:flex-start;
+  line-height:1.5;
+}
+.rule-item::before{
+  content:"▶";
+  color:var(--red);
+  font-size:10px;
+  margin-right:8px;
+  margin-top:3px;
+  flex:none;
+}
+
+/* ---------- 按钮 ---------- */
+.start-btn{
+  background-color:var(--ink);
+  color:var(--white);
+  border:none;
+  padding:16px 36px;
+  font-size:18px;
+  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-top:35px;
+  transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  box-shadow:0 4px 0px #555;
+}
+.start-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 0px #555; background-color:#222; }
+.start-btn:active{ transform:translateY(2px); box-shadow:0 2px 0px #555; }
+.start-btn:focus-visible{ outline:3px solid var(--red); outline-offset:4px; }
+.start-btn .en-text{
+  font-family:var(--en);
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:.5px;
+  color:var(--yellow);
+  border-right:1px solid #555;
+  padding-right:12px;
+  line-height:1.5;
+}
+.start-btn--pulse{ animation:pulseBtn 2s infinite; }
+@keyframes pulseBtn{
+  0%{ transform:scale(1); }
+  50%{ transform:scale(1.03); box-shadow:0 4px 15px rgba(0,0,0,.2); }
+  100%{ transform:scale(1); }
+}
+.start-btn--sm{ padding:13px 26px; font-size:16px; margin-top:20px; }
+.start-btn--sm .en-text{ font-size:14px; }
+
+/* ---------- 场景描述区 ---------- */
+.scene-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.scene{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  line-height:1.9;
+  color:var(--white);
+  background-color:var(--dark);
+  border-radius:99px;
+  padding:5px 14px;
+}
+/* 题型：这题在考"听力/说法/习惯/情商" */
+.qtype{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--muted);
+  background-color:var(--white);
+  border:2px solid var(--line);
+  border-radius:99px;
+  padding:4px 10px;
+}
+
+.question-box{
+  background-color:var(--white);
+  border:2px solid var(--line);
+  border-left:6px solid var(--yellow);
+  border-radius:6px;
+  padding:14px 16px;
+  margin-bottom:18px;
+}
+.question-box .zh-line{
+  font-size:14.5px;
+  line-height:1.95;
+  color:var(--dark);
+}
+.question-box .note-line{
+  margin-top:8px;
+  padding-top:8px;
+  border-top:1px dashed var(--line);
+  font-size:13px;
+  line-height:1.7;
+  color:var(--muted);
+}
+.question-box b{ color:var(--red); font-weight:700; }
+
+/* 老外说的那句原话 */
+.quote{
+  font-family:var(--en);
+  font-size:clamp(22px,6vw,30px);
+  font-weight:900;
+  letter-spacing:.5px;
+  line-height:1.5;
+  color:var(--ink);
+  background-color:var(--white);
+  border:3px solid var(--ink);
+  border-radius:10px;
+  box-shadow:var(--shadow-sm);
+  padding:14px 18px;
+  margin-bottom:18px;
+  text-align:center;
+  transform:rotate(-.6deg);
+}
+.quote small{
+  display:block;
+  font-family:var(--cn);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
+
+.ask{
+  font-size:clamp(18px,4.6vw,22px);
+  font-weight:900;
+  letter-spacing:.5px;
+  line-height:1.8;
+  color:var(--dark);
+  margin-bottom:20px;
+}
+
+/* ---------- 选项 ---------- */
+.options-container{ display:grid; gap:12px; }
+
+.option-card{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  text-align:left;
+  background-color:var(--white);
+  border:3px solid var(--ink);
+  border-radius:8px;
+  padding:12px 14px;
+  cursor:pointer;
+  color:var(--dark);
+  transition:transform .15s ease, box-shadow .15s ease, background-color .2s ease, border-color .2s ease;
+}
+.option-card:hover:not(:disabled){ transform:translate(-3px,-3px); box-shadow:var(--shadow-sm); }
+.option-card:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+.option-card:disabled{ cursor:default; }
+
+.option-left{ display:flex; align-items:center; gap:12px; min-width:0; }
+.option-letter{
+  flex:none;
+  width:32px; height:32px;
+  display:grid; place-items:center;
+  font-family:var(--en);
+  font-size:15px; font-weight:900;
+  color:var(--white);
+  background-color:var(--ink);
+  border-radius:50%;
+  transition:background-color .2s ease, color .2s ease;
+}
+.option-text-box{ display:grid; gap:2px; min-width:0; }
+.option-card .en-text{
+  font-family:var(--en);
+  font-size:clamp(15px,3.9vw,17px);
+  font-weight:800;
+  line-height:1.55;
+}
+.option-card .zh-text{ font-size:12.5px; color:var(--muted); line-height:1.6; }
+
+/* 语感标签：只表示"踩雷风险"，不直接表示对错 */
+.badge{
+  flex:none;
+  margin-left:auto;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  padding:4px 9px;
+  border-radius:99px;
+  border:2px solid currentColor;
+  background-color:var(--white);
+  white-space:nowrap;
+}
+.badge-trap  { color:var(--red); }
+.badge-native{ color:var(--green-deep); }
+.badge-stiff { color:var(--yellow-deep); }
+
+/* 判定后的状态：浅底 + 同色描边 */
+.option-card.is-right{
+  background-color:var(--green-soft);
+  border-color:var(--green-deep);
+  box-shadow:var(--shadow-sm);
+}
+.option-card.is-right .option-letter{ background-color:var(--green-deep); color:var(--white); }
+.option-card.is-right .zh-text{ color:var(--green-deep); }
+.option-card.is-wrong{
+  background-color:var(--red-soft);
+  border-color:var(--red);
+}
+.option-card.is-wrong .option-letter{ background-color:var(--red); color:var(--white); }
+.option-card.is-wrong .zh-text{ color:var(--red-deep); }
+.option-card.is-dim{ opacity:.45; }
+
+.tag-answer{
+  flex:none;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  color:var(--white);
+  background-color:var(--green-deep);
+  border-radius:99px;
+  padding:4px 9px;
+  white-space:nowrap;
+}
+
+/* ---------- 讲解 ---------- */
+.verdict{
+  position:relative;
+  overflow:hidden;
+  margin-top:22px;
+  border:3px solid var(--ink);
+  border-radius:10px;
+  padding:18px;
+  animation:cardIn .3s ease-out both;
+}
+.verdict--ok{ background-color:#f1fdf6; }
+.verdict--ng{ background-color:#fff2f3; }
+.verdict > *:not(.verdict__watermark){ position:relative; }
+
+/* 巨型半透明判定符号：1 秒内读懂输赢 */
+.verdict__watermark{
+  position:absolute;
+  right:-30px;
+  top:50%;
+  width:clamp(180px,48vw,240px);
+  transform:translateY(-50%) rotate(-8deg);
+  pointer-events:none;
+  user-select:none;
+}
+.verdict--ok .verdict__watermark{ color:var(--green); opacity:.18; }
+.verdict--ng .verdict__watermark{ color:var(--red); opacity:.16; }
+
+.verdict__head-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.verdict__icon{
+  flex:none;
+  width:46px; height:46px;
+  padding:10px;
+  border-radius:50%;
+  border:3px solid var(--ink);
+  box-shadow:var(--shadow-sm);
+  animation:stampPop .45s cubic-bezier(.2,1.6,.4,1) both;
+}
+.verdict--ok .verdict__icon{ background-color:var(--green); color:var(--ink); }
+.verdict--ng .verdict__icon{ background-color:var(--red); color:var(--white); }
+@keyframes stampPop{
+  0%{ transform:scale(2.6) rotate(-22deg); opacity:0; }
+  60%{ transform:scale(.9) rotate(5deg); opacity:1; }
+  100%{ transform:scale(1) rotate(0); opacity:1; }
+}
+.verdict__watermark svg,
+.verdict__icon svg{ display:block; width:100%; height:100%; }
+
+.verdict__head{
+  font-size:19px;
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1.35;
+}
+.verdict--ok .verdict__head{ color:#128046; }
+.verdict--ng .verdict__head{ color:var(--red-deep); }
+.verdict p{ font-size:14px; line-height:2; color:var(--dark); margin-bottom:8px; }
+.verdict p:last-of-type{ margin-bottom:0; }
+.verdict .en{ font-family:var(--en); font-weight:800; color:var(--ink); }
+
+/* 黄色进阶框 */
+.bonus-box{
+  margin-top:16px;
+  background-color:#fff8dd;
+  border:2px dashed var(--yellow);
+  border-radius:6px;
+  padding:12px 14px;
+  font-size:13.5px;
+  line-height:2;
+  color:var(--muted);
+}
+.bonus-box__label{
+  display:inline-block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:var(--white);
+  background-color:var(--yellow-deep);
+  border-radius:99px;
+  padding:2px 10px;
+  margin-bottom:6px;
+}
+.highlight{
+  font-family:var(--en);
+  font-weight:800;
+  color:var(--ink);
+  text-decoration:underline;
+  text-decoration-color:var(--yellow);
+  text-decoration-thickness:3px;
+  text-underline-offset:3px;
+  text-decoration-skip-ink:none;
+}
+
+/* ---------- 冲击字 ---------- */
+.impact{
+  position:fixed;
+  left:50%; top:40%;
+  z-index:40;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  pointer-events:none;
+  animation:impact 1.1s cubic-bezier(.2,1.4,.4,1) both;
+}
+.impact__en{
+  font-family:var(--en);
+  font-size:clamp(42px,12vw,80px);
+  font-weight:900;
+  line-height:1.15;
+  letter-spacing:1px;
+  color:var(--white);
+  -webkit-text-stroke:7px var(--ink);
+  paint-order:stroke fill;
+  transform:rotate(-6deg);
+}
+.impact--ng .impact__en{ color:var(--red); }
+.impact--ok .impact__en{ color:var(--green); }
+.impact__cn{
+  display:inline-block;
+  margin-top:12px;
+  font-size:clamp(16px,4vw,22px);
+  font-weight:900;
+  color:var(--ink);
+  background-color:var(--white);
+  border:3px solid var(--ink);
+  border-radius:6px;
+  box-shadow:var(--shadow-sm);
+  padding:6px 16px;
+  transform:rotate(-2deg);
+}
+@keyframes impact{
+  0%{ transform:translate(-50%,-50%) scale(2.6); opacity:0; }
+  18%{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+  70%{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+  100%{ transform:translate(-50%,-60%) scale(.94); opacity:0; }
+}
+
+/* ---------- 红屏闪烁 / 撒花 ---------- */
+.flash{
+  position:fixed; inset:0; z-index:30; pointer-events:none; opacity:0;
+  background:radial-gradient(circle at 50% 45%, rgba(255,71,87,.12) 0%, rgba(255,71,87,.85) 100%);
+}
+.flash.is-on{ animation:flash .55s ease-out both; }
+@keyframes flash{ 0%{opacity:0;} 12%{opacity:1;} 40%{opacity:.25;} 60%{opacity:.8;} 100%{opacity:0;} }
+.fx{ position:fixed; inset:0; z-index:35; pointer-events:none; }
+
+/* ---------- 结算 ---------- */
+.result-kicker{
+  font-family:var(--en);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:4px;
+  color:var(--muted);
+  margin-bottom:22px;
+  text-transform:uppercase;
+}
+.badge-rank{
+  width:clamp(170px,44vw,196px);
+  height:clamp(170px,44vw,196px);
+  margin:0 auto 22px;
+  border:5px solid var(--ink);
+  border-radius:50%;
+  box-shadow:var(--shadow-md);
+  background-color:var(--red);
+  color:var(--white);
+  display:grid;
+  place-content:center;
+  gap:8px;
+  padding:14px;
+  transform:rotate(-6deg);
+  animation:badgeIn .5s cubic-bezier(.2,1.5,.4,1) both;
+}
+.badge-rank--win{ background-color:var(--green); color:var(--ink); }
+@keyframes badgeIn{
+  0%{ transform:rotate(-22deg) scale(2.1); opacity:0; }
+  100%{ transform:rotate(-6deg) scale(1); opacity:1; }
+}
+.badge-rank__label{ font-size:12px; letter-spacing:5px; font-weight:700; opacity:.85; }
+.badge-rank__text{ font-size:clamp(21px,5.6vw,27px); font-weight:900; line-height:1.25; letter-spacing:1px; }
+.result-en{
+  font-family:var(--en);
+  font-size:18px;
+  font-weight:800;
+  line-height:1.8;
+  color:var(--dark);
+  margin-bottom:10px;
+}
+.score{
+  display:inline-flex;
+  align-items:baseline;
+  gap:6px;
+  font-size:16px;
+  font-weight:700;
+  color:var(--dark);
+  background-color:var(--white);
+  border:3px solid var(--ink);
+  border-radius:99px;
+  padding:8px 20px;
+  font-variant-numeric:tabular-nums;
+}
+.score b{ font-size:26px; font-weight:900; color:var(--red); }
+.result-note{
+  font-size:14px;
+  line-height:1.85;
+  color:var(--muted);
+  margin:18px auto 0;
+  max-width:30em;
+}
+.recap{ list-style:none; margin-top:26px; display:grid; gap:10px; text-align:left; }
+.recap li{
+  display:flex; gap:10px; align-items:center;
+  background-color:var(--white);
+  border:2px solid var(--line);
+  border-radius:8px;
+  padding:10px 12px;
+  font-size:13.5px;
+  line-height:1.8;
+}
+.recap__mark{
+  flex:none;
+  width:26px; height:26px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  font-size:14px; font-weight:900;
+  color:var(--white);
+}
+.recap__mark--ok{ background-color:var(--green); color:var(--ink); }
+.recap__mark--ng{ background-color:var(--red); }
+.recap__en{ display:block; font-family:var(--en); font-weight:800; font-size:12.5px; color:var(--muted); }
+.recap__take{ display:block; font-weight:700; color:var(--dark); }
+.recap-title{
+  margin-top:26px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:var(--muted);
+  text-align:left;
+}
+.recap-title + .recap{ margin-top:10px; }
+
+/* 弱项诊断 */
+.diagnosis{
+  display:inline-block;
+  margin-top:14px;
+  font-size:13.5px;
+  color:var(--dark);
+  background-color:var(--white);
+  border:2px dashed var(--muted);
+  border-radius:99px;
+  padding:7px 18px;
+}
+.diagnosis b{ color:var(--red); }
+
+/* 题库自检报错条 */
+.alert{
+  border:4px solid var(--red);
+  border-radius:12px;
+  background-color:#fff2f3;
+  box-shadow:var(--shadow-md);
+  padding:14px 18px;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--red-deep);
+}
+.alert[hidden]{ display:none; }
+.alert ul{ margin:6px 0 0 18px; }
+
+/* ---------- 页脚金句（深灰色调） ---------- */
+.footnote{
+  font-family:var(--en);
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+  line-height:2;
+  letter-spacing:1px;
+  color:#4b5360;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="flash" id="flash" aria-hidden="true"></div>
+<canvas class="fx" id="fx" aria-hidden="true"></canvas>
+
+<div class="app" id="app">
+
+  <div class="hud" id="hud" hidden>
+    <div class="hearts" id="hearts" aria-label="剩余血量"></div>
+    <div class="progress">
+      <span class="counter"><b id="qnum">1</b> / <span id="qtotal">3</span></span>
+      <div class="bar" id="bar" role="progressbar" aria-label="答题进度" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+        <span class="bar__fill" id="barFill"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 题库自检报错条（正常情况下隐藏） -->
+  <div class="alert" id="alert" hidden></div>
+
+  <div id="screen" aria-live="polite"></div>
+
+  <p class="footnote">English is a tool. Use it right, live it bright.</p>
+</div>
+
+<script>
+/* ============================================================
+   ★ 第一段：配置 ★
+   对应 jp-learning 的 data/_core.js —— 分类 / 题型 / 局数 / 称号
+   ============================================================ */
+const CONFIG = (() => {
+  "use strict";
+
+  /* 场景大类：抽题时尽量每类只出 1 题，保证一局里场景不重样 */
+  const PACKS = {
+    order:  { label:'🏪 点餐生存篇', cn:'点餐生存' },
+    travel: { label:'☕ 机场旅途篇', cn:'旅途口语' },
+    office: { label:'💼 外企职场篇', cn:'职场情商' },
+    life:   { label:'🛒 生活日常篇', cn:'生活常识' }
+  };
+
+  /* 题型：显示在场景胶囊旁，提示这题在考什么 */
+  const TYPES = {
+    listening: { label:'听力题' },   // 听懂对方那句话到底在问什么
+    phrase:    { label:'说法题' },   // 同一个意思，哪种说法地道
+    culture:   { label:'习惯题' },   // 当地规矩该怎么应对
+    social:    { label:'情商题' }    // 说法没错，但会不会得罪人
+  };
+
+  const ROUND  = 3;   // 每局题数
+  const MAX_HP = 3;   // 初始血量（3 颗心）
+
+  /* 结算称号：从高到低匹配，取第一个满足 correct >= min 的 */
+  const RANKS = [
+    { min:3, rank:'地道口语达人', win:true,
+      en:'You sound like a local.',
+      note:'三个场面零失误。你已经能把课本英语留在课本里，把真实反应带到现场——这正是"能不能用"的分界线。' },
+    { min:2, rank:'半熟留学生', win:true,
+      en:'Almost there. Keep going.',
+      note:'大方向没错，偶尔会漏出直译腔。记住：地道 = 短句 + 场景默契，不是把中文一个词一个词换成英文。' },
+    { min:1, rank:'教科书选手', win:false,
+      en:'Textbook English, real-world gap.',
+      note:'语法满分，语感扣分。先把 "Yes, please." / "I brought my own." / "I see your point, but..." 这几句练成条件反射。' },
+    { min:0, rank:'字面直译爱好者', win:false,
+      en:'Lost in translation.',
+      note:'你的英语都是逐词翻译过来的——写下来能看懂，说出口全是尴尬。好消息是：地道表达就那么几十句，套路可以速成。再来一次。' }
+  ];
+
+  return { PACKS, TYPES, ROUND, MAX_HP, RANKS };
+})();
+
+
+/* ============================================================
+   ★ 第二段：题库 ★
+   对应 jp-learning 的 data/*.js —— 加题只要往数组里追加一个对象
+   ------------------------------------------------------------
+   字段说明：
+     id        唯一编号，前缀 = 大类首字母（o/t/w/l）
+     pack      大类，必须是 CONFIG.PACKS 里已定义的 key
+     level     难度 1~3，同一局里按 1→3 排序出题
+     type      CONFIG.TYPES 的 key：listening/phrase/culture/social
+     scene     场景地点（显示在顶部胶囊里）
+     situation 情景描述（中文，铺垫）
+     quote     老外说的那句原话（会渲染成大号英文引用框；没有可留空 ''）
+     note      情景补充（灰色小字，可留空 ''）
+     ask       设问
+     options   必须正好 3 个，且恰好 1 个 ok:true
+                 text  选项正文（英文说法题写英文，理解题写中文释义）
+                 note  括号里的语感提示
+                 badge 语感标签
+                 kind  配色：trap 红(踩雷) / native 绿(地道) / stiff 黄(生硬)
+                 ok    是否正解
+                 why   逐项解析
+     explain   💡 避坑解析（黄框正文，本题的核心知识点）
+     takeaway  一句话金句（结算页"带走清单"用）
+   ============================================================ */
+const BANK = [
+
+  /* ---------- 🏪 点餐生存篇 ---------- */
+  {
+    id:'o-01', pack:'order', level:1, type:'listening',
+    scene:'🏪 赛百味点餐篇',
+    situation:'在 Subway 点三明治，面包、肉、蔬菜都选完了，店员最后把它拿起来，转头问你一句：',
+    quote:'Toasted?',
+    note:'她的手已经伸向烤箱了，就等你一个字。你想要加热。',
+    ask:'你想要加热，最自然的回答是？',
+    options:[
+      { text:'Yes, heat it please.', note:'字面直译，略显生硬', badge:'直译', kind:'stiff', ok:false,
+        why:'语法没错，但 heat 在英语里更偏"把东西弄热"的动作描述，用在这里像在给店员下工序说明，一听就是翻译腔。' },
+      { text:'Yes, please.', note:'标准且礼貌', badge:'地道', kind:'native', ok:true,
+        why:'对方已经把问题说完整了，你只需要接住那个"yes"，加上 please 就是完整、礼貌又自然的回答。' },
+      { text:'Yes, microwave.', note:'粗鲁，像在命令', badge:'踩雷', kind:'trap', ok:false,
+        why:'不但指定了工具，而且 Subway 用的是烤箱不是微波炉。蹦出一个名词当命令，听感非常冲。' }
+    ],
+    explain:'💡 听力避坑：老外问"Toasted?"就是问你要不要烤/加热，最地道自然的回答就是"Yes, please."。千万别大喊"Microwave（微波炉）"哦！',
+    takeaway:'店员把问题问完整了，你只要接一句 Yes, please. / No, thanks.'
+  },
+
+  /* ---------- ☕ 机场旅途篇 ---------- */
+  {
+    id:'t-01', pack:'travel', level:1, type:'listening',
+    scene:'☕ 机场咖啡厅篇',
+    situation:'在国外机场咖啡厅点餐，服务员把咖啡递给你，顺便问了一句：',
+    quote:'Room for milk?',
+    note:'你脑子里第一反应是"room = 房间"，然后彻底卡住了。',
+    ask:'她其实是想问什么？',
+    options:[
+      { text:'你的酒店房间里有牛奶吗？', note:'直译误区', badge:'踩雷', kind:'trap', ok:false,
+        why:'把 room 当成"房间"就掉进坑了。咖啡师不会关心你住哪儿，这句话的场景永远发生在杯子上。' },
+      { text:'咖啡杯里需要留点空间加牛奶吗？', note:'高频地道口语', badge:'地道', kind:'native', ok:true,
+        why:'完整说法是 "Do you want room for milk?"——要不要少倒一点，给牛奶留出空间。' },
+      { text:'牛奶需要放进冰箱吗？', note:'离谱翻译', badge:'离谱', kind:'trap', ok:false,
+        why:'和冰箱毫无关系，纯属把陌生短语硬凑成一个能理解的句子。' }
+    ],
+    explain:'💡 地道口语：Room 在这里不是房间，而是空间（Space）。服务员是在问你要不要倒太满，方便你呆会儿自己加奶或加糖。',
+    takeaway:'Room for milk? = 要不要留空间加奶；要就 Yes, please，不要就 No, fill it up.'
+  },
+
+  /* ---------- 💼 外企职场篇 ---------- */
+  {
+    id:'w-01', pack:'office', level:3, type:'social',
+    scene:'💼 外企职场社交篇',
+    situation:'外企开会，老板兴致勃勃提了一个方案，你一听就知道落地不了，但当着全组的面得给足面子。',
+    quote:'',
+    note:'所有人都在等你表态，包括老板。',
+    ask:'你想委婉拒绝，作为优雅的职场人应该说？',
+    options:[
+      { text:"I don't agree with you.", note:'太耿直，空气瞬间凝固', badge:'耿直', kind:'trap', ok:false,
+        why:'语法完全正确，但在英语会议里这是把话说死的说法，等于当众否定对方本人而不是方案。' },
+      { text:'Your idea is bad.', note:'职场自杀式发言', badge:'踩雷', kind:'trap', ok:false,
+        why:'直接给对方的想法定性为 bad，没有任何缓冲，中文里也不会这么说话。' },
+      { text:'I see your point, but built on that, what if we...', note:'既给面子又提出修正', badge:'高情商', kind:'native', ok:true,
+        why:'先确认对方（I see your point），再顺着往上加（built on that），最后用假设句抛出自己的方案，把否定包装成推进。' }
+    ],
+    explain:'💡 职场情商：在外企直接说"I don\'t agree"是非常粗鲁的。用 C 选项的"Yes, and..."法则，先肯定对方，再用"what if we..."引导出自己的方案，才是高管话术。',
+    takeaway:'反对不说 No，说 "I see your point, but what if we..."'
+  },
+
+  /* ---------- 🛒 生活日常篇 ---------- */
+  {
+    id:'l-01', pack:'life', level:2, type:'culture',
+    scene:'🛒 超市结账篇',
+    situation:'在北美超市结账，东西刚扫完，收银员看着你那堆东西问了一句：',
+    quote:'Paper or plastic?',
+    note:'两个词你都认识，连起来却完全不知道在问什么。',
+    ask:'他其实是在问你？',
+    options:[
+      { text:'要纸张还是塑料玩具？', note:'完全想偏', badge:'离谱', kind:'trap', ok:false,
+        why:'超市收银台不卖纸也不卖玩具，这句话的对象永远是"装东西的袋子"。' },
+      { text:'要用纸袋装还是塑料袋装？', note:'环保高频问句', badge:'地道', kind:'native', ok:true,
+        why:'完整说法是 "Paper or plastic bags?"，问的是购物袋材质，日常被缩成两个词。' },
+      { text:'要用纸币付还是刷卡？', note:'误当成支付方式', badge:'踩雷', kind:'trap', ok:false,
+        why:'付款方式的问法是 "Cash or card?"，和 paper/plastic 完全是两句话。' }
+    ],
+    explain:'💡 生活常识：这是国外超市最经典的环保问句，用来询问你使用哪种购物袋。如果是自己带了环保袋，直接回答"I brought my own"即可。',
+    takeaway:'Paper or plastic? 问的是袋子；自带袋就说 I brought my own.'
+  }
+
+];
+
+
+/* ============================================================
+   ★ 第三段：引擎 ★
+   洗牌抽题 / 血量 / 判定 / 特效 / 结算 —— 加题时不用动这一段
+   ============================================================ */
+(() => {
+  "use strict";
+
+  const { PACKS, TYPES, ROUND, MAX_HP, RANKS } = CONFIG;
+
+  const $ = (id) => document.getElementById(id);
+  const app = $("app"), screen = $("screen"), hud = $("hud"), flash = $("flash");
+  const heartsEl = $("hearts"), qnum = $("qnum"), bar = $("bar"), barFill = $("barFill");
+  $("qtotal").textContent = ROUND;
+  bar.setAttribute("aria-valuemax", String(ROUND));
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const HEART_SVG = '<svg class="heart" viewBox="0 0 100 100" aria-hidden="true"><path class="shape" d="M50 86C24 68 8 52 8 34 8 21 18 12 30 12c8 0 15 4 20 11 5-7 12-11 20-11 12 0 22 9 22 22 0 18-16 34-42 52z"/></svg>';
+
+  /* 判定符号：○ / ✕（SVG 绘制，不依赖系统字体） */
+  const MARK = {
+    ok: '<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="31" fill="none" stroke="currentColor" stroke-width="15"/></svg>',
+    ng: '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M26 26 76 76M76 26 26 76" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round"/></svg>'
+  };
+
+  /* ========== 状态 ========== */
+  let SET = [];   // 本局抽中的 3 道题
+  const state = { index:0, hp:MAX_HP, correct:0, log:[], locked:false };
+
+  /* ========== 洗牌抽题 ========== */
+  /* Fisher–Yates：从后往前逐位与随机位置交换，每种排列等概率 */
+  function shuffle(arr){
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  let lastIds = new Set();   // 上一局出过的题，这局尽量避开
+
+  function drawSet(){
+    const pool = shuffle(BANK);                       // ① 整个题库彻底打乱
+    const fresh = pool.filter(q => !lastIds.has(q.id));
+    const ordered = [...fresh, ...pool.filter(q => lastIds.has(q.id))];  // ② 没出过的排前面
+
+    // ③ 依次取题，同一大类先只取 1 道，保证一局里场景不重样
+    const picked = [], usedPacks = new Set();
+    for (const q of ordered){
+      if (picked.length >= ROUND) break;
+      if (usedPacks.has(q.pack)) continue;
+      picked.push(q); usedPacks.add(q.pack);
+    }
+    // ④ 大类不够时，用剩下的题补满
+    for (const q of ordered){
+      if (picked.length >= ROUND) break;
+      if (!picked.includes(q)) picked.push(q);
+    }
+
+    picked.sort((a, b) => a.level - b.level);         // ⑤ 难度由浅入深
+    lastIds = new Set(picked.map(q => q.id));
+    return picked;
+  }
+
+  /* ========== 题库自检：写错题当场报红条，而不是白屏 ========== */
+  function validateBank(bank){
+    const errs = [], ids = new Set(), KINDS = new Set(["trap", "native", "stiff"]);
+    bank.forEach((q, i) => {
+      const at = `第${i + 1}题（${q.id || "缺 id"}）`;
+      ["id", "pack", "scene", "situation", "ask", "explain", "takeaway"].forEach(f => {
+        if (!q[f]) errs.push(`${at}：缺字段 ${f}`);
+      });
+      if (q.id){
+        if (ids.has(q.id)) errs.push(`${at}：id 与前面重复`);
+        ids.add(q.id);
+      }
+      if (!PACKS[q.pack]) errs.push(`${at}：pack「${q.pack}」未在 PACKS 中定义`);
+      if (!(q.level >= 1 && q.level <= 3)) errs.push(`${at}：level 必须是 1~3`);
+      if (!TYPES[q.type]) errs.push(`${at}：type「${q.type}」不合法`);
+      if (!Array.isArray(q.options) || q.options.length !== 3){
+        errs.push(`${at}：必须正好 3 个选项`);
+        return;
+      }
+      const rights = q.options.filter(o => o.ok).length;
+      if (rights !== 1) errs.push(`${at}：正解有 ${rights} 个，必须恰好 1 个`);
+      q.options.forEach((o, j) => {
+        const tag = `${at} 选项${"ABC"[j]}`;
+        ["text", "note", "badge", "why"].forEach(f => { if (!o[f]) errs.push(`${tag}：缺字段 ${f}`); });
+        if (!KINDS.has(o.kind)) errs.push(`${tag}：kind「${o.kind}」不合法（只能 trap/native/stiff）`);
+      });
+    });
+    if (bank.length < ROUND) errs.push(`题库只有 ${bank.length} 题，少于每局需要的 ${ROUND} 题`);
+    return errs;
+  }
+
+  /* ========== HUD ========== */
+  function renderHearts(breakIndex = -1){
+    heartsEl.innerHTML = HEART_SVG.repeat(MAX_HP);
+    [...heartsEl.children].forEach((el, i) => {
+      if (i >= state.hp) el.classList.add("is-lost");
+      if (i === breakIndex && !reduced) el.classList.add("is-breaking");
+    });
+  }
+  function renderProgress(){
+    qnum.textContent = Math.min(state.index + 1, ROUND);
+    barFill.style.width = (state.index / ROUND * 100) + "%";
+    bar.setAttribute("aria-valuenow", String(state.index));
+  }
+
+  /* ========== 封面 ========== */
+  function renderCover(){
+    hud.hidden = true;
+    screen.innerHTML = `
+      <div class="card card--center">
+        <div class="sub-lang-title">Real-life English Quiz</div>
+        <div class="title-vs-box">
+          <div class="main-title red-title">课本英语</div>
+          <div class="vs-text">vs</div>
+          <div class="main-title blue-title">地道英语</div>
+        </div>
+        <p class="desc-text">
+          雅思考了 7 分，点个三明治全靠比划。<br>
+          三个真实场面，三条命——说错一句，空气就凉一次。
+        </p>
+        <div class="rules-card">
+          <div class="rule-item">共 ${ROUND} 题，每答错一题失去一颗心</div>
+          <div class="rule-item">血量归零直接 GG，别指望硬刚</div>
+          <div class="rule-item">每局从 ${BANK.length} 道题里洗牌随机抽 ${ROUND} 题，场景不重样</div>
+          <div class="rule-item">每题都有避坑解析，可以用键盘 A / B / C 作答</div>
+        </div>
+        <button class="start-btn start-btn--pulse" id="startBtn" type="button">
+          <span class="en-text">Let's go</span>
+          <span>开始挑战 👇</span>
+        </button>
+      </div>`;
+    $("startBtn").addEventListener("click", startGame);
+  }
+
+  function startGame(){
+    SET = drawSet();
+    state.index = 0; state.hp = MAX_HP; state.correct = 0; state.log = []; state.locked = false;
+    hud.hidden = false;
+    renderHearts();
+    renderQuestion();
+  }
+
+  /* ========== 出题 ========== */
+  function renderQuestion(){
+    const q = SET[state.index];
+    state.locked = false;
+    renderProgress();
+
+    const quoteHtml = q.quote
+      ? `<div class="quote"><small>对方说</small>『${q.quote}』</div>`
+      : "";
+    const noteHtml = q.note ? `<p class="note-line">${q.note}</p>` : "";
+
+    screen.innerHTML = `
+      <div class="card" id="qcard">
+        <div class="scene-row">
+          <span class="scene">${q.scene}</span>
+          <span class="qtype">${TYPES[q.type].label}</span>
+        </div>
+
+        <div class="question-box">
+          <p class="zh-line">${q.situation}</p>
+          ${noteHtml}
+        </div>
+
+        ${quoteHtml}
+
+        <h2 class="ask">${q.ask}</h2>
+
+        <div class="options-container" id="options" role="group" aria-label="选项"></div>
+        <div id="verdict"></div>
+      </div>`;
+
+    const wrap = $("options");
+    q.options.forEach((opt, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "option-card";
+      b.dataset.i = String(i);
+      b.innerHTML = `
+        <span class="option-left">
+          <span class="option-letter">${"ABC"[i]}</span>
+          <span class="option-text-box">
+            <span class="en-text">${opt.text}</span>
+            <span class="zh-text">${opt.note}</span>
+          </span>
+        </span>
+        <span class="badge badge-${opt.kind}">${opt.badge}</span>`;
+      b.addEventListener("click", () => answer(i));
+      wrap.appendChild(b);
+    });
+  }
+
+  /* ========== 判定 ========== */
+  function answer(choice){
+    if (state.locked) return;
+    state.locked = true;
+
+    const q = SET[state.index];
+    const picked = q.options[choice];
+    const rightIndex = q.options.findIndex(o => o.ok);
+    const right = q.options[rightIndex];
+    const ok = picked.ok;
+
+    // 整张卡片换色：答对浅绿底绿边，答错浅红底红边
+    $("qcard").classList.add(ok ? "is-ok" : "is-ng");
+
+    // 选项状态：正确项永远高亮（答错时也要指出正解在哪）
+    [...$("options").children].forEach((el, i) => {
+      el.disabled = true;
+      if (i === rightIndex){
+        el.classList.add("is-right");
+        el.querySelector(".badge").outerHTML = '<span class="tag-answer">✓ 正解</span>';
+      } else if (i === choice){
+        el.classList.add("is-wrong");
+      } else {
+        el.classList.add("is-dim");
+      }
+    });
+
+    state.log.push({ ok, picked, right, pack:q.pack, takeaway:q.takeaway });
+
+    if (ok){
+      state.correct++;
+      impact("NAILED IT!", "答得地道！", "ok");
+      confetti();
+    } else {
+      state.hp = Math.max(0, state.hp - 1);
+      renderHearts(state.hp);
+      impact("AWKWARD!", "空气突然安静…", "ng");
+      redFlash();
+      app.classList.remove("is-hit");
+      void app.offsetWidth;
+      app.classList.add("is-hit");
+    }
+
+    showVerdict(ok, q, picked, right);
+  }
+
+  function showVerdict(ok, q, picked, right){
+    const last = state.index === ROUND - 1;
+    const end = state.hp === 0 || last;
+
+    const body = ok
+      ? `<p><span class="en">${right.text}</span> —— ${right.why}</p>`
+      : `<p>你选的 <span class="en">${picked.text}</span>：${picked.why}</p>
+         <p>正解是 <span class="en">${right.text}</span> —— ${right.why}</p>`;
+
+    const mark = ok ? MARK.ok : MARK.ng;
+    const gg = state.hp === 0;
+
+    $("verdict").innerHTML = `
+      <div class="verdict ${ok ? "verdict--ok" : "verdict--ng"}">
+        <span class="verdict__watermark">${mark}</span>
+        <div class="verdict__head-row">
+          <span class="verdict__icon">${mark}</span>
+          <h3 class="verdict__head">${ok ? "答对了 ・ 空气很安全" : "答错了 ・ 空气凝固了"}</h3>
+        </div>
+        ${body}
+        <div class="bonus-box">
+          <span class="bonus-box__label">避坑解析</span>
+          <div>${q.explain}</div>
+        </div>
+        <button class="start-btn start-btn--sm" id="nextBtn" type="button">
+          <span class="en-text">${end ? "Result" : "Next"}</span>
+          <span>${gg ? "血量归零 💀" : end ? "查看结算 🏁" : "下一题 👉"}</span>
+        </button>
+      </div>`;
+
+    $("nextBtn").addEventListener("click", () => {
+      state.index++;
+      renderProgress();
+      if (state.hp === 0 || state.index >= ROUND) renderResult();
+      else renderQuestion();
+    });
+  }
+
+  /* ========== 结算 ========== */
+  function renderResult(){
+    const wiped = state.hp === 0;
+    const r = RANKS.find(x => state.correct >= x.min);
+    renderProgress();
+
+    /* 带走清单：每题一条金句 */
+    const recap = state.log.map(item => `
+      <li>
+        <span class="recap__mark recap__mark--${item.ok ? "ok" : "ng"}">${item.ok ? "○" : "×"}</span>
+        <span>
+          <span class="recap__take">${item.takeaway}</span>
+          <span class="recap__en">${item.right.text}</span>
+        </span>
+      </li>`).join("");
+
+    /* 弱项诊断：按错题所属大类归因 */
+    const missed = state.log.filter(x => !x.ok);
+    let diagnosis;
+    if (!missed.length){
+      diagnosis = `本局 ${state.log.length} 个场景零失误，语感在线。`;
+    } else {
+      const tally = {};
+      missed.forEach(x => { tally[x.pack] = (tally[x.pack] || 0) + 1; });
+      const worst = Object.entries(tally).sort((a, b) => b[1] - a[1]);
+      diagnosis = "弱项：" + worst.map(([p, n]) => `<b>${PACKS[p].cn}</b> ${n} 次`).join(" ・ ");
+    }
+
+    screen.innerHTML = `
+      <div class="card card--center">
+        <div class="result-kicker">${wiped ? "Game Over ・ 血量归零" : "Result ・ 结算"}</div>
+        <div class="badge-rank ${r.win ? "badge-rank--win" : ""}">
+          <div class="badge-rank__label">称号</div>
+          <div class="badge-rank__text">${r.rank}</div>
+        </div>
+        <p class="result-en">${r.en}</p>
+        <p class="score">答对 <b>${state.correct}</b> / ${ROUND} ・ 剩余 HP ${state.hp}</p>
+        <p class="result-note">${r.note}</p>
+        <p class="diagnosis">${diagnosis}</p>
+        <div class="recap-title">带走这 ${state.log.length} 句</div>
+        <ul class="recap">${recap}</ul>
+        <button class="start-btn start-btn--pulse" id="againBtn" type="button">
+          <span class="en-text">One more</span>
+          <span>再来一次 🔁</span>
+        </button>
+      </div>`;
+
+    if (state.correct === ROUND) confetti(150);
+    $("againBtn").addEventListener("click", () => { renderCover(); window.scrollTo({ top:0 }); });
+  }
+
+  /* ========== 特效 ========== */
+  function impact(en, cn, kind){
+    const el = document.createElement("div");
+    el.className = "impact impact--" + kind;
+    el.innerHTML = `<div class="impact__en">${en}</div><div class="impact__cn">${cn}</div>`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), reduced ? 700 : 1200);
+  }
+
+  function redFlash(){
+    flash.classList.remove("is-on");
+    void flash.offsetWidth;
+    flash.classList.add("is-on");
+  }
+
+  const fx = $("fx"), ctx = fx.getContext("2d");
+  let parts = [], raf = null;
+
+  function sizeCanvas(){
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    fx.width = innerWidth * dpr;
+    fx.height = innerHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  sizeCanvas();
+  addEventListener("resize", sizeCanvas);
+
+  const COLORS = ["#ff4757", "#2ed573", "#1e90ff", "#f1c40f", "#ffffff"];
+
+  function confetti(count = 90){
+    if (reduced) return;
+    for (let i = 0; i < count; i++){
+      parts.push({
+        x: innerWidth * (0.5 + (Math.random() - 0.5) * 0.5),
+        y: innerHeight * 0.4,
+        vx: (Math.random() - 0.5) * 11,
+        vy: -Math.random() * 13 - 4,
+        w: 6 + Math.random() * 8,
+        h: 8 + Math.random() * 10,
+        rot: Math.random() * Math.PI,
+        vr: (Math.random() - 0.5) * 0.3,
+        color: COLORS[(Math.random() * COLORS.length) | 0],
+        round: Math.random() < 0.4,
+        life: 1
+      });
+    }
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+
+  function tick(){
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    parts = parts.filter(p => p.life > 0 && p.y < innerHeight + 60);
+    for (const p of parts){
+      p.vy += 0.34; p.vx *= 0.992; p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+      if (p.y > innerHeight * 0.7) p.life -= 0.02;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = Math.max(0, p.life);
+      ctx.fillStyle = p.color;
+      ctx.strokeStyle = "#111111";
+      ctx.lineWidth = 1.5;
+      if (p.round){
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.w * 0.5, p.h * 0.5, 0, 0, Math.PI * 2);
+        ctx.fill(); ctx.stroke();
+      } else {
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.strokeRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      }
+      ctx.restore();
+    }
+    if (parts.length) raf = requestAnimationFrame(tick);
+    else { ctx.clearRect(0, 0, innerWidth, innerHeight); raf = null; }
+  }
+
+  /* ---- 键盘 A / B / C 作答 ---- */
+  addEventListener("keydown", (e) => {
+    const i = "abc".indexOf(e.key.toLowerCase());
+    if (i < 0 || state.locked) return;
+    const btn = document.querySelector(`.option-card[data-i="${i}"]`);
+    if (btn && !btn.disabled) btn.click();
+  });
+
+  /* ---- 启动自检：题库写错时页面顶部报红条 ---- */
+  const bankErrors = validateBank(BANK);
+  if (bankErrors.length){
+    const box = $("alert");
+    box.hidden = false;
+    box.innerHTML = `<b>题库自检发现 ${bankErrors.length} 处问题：</b>
+      <ul>${bankErrors.map(e => `<li>${e}</li>`).join("")}</ul>`;
+    console.error("[题库自检]", bankErrors);
+  }
+
+  renderCover();
+})();
+</script>
+</body>
+</html>
