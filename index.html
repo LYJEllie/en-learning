@@ -966,6 +966,79 @@ const BANK_KIDS = [
     takeaway:'Have a nice day! → Thanks, you too!'
   },
 
+  {
+    id:'kh-07', pack:'hello', level:1, type:'phrase',
+    scene:'👋 外教问你是哪国人',
+    situation:'外教在班里挨个聊天，走到你面前问：',
+    quote:'Where are you from?',
+    note:'你想说"我来自中国"。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"I'm from China.", note:'from 不能丢', badge:'地道', kind:'native', ok:true,
+        why:'from 是"来自"，这是回答国籍、家乡的固定说法。' },
+      { text:"I'm China.", note:'漏了 from，句子就散了', badge:'语法错', kind:'stiff', ok:false,
+        why:'少了 from 就成了"我是中国"，人不能等于国家。' },
+      { text:"I'm from home.", note:'把问题理解成了"你刚从哪儿来"', badge:'理解偏', kind:'trap', ok:false,
+        why:'Where are you from? 问的是你来自哪个国家或城市，不是问你刚才在哪儿。' }
+    ],
+    explain:'💡 这三句常一起出现：What\'s your name? → I\'m Lily.；How old are you? → I\'m nine.；Where are you from? → I\'m from China.。最后一句千万别把 from 丢掉。',
+    takeaway:"Where are you from? → I'm from China."
+  },
+  {
+    id:'kh-08', pack:'hello', level:2, type:'phrase',
+    scene:'👋 把朋友介绍给妈妈',
+    situation:'放学时你带同学回家，妈妈开门看见了你身边的外国小朋友。',
+    quote:'',
+    note:'你得把他介绍给妈妈。',
+    ask:'该怎么说？',
+    options:[
+      { text:'Mom, this is my friend Tom.', note:'介绍别人的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'This is… 就是用来把别人介绍给大家的，介绍完对方会说 Nice to meet you.' },
+      { text:'Mom, my friend name is Tom.', note:'少了一个所有格', badge:'语法错', kind:'stiff', ok:false,
+        why:'要说 my friend\'s name（我朋友的名字），friend 后面得加 \'s。' },
+      { text:'Mom, here is Tom.', note:'像在说"东西在这儿"', badge:'不自然', kind:'trap', ok:false,
+        why:'Here is… 一般用来递东西或指位置，用在人身上会很奇怪。' }
+    ],
+    explain:'💡 介绍别人用 This is…，介绍自己用 I\'m…。注意"我朋友的名字"是 my friend\'s name，那个 \'s 中国小朋友最容易漏。',
+    takeaway:'介绍别人 → This is my friend Tom.'
+  },
+  {
+    id:'kh-09', pack:'hello', level:3, type:'phrase',
+    scene:'👋 接外国朋友的电话',
+    situation:'家里电话响了，你接起来，对面是同学的妈妈，她问：',
+    quote:"Hello, who's that?",
+    note:'她想知道接电话的是谁。',
+    ask:'你要怎么说"我是莉莉"？',
+    options:[
+      { text:'This is Lily.', note:'电话里说"我是"的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'打电话时不用 I am，英语习惯说 This is + 名字，或者 Lily speaking.' },
+      { text:'I am Lily.', note:'当面可以，电话里老外不这么说', badge:'场合不对', kind:'stiff', ok:false,
+        why:'对方能听懂，但电话里几乎没人这么讲，一开口就听出是外国人。' },
+      { text:'My name is calling Lily.', note:'把两种说法拼在了一起', badge:'语法错', kind:'trap', ok:false,
+        why:'My name is Lily 和 Lily speaking 是两句话，不能混着用。' }
+    ],
+    explain:'💡 电话英语有自己的一套：问对方是谁 Who\'s that?；说自己是谁 This is Lily. / Lily speaking.；找人 May I speak to Tom?',
+    takeaway:'电话里说"我是" → This is Lily.'
+  },
+  {
+    id:'kh-10', pack:'hello', level:2, type:'culture',
+    scene:'👋 走廊碰见老师',
+    situation:'早上在走廊碰见英语老师，她姓王（Wang），你想跟她打个招呼。',
+    quote:'',
+    note:'她也看见你了，笑着停下脚步。',
+    ask:'该怎么称呼她？',
+    options:[
+      { text:'Good morning, teacher!', note:'中国小朋友最常见的说法', badge:'中式', kind:'trap', ok:false,
+        why:'teacher 是职业名，不能拿来当称呼，就像英语里不会喊别人"司机""医生"。' },
+      { text:'Good morning, Miss Wang!', note:'姓氏前面加称谓', badge:'地道', kind:'native', ok:true,
+        why:'英语里称呼老师用 Mr. / Miss / Mrs. / Ms. 加姓氏，这才是正确叫法。' },
+      { text:'Good morning, teacher Wang!', note:'把 teacher 当成了姓氏前缀', badge:'半中半英', kind:'stiff', ok:false,
+        why:'"王老师"不能直译成 teacher Wang，得换成 Miss Wang 或 Mr. Wang。' }
+    ],
+    explain:'💡 这是中国学生最经典的一个坑：老师不叫 teacher，要叫 Mr. / Miss / Mrs. + 姓。不知道对方姓什么时，只说 Good morning! 也完全可以。',
+    takeaway:'王老师 = Miss Wang，不是 teacher Wang。'
+  },
+
   /* ---------- 🏫 课堂篇 ---------- */
   {
     id:'kc-01', pack:'class', level:1, type:'listening',
@@ -1075,6 +1148,79 @@ const BANK_KIDS = [
     ],
     explain:'💡 英语的短答要跟问句"配对"：Do you…? → Yes, I do.；Are you…? → Yes, I am.；Can you…? → Yes, I can.。助动词用错，一听就不对劲。',
     takeaway:'Do you…? → Yes, I do. / No, I don\'t.'
+  },
+
+  {
+    id:'kc-07', pack:'class', level:1, type:'listening',
+    scene:'🏫 体育课集合',
+    situation:'体育课上，外教吹了一声哨子，对大家喊：',
+    quote:'Line up, please!',
+    note:'同学们呼啦一下都动了起来。',
+    ask:'老师让你们做什么？',
+    options:[
+      { text:'排好队', note:'line 在这里是"队伍"', badge:'排队', kind:'stiff', ok:true,
+        why:'line up 是"排成一队"，操场集合、食堂打饭、上车之前都用它。' },
+      { text:'画一条线', note:'画线是 draw a line', badge:'画线', kind:'stiff', ok:false,
+        why:'line 确实有"线"的意思，但 line up 是固定短语，意思是排队。' },
+      { text:'把手举起来', note:'举手是 put up your hand', badge:'举手', kind:'stiff', ok:false,
+        why:'带 up 的短语很多，别看见 up 就以为是"举起来"。' }
+    ],
+    explain:'💡 带 up 的课堂指令记一组：Line up（排队）、Stand up（起立）、Hurry up（快点）、Put up your hand（举手）。',
+    takeaway:'Line up! = 排好队。'
+  },
+  {
+    id:'kc-08', pack:'class', level:2, type:'phrase',
+    scene:'🏫 作业忘在家里了',
+    situation:'老师开始收作业了，你翻遍书包才想起来——作业本落在家里的桌子上。',
+    quote:'',
+    note:'老师已经走到你旁边了。',
+    ask:'该怎么跟老师说？',
+    options:[
+      { text:"I'm sorry. I forgot my homework at home.", note:'先道歉，再说清楚', badge:'地道', kind:'native', ok:true,
+        why:'事情已经发生了，用过去式 forgot；先说 sorry 再解释，老师会好接受得多。' },
+      { text:'I forget my homework.', note:'时态不对', badge:'语法错', kind:'stiff', ok:false,
+        why:'忘带是刚才发生的事，要用过去式 forgot，不是 forget。' },
+      { text:'My homework is not here.', note:'像在陈述一件和自己无关的事', badge:'甩锅', kind:'trap', ok:false,
+        why:'听起来像"作业自己不见了"，完全没有承认是自己忘了带。' }
+    ],
+    explain:'💡 出小状况的三步：I\'m sorry.（道歉）+ 说清楚发生了什么 + I\'ll bring it tomorrow.（我明天带来）。承认加补救，比找借口有用得多。',
+    takeaway:'忘带东西 → I\'m sorry, I forgot my homework.'
+  },
+  {
+    id:'kc-09', pack:'class', level:3, type:'phrase',
+    scene:'🏫 想借同学的橡皮',
+    situation:'你的橡皮不见了，想跟旁边的外国同学借一块用一下。',
+    quote:'',
+    note:'他的橡皮就放在桌角。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'Can I borrow your eraser?', note:'借进来用 borrow', badge:'地道', kind:'native', ok:true,
+        why:'borrow 是"借入"，主语是借东西的那个人，也就是你。' },
+      { text:'Can I lend your eraser?', note:'borrow 和 lend 用反了', badge:'方向反', kind:'stiff', ok:false,
+        why:'lend 是"借出"，主语得是东西的主人：Can you lend me your eraser? 才对。' },
+      { text:'Give me your eraser.', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'没有 please 的祈使句听起来是在要东西，不是在借。' }
+    ],
+    explain:'💡 borrow 是"借进来"，lend 是"借出去"，方向正好相反。这两句意思一样：Can I borrow your eraser?（我能借你的橡皮吗）＝ Can you lend me your eraser?（你能借我橡皮吗）。',
+    takeaway:'我借别人的用 borrow；别人借给我用 lend。'
+  },
+  {
+    id:'kc-10', pack:'class', level:1, type:'listening',
+    scene:'🏫 跟着老师念课文',
+    situation:'外教举起课本念了一句英文，然后停下来看着全班说：',
+    quote:'Read after me.',
+    note:'她念一句，停一下，等着大家。',
+    ask:'她让你们做什么？',
+    options:[
+      { text:'她念一句，你们跟着念一句', note:'after = 在…之后', badge:'跟读', kind:'stiff', ok:true,
+        why:'read after me 就是"跟我读"，老师先念，你们再重复。' },
+      { text:'排在她后面读书', note:'把 after 理解成了位置', badge:'位置', kind:'stiff', ok:false,
+        why:'这里的 after 说的是时间上的先后，不是排队站在谁后面。' },
+      { text:'读给她听', note:'读给某人听是 read to me', badge:'读给', kind:'stiff', ok:false,
+        why:'read to me 才是"读给我听"，换一个介词，意思就全变了。' }
+    ],
+    explain:'💡 一个介词就能改变整句话：read after me（跟我读）、read to me（读给我听）、read with me（和我一起读）。听指令要连介词一起听。',
+    takeaway:'Read after me. = 跟我读。'
   },
 
   /* ---------- 🏠 生活篇 ---------- */
@@ -1188,6 +1334,79 @@ const BANK_KIDS = [
     takeaway:'别人说 Bless you! → 你说 Thank you.'
   },
 
+  {
+    id:'kl-07', pack:'life', level:3, type:'listening',
+    scene:'🏠 在国外的快餐店',
+    situation:'跟爸爸妈妈在国外点汉堡，店员敲完单子，抬头问了一句：',
+    quote:'For here or to go?',
+    note:'你们打算带回酒店吃。',
+    ask:'她在问什么？',
+    options:[
+      { text:'在店里吃，还是打包带走', note:'快餐店的固定问句', badge:'堂食/打包', kind:'stiff', ok:true,
+        why:'for here 是在店里吃，to go 是带走。要带走就回一句 To go, please.' },
+      { text:'你们要去哪里吃', note:'店员不会关心你去哪儿', badge:'去哪儿', kind:'stiff', ok:false,
+        why:'她问的是订单怎么装，不是问你们的行程。' },
+      { text:'要不要现在就走', note:'把 go 理解成了"走人"', badge:'催你走', kind:'stiff', ok:false,
+        why:'to go 在这里指"带走的食物"，不是在催顾客离开。' }
+    ],
+    explain:'💡 快餐店三连问听懂就不慌：What would you like?（要点什么）、For here or to go?（堂食还是带走）、Anything else?（还要别的吗）。带走就说 To go, please.',
+    takeaway:'For here or to go? → 带走就说 To go, please.'
+  },
+  {
+    id:'kl-08', pack:'life', level:1, type:'word',
+    scene:'🏠 聊今天的天气',
+    situation:'外教拉开窗帘，指着外面的大太阳问全班：',
+    quote:"How's the weather today?",
+    note:'今天是个大晴天。',
+    ask:'你该怎么回答？',
+    options:[
+      { text:"It's Monday.", note:'答成了星期', badge:'星期', kind:'stiff', ok:false,
+        why:'问星期是 What day is it today?，和天气不是一回事。' },
+      { text:"It's sunny.", note:'天气就用 It\'s + 天气词', badge:'天气', kind:'stiff', ok:true,
+        why:'说天气固定用 It\'s 开头：sunny（晴）、rainy（雨）、windy（风大）、cloudy（多云）。' },
+      { text:"I'm fine.", note:'答成了心情', badge:'心情', kind:'stiff', ok:false,
+        why:'这句是回答 How are you? 的，老师问的是外面的天气。' }
+    ],
+    explain:'💡 说天气永远用 It\'s 开头，主语不是"我"也不是"今天"：It\'s sunny / rainy / windy / cloudy / hot / cold。',
+    takeaway:"How's the weather? → It's sunny."
+  },
+  {
+    id:'kl-09', pack:'life', level:2, type:'phrase',
+    scene:'🏠 跟老师说不舒服',
+    situation:'上课上到一半你头很痛，举手告诉外教。她走过来关切地问：',
+    quote:"What's wrong?",
+    note:'你想说"我头疼"。',
+    ask:'该怎么说？',
+    options:[
+      { text:'I have a headache.', note:'身体不舒服用 have', badge:'地道', kind:'native', ok:true,
+        why:'英语里说生病用 have：have a headache（头疼）、have a cold（感冒）、have a fever（发烧）。' },
+      { text:'I am headache.', note:'把自己说成了"头疼"本身', badge:'语法错', kind:'stiff', ok:false,
+        why:'headache 是一种病，不是形容你的词，不能用 I am。' },
+      { text:'My head is broken.', note:'听起来像脑袋碎了', badge:'吓人', kind:'trap', ok:false,
+        why:'broken 用在东西坏掉上面，用在脑袋上会把老师吓一跳。' }
+    ],
+    explain:'💡 生病三句：I have a headache.（头疼）、I have a stomachache.（肚子疼）、I don\'t feel well.（我不舒服）。最后一句最万能，说不清哪儿难受时就用它。',
+    takeaway:'不舒服 → I have a headache. / I don\'t feel well.'
+  },
+  {
+    id:'kl-10', pack:'life', level:3, type:'listening',
+    scene:'🏠 自己去买冰淇淋',
+    situation:'你递过去一张十块的钞票，店员收好钱，把几个硬币放到你手上说：',
+    quote:"Here's your change.",
+    note:'她笑着等你拿好。',
+    ask:'她给你的是什么？',
+    options:[
+      { text:'找给你的零钱', note:'change 在这里是"零钱"', badge:'零钱', kind:'stiff', ok:true,
+        why:'买东西时的 change 就是找零，Keep the change. 则是"零钱不用找了"。' },
+      { text:'你的变化', note:'把 change 直译成了"改变"', badge:'改变', kind:'stiff', ok:false,
+        why:'change 确实有"改变"的意思，但在收银台它永远是"零钱"。' },
+      { text:'让你换一个', note:'换东西要说 change it', badge:'换货', kind:'stiff', ok:false,
+        why:'想换商品会说 Can I change it?，句子结构完全不一样。' }
+    ],
+    explain:'💡 一个词有好几个意思，要靠场景判断：收银台的 change 是零钱，天气预报的 change 是变化，换衣服的 change 是更换。先看在哪儿，再猜意思。',
+    takeaway:"Here's your change. = 这是找你的零钱。"
+  },
+
   /* ---------- 🎈 交朋友篇 ---------- */
   {
     id:'kf-01', pack:'friend', level:1, type:'phrase',
@@ -1296,6 +1515,78 @@ const BANK_KIDS = [
     ],
     explain:'💡 排队和轮流的高频句：It\'s your turn.（轮到你了）、It\'s my turn.（轮到我了）、Wait your turn.（排队等着）。听懂 turn，玩游戏就不会插错队。',
     takeaway:'Your turn! = 轮到你了。'
+  },
+  {
+    id:'kf-07', pack:'friend', level:3, type:'manners',
+    scene:'🎈 门口撞上了',
+    situation:'你和一个外国同学同时走到门口，两个人都停下来，谁也没先进去。',
+    quote:'',
+    note:'你想让他先走。',
+    ask:'这时候该说？',
+    options:[
+      { text:'After you.', note:'两个词的绅士句', badge:'地道', kind:'native', ok:true,
+        why:'意思是"你先请"。进门、上楼梯、排队时都能用，对方会回一句 Thank you.' },
+      { text:'You first.', note:'能听懂，但有点生硬', badge:'生硬', kind:'stiff', ok:false,
+        why:'像在下指令"你先"，礼貌程度差了一截。' },
+      { text:'Go!', note:'像在发号施令', badge:'太冲', kind:'trap', ok:false,
+        why:'单说一个 Go 是催人快走，用在这儿会显得很凶。' }
+    ],
+    explain:'💡 After you. 只有两个词，却能立刻显出教养，是英语里非常好用的礼貌句。别人对你说了 After you，记得回一句 Thank you. 再走。',
+    takeaway:'让别人先走 → After you.'
+  },
+  {
+    id:'kf-08', pack:'friend', level:2, type:'manners',
+    scene:'🎈 收到生日礼物',
+    situation:'生日会上，外国同学把包好的礼物递给你，还站在旁边等着看你拆。',
+    quote:'',
+    note:'你拆开一看，正是你想要的那本书。',
+    ask:'这时候该说什么？',
+    options:[
+      { text:'How much is it?', note:'当面问价格很失礼', badge:'踩雷', kind:'trap', ok:false,
+        why:'在英语国家问礼物多少钱是很不礼貌的，会让送礼的人非常尴尬。' },
+      { text:'Thank you! I love it!', note:'道谢＋说出你的喜欢', badge:'地道', kind:'native', ok:true,
+        why:'当面拆礼物、当面说喜欢，是英语国家的礼貌，对方会特别开心。' },
+      { text:'I have this one.', note:'等于说"我已经有了"', badge:'扫兴', kind:'stiff', ok:false,
+        why:'就算真的有了，也要先谢过再说，否则对方的心意就落空了。' }
+    ],
+    explain:'💡 收礼物的完整反应：当着对方的面拆开 → Thank you! I love it!（或 It\'s so nice!）。中国习惯是收下先放着，英语国家反而觉得当场拆开、当场夸才是尊重。',
+    takeaway:'收到礼物 → Thank you! I love it!'
+  },
+  {
+    id:'kf-09', pack:'friend', level:3, type:'listening',
+    scene:'🎈 同学帮你捡起了书',
+    situation:'你的书掉了一地，外国同学蹲下来帮你一起捡。你连忙说 Thank you，他摆摆手说：',
+    quote:'No problem.',
+    note:'说完他就笑着走开了。',
+    ask:'他的意思是？',
+    options:[
+      { text:'不客气，小事一桩', note:'和 You\'re welcome 一个意思', badge:'不客气', kind:'stiff', ok:true,
+        why:'No problem 是很随意的"不用谢"，同学、朋友之间用得最多。' },
+      { text:'这件事没问题，我能做到', note:'把它当成了在打包票', badge:'保证', kind:'stiff', ok:false,
+        why:'那种意思要看场景。这里你刚说完 Thank you，它只能是"不客气"。' },
+      { text:'你没有问题要问吧', note:'和提问没关系', badge:'提问', kind:'stiff', ok:false,
+        why:'问你有没有问题会说 Any questions?，句子完全不一样。' }
+    ],
+    explain:'💡 "不客气"有好几种说法，随意程度从高到低：No problem. / Sure. / You\'re welcome. / My pleasure.。听到哪一句，都表示对方不介意。',
+    takeaway:'No problem. = 不客气（朋友之间最常用）。'
+  },
+  {
+    id:'kf-10', pack:'friend', level:2, type:'manners',
+    scene:'🎈 被邀请但去不了',
+    situation:'外国同学兴冲冲跑来问你周末去不去他家玩，可你那天要上钢琴课。',
+    quote:'Can you come to my house on Sunday?',
+    note:'他眼睛亮亮地等你回答。',
+    ask:'想拒绝又不想让他难过，该说？',
+    options:[
+      { text:'No.', note:'太硬了，像当面关门', badge:'冷硬', kind:'trap', ok:false,
+        why:'一个 No 没有任何解释，对方会以为你不想跟他玩。' },
+      { text:"Sorry, I can't. I have a piano lesson. Maybe next time!", note:'道歉＋原因＋下次', badge:'地道', kind:'native', ok:true,
+        why:'三步走：先说抱歉，再给个理由，最后留一句 Maybe next time，友谊就保住了。' },
+      { text:"I don't want.", note:'听起来像"我不想跟你玩"', badge:'伤人', kind:'stiff', ok:false,
+        why:'句子本身也不完整（want 后面得跟东西），而且这个说法很伤人。' }
+    ],
+    explain:'💡 拒绝邀请有个万能公式：Sorry, I can\'t.（抱歉去不了）+ 一个理由 + Maybe next time!（下次吧）。有理由、有下次，对方就不会觉得被嫌弃。',
+    takeaway:"拒绝邀请 → Sorry, I can't … Maybe next time!"
   }
 
 ];
