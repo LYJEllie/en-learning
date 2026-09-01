@@ -1,0 +1,283 @@
+/* ============================================================
+   🧒 小学生入门 · 🏠 生活篇（15 题）
+   只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
+   ============================================================ */
+(function (EN) {
+  "use strict";
+
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-01', pack:'life', level:1, type:'word',
+    scene:'🏠 认物品和颜色',
+    situation:'外教举起一根香蕉，指了指它的皮，问全班：',
+    quote:'What color is it?',
+    note:'她等着有人举手回答。',
+    ask:'你要怎么回答？',
+    options:[
+      { text:'Banana.', note:'这是名字，不是颜色', badge:'名字', kind:'stiff', ok:false,
+        why:'回答名字用在 What is it? 上面：It\'s a banana.' },
+      { text:'Yellow.', note:'香蕉是黄色的', badge:'颜色', kind:'stiff', ok:true,
+        why:'What color…? 问的就是颜色，回一个颜色词即可，说完整一点是 It\'s yellow.' },
+      { text:'Sweet.', note:'这是味道', badge:'味道', kind:'stiff', ok:false,
+        why:'sweet 是"甜的"，回答的是 How does it taste?（尝起来怎么样）。' }
+    ],
+    explain:'💡 问句开头那个词决定你该回答什么：What color…? 回颜色，What…? 回名字，How many…? 回数字。先听清开头，再张嘴。',
+    takeaway:'What color is it? → 回颜色：It\'s yellow.'
+  },
+  {
+    id:'kl-02', pack:'life', level:2, type:'listening',
+    scene:'🏠 生日会上',
+    situation:'在同学的生日会上，他妈妈端着一盘果汁走过来问你：',
+    quote:'Would you like some juice?',
+    note:'你正好口渴，想要一杯。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'Yes, please.', note:'又短又礼貌', badge:'地道', kind:'native', ok:true,
+        why:'Would you like…? 的标准回答就是 Yes, please.（要）或 No, thank you.（不要）。' },
+      { text:'I like juice.', note:'答成了"我喜欢果汁"', badge:'答偏了', kind:'stiff', ok:false,
+        why:'这句没有回答"要不要"，阿姨还得再问你一次。' },
+      { text:'Of course I want.', note:'典型的直译腔', badge:'中式', kind:'trap', ok:false,
+        why:'把"当然想要"逐词翻译过来的，英语里没人这么说，语气还有点冲。' }
+    ],
+    explain:'💡 Would you like…? = 要不要…？要就 Yes, please.，不要就 No, thank you.。这两句在国外一天能用十次，比背多少单词都实用。',
+    takeaway:'要 → Yes, please. 不要 → No, thank you.'
+  },
+  {
+    id:'kl-03', pack:'life', level:3, type:'manners',
+    scene:'🏠 被外教夸奖',
+    situation:'你鼓起勇气用英语做了自我介绍，外教眼睛一亮，对你说：',
+    quote:'Wow! Your English is very good!',
+    note:'全班都看过来了，你有点不好意思。',
+    ask:'这时候最好的回答是？',
+    options:[
+      { text:'No, no. My English is bad.', note:'中文式谦虚，英语里会让人尴尬', badge:'别否认', kind:'trap', ok:false,
+        why:'一直否认等于说对方看走了眼，夸你的人反而不知道怎么接话。' },
+      { text:"Thank you! I'm still learning.", note:'大方接受，还很谦虚', badge:'地道', kind:'native', ok:true,
+        why:'先道谢，再加一句"我还在学"，既不失礼也不显得自满。' },
+      { text:'I know.', note:'有点太自信了', badge:'小骄傲', kind:'stiff', ok:false,
+        why:'意思是"我知道（我很棒）"，听起来有些自满。' }
+    ],
+    explain:'💡 中文习惯说"哪里哪里"，英语里被夸就大方说 Thank you!。想谦虚一点，可以接一句 I\'m still learning.（我还在学）或 Thanks, I practice every day.',
+    takeaway:'被夸就说 Thank you!，别急着否认。'
+  },
+  {
+    id:'kl-04', pack:'life', level:1, type:'listening',
+    scene:'🏠 邻居阿姨问你',
+    situation:'在小区里遇到外国邻居，她蹲下来笑着问你：',
+    quote:'How old are you?',
+    note:'你今年九岁。',
+    ask:'她在问什么？该怎么答？',
+    options:[
+      { text:"I'm fine, thank you.", note:'听成了 How are you', badge:'听岔了', kind:'stiff', ok:false,
+        why:'fine 和 nine 听起来很像，但人家问的是年龄，不是心情。' },
+      { text:"I'm nine.", note:'问年龄，就回数字', badge:'答年龄', kind:'stiff', ok:true,
+        why:'完整说法是 I\'m nine years old.，日常里说 I\'m nine. 就够了。' },
+      { text:"It's nine o'clock.", note:'答成了时间', badge:'答时间', kind:'stiff', ok:false,
+        why:'问时间要说 What time is it?，和年龄是两回事。' }
+    ],
+    explain:'💡 三句话长得像，别搞混：How are you?（你好吗）→ I\'m fine.；How old are you?（你几岁）→ I\'m nine.；What time is it?（几点了）→ It\'s nine o\'clock.',
+    takeaway:"How old are you? → I'm nine."
+  },
+  {
+    id:'kl-05', pack:'life', level:3, type:'listening',
+    scene:'🏠 在同学家做客',
+    situation:'同学的妈妈端上一盘饼干放在你面前，笑着说了一句：',
+    quote:'Help yourself!',
+    note:'说完她就去厨房了，桌上只剩你和饼干。',
+    ask:'她的意思是？',
+    options:[
+      { text:'你自己随便吃，别客气', note:'招待客人的固定说法', badge:'请随意', kind:'stiff', ok:true,
+        why:'Help yourself 就是"自己动手拿"，主人用它表示不用等我给你端。' },
+      { text:'你要帮助你自己', note:'逐词直译，读不通', badge:'直译', kind:'stiff', ok:false,
+        why:'help 在这句里不是"帮助"，整句是固定说法，不能一个词一个词地翻。' },
+      { text:'你来帮我端一下', note:'主语反了', badge:'弄反了', kind:'stiff', ok:false,
+        why:'让你帮忙会说 Can you help me?，主语完全不一样。' }
+    ],
+    explain:'💡 去外国人家里做客常听到三句：Help yourself!（随便吃）、Make yourself at home.（别拘束，当自己家）、Would you like some more?（再来点吗）。听懂了就不会僵在那儿。',
+    takeaway:'Help yourself! = 别客气，自己拿。'
+  },
+  {
+    id:'kl-06', pack:'life', level:2, type:'culture',
+    scene:'🏠 打了个大喷嚏',
+    situation:'上课时你没忍住打了个响亮的喷嚏，外教立刻转过头对你说：',
+    quote:'Bless you!',
+    note:'全班都笑了，你有点懵。',
+    ask:'你应该怎么回应？',
+    options:[
+      { text:'Thank you.', note:'一句话就接住了', badge:'地道', kind:'native', ok:true,
+        why:'Bless you 是别人打喷嚏时送出的祝福，收到祝福说声谢谢就对了。' },
+      { text:'Sorry.', note:'不用道歉', badge:'没必要', kind:'stiff', ok:false,
+        why:'打喷嚏不是做错事。真想客气可以说 Excuse me.，但老师这句显然在等一句 Thank you。' },
+      { text:'Bless you!', note:'原句还回去，这次不行', badge:'不能照抄', kind:'trap', ok:false,
+        why:'这句是说给打喷嚏的人听的，还回去等于祝老师也打个喷嚏。' }
+    ],
+    explain:'💡 英语国家的人听到别人打喷嚏，几乎会条件反射地说一句 Bless you!（保佑你）。不用觉得奇怪，回一句 Thank you. 就好。',
+    takeaway:'别人说 Bless you! → 你说 Thank you.'
+  },
+  {
+    id:'kl-07', pack:'life', level:3, type:'listening',
+    scene:'🏠 在国外的快餐店',
+    situation:'跟爸爸妈妈在国外点汉堡，店员敲完单子，抬头问了一句：',
+    quote:'For here or to go?',
+    note:'你们打算带回酒店吃。',
+    ask:'她在问什么？',
+    options:[
+      { text:'在店里吃，还是打包带走', note:'快餐店的固定问句', badge:'堂食/打包', kind:'stiff', ok:true,
+        why:'for here 是在店里吃，to go 是带走。要带走就回一句 To go, please.' },
+      { text:'你们要去哪里吃', note:'店员不会关心你去哪儿', badge:'去哪儿', kind:'stiff', ok:false,
+        why:'她问的是订单怎么装，不是问你们的行程。' },
+      { text:'要不要现在就走', note:'把 go 理解成了"走人"', badge:'催你走', kind:'stiff', ok:false,
+        why:'to go 在这里指"带走的食物"，不是在催顾客离开。' }
+    ],
+    explain:'💡 快餐店三连问听懂就不慌：What would you like?（要点什么）、For here or to go?（堂食还是带走）、Anything else?（还要别的吗）。带走就说 To go, please.',
+    takeaway:'For here or to go? → 带走就说 To go, please.'
+  },
+  {
+    id:'kl-08', pack:'life', level:1, type:'word',
+    scene:'🏠 聊今天的天气',
+    situation:'外教拉开窗帘，指着外面的大太阳问全班：',
+    quote:"How's the weather today?",
+    note:'今天是个大晴天。',
+    ask:'你该怎么回答？',
+    options:[
+      { text:"It's Monday.", note:'答成了星期', badge:'星期', kind:'stiff', ok:false,
+        why:'问星期是 What day is it today?，和天气不是一回事。' },
+      { text:"It's sunny.", note:'天气就用 It\'s + 天气词', badge:'天气', kind:'stiff', ok:true,
+        why:'说天气固定用 It\'s 开头：sunny（晴）、rainy（雨）、windy（风大）、cloudy（多云）。' },
+      { text:"I'm fine.", note:'答成了心情', badge:'心情', kind:'stiff', ok:false,
+        why:'这句是回答 How are you? 的，老师问的是外面的天气。' }
+    ],
+    explain:'💡 说天气永远用 It\'s 开头，主语不是"我"也不是"今天"：It\'s sunny / rainy / windy / cloudy / hot / cold。',
+    takeaway:"How's the weather? → It's sunny."
+  },
+  {
+    id:'kl-09', pack:'life', level:2, type:'phrase',
+    scene:'🏠 跟老师说不舒服',
+    situation:'上课上到一半你头很痛，举手告诉外教。她走过来关切地问：',
+    quote:"What's wrong?",
+    note:'你想说"我头疼"。',
+    ask:'该怎么说？',
+    options:[
+      { text:'I have a headache.', note:'身体不舒服用 have', badge:'地道', kind:'native', ok:true,
+        why:'英语里说生病用 have：have a headache（头疼）、have a cold（感冒）、have a fever（发烧）。' },
+      { text:'I am headache.', note:'把自己说成了"头疼"本身', badge:'语法错', kind:'stiff', ok:false,
+        why:'headache 是一种病，不是形容你的词，不能用 I am。' },
+      { text:'My head is broken.', note:'听起来像脑袋碎了', badge:'吓人', kind:'trap', ok:false,
+        why:'broken 用在东西坏掉上面，用在脑袋上会把老师吓一跳。' }
+    ],
+    explain:'💡 生病三句：I have a headache.（头疼）、I have a stomachache.（肚子疼）、I don\'t feel well.（我不舒服）。最后一句最万能，说不清哪儿难受时就用它。',
+    takeaway:'不舒服 → I have a headache. / I don\'t feel well.'
+  },
+  {
+    id:'kl-10', pack:'life', level:3, type:'listening',
+    scene:'🏠 自己去买冰淇淋',
+    situation:'你递过去一张十块的钞票，店员收好钱，把几个硬币放到你手上说：',
+    quote:"Here's your change.",
+    note:'她笑着等你拿好。',
+    ask:'她给你的是什么？',
+    options:[
+      { text:'找给你的零钱', note:'change 在这里是"零钱"', badge:'零钱', kind:'stiff', ok:true,
+        why:'买东西时的 change 就是找零，Keep the change. 则是"零钱不用找了"。' },
+      { text:'你的变化', note:'把 change 直译成了"改变"', badge:'改变', kind:'stiff', ok:false,
+        why:'change 确实有"改变"的意思，但在收银台它永远是"零钱"。' },
+      { text:'让你换一个', note:'换东西要说 change it', badge:'换货', kind:'stiff', ok:false,
+        why:'想换商品会说 Can I change it?，句子结构完全不一样。' }
+    ],
+    explain:'💡 一个词有好几个意思，要靠场景判断：收银台的 change 是零钱，天气预报的 change 是变化，换衣服的 change 是更换。先看在哪儿，再猜意思。',
+    takeaway:"Here's your change. = 这是找你的零钱。"
+  },
+  {
+    id:'kl-11', pack:'life', level:1, type:'listening',
+    scene:'🏠 在国外的寄宿家庭',
+    situation:'你在楼上写作业，楼下的阿姨朝楼梯口喊了一声：',
+    quote:'Dinner is ready!',
+    note:'厨房那边飘来了香味。',
+    ask:'她在喊什么？',
+    options:[
+      { text:'开饭啦，快下来吃', note:'ready = 准备好了', badge:'开饭', kind:'stiff', ok:true,
+        why:'饭做好了就是喊你下楼吃饭，听到这句赶紧应一声 Coming!' },
+      { text:'晚饭还要再等一会儿', note:'意思正好相反', badge:'再等等', kind:'stiff', ok:false,
+        why:'还没好会说 Dinner isn\'t ready yet.' },
+      { text:'问你晚饭想吃什么', note:'不是在征求意见', badge:'问你', kind:'stiff', ok:false,
+        why:'问你想吃什么是 What do you want for dinner?' }
+    ],
+    explain:'💡 家里常听到的三句：Dinner is ready!（开饭了）、Wash your hands.（去洗手）、Help yourself.（自己拿着吃）。听到第一句就该下楼了。',
+    takeaway:'Dinner is ready! = 开饭啦，答一句 Coming!'
+  },
+  {
+    id:'kl-12', pack:'life', level:2, type:'phrase',
+    scene:'🏠 在同学家吃饭',
+    situation:'你已经吃得饱饱的，同学的妈妈又端着盘子过来问：',
+    quote:'Would you like some more?',
+    note:'盘子都伸到你面前了。',
+    ask:'想礼貌地说"我吃饱了"，该说？',
+    options:[
+      { text:"No, thank you. I'm full.", note:'先谢，再说吃饱了', badge:'地道', kind:'native', ok:true,
+        why:'full 就是"饱了"。前面加一句 No, thank you.，才不会显得嫌弃人家的菜。' },
+      { text:"No, I don't want.", note:'又硬又不完整', badge:'生硬', kind:'stiff', ok:false,
+        why:'want 后面缺东西，语气也像在拒人千里之外。' },
+      { text:"I'm very fat.", note:'把"饱"说成了"胖"', badge:'说错词', kind:'trap', ok:false,
+        why:'full 是饱，fat 是胖。一词之差，说出口全桌都会愣住。' }
+    ],
+    explain:'💡 吃饱了说 I\'m full.；还想要就说 Yes, please.。想夸菜好吃再加一句 It\'s delicious!，主人会特别开心。',
+    takeaway:"吃饱了 → No, thank you. I'm full."
+  },
+  {
+    id:'kl-13', pack:'life', level:2, type:'listening',
+    scene:'🏠 生日会切蛋糕',
+    situation:'蛋糕上的蜡烛点好了，大家唱完生日歌，同学的妈妈笑着对你说：',
+    quote:'Make a wish!',
+    note:'所有人都看着你，等你吹蜡烛。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'许个愿', note:'wish = 愿望', badge:'许愿', kind:'stiff', ok:true,
+        why:'make a wish 就是吹蜡烛之前先许个愿。' },
+      { text:'做一个蛋糕', note:'做蛋糕是 make a cake', badge:'做蛋糕', kind:'stiff', ok:false,
+        why:'蛋糕已经在桌上了，而且 wish 和 cake 差得远。' },
+      { text:'去洗一下手', note:'wish 和 wash 看混了', badge:'洗手', kind:'stiff', ok:false,
+        why:'wish（愿望）和 wash（洗）长得像，但不是一个词。' }
+    ],
+    explain:'💡 生日现场三句：Happy birthday!（生日快乐）、Make a wish!（许个愿）、Blow out the candles!（吹蜡烛）。注意 wish 和 wash 别看混。',
+    takeaway:'Make a wish! = 许个愿吧。'
+  },
+  {
+    id:'kl-14', pack:'life', level:3, type:'listening',
+    scene:'🏠 下地铁的时候',
+    situation:'跟着家人下地铁，站台边的工作人员看见你，提醒了一句：',
+    quote:'Watch your step!',
+    note:'车厢和站台之间有一道缝。',
+    ask:'他在提醒你什么？',
+    options:[
+      { text:'当心脚下，小心台阶', note:'watch = 当心', badge:'小心', kind:'stiff', ok:true,
+        why:'watch 在这里是"注意、当心"，不是"看"。' },
+      { text:'看看你的鞋子', note:'step 不是鞋子', badge:'看鞋', kind:'stiff', ok:false,
+        why:'step 是脚步、台阶，鞋子是 shoes。' },
+      { text:'数一数走了几步', note:'和数数没关系', badge:'数步数', kind:'stiff', ok:false,
+        why:'数步数会说 count your steps，那是完全不同的句子。' }
+    ],
+    explain:'💡 watch 常用来提醒危险：Watch your step!（当心脚下）、Watch out!（小心）、Watch your head!（当心碰头）。听到 watch 开头，先停一下准没错。',
+    takeaway:'Watch your step! = 当心脚下。'
+  },
+  {
+    id:'kl-15', pack:'life', level:1, type:'word',
+    scene:'🏠 数一数有几个',
+    situation:'外教把三个苹果摆在讲台上，指着它们问全班：',
+    quote:'How many apples are there?',
+    note:'桌上一共三个。',
+    ask:'该怎么回答？',
+    options:[
+      { text:'Three.', note:'问数量，就回数字', badge:'数字', kind:'stiff', ok:true,
+        why:'How many 问的是数量，回一个数字就够，说完整是 There are three.' },
+      { text:'Apples.', note:'答成了名字', badge:'名字', kind:'stiff', ok:false,
+        why:'回答名字用在 What are they? 上面。' },
+      { text:"They're red.", note:'答成了颜色', badge:'颜色', kind:'stiff', ok:false,
+        why:'这是回答 What color are they? 的。' }
+    ],
+    explain:'💡 又一次考"听问句开头"：How many…? 回数字，What…? 回名字，What color…? 回颜色。这三个问句练熟，回答就不会跑偏。',
+    takeaway:'How many…? → 回数字：Three.'
+  }
+
+  ]);
+
+})(window.EN);

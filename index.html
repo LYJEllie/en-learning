@@ -10,7 +10,7 @@
    课本英语 vs 地道英语 —— 英语情景答题小游戏
    复古扁平 / Neo-brutalism：米底 + 粗黑边 + 硬投影
    红 #ff4757 = 踩雷    绿 #2ed573 = 地道    黄 #f1c40f = 生硬
-   单文件：CSS / 题库 / 引擎 全部在本文件内
+   开发版：题库在 ../data/*.js，跑 node build.mjs 合成根目录单文件 index.html
    ============================================================ */
 
 :root{
@@ -752,6 +752,29 @@ body{
 .alert[hidden]{ display:none; }
 .alert ul{ margin:6px 0 0 18px; }
 
+/* ---------- 底部：累计访问量计数器 ---------- */
+.visit-counter{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding-top:14px;
+  border-top:2px dashed var(--line);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--muted);
+}
+.visit-counter[hidden]{ display:none; }
+.visit-counter img{
+  border:2px solid var(--ink);
+  border-radius:3px;
+  padding:2px;
+  background-color:var(--white);
+  box-shadow:2px 2px 0px var(--ink);
+  vertical-align:middle;
+}
+
 /* ---------- 页脚金句（深灰色调） ---------- */
 .footnote{
   font-family:var(--en);
@@ -791,71 +814,245 @@ body{
   <div id="screen" aria-live="polite"></div>
 
   <p class="footnote">English is a tool. Use it right, live it bright.</p>
+
+  <!-- ============================================================
+       累计访问量（hits.sh 免费挂件，返回一张 SVG 图片）
+       计数用的 key 就是 URL 里那段路径：lyjellie.github.io/en-learning
+       —— 想单独统计别的页面就换路径；想清零，换一个没用过的路径。
+       配色：labelColor=111111（黑标签）、color=ff4757（红数字）
+       挂件加载不出来时（离线 / 被拦截）整行自动隐藏，不留裂图。
+       ============================================================ -->
+  <div class="visit-counter" id="visitCounter">
+    <span>累计访问</span>
+    <img src="https://hits.sh/lyjellie.github.io/en-learning.svg?style=flat-square&amp;label=views&amp;color=ff4757&amp;labelColor=111111"
+         alt="累计访问量"
+         onerror="document.getElementById('visitCounter').hidden = true;">
+  </div>
 </div>
 
 <script>
+/* ===== inlined: data/_core.js ===== */
 /* ============================================================
-   ★ 第一段：全局设置 ★
-   对应 jp-learning 的 data/_core.js —— 局数 / 血量 / 题型
-   分类与称号是每个模式各一套，见第三段 MODES
-   ============================================================ */
-const CORE = {
-  ROUND:  3,   // 每局题数
-  MAX_HP: 3,   // 初始血量（3 颗心）
-
-  /* 题型：显示在场景胶囊旁，提示这题在考什么（两个模式共用） */
-  TYPES: {
-    listening: { label:'听力题' },   // 听懂对方那句话到底在问什么
-    phrase:    { label:'说法题' },   // 同一个意思，哪种说法地道
-    culture:   { label:'习惯题' },   // 当地规矩该怎么应对
-    social:    { label:'情商题' },   // 说法没错，但会不会得罪人
-    word:      { label:'单词题' },   // 该回哪个词（小学生模式）
-    manners:   { label:'礼貌题' }    // 该说哪句才不失礼（小学生模式）
-  }
-};
-
-
-/* ============================================================
-   ★ 第二段：题库 ★
-   对应 jp-learning 的 data/*.js —— 加题只要往数组里追加一个对象
+   题库核心 —— 全局设置 / 模式定义 / 注册器 / 自检 / 抽题
+   题目数据在同目录的 kids-*.js 与 adult.js
    ------------------------------------------------------------
+   加一道题：打开对应的 data/kids-xxx.js，往数组里追加一个对象。
+   加一个大类：在下面 MODES.kids.PACKS 里加一行，建一个同名
+              data/kids-xxx.js，再去 src/index.html 加一行 <script src>。
+   加一个模式：照抄一份 MODES.xxx，BANK 留空数组即可。
+
    字段说明：
-     id        唯一编号（小学生 kh/kc/kl/kf，成人 o/t/w/l）
-     pack      大类，必须是所属模式 MODES.xxx.PACKS 里已定义的 key
+     id        唯一编号（小学生 kh/kc/kl/kf/kt，成人 o/t/w/l）
+     pack      大类，必须是所属模式 PACKS 里已定义的 key
      level     难度 1~3，同一局里按 1→3 排序出题
-     type      CORE.TYPES 的 key：listening/phrase/culture/social/word/manners
-     scene     场景地点（显示在顶部胶囊里）
-     situation 情景描述（中文，铺垫）
-     quote     老外说的那句原话（会渲染成大号英文引用框；没有可留空 ''）
-     note      情景补充（灰色小字，可留空 ''）
+     type      CORE.TYPES 的 key
+     scene     场景名（显示在顶部黑胶囊里）
+     situation 情景铺垫（中文）
+     quote     老外说的那句原话（大号引用框；没有就留空 ''）
+     note      情景补充（灰色小字，可留 ''）
      ask       设问
      options   必须正好 3 个，且恰好 1 个 ok:true
-                 text  选项正文（英文说法题写英文，理解题写中文释义）
-                 note  括号里的语感提示
-                 badge 语感标签
-                 kind  配色：trap 红(踩雷) / native 绿(地道) / stiff 黄(生硬)
-                 ok    是否正解
-                 why   逐项解析
-     explain   💡 避坑解析（黄框正文，本题的核心知识点）
+                 text/note  选项正文与语感提示
+                 badge      语感标签
+                 kind       配色：trap 红(踩雷) / native 绿(地道) / stiff 黄(生硬)
+                            ※ 纯知识题三项同色，避免颜色泄题
+                 why        逐项解析
+     explain   💡 避坑解析（黄框正文）
      takeaway  一句话金句（结算页"带走清单"用）
-
-   两套题库：BANK_KIDS（小学生入门）/ BANK_ADULT（成人地道），
-   各自的分类与称号见第三段 MODES。
    ============================================================ */
+(function (root) {
+  "use strict";
 
+  const CORE = {
+    ROUND:  3,   // 每局题数
+    MAX_HP: 3,   // 初始血量（3 颗心）
+
+    /* 题型：显示在场景胶囊旁，提示这题在考什么（两个模式共用） */
+    TYPES: {
+      listening: { label:'听力题' },   // 听懂对方那句话到底在问什么
+      phrase:    { label:'说法题' },   // 同一个意思，哪种说法地道
+      culture:   { label:'习惯题' },   // 当地规矩该怎么应对
+      social:    { label:'情商题' },   // 说法没错，但会不会得罪人
+      word:      { label:'单词题' },   // 该回哪个词（小学生模式）
+      manners:   { label:'礼貌题' }    // 该说哪句才不失礼（小学生模式）
+    }
+  };
+
+  const MODES = {
+
+    kids: {
+      key:'kids',
+      emoji:'🧒',
+      name:'小学生入门',
+      sub:'打招呼 / 课堂 / 生活 / 交朋友 / 出门在外',
+      chip:'🧒 小学生入门',
+      /* 选项每次随机排序：题库写得越多，正解越容易扎堆在某个位置，
+         小朋友会摸出"点第一个准没错"。打乱之后位置彻底失效 */
+      shuffleOptions: true,
+      BANK: [],   // 题目由 data/kids-*.js 注册进来
+      PACKS: {
+        hello:  { label:'👋 打招呼篇',   cn:'打招呼' },
+        class:  { label:'🏫 课堂篇',     cn:'课堂用语' },
+        life:   { label:'🏠 生活篇',     cn:'生活常识' },
+        friend: { label:'🎈 交朋友篇',   cn:'交朋友' },
+        trip:   { label:'🧳 出门在外篇', cn:'出门在外' }
+      },
+      /* 小学生模式的文案：答错也不打击 */
+      impactOk: ['GREAT JOB!', '答对啦！'],
+      impactNg: ['OOPS!', '没关系，看看解析～'],
+      verdictOk: '答对了 ・ 太棒了',
+      verdictNg: '答错了 ・ 记住它就赚到了',
+      RANKS: [
+        { min:3, rank:'英语小达人', win:true,
+          en:'You did it! Perfect!',
+          note:'三题全对！这几句话已经是你的了，下次真的遇到外国朋友，你也能张口就来。' },
+        { min:2, rank:'进步小明星', win:true,
+          en:'Great job! Almost perfect!',
+          note:'只差一点点。把错的那句大声念三遍，明天就忘不掉了。' },
+        { min:1, rank:'努力小学员', win:false,
+          en:'Good try! Keep going!',
+          note:'答对一题也很棒！英语就是这样一句一句学会的，看完解析再来一次，一定更好。' },
+        { min:0, rank:'英语小新手', win:false,
+          en:"Don't worry. Try again!",
+          note:'第一次见到这些句子都会懵，一点也不丢人。把解析读一遍再玩一次，你会发现它们突然变简单了。' }
+      ]
+    },
+
+    adult: {
+      key:'adult',
+      emoji:'🧑‍💼',
+      name:'成人地道',
+      sub:'点餐 / 旅途 / 职场 / 生活',
+      chip:'🧑‍💼 成人地道',
+      /* 这里保持原顺序：w-01 的解析里写了"用 C 选项的 Yes, and 法则"，位置不能动 */
+      shuffleOptions: false,
+      BANK: [],   // 题目由 data/adult.js 注册进来
+      PACKS: {
+        order:  { label:'🏪 点餐生存篇', cn:'点餐生存' },
+        travel: { label:'☕ 机场旅途篇', cn:'旅途口语' },
+        office: { label:'💼 外企职场篇', cn:'职场情商' },
+        life:   { label:'🛒 生活日常篇', cn:'生活常识' }
+      },
+      impactOk: ['NAILED IT!', '答得地道！'],
+      impactNg: ['AWKWARD!', '空气突然安静…'],
+      verdictOk: '答对了 ・ 空气很安全',
+      verdictNg: '答错了 ・ 空气凝固了',
+      RANKS: [
+        { min:3, rank:'地道口语达人', win:true,
+          en:'You sound like a local.',
+          note:'三个场面零失误。你已经能把课本英语留在课本里，把真实反应带到现场——这正是"能不能用"的分界线。' },
+        { min:2, rank:'半熟留学生', win:true,
+          en:'Almost there. Keep going.',
+          note:'大方向没错，偶尔会漏出直译腔。记住：地道 = 短句 + 场景默契，不是把中文一个词一个词换成英文。' },
+        { min:1, rank:'教科书选手', win:false,
+          en:'Textbook English, real-world gap.',
+          note:'语法满分，语感扣分。先把 "Yes, please." / "I brought my own." / "I see your point, but..." 这几句练成条件反射。' },
+        { min:0, rank:'字面直译爱好者', win:false,
+          en:'Lost in translation.',
+          note:'你的英语都是逐词翻译过来的——写下来能看懂，说出口全是尴尬。好消息是：地道表达就那么几十句，套路可以速成。再来一次。' }
+      ]
+    }
+
+  };
+
+  /* ========== 洗牌：Fisher–Yates，每种排列等概率 ========== */
+  function shuffle(arr){
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  /* ========== 抽题：洗牌 → 避开上一局 → 每类只取 1 道 → 难度升序 ========== */
+  const lastIds = {};   // 每个模式各记一份上局出过的题
+
+  function drawSet(mode){
+    const seen = lastIds[mode.key] || new Set();
+    const pool = shuffle(mode.BANK);                     // ① 整个题库彻底打乱
+    const fresh = pool.filter(q => !seen.has(q.id));
+    const ordered = [...fresh, ...pool.filter(q => seen.has(q.id))];  // ② 没出过的排前面
+
+    // ③ 依次取题，同一大类先只取 1 道，保证一局里场景不重样
+    const picked = [], usedPacks = new Set();
+    for (const q of ordered){
+      if (picked.length >= CORE.ROUND) break;
+      if (usedPacks.has(q.pack)) continue;
+      picked.push(q); usedPacks.add(q.pack);
+    }
+    // ④ 大类不够时，用剩下的题补满
+    for (const q of ordered){
+      if (picked.length >= CORE.ROUND) break;
+      if (!picked.includes(q)) picked.push(q);
+    }
+
+    picked.sort((a, b) => a.level - b.level);            // ⑤ 难度由浅入深
+    lastIds[mode.key] = new Set(picked.map(q => q.id));
+    return picked;
+  }
+
+  /* ========== 题库自检：写错题当场报红条，而不是白屏 ========== */
+  const KINDS = new Set(["trap", "native", "stiff"]);
+
+  function validateMode(mode){
+    const errs = [], ids = new Set();
+    mode.BANK.forEach((q, i) => {
+      const at = `${mode.name} 第${i + 1}题（${q.id || "缺 id"}）`;
+      ["id", "pack", "scene", "situation", "ask", "explain", "takeaway"].forEach(f => {
+        if (!q[f]) errs.push(`${at}：缺字段 ${f}`);
+      });
+      if (q.id){
+        if (ids.has(q.id)) errs.push(`${at}：id 与前面重复`);
+        ids.add(q.id);
+      }
+      if (!mode.PACKS[q.pack]) errs.push(`${at}：pack「${q.pack}」未在 PACKS 中定义`);
+      if (!(q.level >= 1 && q.level <= 3)) errs.push(`${at}：level 必须是 1~3`);
+      if (!CORE.TYPES[q.type]) errs.push(`${at}：type「${q.type}」不合法`);
+      if (!Array.isArray(q.options) || q.options.length !== 3){
+        errs.push(`${at}：必须正好 3 个选项`);
+        return;
+      }
+      const rights = q.options.filter(o => o.ok).length;
+      if (rights !== 1) errs.push(`${at}：正解有 ${rights} 个，必须恰好 1 个`);
+      q.options.forEach((o, j) => {
+        const tag = `${at} 选项${"ABC"[j]}`;
+        ["text", "note", "badge", "why"].forEach(f => { if (!o[f]) errs.push(`${tag}：缺字段 ${f}`); });
+        if (!KINDS.has(o.kind)) errs.push(`${tag}：kind「${o.kind}」不合法（只能 trap/native/stiff）`);
+      });
+    });
+    Object.keys(mode.PACKS).forEach(p => {
+      if (!mode.BANK.some(q => q.pack === p)) errs.push(`${mode.name}：大类「${p}」一道题都没有，抽题会漏空`);
+    });
+    if (mode.BANK.length < CORE.ROUND) errs.push(`${mode.name}：题库只有 ${mode.BANK.length} 题，少于每局需要的 ${CORE.ROUND} 题`);
+    return errs;
+  }
+
+  root.EN = {
+    CORE, MODES, shuffle,
+    /* 注册一批题目；忘写 pack 字段时按文件所属大类自动补上 */
+    add(modeKey, pack, list){
+      const mode = MODES[modeKey];
+      if (!mode) { console.error("[题库] 未知模式：" + modeKey); return; }
+      list.forEach(q => { if (!q.pack && pack) q.pack = pack; mode.BANK.push(q); });
+    },
+    draw: (mode) => drawSet(mode),
+    validate: () => Object.values(MODES).flatMap(validateMode)
+  };
+
+})(window);
+</script>
+<script>
+/* ===== inlined: data/kids-hello.js ===== */
 /* ============================================================
-   🧒 小学生入门题库（12 题 · 四大类各 3 题）
-   ------------------------------------------------------------
-   写题原则：
-     1. 句子不超过 8 个词，只用小学阶段的词汇
-     2. 干扰项必须是"中国小朋友真的会犯的错"（说反了 / 答非所问 /
-        逐词直译），不放没人会选的搞笑选项
-     3. 解析先说清楚"这句到底什么意思"，再给一条可以直接背的规律
-     4. 语气全程鼓励，答错不嘲笑
+   🧒 小学生入门 · 👋 打招呼篇（15 题）
+   只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
-const BANK_KIDS = [
+(function (EN) {
+  "use strict";
 
-  /* ---------- 👋 打招呼篇 ---------- */
+  EN.add('kids', 'hello', [
+
   {
     id:'kh-01', pack:'hello', level:1, type:'listening',
     scene:'👋 早上进教室',
@@ -910,7 +1107,6 @@ const BANK_KIDS = [
     explain:'💡 See you 就是"回头见"，后面能接不同的时间：See you later（待会儿见）、See you tomorrow（明天见）、See you next week（下周见）。',
     takeaway:'See you tomorrow! → 把原句还回去就对了。'
   },
-
   {
     id:'kh-04', pack:'hello', level:1, type:'listening',
     scene:'👋 老师问你好',
@@ -965,7 +1161,6 @@ const BANK_KIDS = [
     explain:'💡 You too! 是英语里的偷懒神器：别人说 Have a nice day / Have a good weekend / Enjoy your meal，你一律可以回 Thanks, you too!',
     takeaway:'Have a nice day! → Thanks, you too!'
   },
-
   {
     id:'kh-07', pack:'hello', level:1, type:'phrase',
     scene:'👋 外教问你是哪国人',
@@ -1038,7 +1233,6 @@ const BANK_KIDS = [
     explain:'💡 这是中国学生最经典的一个坑：老师不叫 teacher，要叫 Mr. / Miss / Mrs. + 姓。不知道对方姓什么时，只说 Good morning! 也完全可以。',
     takeaway:'王老师 = Miss Wang，不是 teacher Wang。'
   },
-
   {
     id:'kh-11', pack:'hello', level:1, type:'listening',
     scene:'👋 校门口的招呼',
@@ -1128,9 +1322,23 @@ const BANK_KIDS = [
     ],
     explain:'💡 中文里"阿姨""叔叔"可以随便叫，英语里 aunt / uncle 只留给亲戚。对长辈用 Mr. / Mrs. / Ms. + 姓；不知道姓就说 Hello! 或 Excuse me.',
     takeaway:'同学的妈妈叫 Mrs. Smith，不叫 aunt。'
-  },
+  }
 
-  /* ---------- 🏫 课堂篇 ---------- */
+  ]);
+
+})(window.EN);
+</script>
+<script>
+/* ===== inlined: data/kids-class.js ===== */
+/* ============================================================
+   🧒 小学生入门 · 🏫 课堂篇（15 题）
+   只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
+   ============================================================ */
+(function (EN) {
+  "use strict";
+
+  EN.add('kids', 'class', [
+
   {
     id:'kc-01', pack:'class', level:1, type:'listening',
     scene:'🏫 老师点名',
@@ -1185,7 +1393,6 @@ const BANK_KIDS = [
     explain:'💡 没听懂说 Sorry, I don\'t understand.；没听清说 Sorry? 或 Could you say that again, please?（能再说一遍吗）。这两句是新手最该先背下来的救命句。',
     takeaway:'没听懂 → Sorry, I don\'t understand.'
   },
-
   {
     id:'kc-04', pack:'class', level:2, type:'listening',
     scene:'🏫 听懂课堂指令',
@@ -1240,7 +1447,6 @@ const BANK_KIDS = [
     explain:'💡 英语的短答要跟问句"配对"：Do you…? → Yes, I do.；Are you…? → Yes, I am.；Can you…? → Yes, I can.。助动词用错，一听就不对劲。',
     takeaway:'Do you…? → Yes, I do. / No, I don\'t.'
   },
-
   {
     id:'kc-07', pack:'class', level:1, type:'listening',
     scene:'🏫 体育课集合',
@@ -1313,7 +1519,6 @@ const BANK_KIDS = [
     explain:'💡 一个介词就能改变整句话：read after me（跟我读）、read to me（读给我听）、read with me（和我一起读）。听指令要连介词一起听。',
     takeaway:'Read after me. = 跟我读。'
   },
-
   {
     id:'kc-11', pack:'class', level:1, type:'listening',
     scene:'🏫 老师安排练习',
@@ -1403,9 +1608,23 @@ const BANK_KIDS = [
     ],
     explain:'💡 主动争取的三句：Let me try!（我来试试）、Can I try?（我能试试吗）、I\'ll do it!（我来做）。老师最喜欢主动举手的学生。',
     takeaway:'想试试 → Let me try!'
-  },
+  }
 
-  /* ---------- 🏠 生活篇 ---------- */
+  ]);
+
+})(window.EN);
+</script>
+<script>
+/* ===== inlined: data/kids-life.js ===== */
+/* ============================================================
+   🧒 小学生入门 · 🏠 生活篇（15 题）
+   只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
+   ============================================================ */
+(function (EN) {
+  "use strict";
+
+  EN.add('kids', 'life', [
+
   {
     id:'kl-01', pack:'life', level:1, type:'word',
     scene:'🏠 认物品和颜色',
@@ -1460,7 +1679,6 @@ const BANK_KIDS = [
     explain:'💡 中文习惯说"哪里哪里"，英语里被夸就大方说 Thank you!。想谦虚一点，可以接一句 I\'m still learning.（我还在学）或 Thanks, I practice every day.',
     takeaway:'被夸就说 Thank you!，别急着否认。'
   },
-
   {
     id:'kl-04', pack:'life', level:1, type:'listening',
     scene:'🏠 邻居阿姨问你',
@@ -1515,7 +1733,6 @@ const BANK_KIDS = [
     explain:'💡 英语国家的人听到别人打喷嚏，几乎会条件反射地说一句 Bless you!（保佑你）。不用觉得奇怪，回一句 Thank you. 就好。',
     takeaway:'别人说 Bless you! → 你说 Thank you.'
   },
-
   {
     id:'kl-07', pack:'life', level:3, type:'listening',
     scene:'🏠 在国外的快餐店',
@@ -1588,7 +1805,6 @@ const BANK_KIDS = [
     explain:'💡 一个词有好几个意思，要靠场景判断：收银台的 change 是零钱，天气预报的 change 是变化，换衣服的 change 是更换。先看在哪儿，再猜意思。',
     takeaway:"Here's your change. = 这是找你的零钱。"
   },
-
   {
     id:'kl-11', pack:'life', level:1, type:'listening',
     scene:'🏠 在国外的寄宿家庭',
@@ -1678,9 +1894,23 @@ const BANK_KIDS = [
     ],
     explain:'💡 又一次考"听问句开头"：How many…? 回数字，What…? 回名字，What color…? 回颜色。这三个问句练熟，回答就不会跑偏。',
     takeaway:'How many…? → 回数字：Three.'
-  },
+  }
 
-  /* ---------- 🎈 交朋友篇 ---------- */
+  ]);
+
+})(window.EN);
+</script>
+<script>
+/* ===== inlined: data/kids-friend.js ===== */
+/* ============================================================
+   🧒 小学生入门 · 🎈 交朋友篇（15 题）
+   只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
+   ============================================================ */
+(function (EN) {
+  "use strict";
+
+  EN.add('kids', 'friend', [
+
   {
     id:'kf-01', pack:'friend', level:1, type:'phrase',
     scene:'🎈 想一起玩',
@@ -1952,15 +2182,308 @@ const BANK_KIDS = [
     takeaway:'Same here. = 我也一样（＝ Me too）。'
   }
 
-];
+  ]);
 
+})(window.EN);
+</script>
+<script>
+/* ===== inlined: data/kids-trip.js ===== */
+/* ============================================================
+   🧒 小学生入门 · 🧳 出门在外篇（15 题）
+   出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
+   只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
+   ============================================================ */
+(function (EN) {
+  "use strict";
 
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-01', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 在国外的商场里',
+    situation:'跟妈妈逛商场，你想找洗手间，看见前面站着一位工作人员。',
+    quote:'',
+    note:'她正背对着你整理货架。',
+    ask:'走过去该先说哪一句？',
+    options:[
+      { text:'Excuse me, where is the restroom?', note:'先打招呼，再问路', badge:'地道', kind:'native', ok:true,
+        why:'Excuse me 是"打扰一下"，用来礼貌地开启对话，问路、叫人、借过全靠它。' },
+      { text:'Hey! Where is the restroom?', note:'像在街上喊人', badge:'太随便', kind:'trap', ok:false,
+        why:'Hey! 只在熟人之间用，对陌生人这么喊会让人皱眉。' },
+      { text:'Where is the restroom?', note:'不算错，但太突然', badge:'莽撞', kind:'stiff', ok:false,
+        why:'一上来就抛问题会显得冒失，前面加一句 Excuse me 才完整。' }
+    ],
+    explain:'💡 在外面找人帮忙，第一句永远是 Excuse me.（打扰一下）。它不是道歉，而是"我要跟你说话啦"的信号，说完再问就自然多了。',
+    takeaway:'问路先说 Excuse me，再问 Where is…?'
+  },
+  {
+    id:'kt-02', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 纪念品商店',
+    situation:'你在货架上看中了一个小挂件，想问问多少钱。',
+    quote:'',
+    note:'店员就站在旁边。',
+    ask:'该怎么问？',
+    options:[
+      { text:'How many money?', note:'many 和 much 用反了', badge:'语法错', kind:'stiff', ok:false,
+        why:'钱不能一个一个数，要用 much：How much…?' },
+      { text:'How much is it?', note:'问价格的标准句', badge:'地道', kind:'native', ok:true,
+        why:'指着东西说 How much is it?，最简单直接，店员一听就懂。' },
+      { text:'Give me the price.', note:'像在下命令', badge:'太冲', kind:'trap', ok:false,
+        why:'祈使句听起来是在要求对方交代，不像在问价。' }
+    ],
+    explain:'💡 how much 问价钱和不能数的东西，how many 问能数的数量：How much is it?（多少钱）／How many apples?（几个苹果）。',
+    takeaway:'问价 → How much is it?'
+  },
+  {
+    id:'kt-03', pack:'trip', level:1, type:'listening',
+    scene:'🧳 游乐园排队',
+    situation:'你想快点玩上过山车，往前挤了两步，工作人员看见了，对你说：',
+    quote:'Wait in line, please.',
+    note:'旁边的人都站成了长长的一条。',
+    ask:'他让你做什么？',
+    options:[
+      { text:'请排队等着', note:'in line = 在队伍里', badge:'排队', kind:'stiff', ok:true,
+        why:'这句是提醒你别插队，回到队伍里等。' },
+      { text:'在网上等消息', note:'和上网没关系', badge:'上网', kind:'stiff', ok:false,
+        why:'online（在线）是一个词，in line（排队）是两个词，别看混。' },
+      { text:'沿着线走', note:'那是 follow the line', badge:'走线', kind:'stiff', ok:false,
+        why:'line 在这里指人排成的队伍，不是地上的线。' }
+    ],
+    explain:'💡 排队相关：Wait in line.（排队等）、The line is long.（队很长）、Are you in line?（你在排队吗）。英式英语里排队还常说 queue。',
+    takeaway:'Wait in line. = 请排队。'
+  },
+  {
+    id:'kt-04', pack:'trip', level:2, type:'listening',
+    scene:'🧳 问完路之后',
+    situation:'你问了路人洗手间在哪，他抬手往前一指，说了一句：',
+    quote:'Go straight and turn left.',
+    note:'前面有两个路口。',
+    ask:'他让你怎么走？',
+    options:[
+      { text:'一直往前走，然后左转', note:'问路回答的经典组合', badge:'方向', kind:'stiff', ok:true,
+        why:'go straight 是一直往前，turn left 是左转，合起来就是完整的路线。' },
+      { text:'走直线，别绕远路', note:'把 straight 当成了走法', badge:'走法', kind:'stiff', ok:false,
+        why:'straight 在这里指方向"笔直往前"，不是在教你怎么走路。' },
+      { text:'往前走，然后往右转', note:'left 和 right 记反了', badge:'反了', kind:'stiff', ok:false,
+        why:'left 是左，right 是右。这两个词记反，路就走反了。' }
+    ],
+    explain:'💡 问路必听的几个词：go straight（直走）、turn left / right（左转 / 右转）、next to（挨着）、across from（在对面）。听懂这几个就不会走丢。',
+    takeaway:'Go straight and turn left. = 直走然后左转。'
+  },
+  {
+    id:'kt-05', pack:'trip', level:1, type:'listening',
+    scene:'🧳 飞机上发餐',
+    situation:'飞了两个小时，空乘推着餐车走到你这一排，弯下腰问：',
+    quote:'Chicken or beef?',
+    note:'她手里端着两个不一样的餐盒。',
+    ask:'她在问什么？',
+    options:[
+      { text:'要鸡肉还是牛肉', note:'飞机餐最经典的问句', badge:'选餐', kind:'stiff', ok:true,
+        why:'想要哪个就说 Chicken, please. 或 Beef, please.' },
+      { text:'这是鸡肉和牛肉做的', note:'当成了介绍菜品', badge:'介绍', kind:'stiff', ok:false,
+        why:'介绍菜品会说 It\'s chicken and beef.，这句是在让你二选一。' },
+      { text:'你会做鸡肉和牛肉吗', note:'和会不会做饭没关系', badge:'问会不会', kind:'stiff', ok:false,
+        why:'那要说 Can you cook…?，跟这句差得远。' }
+    ],
+    explain:'💡 飞机上的三句：Chicken or beef?（鸡肉还是牛肉）、Something to drink?（喝点什么）、Coffee or tea?（咖啡还是茶）。回答统一是 …, please.',
+    takeaway:'Chicken or beef? → Chicken, please.'
+  },
+  {
+    id:'kt-06', pack:'trip', level:2, type:'listening',
+    scene:'🧳 飞机要起飞了',
+    situation:'飞机开始滑行，广播里传来一句提醒，空乘也在挨个检查：',
+    quote:'Please fasten your seat belt.',
+    note:'你的安全带还搭在腿上没扣。',
+    ask:'她提醒你做什么？',
+    options:[
+      { text:'请系好安全带', note:'fasten = 扣紧、系上', badge:'系安全带', kind:'stiff', ok:true,
+        why:'起飞和降落时都必须系好，这是飞机上听到次数最多的一句。' },
+      { text:'请把椅背调直', note:'那是另一句提醒', badge:'收椅背', kind:'stiff', ok:false,
+        why:'椅背调直会说 Put your seat back up.' },
+      { text:'请快一点坐下', note:'fasten 和 fast 看混了', badge:'催你', kind:'stiff', ok:false,
+        why:'fasten（系上）和 fast（快）长得像，却是两个词。' }
+    ],
+    explain:'💡 起飞前的四句：Please fasten your seat belt.（系安全带）、Put your seat back up.（椅背调直）、Close the window shade.（关遮光板）、Turn off your phone.（关手机）。',
+    takeaway:'fasten your seat belt = 系好安全带。'
+  },
+  {
+    id:'kt-07', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 买博物馆门票',
+    situation:'博物馆售票窗口前，你想给自己买一张儿童票。',
+    quote:'',
+    note:'售票员抬起头看着你。',
+    ask:'该怎么说？',
+    options:[
+      { text:'One child ticket, please.', note:'数量＋种类＋please', badge:'地道', kind:'native', ok:true,
+        why:'买票的固定格式，简单又清楚，售票员一听就明白。' },
+      { text:'I want one child ticket.', note:'像在陈述需求', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但少了 please，语气比较硬。' },
+      { text:'Give me a child ticket.', note:'像在命令售票员', badge:'太冲', kind:'trap', ok:false,
+        why:'祈使句又没有 please，听起来很不客气。' }
+    ],
+    explain:'💡 买东西的万能格式：数量 + 东西 + please。One coffee, please.／Two tickets, please.。加上 please，礼貌就到位了。',
+    takeaway:'买票 → One child ticket, please.'
+  },
+  {
+    id:'kt-08', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 想拍张全家福',
+    situation:'一家人站在喷泉前想拍合影，旁边正好有位游客闲着。',
+    quote:'',
+    note:'你手里举着手机。',
+    ask:'该怎么请他帮忙？',
+    options:[
+      { text:'Excuse me, can you take a picture of us?', note:'先打招呼，再请求', badge:'地道', kind:'native', ok:true,
+        why:'take a picture of us 是"给我们拍张照"，of 后面跟的是被拍的人。' },
+      { text:'Can you take a picture with us?', note:'with 变成了"跟我们一起拍"', badge:'差一个词', kind:'stiff', ok:false,
+        why:'with us 是请对方入镜合影，一个介词差出十万八千里。' },
+      { text:'You take picture.', note:'句子不完整，像命令', badge:'太冲', kind:'trap', ok:false,
+        why:'既没有请求的语气，也漏了冠词，听起来很生硬。' }
+    ],
+    explain:'💡 请人帮拍：Can you take a picture of us, please?，拍完记得说 Thank you!。想跟别人合影才用 with：Can I take a picture with you?',
+    takeaway:'请人帮拍用 of us；合影才是 with。'
+  },
+  {
+    id:'kt-09', pack:'trip', level:2, type:'manners',
+    scene:'🧳 地铁上遇到老奶奶',
+    situation:'地铁很挤，一位拄着拐杖的老奶奶上了车，你正好有座位。',
+    quote:'',
+    note:'你想把座位让给她。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'You are old. Take my seat.', note:'当面说人老，很失礼', badge:'踩雷', kind:'trap', ok:false,
+        why:'英语国家很忌讳说别人 old，好心也会办成坏事。' },
+      { text:'Would you like my seat?', note:'先问一句再让', badge:'地道', kind:'native', ok:true,
+        why:'用问句既尊重对方，也不会让她觉得被当成"需要照顾的老人"。' },
+      { text:'Sit here.', note:'像在指挥别人', badge:'生硬', kind:'stiff', ok:false,
+        why:'心意是好的，但祈使句听起来像命令。' }
+    ],
+    explain:'💡 让座的地道说法：Would you like my seat? 或 Please, take my seat.。对方要是说 No, thank you.，也别在意，心意到了就好。',
+    takeaway:'让座 → Would you like my seat?'
+  },
+  {
+    id:'kt-10', pack:'trip', level:3, type:'listening',
+    scene:'🧳 快餐店找位子',
+    situation:'你在快餐店占了张四人桌，旁边的椅子空着。一位客人端着餐盘走过来问：',
+    quote:'Is this seat taken?',
+    note:'他指了指你旁边那把空椅子。',
+    ask:'他在问什么？',
+    options:[
+      { text:'这个位子有人坐吗', note:'taken = 被占了', badge:'问空位', kind:'stiff', ok:true,
+        why:'这是很客气地问能不能坐这儿。没人坐就回一句 No, go ahead.' },
+      { text:'这把椅子是你搬来的吗', note:'把 taken 当成了"拿"', badge:'问来历', kind:'stiff', ok:false,
+        why:'take 确实有"拿"的意思，但在座位场景里它指"被占用"。' },
+      { text:'这个位子要收钱吗', note:'和收费没关系', badge:'问收费', kind:'stiff', ok:false,
+        why:'问收不收费会说 Is it free?，那是另一句话。' }
+    ],
+    explain:'💡 找座位的两句：Is this seat taken?（这儿有人吗）／Is this seat free?（这儿空着吗）。没人坐就回 No, go ahead.（没人，你坐吧）。',
+    takeaway:'Is this seat taken? = 这儿有人坐吗？'
+  },
+  {
+    id:'kt-11', pack:'trip', level:3, type:'listening',
+    scene:'🧳 机场过安检',
+    situation:'排到你了，安检员指了指你的鞋，说了一句：',
+    quote:'Take off your shoes, please.',
+    note:'前面的人都把鞋放进了篮子里。',
+    ask:'他让你做什么？',
+    options:[
+      { text:'请把鞋脱下来', note:'take off = 脱下', badge:'脱鞋', kind:'stiff', ok:true,
+        why:'过安检时经常要脱鞋、脱外套，放进篮子过机器。' },
+      { text:'请把鞋带系好', note:'那是 tie your shoes', badge:'系鞋带', kind:'stiff', ok:false,
+        why:'系鞋带和脱鞋是两个完全不同的动作。' },
+      { text:'请把鞋擦干净', note:'那是 clean your shoes', badge:'擦鞋', kind:'stiff', ok:false,
+        why:'安检员不管鞋干不干净，他只要你把鞋脱下来。' }
+    ],
+    explain:'💡 take off 有两个常见意思：脱下（Take off your coat.）和飞机起飞（The plane takes off at six.）。在安检口听到的永远是第一个。',
+    takeaway:'Take off your shoes. = 请脱鞋。'
+  },
+  {
+    id:'kt-12', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 跟家人走散了',
+    situation:'在商场回头一看，爸爸妈妈都不见了。你走到服务台，工作人员蹲下来问你：',
+    quote:'Are you OK?',
+    note:'你有点紧张，但得把话说清楚。',
+    ask:'该怎么说明情况？',
+    options:[
+      { text:"I'm lost. Can you help me?", note:'一句话说清处境', badge:'地道', kind:'native', ok:true,
+        why:'lost 是"迷路了、走散了"，再加一句 Can you help me?，对方立刻知道该怎么帮你。' },
+      { text:"I can't find my parents' place.", note:'绕了一大圈', badge:'啰嗦', kind:'stiff', ok:false,
+        why:'意思勉强能懂，但越紧张越要说短句。' },
+      { text:'I lost.', note:'少了 am，还容易被听成"我输了"', badge:'语法错', kind:'trap', ok:false,
+        why:'I lost 是"我输了"；迷路要说 I\'m lost.' }
+    ],
+    explain:'💡 走散了最该会的三句：I\'m lost.（我迷路了）、Can you help me?（能帮帮我吗）、Can you call my mom?（能帮我打给妈妈吗）。再背熟爸妈的手机号就更稳了。',
+    takeaway:"走散了 → I'm lost. Can you help me?"
+  },
+  {
+    id:'kt-13', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 买纪念 T 恤',
+    situation:'你在店里挑中一件 T 恤，想先穿上看看合不合身。',
+    quote:'',
+    note:'试衣间就在旁边。',
+    ask:'该怎么问店员？',
+    options:[
+      { text:'Can I try it on?', note:'试穿的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'try on 是"试穿"，中间可以夹代词：try it on。' },
+      { text:'Can I try it?', note:'少了 on，更像"尝一尝"', badge:'差一个词', kind:'stiff', ok:false,
+        why:'try it 常用在尝东西、试试看上面，试衣服要用 try on。' },
+      { text:'Can I wear it?', note:'像是问能不能直接穿走', badge:'会误会', kind:'trap', ok:false,
+        why:'wear 说的是"穿着"这个状态，店员会以为你想穿着它出门。' }
+    ],
+    explain:'💡 买衣服三句：Can I try it on?（能试穿吗）、Do you have a bigger one?（有大一号的吗）、It doesn\'t fit.（不合身）。',
+    takeaway:'试穿 → Can I try it on?'
+  },
+  {
+    id:'kt-14', pack:'trip', level:2, type:'listening',
+    scene:'🧳 参观博物馆',
+    situation:'你正举起手机想拍一幅名画，工作人员快步走过来，指了指墙上的牌子：',
+    quote:'No photos, please.',
+    note:'牌子上画着一个相机，被打了叉。',
+    ask:'他的意思是？',
+    options:[
+      { text:'这里禁止拍照', note:'No + 名词 = 禁止', badge:'禁拍', kind:'stiff', ok:true,
+        why:'公共场所的禁止牌几乎都是这个句式，看见 No 开头就先停手。' },
+      { text:'这里不卖照片', note:'当成了商店告示', badge:'没有卖', kind:'stiff', ok:false,
+        why:'那要说 We don\'t sell photos.，是完全不同的句子。' },
+      { text:'你照片拍得不好', note:'不是在点评你', badge:'评价', kind:'stiff', ok:false,
+        why:'评价照片会说 The photo isn\'t good.，工作人员没空管这个。' }
+    ],
+    explain:'💡 公共场所的禁止牌都是 No + 名词：No photos（禁止拍照）、No food（禁止饮食）、No running（禁止奔跑）、No pets（宠物勿入）。',
+    takeaway:'No photos, please. = 请勿拍照。'
+  },
+  {
+    id:'kt-15', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 街边小吃摊',
+    situation:'小吃摊的热狗看起来很香，你想买一个。',
+    quote:'',
+    note:'老板正等着你开口。',
+    ask:'该怎么点？',
+    options:[
+      { text:'Hot dog!', note:'只喊菜名，像在下命令', badge:'太冲', kind:'trap', ok:false,
+        why:'单蹦一个名词听起来很急躁，前面加半句话就完全不一样了。' },
+      { text:'I want a hot dog.', note:'像在提要求', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但 I want 的语气比较直，至少要补一个 please。' },
+      { text:'Can I have a hot dog, please?', note:'点餐的万能句型', badge:'地道', kind:'native', ok:true,
+        why:'Can I have…? 是点餐、要东西时最常用的说法，礼貌又自然。' }
+    ],
+    explain:'💡 点餐要东西的万能句：Can I have a hot dog, please? / Can I get a Coke, please?。想问有没有就说 Do you have…?',
+    takeaway:'点餐 → Can I have …, please?'
+  }
+
+  ]);
+
+})(window.EN);
+</script>
+<script>
+/* ===== inlined: data/adult.js ===== */
 /* ============================================================
    🧑‍💼 成人地道题库（4 题 · 四大类各 1 题）
+   四个大类都放在这一个文件里；题变多时可以照小学生那样一类一个文件。
    ============================================================ */
-const BANK_ADULT = [
+(function (EN) {
+  "use strict";
 
-  /* ---------- 🏪 点餐生存篇 ---------- */
+  EN.add('adult', null, [
+
   {
     id:'o-01', pack:'order', level:1, type:'listening',
     scene:'🏪 赛百味点餐篇',
@@ -1979,8 +2502,6 @@ const BANK_ADULT = [
     explain:'💡 听力避坑：老外问"Toasted?"就是问你要不要烤/加热，最地道自然的回答就是"Yes, please."。千万别大喊"Microwave（微波炉）"哦！',
     takeaway:'店员把问题问完整了，你只要接一句 Yes, please. / No, thanks.'
   },
-
-  /* ---------- ☕ 机场旅途篇 ---------- */
   {
     id:'t-01', pack:'travel', level:1, type:'listening',
     scene:'☕ 机场咖啡厅篇',
@@ -1999,8 +2520,6 @@ const BANK_ADULT = [
     explain:'💡 地道口语：Room 在这里不是房间，而是空间（Space）。服务员是在问你要不要倒太满，方便你呆会儿自己加奶或加糖。',
     takeaway:'Room for milk? = 要不要留空间加奶；要就 Yes, please，不要就 No, fill it up.'
   },
-
-  /* ---------- 💼 外企职场篇 ---------- */
   {
     id:'w-01', pack:'office', level:3, type:'social',
     scene:'💼 外企职场社交篇',
@@ -2019,8 +2538,6 @@ const BANK_ADULT = [
     explain:'💡 职场情商：在外企直接说"I don\'t agree"是非常粗鲁的。用 C 选项的"Yes, and..."法则，先肯定对方，再用"what if we..."引导出自己的方案，才是高管话术。',
     takeaway:'反对不说 No，说 "I see your point, but what if we..."'
   },
-
-  /* ---------- 🛒 生活日常篇 ---------- */
   {
     id:'l-01', pack:'life', level:2, type:'culture',
     scene:'🛒 超市结账篇',
@@ -2040,91 +2557,11 @@ const BANK_ADULT = [
     takeaway:'Paper or plastic? 问的是袋子；自带袋就说 I brought my own.'
   }
 
-];
+  ]);
 
-
-/* ============================================================
-   ★ 第三段：模式装配 ★
-   每个模式 = 一套分类 PACKS + 一套称号 RANKS + 一套题库 + 一套文案
-   想再加一个模式（比如「初中生」），照抄一份改内容即可，引擎不用动
-   ============================================================ */
-const MODES = {
-
-  kids: {
-    key:'kids',
-    emoji:'🧒',
-    name:'小学生入门',
-    sub:'打招呼 / 课堂 / 生活 / 交朋友',
-    chip:'🧒 小学生入门',
-    /* 选项每次随机排序：题库写得越多，正解越容易扎堆在某个位置，
-       小朋友会摸出"点第一个准没错"。打乱之后位置彻底失效 */
-    shuffleOptions: true,
-    BANK: BANK_KIDS,
-    PACKS: {
-      hello:  { label:'👋 打招呼篇', cn:'打招呼' },
-      class:  { label:'🏫 课堂篇',   cn:'课堂用语' },
-      life:   { label:'🏠 生活篇',   cn:'生活常识' },
-      friend: { label:'🎈 交朋友篇', cn:'交朋友' }
-    },
-    /* 小学生模式的文案：答错也不打击 */
-    impactOk: ['GREAT JOB!', '答对啦！'],
-    impactNg: ['OOPS!', '没关系，看看解析～'],
-    verdictOk: '答对了 ・ 太棒了',
-    verdictNg: '答错了 ・ 记住它就赚到了',
-    RANKS: [
-      { min:3, rank:'英语小达人', win:true,
-        en:'You did it! Perfect!',
-        note:'三题全对！这几句话已经是你的了，下次真的遇到外国朋友，你也能张口就来。' },
-      { min:2, rank:'进步小明星', win:true,
-        en:'Great job! Almost perfect!',
-        note:'只差一点点。把错的那句大声念三遍，明天就忘不掉了。' },
-      { min:1, rank:'努力小学员', win:false,
-        en:'Good try! Keep going!',
-        note:'答对一题也很棒！英语就是这样一句一句学会的，看完解析再来一次，一定更好。' },
-      { min:0, rank:'英语小新手', win:false,
-        en:"Don't worry. Try again!",
-        note:'第一次见到这些句子都会懵，一点也不丢人。把解析读一遍再玩一次，你会发现它们突然变简单了。' }
-    ]
-  },
-
-  adult: {
-    key:'adult',
-    emoji:'🧑‍💼',
-    name:'成人地道',
-    sub:'点餐 / 旅途 / 职场 / 生活',
-    chip:'🧑‍💼 成人地道',
-    /* 这里保持原顺序：w-01 的解析里写了"用 C 选项的 Yes, and 法则"，位置不能动 */
-    shuffleOptions: false,
-    BANK: BANK_ADULT,
-    PACKS: {
-      order:  { label:'🏪 点餐生存篇', cn:'点餐生存' },
-      travel: { label:'☕ 机场旅途篇', cn:'旅途口语' },
-      office: { label:'💼 外企职场篇', cn:'职场情商' },
-      life:   { label:'🛒 生活日常篇', cn:'生活常识' }
-    },
-    impactOk: ['NAILED IT!', '答得地道！'],
-    impactNg: ['AWKWARD!', '空气突然安静…'],
-    verdictOk: '答对了 ・ 空气很安全',
-    verdictNg: '答错了 ・ 空气凝固了',
-    RANKS: [
-      { min:3, rank:'地道口语达人', win:true,
-        en:'You sound like a local.',
-        note:'三个场面零失误。你已经能把课本英语留在课本里，把真实反应带到现场——这正是"能不能用"的分界线。' },
-      { min:2, rank:'半熟留学生', win:true,
-        en:'Almost there. Keep going.',
-        note:'大方向没错，偶尔会漏出直译腔。记住：地道 = 短句 + 场景默契，不是把中文一个词一个词换成英文。' },
-      { min:1, rank:'教科书选手', win:false,
-        en:'Textbook English, real-world gap.',
-        note:'语法满分，语感扣分。先把 "Yes, please." / "I brought my own." / "I see your point, but..." 这几句练成条件反射。' },
-      { min:0, rank:'字面直译爱好者', win:false,
-        en:'Lost in translation.',
-        note:'你的英语都是逐词翻译过来的——写下来能看懂，说出口全是尴尬。好消息是：地道表达就那么几十句，套路可以速成。再来一次。' }
-    ]
-  }
-
-};
-
-
+})(window.EN);
+</script>
+<script>
 /* ============================================================
    ★ 第四段：引擎 ★
    洗牌抽题 / 血量 / 判定 / 特效 / 结算 —— 加题时不用动这一段
@@ -2132,6 +2569,17 @@ const MODES = {
 (() => {
   "use strict";
 
+  /* 题库来自 data/*.js —— 没加载成功就直说，别让用户对着白屏发呆 */
+  const EN = window.EN;
+  if (!EN) {
+    const box = document.getElementById("alert");
+    box.hidden = false;
+    box.innerHTML = "<b>题库没有加载。</b><ul>" +
+      "<li>直接打开 src/index.html 时，data/ 目录必须在它的上一级</li>" +
+      "<li>要发布或分享，请用仓库根目录的 <b>index.html</b>（合并后的单文件版）</li></ul>";
+    return;
+  }
+  const { CORE, MODES } = EN;
   const { ROUND, MAX_HP, TYPES } = CORE;
 
   /* 当前模式：封面选完才定。之后 M.BANK / M.PACKS / M.RANKS / M.文案 全从这里取 */
@@ -2155,76 +2603,6 @@ const MODES = {
   /* ========== 状态 ========== */
   let SET = [];   // 本局抽中的 3 道题
   const state = { index:0, hp:MAX_HP, correct:0, log:[], locked:false, opts:[] };
-
-  /* ========== 洗牌抽题 ========== */
-  /* Fisher–Yates：从后往前逐位与随机位置交换，每种排列等概率 */
-  function shuffle(arr){
-    const a = [...arr];
-    for (let i = a.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
-
-  /* 上一局出过的题，这局尽量避开（两个模式各记一份） */
-  const lastIds = { kids:new Set(), adult:new Set() };
-
-  function drawSet(){
-    const seen = lastIds[M.key];
-    const pool = shuffle(M.BANK);                     // ① 整个题库彻底打乱
-    const fresh = pool.filter(q => !seen.has(q.id));
-    const ordered = [...fresh, ...pool.filter(q => seen.has(q.id))];     // ② 没出过的排前面
-
-    // ③ 依次取题，同一大类先只取 1 道，保证一局里场景不重样
-    const picked = [], usedPacks = new Set();
-    for (const q of ordered){
-      if (picked.length >= ROUND) break;
-      if (usedPacks.has(q.pack)) continue;
-      picked.push(q); usedPacks.add(q.pack);
-    }
-    // ④ 大类不够时，用剩下的题补满
-    for (const q of ordered){
-      if (picked.length >= ROUND) break;
-      if (!picked.includes(q)) picked.push(q);
-    }
-
-    picked.sort((a, b) => a.level - b.level);         // ⑤ 难度由浅入深
-    lastIds[M.key] = new Set(picked.map(q => q.id));
-    return picked;
-  }
-
-  /* ========== 题库自检：写错题当场报红条，而不是白屏 ========== */
-  function validateBank(mode){
-    const bank = mode.BANK, PACKS = mode.PACKS;
-    const errs = [], ids = new Set(), KINDS = new Set(["trap", "native", "stiff"]);
-    bank.forEach((q, i) => {
-      const at = `${mode.name} 第${i + 1}题（${q.id || "缺 id"}）`;
-      ["id", "pack", "scene", "situation", "ask", "explain", "takeaway"].forEach(f => {
-        if (!q[f]) errs.push(`${at}：缺字段 ${f}`);
-      });
-      if (q.id){
-        if (ids.has(q.id)) errs.push(`${at}：id 与前面重复`);
-        ids.add(q.id);
-      }
-      if (!PACKS[q.pack]) errs.push(`${at}：pack「${q.pack}」未在 PACKS 中定义`);
-      if (!(q.level >= 1 && q.level <= 3)) errs.push(`${at}：level 必须是 1~3`);
-      if (!TYPES[q.type]) errs.push(`${at}：type「${q.type}」不合法`);
-      if (!Array.isArray(q.options) || q.options.length !== 3){
-        errs.push(`${at}：必须正好 3 个选项`);
-        return;
-      }
-      const rights = q.options.filter(o => o.ok).length;
-      if (rights !== 1) errs.push(`${at}：正解有 ${rights} 个，必须恰好 1 个`);
-      q.options.forEach((o, j) => {
-        const tag = `${at} 选项${"ABC"[j]}`;
-        ["text", "note", "badge", "why"].forEach(f => { if (!o[f]) errs.push(`${tag}：缺字段 ${f}`); });
-        if (!KINDS.has(o.kind)) errs.push(`${tag}：kind「${o.kind}」不合法（只能 trap/native/stiff）`);
-      });
-    });
-    if (bank.length < ROUND) errs.push(`题库只有 ${bank.length} 题，少于每局需要的 ${ROUND} 题`);
-    return errs;
-  }
 
   /* ========== HUD ========== */
   function renderHearts(breakIndex = -1){
@@ -2283,7 +2661,7 @@ const MODES = {
 
   function startGame(modeKey){
     M = MODES[modeKey] || M;
-    SET = drawSet();
+    SET = EN.draw(M);
     state.index = 0; state.hp = MAX_HP; state.correct = 0; state.log = []; state.locked = false;
     hud.hidden = false;
     renderHearts();
@@ -2323,7 +2701,7 @@ const MODES = {
       </div>`;
 
     /* 本题实际显示的选项顺序（小学生模式每次打乱），判定也以它为准 */
-    state.opts = M.shuffleOptions ? shuffle(q.options) : q.options;
+    state.opts = M.shuffleOptions ? EN.shuffle(q.options) : q.options;
 
     const wrap = $("options");
     state.opts.forEach((opt, i) => {
@@ -2567,7 +2945,7 @@ const MODES = {
   });
 
   /* ---- 启动自检：题库写错时页面顶部报红条 ---- */
-  const bankErrors = Object.values(MODES).flatMap(m => validateBank(m));
+  const bankErrors = EN.validate();
   if (bankErrors.length){
     const box = $("alert");
     box.hidden = false;
