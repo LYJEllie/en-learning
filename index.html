@@ -1039,6 +1039,97 @@ const BANK_KIDS = [
     takeaway:'王老师 = Miss Wang，不是 teacher Wang。'
   },
 
+  {
+    id:'kh-11', pack:'hello', level:1, type:'listening',
+    scene:'👋 校门口的招呼',
+    situation:'早上进校门，外国同学远远看见你，挥着手喊了一声：',
+    quote:'Morning!',
+    note:'他只喊了一个词就跑过来了。',
+    ask:'他在说什么？',
+    options:[
+      { text:'就是 Good morning，省掉了前面那个词', note:'熟人之间的轻松版', badge:'省略', kind:'stiff', ok:true,
+        why:'熟人之间常把 Good morning 缩成 Morning!，听起来更随意。' },
+      { text:'在问现在是不是早上', note:'当成了问句', badge:'问时间', kind:'stiff', ok:false,
+        why:'问时间要说 Is it morning? 或 What time is it?，单蹦一个 Morning! 只是打招呼。' },
+      { text:'在催你早点到', note:'和守时没关系', badge:'催你', kind:'stiff', ok:false,
+        why:'催人早到会说 Come early.，和这句完全无关。' }
+    ],
+    explain:'💡 熟人打招呼爱省略：Morning!（＝Good morning）、Afternoon!、Evening!。你也可以同样回一句 Morning!',
+    takeaway:'Morning! = Good morning! 的轻松版。'
+  },
+  {
+    id:'kh-12', pack:'hello', level:2, type:'culture',
+    scene:'👋 跟外教说再见',
+    situation:'下课了，你想跟外教道个别。班里同学习惯挥着手喊 bye-bye。',
+    quote:'',
+    note:'她正在收课本，笑着看你。',
+    ask:'哪种说法最自然？',
+    options:[
+      { text:'Bye! / See you!', note:'日常最常用', badge:'地道', kind:'native', ok:true,
+        why:'又短又自然，同学、老师、朋友之间基本都用它。' },
+      { text:'Bye-bye!', note:'主要是哄小宝宝时说的', badge:'偏幼', kind:'stiff', ok:false,
+        why:'不算错，但在英语国家更多是大人对小小孩说的，同龄人之间说会显得有点幼。' },
+      { text:'Goodbye.', note:'太正式，有点郑重', badge:'太正式', kind:'stiff', ok:false,
+        why:'Goodbye 偏正式，日常道别用它会显得生分，像很久见不到了。' }
+    ],
+    explain:'💡 道别的随意程度：Bye! / See you!（日常）→ Bye-bye!（哄小孩）→ Goodbye.（正式）。跟老师同学说 Bye! 或 See you tomorrow! 最合适。',
+    takeaway:'日常道别 → Bye! / See you!'
+  },
+  {
+    id:'kh-13', pack:'hello', level:3, type:'listening',
+    scene:'👋 同学突然问了一句',
+    situation:'课间你趴在桌上画画，外国同学走过来拍拍你的肩膀：',
+    quote:"What's up?",
+    note:'他一脸轻松，好像只是随口一问。',
+    ask:'他在问什么？',
+    options:[
+      { text:'最近怎么样、有什么事吗', note:'其实就是一句招呼', badge:'打招呼', kind:'stiff', ok:true,
+        why:'What\'s up? 多半只是熟人之间的问候，回一句 Not much. 就行。' },
+      { text:'上面有什么东西', note:'把 up 当成了"上面"', badge:'看上面', kind:'stiff', ok:false,
+        why:'up 在这里没有方向的意思，整句是固定的口语打招呼。' },
+      { text:'你站起来干什么', note:'和起立没关系', badge:'起立', kind:'stiff', ok:false,
+        why:'让人起立是 Stand up.，和这句差得远。' }
+    ],
+    explain:'💡 What\'s up? 听着像问题，其实约等于 Hi。标准回答是 Not much. / Nothing much. / Hey!，然后可以反问一句 You?',
+    takeaway:"What's up? ≈ 嗨，最近怎么样。回 Not much. 就行。"
+  },
+  {
+    id:'kh-14', pack:'hello', level:2, type:'culture',
+    scene:'👋 外教让你叫她名字',
+    situation:'新来的外教做完自我介绍，笑着补了一句：',
+    quote:'Please call me Anna.',
+    note:'Anna 是她的名字，不是姓。',
+    ask:'她的意思是？',
+    options:[
+      { text:'以后直接叫她 Anna 就好', note:'外教常这么说', badge:'地道', kind:'native', ok:true,
+        why:'英语国家的老师常让学生直呼其名，这是拉近距离的方式，照做就好。' },
+      { text:'要叫她 Miss Anna', note:'称谓要配姓，不配名', badge:'半中半英', kind:'trap', ok:false,
+        why:'Miss / Mr. 后面跟的是姓，不是名，Miss Anna 是中式说法。' },
+      { text:'她在问你叫什么名字', note:'方向听反了', badge:'听反了', kind:'stiff', ok:false,
+        why:'call me… 是"叫我…"；问你名字要说 What should I call you?' }
+    ],
+    explain:'💡 老师主动说 Please call me Anna. 就是允许你直呼其名，不用再加 Miss。她要是没说，就还用 Miss / Mr. + 姓。',
+    takeaway:'Please call me Anna. = 以后叫我 Anna 就行。'
+  },
+  {
+    id:'kh-15', pack:'hello', level:1, type:'culture',
+    scene:'👋 见到朋友的妈妈',
+    situation:'你去外国同学家玩，开门的是他妈妈，姓 Smith。',
+    quote:'',
+    note:'你想像在国内一样喊一声"阿姨"。',
+    ask:'该怎么称呼她？',
+    options:[
+      { text:'Hello, aunt!', note:'aunt 只用来叫亲姑姑、姨妈', badge:'中式', kind:'trap', ok:false,
+        why:'英语里 aunt 是亲戚称呼，对同学的妈妈这么叫，对方会愣一下。' },
+      { text:'Hello, Mrs. Smith!', note:'称谓加姓，最稳妥', badge:'地道', kind:'native', ok:true,
+        why:'对朋友的妈妈用 Mrs. / Ms. + 姓，礼貌又得体。' },
+      { text:"Hello, Tom's mother!", note:'像在介绍她的身份', badge:'不自然', kind:'stiff', ok:false,
+        why:'能听懂，但当面这么叫很奇怪，就像喊别人"小明他妈"。' }
+    ],
+    explain:'💡 中文里"阿姨""叔叔"可以随便叫，英语里 aunt / uncle 只留给亲戚。对长辈用 Mr. / Mrs. / Ms. + 姓；不知道姓就说 Hello! 或 Excuse me.',
+    takeaway:'同学的妈妈叫 Mrs. Smith，不叫 aunt。'
+  },
+
   /* ---------- 🏫 课堂篇 ---------- */
   {
     id:'kc-01', pack:'class', level:1, type:'listening',
@@ -1221,6 +1312,97 @@ const BANK_KIDS = [
     ],
     explain:'💡 一个介词就能改变整句话：read after me（跟我读）、read to me（读给我听）、read with me（和我一起读）。听指令要连介词一起听。',
     takeaway:'Read after me. = 跟我读。'
+  },
+
+  {
+    id:'kc-11', pack:'class', level:1, type:'listening',
+    scene:'🏫 老师安排练习',
+    situation:'讲完一段对话，外教拍拍手说：',
+    quote:'Work in pairs, please.',
+    note:'同学们纷纷转向旁边的人。',
+    ask:'老师让你们怎么做？',
+    options:[
+      { text:'两人一组练习', note:'pair = 一对', badge:'两人', kind:'stiff', ok:true,
+        why:'pair 是"一对"，in pairs 就是两个人一组。' },
+      { text:'在纸上写答案', note:'把 pair 听成了 paper', badge:'写纸上', kind:'stiff', ok:false,
+        why:'paper（纸）和 pair（一对）听起来像，但完全是两个词。' },
+      { text:'把桌子排成一排', note:'排桌子是 line up', badge:'排桌子', kind:'stiff', ok:false,
+        why:'排队、排东西用 line up，和 pair 无关。' }
+    ],
+    explain:'💡 分组指令记一组：Work in pairs（两人一组）、Work in groups（分小组）、Work by yourself（自己做）。',
+    takeaway:'Work in pairs. = 两人一组。'
+  },
+  {
+    id:'kc-12', pack:'class', level:2, type:'listening',
+    scene:'🏫 小测验结束',
+    situation:'小测验做到一半，外教看了看表，说了两句话：',
+    quote:"Time's up. Pens down.",
+    note:'周围的同学都停笔了。',
+    ask:'她的意思是？',
+    options:[
+      { text:'时间到了，把笔放下', note:'收卷的固定说法', badge:'停笔', kind:'stiff', ok:true,
+        why:'Time\'s up 是"时间到"，Pens down 是"停笔"，两句一起就是收卷。' },
+      { text:'时间还早，接着写', note:'意思正好相反', badge:'继续', kind:'stiff', ok:false,
+        why:'up 在这里表示"用完了"，不是"还有"。' },
+      { text:'把笔尖朝下放好', note:'当成了摆放要求', badge:'摆放', kind:'stiff', ok:false,
+        why:'Pens down 说的是停止书写这个动作，不是要你摆笔的姿势。' }
+    ],
+    explain:'💡 考试三句：You may begin.（开始答题）、Five minutes left.（还剩五分钟）、Time\'s up. Pens down.（时间到，停笔）。',
+    takeaway:"Time's up. Pens down. = 时间到，停笔。"
+  },
+  {
+    id:'kc-13', pack:'class', level:3, type:'listening',
+    scene:'🏫 老师讲到一半停下来',
+    situation:'外教在黑板上写了一长串，转过身看着大家问：',
+    quote:'Are you with me?',
+    note:'她的眼睛扫过全班，等着大家点头。',
+    ask:'她在问什么？',
+    options:[
+      { text:'你们跟上我的思路了吗', note:'确认大家听懂没', badge:'听懂没', kind:'stiff', ok:true,
+        why:'这是老师确认大家有没有跟上，听懂了就点头或者说 Yes.' },
+      { text:'你们要跟我一起走吗', note:'照字面理解了', badge:'同行', kind:'stiff', ok:false,
+        why:'字面确实是"和我在一起"，但在课堂上它只表示"听明白了吗"。' },
+      { text:'你们站在我这边吗', note:'当成了表态站队', badge:'站队', kind:'stiff', ok:false,
+        why:'那是争论时表态支持谁的说法，和上课无关。' }
+    ],
+    explain:'💡 老师确认你听懂的几种问法：Are you with me? / Does that make sense? / Any questions?。跟上了答 Yes.，没跟上就说 Sorry, I don\'t understand.',
+    takeaway:'Are you with me? = 跟上了吗？'
+  },
+  {
+    id:'kc-14', pack:'class', level:1, type:'phrase',
+    scene:'🏫 同学来借你的书',
+    situation:'同桌探过头来问你，能不能借一下你的课本。',
+    quote:'Can I borrow your book?',
+    note:'你很乐意借给他。',
+    ask:'该怎么答应？',
+    options:[
+      { text:'Sure. Here you are.', note:'答应＋把东西递过去', badge:'地道', kind:'native', ok:true,
+        why:'Sure 是爽快的"当然可以"，递东西时说 Here you are.，一气呵成。' },
+      { text:'Yes, I can.', note:'主语搞错了', badge:'语法错', kind:'stiff', ok:false,
+        why:'对方问的是"我能不能借"，要回答 Yes, you can. 或者干脆说 Sure.' },
+      { text:"You're welcome.", note:'时机不对', badge:'说早了', kind:'stiff', ok:false,
+        why:'"不客气"要等对方说完 Thank you 才轮到你说。' }
+    ],
+    explain:'💡 答应别人的请求：Sure. / Of course. / No problem.，然后递东西说 Here you are.。这一串正好接上前面学的 Thank you → You\'re welcome。',
+    takeaway:'答应就说 Sure. Here you are.'
+  },
+  {
+    id:'kc-15', pack:'class', level:2, type:'phrase',
+    scene:'🏫 老师找人上台',
+    situation:'黑板上写着一道题，外教问全班谁想上来试试。你很想去。',
+    quote:'Who wants to try?',
+    note:'你举起了手。',
+    ask:'举手的同时该说什么？',
+    options:[
+      { text:'Let me try!', note:'又短又有劲', badge:'地道', kind:'native', ok:true,
+        why:'Let me… 是"让我来"，主动争取机会时最常用。' },
+      { text:'I want try.', note:'少了一个 to', badge:'语法错', kind:'stiff', ok:false,
+        why:'want 后面要跟 to：I want to try.，不过还是 Let me try! 更有主动劲儿。' },
+      { text:'I can do.', note:'句子没说完', badge:'不完整', kind:'trap', ok:false,
+        why:'do 后面缺了宾语，要说 I can do it.' }
+    ],
+    explain:'💡 主动争取的三句：Let me try!（我来试试）、Can I try?（我能试试吗）、I\'ll do it!（我来做）。老师最喜欢主动举手的学生。',
+    takeaway:'想试试 → Let me try!'
   },
 
   /* ---------- 🏠 生活篇 ---------- */
@@ -1407,6 +1589,97 @@ const BANK_KIDS = [
     takeaway:"Here's your change. = 这是找你的零钱。"
   },
 
+  {
+    id:'kl-11', pack:'life', level:1, type:'listening',
+    scene:'🏠 在国外的寄宿家庭',
+    situation:'你在楼上写作业，楼下的阿姨朝楼梯口喊了一声：',
+    quote:'Dinner is ready!',
+    note:'厨房那边飘来了香味。',
+    ask:'她在喊什么？',
+    options:[
+      { text:'开饭啦，快下来吃', note:'ready = 准备好了', badge:'开饭', kind:'stiff', ok:true,
+        why:'饭做好了就是喊你下楼吃饭，听到这句赶紧应一声 Coming!' },
+      { text:'晚饭还要再等一会儿', note:'意思正好相反', badge:'再等等', kind:'stiff', ok:false,
+        why:'还没好会说 Dinner isn\'t ready yet.' },
+      { text:'问你晚饭想吃什么', note:'不是在征求意见', badge:'问你', kind:'stiff', ok:false,
+        why:'问你想吃什么是 What do you want for dinner?' }
+    ],
+    explain:'💡 家里常听到的三句：Dinner is ready!（开饭了）、Wash your hands.（去洗手）、Help yourself.（自己拿着吃）。听到第一句就该下楼了。',
+    takeaway:'Dinner is ready! = 开饭啦，答一句 Coming!'
+  },
+  {
+    id:'kl-12', pack:'life', level:2, type:'phrase',
+    scene:'🏠 在同学家吃饭',
+    situation:'你已经吃得饱饱的，同学的妈妈又端着盘子过来问：',
+    quote:'Would you like some more?',
+    note:'盘子都伸到你面前了。',
+    ask:'想礼貌地说"我吃饱了"，该说？',
+    options:[
+      { text:"No, thank you. I'm full.", note:'先谢，再说吃饱了', badge:'地道', kind:'native', ok:true,
+        why:'full 就是"饱了"。前面加一句 No, thank you.，才不会显得嫌弃人家的菜。' },
+      { text:"No, I don't want.", note:'又硬又不完整', badge:'生硬', kind:'stiff', ok:false,
+        why:'want 后面缺东西，语气也像在拒人千里之外。' },
+      { text:"I'm very fat.", note:'把"饱"说成了"胖"', badge:'说错词', kind:'trap', ok:false,
+        why:'full 是饱，fat 是胖。一词之差，说出口全桌都会愣住。' }
+    ],
+    explain:'💡 吃饱了说 I\'m full.；还想要就说 Yes, please.。想夸菜好吃再加一句 It\'s delicious!，主人会特别开心。',
+    takeaway:"吃饱了 → No, thank you. I'm full."
+  },
+  {
+    id:'kl-13', pack:'life', level:2, type:'listening',
+    scene:'🏠 生日会切蛋糕',
+    situation:'蛋糕上的蜡烛点好了，大家唱完生日歌，同学的妈妈笑着对你说：',
+    quote:'Make a wish!',
+    note:'所有人都看着你，等你吹蜡烛。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'许个愿', note:'wish = 愿望', badge:'许愿', kind:'stiff', ok:true,
+        why:'make a wish 就是吹蜡烛之前先许个愿。' },
+      { text:'做一个蛋糕', note:'做蛋糕是 make a cake', badge:'做蛋糕', kind:'stiff', ok:false,
+        why:'蛋糕已经在桌上了，而且 wish 和 cake 差得远。' },
+      { text:'去洗一下手', note:'wish 和 wash 看混了', badge:'洗手', kind:'stiff', ok:false,
+        why:'wish（愿望）和 wash（洗）长得像，但不是一个词。' }
+    ],
+    explain:'💡 生日现场三句：Happy birthday!（生日快乐）、Make a wish!（许个愿）、Blow out the candles!（吹蜡烛）。注意 wish 和 wash 别看混。',
+    takeaway:'Make a wish! = 许个愿吧。'
+  },
+  {
+    id:'kl-14', pack:'life', level:3, type:'listening',
+    scene:'🏠 下地铁的时候',
+    situation:'跟着家人下地铁，站台边的工作人员看见你，提醒了一句：',
+    quote:'Watch your step!',
+    note:'车厢和站台之间有一道缝。',
+    ask:'他在提醒你什么？',
+    options:[
+      { text:'当心脚下，小心台阶', note:'watch = 当心', badge:'小心', kind:'stiff', ok:true,
+        why:'watch 在这里是"注意、当心"，不是"看"。' },
+      { text:'看看你的鞋子', note:'step 不是鞋子', badge:'看鞋', kind:'stiff', ok:false,
+        why:'step 是脚步、台阶，鞋子是 shoes。' },
+      { text:'数一数走了几步', note:'和数数没关系', badge:'数步数', kind:'stiff', ok:false,
+        why:'数步数会说 count your steps，那是完全不同的句子。' }
+    ],
+    explain:'💡 watch 常用来提醒危险：Watch your step!（当心脚下）、Watch out!（小心）、Watch your head!（当心碰头）。听到 watch 开头，先停一下准没错。',
+    takeaway:'Watch your step! = 当心脚下。'
+  },
+  {
+    id:'kl-15', pack:'life', level:1, type:'word',
+    scene:'🏠 数一数有几个',
+    situation:'外教把三个苹果摆在讲台上，指着它们问全班：',
+    quote:'How many apples are there?',
+    note:'桌上一共三个。',
+    ask:'该怎么回答？',
+    options:[
+      { text:'Three.', note:'问数量，就回数字', badge:'数字', kind:'stiff', ok:true,
+        why:'How many 问的是数量，回一个数字就够，说完整是 There are three.' },
+      { text:'Apples.', note:'答成了名字', badge:'名字', kind:'stiff', ok:false,
+        why:'回答名字用在 What are they? 上面。' },
+      { text:"They're red.", note:'答成了颜色', badge:'颜色', kind:'stiff', ok:false,
+        why:'这是回答 What color are they? 的。' }
+    ],
+    explain:'💡 又一次考"听问句开头"：How many…? 回数字，What…? 回名字，What color…? 回颜色。这三个问句练熟，回答就不会跑偏。',
+    takeaway:'How many…? → 回数字：Three.'
+  },
+
   /* ---------- 🎈 交朋友篇 ---------- */
   {
     id:'kf-01', pack:'friend', level:1, type:'phrase',
@@ -1587,6 +1860,96 @@ const BANK_KIDS = [
     ],
     explain:'💡 拒绝邀请有个万能公式：Sorry, I can\'t.（抱歉去不了）+ 一个理由 + Maybe next time!（下次吧）。有理由、有下次，对方就不会觉得被嫌弃。',
     takeaway:"拒绝邀请 → Sorry, I can't … Maybe next time!"
+  },
+  {
+    id:'kf-11', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 书包拉链卡住了',
+    situation:'书包拉链卡死了，你自己怎么弄都弄不开，旁边坐着外国同学。',
+    quote:'',
+    note:'你想请他搭把手。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'Can you help me, please?', note:'请人帮忙的万能句', badge:'地道', kind:'native', ok:true,
+        why:'Can you…? 加上 please，礼貌又清楚，对方一般会说 Sure!' },
+      { text:'Help me.', note:'像在喊救命', badge:'太急', kind:'stiff', ok:false,
+        why:'单说 Help me 语气很急，容易把人吓一跳。' },
+      { text:'You help me.', note:'像在指派任务', badge:'命令', kind:'trap', ok:false,
+        why:'陈述句听起来是"你来帮我"，不是在请求别人。' }
+    ],
+    explain:'💡 请人帮忙：Can you help me, please? / Could you help me?；帮完记得说 Thank you.，对方会回一句 No problem.',
+    takeaway:'请人帮忙 → Can you help me, please?'
+  },
+  {
+    id:'kf-12', pack:'friend', level:2, type:'manners',
+    scene:'🎈 同学穿了双新鞋',
+    situation:'外国同学今天穿了双很酷的球鞋，一进教室就有人围过去看。',
+    quote:'',
+    note:'你也觉得挺好看，想说点什么。',
+    ask:'想夸他一句，该说？',
+    options:[
+      { text:'I like your shoes!', note:'英语里最常见的夸人方式', badge:'地道', kind:'native', ok:true,
+        why:'夸对方身上的东西是英语社交的日常，对方会笑着回一句 Thank you!' },
+      { text:'How much are they?', note:'当面问价格很失礼', badge:'踩雷', kind:'trap', ok:false,
+        why:'和问礼物多少钱一样，英语国家很忌讳当面聊价钱。' },
+      { text:'Your shoes are very expensive.', note:'评论价钱，不算夸人', badge:'不合适', kind:'stiff', ok:false,
+        why:'就算是好话，一扯到贵不贵也会让对方不自在。' }
+    ],
+    explain:'💡 夸人公式：I like your + 东西（I like your bag / your hair / your drawing）。被夸就回 Thank you!。记住一条：夸东西可以，问价钱不行。',
+    takeaway:'夸人 → I like your shoes! 别问 How much.'
+  },
+  {
+    id:'kf-13', pack:'friend', level:1, type:'listening',
+    scene:'🎈 给同学看你的画',
+    situation:'你把刚画完的画拿给外国同学看，他眼睛一亮，只说了一个词：',
+    quote:'Cool!',
+    note:'教室里挺暖和的，不冷。',
+    ask:'他是什么意思？',
+    options:[
+      { text:'太酷了、真棒', note:'小朋友之间最常用的夸奖', badge:'夸你', kind:'stiff', ok:true,
+        why:'cool 在口语里是"厉害、真棒"，跟温度没关系。' },
+      { text:'有点冷', note:'当成了说天气', badge:'说天气', kind:'stiff', ok:false,
+        why:'说冷会用 It\'s cold.，单蹦一个 Cool! 是在夸你。' },
+      { text:'让你凉快一下', note:'那是 Cool down.', badge:'降温', kind:'stiff', ok:false,
+        why:'多一个 down，意思就变成"冷静一下、凉快一下"了。' }
+    ],
+    explain:'💡 小朋友之间的夸奖词：Cool!（真酷）、Awesome!（太棒了）、Nice!（不错）、Well done!（做得好）。听到这些，大方回一句 Thanks! 就行。',
+    takeaway:'Cool! = 真棒！回一句 Thanks!'
+  },
+  {
+    id:'kf-14', pack:'friend', level:2, type:'manners',
+    scene:'🎈 比赛输给了对手',
+    situation:'班级足球赛你们队输了。对方队员跑过来伸出手，你心里还有点不甘心。',
+    quote:'',
+    note:'队友们都在看着你。',
+    ask:'这时候最好的一句话是？',
+    options:[
+      { text:'You are lucky.', note:'等于说对方赢得侥幸', badge:'不服气', kind:'trap', ok:false,
+        why:'把别人的胜利说成运气，听起来很没风度。' },
+      { text:'Good game!', note:'赛后握手的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'不管输赢都说一句 Good game!，这是英语国家最基本的体育礼貌。' },
+      { text:'I am not happy.', note:'把情绪甩给对方', badge:'尴尬', kind:'stiff', ok:false,
+        why:'心情可以回家跟爸妈说，当场说出来只会让气氛僵住。' }
+    ],
+    explain:'💡 比赛结束的三句：Good game!（打得好）、Well played!（表现不错）、Congratulations!（恭喜你们）。输了也能大方说出口，才是真正的赢家。',
+    takeaway:'比赛结束握手说 Good game!'
+  },
+  {
+    id:'kf-15', pack:'friend', level:3, type:'listening',
+    scene:'🎈 聊到都爱吃的东西',
+    situation:'午饭时你说自己最喜欢吃披萨，对面的外国同学放下叉子，点着头说：',
+    quote:'Same here.',
+    note:'他说完还冲你笑了一下。',
+    ask:'他的意思是？',
+    options:[
+      { text:'我也一样', note:'就是 Me too 的另一种说法', badge:'我也是', kind:'stiff', ok:true,
+        why:'Same here 表示"我跟你一样"，朋友聊天时用得非常多。' },
+      { text:'这里的东西都一样', note:'当成了在说食堂', badge:'说食物', kind:'stiff', ok:false,
+        why:'说东西都一样会用 They\'re all the same.，句子结构完全不同。' },
+      { text:'我们坐同一个位置', note:'把 here 当成了位置', badge:'说位置', kind:'stiff', ok:false,
+        why:'here 在这句里没有实际的位置含义，它只是固定说法的一部分。' }
+    ],
+    explain:'💡 "我也是"有好几种说法：Me too. / Same here. / So do I.。但要注意：上课点名答"到"可不能用它们，那时候要说 Here!',
+    takeaway:'Same here. = 我也一样（＝ Me too）。'
   }
 
 ];

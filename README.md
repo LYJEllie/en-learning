@@ -6,7 +6,7 @@
 
 | 模式 | 面向 | 题量 | 内容 |
 |---|---|---|---|
-| 🧒 小学生入门 | 刚学英语的小学生 | 40 题 | 打招呼 / 课堂 / 生活 / 交朋友 |
+| 🧒 小学生入门 | 刚学英语的小学生 | 60 题 | 打招呼 / 课堂 / 生活 / 交朋友 |
 | 🧑‍💼 成人地道 | 出国、外企、留学 | 4 题 | 点餐 / 旅途 / 职场 / 生活 |
 
 单文件、无依赖、无构建：双击 `index.html` 即可玩；仓库推到 GitHub Pages 就能上线。
@@ -36,18 +36,18 @@
 
 小学生模式还会**把三个选项也洗一遍**（`shuffleOptions: true`）。题库越大，正解越容易扎堆在某个位置，小朋友就会摸出"点第一个准没错"；打乱之后位置彻底失效。成人模式关掉了这个开关，因为 `w-01` 的解析里写了"用 C 选项的 Yes, and 法则"，位置不能动。
 
-实测：小学生模式 40 题能抽出 **4 000 种不同组合**（4 类选 3 × 每类 10 题 = 4000）；跑 200 局 600 题，正解落在 A/B/C 的次数是 201 / 190 / 209，判定零错误。
+实测：小学生模式 60 题能抽出 **13 500 种不同组合**（4 类选 3 × 每类 15 题）；跑 2 万局模拟出现过 10 372 种，单题出现 910~1085 次（均值 1000）。跑 200 局 600 题，正解落在 A/B/C 的次数是 212 / 184 / 204，判定零错误。
 
 ## 题库
 
-### 🧒 小学生入门（40 题，四大类各 10 题）
+### 🧒 小学生入门（60 题，四大类各 15 题）
 
 | 大类 | key | id | 考什么 |
 |---|---|---|---|
-| 👋 打招呼篇 | `hello` | `kh-` | Good morning / Nice to meet you / See you tomorrow / How are you / What's your name / Have a nice day → You too / Where are you from / This is my friend / 电话里的 This is Lily / 老师不叫 teacher |
-| 🏫 课堂篇 | `class` | `kc-` | 点名答"到" Here! / May I …, please? / I don't understand / 听懂 page ten / 迟到 May I come in? / 短答 Yes, I do. / Line up / 忘带作业 forgot / borrow 与 lend / Read after me |
-| 🏠 生活篇 | `life` | `kl-` | What color…? 回什么 / Would you like…? / 被夸怎么回 / fine 与 nine / Help yourself! / Bless you! / For here or to go? / 天气 It's sunny / I have a headache / change 是零钱 |
-| 🎈 交朋友篇 | `friend` | `kf-` | Can I play with you? / Sorry 与 Excuse me / Here you are 三句链 / Are you OK? / Would you like some? / Your turn! / After you / 收礼物当场拆 / No problem / 委婉拒绝邀请 |
+| 👋 打招呼篇 | `hello` | `kh-` | Good morning / Nice to meet you / See you tomorrow / How are you / What's your name / Have a nice day → You too / Where are you from / This is my friend / 电话里的 This is Lily / 老师不叫 teacher / Morning! / Bye-bye 偏幼 / What's up? / call me Anna / 别叫 aunt |
+| 🏫 课堂篇 | `class` | `kc-` | 点名答"到" Here! / May I …, please? / I don't understand / 听懂 page ten / 迟到 May I come in? / 短答 Yes, I do. / Line up / 忘带作业 forgot / borrow 与 lend / Read after me / Work in pairs / Time's up / Are you with me? / Sure, here you are / Let me try |
+| 🏠 生活篇 | `life` | `kl-` | What color…? 回什么 / Would you like…? / 被夸怎么回 / fine 与 nine / Help yourself! / Bless you! / For here or to go? / 天气 It's sunny / I have a headache / change 是零钱 / Dinner is ready / I'm full / Make a wish / Watch your step / How many |
+| 🎈 交朋友篇 | `friend` | `kf-` | Can I play with you? / Sorry 与 Excuse me / Here you are 三句链 / Are you OK? / Would you like some? / Your turn! / After you / 收礼物当场拆 / No problem / 委婉拒绝邀请 / Can you help me / 夸人 I like your… / Cool! / Good game / Same here |
 
 写小学生题的四条原则：
 
@@ -73,7 +73,7 @@
 <style>            复古扁平 UI（米底 + 粗黑边 + 硬投影）
 <script>
   ★ 第一段 CORE       ROUND / MAX_HP / 题型 TYPES（两个模式共用）
-  ★ 第二段 题库       BANK_KIDS（40 题）· BANK_ADULT（4 题） ← 扩充题目只改这里
+  ★ 第二段 题库       BANK_KIDS（60 题）· BANK_ADULT（4 题） ← 扩充题目只改这里
   ★ 第三段 MODES      每个模式 = 分类 PACKS + 称号 RANKS + 题库 + 文案
   ★ 第四段 引擎       洗牌抽题 / 血量 / 判定 / 特效 / 结算 / 题库自检
 ```
@@ -123,7 +123,7 @@
 
 ### 三条内容约定
 
-- **配色只表示踩雷风险，不表示对错**。像"香蕉是什么颜色""Your turn 什么意思"这种纯知识题，三个选项要同色（40 题里有 13 道是这么写的），否则小朋友会发现"点绿的准没错"。
+- **配色只表示踩雷风险，不表示对错**。像"香蕉是什么颜色""Your turn 什么意思"这种纯知识题，三个选项要同色（60 题里有 24 道是这么写的），否则小朋友会发现"点绿的准没错"。
 - **标签不要总是"绿色 = 正解"**。故意放几道"看起来礼貌其实用错场合"的题，玩家才不会靠标签蒙。
 - **别在解析里写"选 C"**。小学生模式的选项顺序是随机的，位置会变；成人模式的 `w-01` 因为解析里写死了 C，只能单独关掉打乱开关。
 
@@ -136,8 +136,8 @@
 | 小学生题量 | 单文件大小 | 可抽组合数 | 说明 |
 |---|---|---|---|
 | 24 题（每类 6） | 78 KB | 864 | 玩十几局才会撞见重复题 |
-| **40 题（现在，每类 10）** | **97 KB** | **4 000** | 舒适区，单文件还很好翻 |
-| 60 题（每类 15） | ~120 KB | 13 500 | 建议在这一档拆成 `data/*.js` |
+| 40 题（每类 10） | 97 KB | 4 000 | 舒适区，单文件还很好翻 |
+| **60 题（现在，每类 15）** | **119 KB** | **13 500** | 单文件比较舒服的上限，再多建议拆 `data/*.js` |
 | 100 题（每类 25） | ~168 KB | 62 500 | 单文件仍能秒开，但编辑器里翻起来累 |
 | 200 题以上 | 286 KB+ | 50 万+ | 一定要拆文件，否则改一道题得翻半天 |
 
@@ -147,8 +147,8 @@
 
 实用建议：
 
-- **每类 10 题**（现在这样）是甜点区：4000 种组合，单文件 97 KB 仍然好维护
-- 还想加就冲每类 15 题；到 60 题那一档，建议按最后一节拆成 `data/*.js`，别硬扛在一个文件里
+- **每类 15 题**（现在这样）：13 500 种组合、119 KB，已经是单文件比较舒服的上限
+- 再往上加，先按最后一节拆成 `data/*.js`；或者加**第五个大类**——组合数会从 13 500 跳到 `C(5,3) × 15³ = 33 750`，比继续往老类里堆题划算得多
 - 加题时注意四类**保持均衡**：抽题是每类各取 1 道，某一类堆到 20 题、别的类只有 3 题，也不会提高它的出场率
 
 ### 题库自检
@@ -171,7 +171,7 @@
 
 ## 题量涨上去之后（可选）
 
-题目超过 ~40 道时，可按 `jp-learning` 的方案拆分：
+题量继续往上涨时，可按 `jp-learning` 的方案拆分：
 
 ```
 index.html          引擎与样式
