@@ -235,6 +235,76 @@ body{
 .start-btn--sm{ padding:13px 26px; font-size:16px; margin-top:20px; }
 .start-btn--sm .en-text{ font-size:14px; }
 
+/* ---------- 模式选择 ---------- */
+.mode-label{
+  margin-top:28px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:var(--muted);
+}
+.mode-list{ display:grid; gap:12px; margin-top:12px; }
+.mode-btn{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  text-align:left;
+  background-color:var(--white);
+  border:3px solid var(--ink);
+  border-radius:10px;
+  box-shadow:var(--shadow-sm);
+  padding:14px 16px;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.mode-btn:hover{ transform:translate(-3px,-3px); box-shadow:var(--shadow-md); background-color:#fffdf3; }
+.mode-btn:active{ transform:translate(0,0); box-shadow:var(--shadow-sm); }
+.mode-btn:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+.mode-btn__emoji{ flex:none; font-size:26px; line-height:1; }
+.mode-btn__box{ display:grid; gap:3px; min-width:0; }
+.mode-btn__name{ font-size:16px; font-weight:900; letter-spacing:1px; color:var(--ink); }
+.mode-btn__sub{ font-size:12px; line-height:1.5; color:var(--muted); }
+.mode-btn__go{
+  flex:none;
+  margin-left:auto;
+  font-family:var(--en);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1px;
+  color:var(--white);
+  background-color:var(--ink);
+  border-radius:99px;
+  padding:5px 11px;
+}
+.mode-btn--kids .mode-btn__go{ background-color:var(--green-deep); }
+
+.text-btn{
+  display:inline-block;
+  margin-top:14px;
+  background:none;
+  border:none;
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  text-decoration:underline;
+  text-underline-offset:4px;
+  cursor:pointer;
+}
+.text-btn:hover{ color:var(--ink); }
+.text-btn:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+
+/* 当前模式标记（题面左上角） */
+.mode-chip{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--white);
+  background-color:var(--muted);
+  border-radius:99px;
+  padding:4px 10px;
+}
+
 /* ---------- 场景描述区 ---------- */
 .scene-row{
   display:flex;
@@ -725,49 +795,24 @@ body{
 
 <script>
 /* ============================================================
-   ★ 第一段：配置 ★
-   对应 jp-learning 的 data/_core.js —— 分类 / 题型 / 局数 / 称号
+   ★ 第一段：全局设置 ★
+   对应 jp-learning 的 data/_core.js —— 局数 / 血量 / 题型
+   分类与称号是每个模式各一套，见第三段 MODES
    ============================================================ */
-const CONFIG = (() => {
-  "use strict";
+const CORE = {
+  ROUND:  3,   // 每局题数
+  MAX_HP: 3,   // 初始血量（3 颗心）
 
-  /* 场景大类：抽题时尽量每类只出 1 题，保证一局里场景不重样 */
-  const PACKS = {
-    order:  { label:'🏪 点餐生存篇', cn:'点餐生存' },
-    travel: { label:'☕ 机场旅途篇', cn:'旅途口语' },
-    office: { label:'💼 外企职场篇', cn:'职场情商' },
-    life:   { label:'🛒 生活日常篇', cn:'生活常识' }
-  };
-
-  /* 题型：显示在场景胶囊旁，提示这题在考什么 */
-  const TYPES = {
+  /* 题型：显示在场景胶囊旁，提示这题在考什么（两个模式共用） */
+  TYPES: {
     listening: { label:'听力题' },   // 听懂对方那句话到底在问什么
     phrase:    { label:'说法题' },   // 同一个意思，哪种说法地道
     culture:   { label:'习惯题' },   // 当地规矩该怎么应对
-    social:    { label:'情商题' }    // 说法没错，但会不会得罪人
-  };
-
-  const ROUND  = 3;   // 每局题数
-  const MAX_HP = 3;   // 初始血量（3 颗心）
-
-  /* 结算称号：从高到低匹配，取第一个满足 correct >= min 的 */
-  const RANKS = [
-    { min:3, rank:'地道口语达人', win:true,
-      en:'You sound like a local.',
-      note:'三个场面零失误。你已经能把课本英语留在课本里，把真实反应带到现场——这正是"能不能用"的分界线。' },
-    { min:2, rank:'半熟留学生', win:true,
-      en:'Almost there. Keep going.',
-      note:'大方向没错，偶尔会漏出直译腔。记住：地道 = 短句 + 场景默契，不是把中文一个词一个词换成英文。' },
-    { min:1, rank:'教科书选手', win:false,
-      en:'Textbook English, real-world gap.',
-      note:'语法满分，语感扣分。先把 "Yes, please." / "I brought my own." / "I see your point, but..." 这几句练成条件反射。' },
-    { min:0, rank:'字面直译爱好者', win:false,
-      en:'Lost in translation.',
-      note:'你的英语都是逐词翻译过来的——写下来能看懂，说出口全是尴尬。好消息是：地道表达就那么几十句，套路可以速成。再来一次。' }
-  ];
-
-  return { PACKS, TYPES, ROUND, MAX_HP, RANKS };
-})();
+    social:    { label:'情商题' },   // 说法没错，但会不会得罪人
+    word:      { label:'单词题' },   // 该回哪个词（小学生模式）
+    manners:   { label:'礼貌题' }    // 该说哪句才不失礼（小学生模式）
+  }
+};
 
 
 /* ============================================================
@@ -775,10 +820,10 @@ const CONFIG = (() => {
    对应 jp-learning 的 data/*.js —— 加题只要往数组里追加一个对象
    ------------------------------------------------------------
    字段说明：
-     id        唯一编号，前缀 = 大类首字母（o/t/w/l）
-     pack      大类，必须是 CONFIG.PACKS 里已定义的 key
+     id        唯一编号（小学生 kh/kc/kl/kf，成人 o/t/w/l）
+     pack      大类，必须是所属模式 MODES.xxx.PACKS 里已定义的 key
      level     难度 1~3，同一局里按 1→3 排序出题
-     type      CONFIG.TYPES 的 key：listening/phrase/culture/social
+     type      CORE.TYPES 的 key：listening/phrase/culture/social/word/manners
      scene     场景地点（显示在顶部胶囊里）
      situation 情景描述（中文，铺垫）
      quote     老外说的那句原话（会渲染成大号英文引用框；没有可留空 ''）
@@ -793,8 +838,254 @@ const CONFIG = (() => {
                  why   逐项解析
      explain   💡 避坑解析（黄框正文，本题的核心知识点）
      takeaway  一句话金句（结算页"带走清单"用）
+
+   两套题库：BANK_KIDS（小学生入门）/ BANK_ADULT（成人地道），
+   各自的分类与称号见第三段 MODES。
    ============================================================ */
-const BANK = [
+
+/* ============================================================
+   🧒 小学生入门题库（12 题 · 四大类各 3 题）
+   ------------------------------------------------------------
+   写题原则：
+     1. 句子不超过 8 个词，只用小学阶段的词汇
+     2. 干扰项必须是"中国小朋友真的会犯的错"（说反了 / 答非所问 /
+        逐词直译），不放没人会选的搞笑选项
+     3. 解析先说清楚"这句到底什么意思"，再给一条可以直接背的规律
+     4. 语气全程鼓励，答错不嘲笑
+   ============================================================ */
+const BANK_KIDS = [
+
+  /* ---------- 👋 打招呼篇 ---------- */
+  {
+    id:'kh-01', pack:'hello', level:1, type:'listening',
+    scene:'👋 早上进教室',
+    situation:'早读课刚开始，外教老师走进教室，笑着对全班说了一句：',
+    quote:'Good morning!',
+    note:'她正看着你，等你回一句。',
+    ask:'这时候你应该说？',
+    options:[
+      { text:'Good morning!', note:'把同一句还回去，最自然', badge:'地道', kind:'native', ok:true,
+        why:'打招呼就是"你说什么，我回什么"，早上互道 Good morning 最标准。' },
+      { text:'Good night!', note:'这是睡觉前说的', badge:'说反了', kind:'trap', ok:false,
+        why:'Good night 是晚上道别、上床睡觉前才说的，早上说会闹笑话。' },
+      { text:'I am fine, thank you.', note:'答非所问', badge:'背串了', kind:'stiff', ok:false,
+        why:'这句是回答 How are you? 的，老师并没有问你好不好。' }
+    ],
+    explain:'💡 打招呼三件套：早上 Good morning，中午 Good afternoon，傍晚 Good evening。别人怎么说，你就怎么还回去，这是最不会出错的办法。',
+    takeaway:'别人说 Good morning，你也说 Good morning。'
+  },
+  {
+    id:'kh-02', pack:'hello', level:1, type:'phrase',
+    scene:'👋 认识新同学',
+    situation:'开学第一天，新同桌是个外国小朋友，老师让你们互相认识一下。',
+    quote:'',
+    note:'他伸出手，正等你先开口。',
+    ask:'想说"很高兴认识你"，该说哪句？',
+    options:[
+      { text:'How old are you?', note:'一上来就问年龄，有点唐突', badge:'太直接', kind:'stiff', ok:false,
+        why:'不是不能问，但把它当开场白会让对方愣一下，先打招呼再聊别的。' },
+      { text:'Nice to meet you!', note:'第一次见面的万能句', badge:'地道', kind:'native', ok:true,
+        why:'初次见面的标准问候，对方通常会回一句 Nice to meet you, too!' },
+      { text:'Hello, teacher!', note:'人家不是老师', badge:'叫错了', kind:'trap', ok:false,
+        why:'teacher 只用来称呼老师。同学之间直接说 Hi / Hello 加名字就好。' }
+    ],
+    explain:'💡 第一次见面用 Nice to meet you!（很高兴认识你）；以后再碰到要改成 Nice to see you!（很高兴见到你）。一个 meet 一个 see，别用反。',
+    takeaway:'初次见面 Nice to meet you，再次见面 Nice to see you。'
+  },
+  {
+    id:'kh-03', pack:'hello', level:2, type:'listening',
+    scene:'👋 放学道别',
+    situation:'放学铃响了，外教站在门口跟每个同学挥手，轮到你时她说：',
+    quote:'See you tomorrow!',
+    note:'你也想说一句"明天见"。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'Good night!', note:'现在还没到晚上', badge:'说反了', kind:'trap', ok:false,
+        why:'Good night 是晚上睡前才说的，下午放学说不合适。' },
+      { text:'Nice to meet you!', note:'这是初次见面说的', badge:'背串了', kind:'stiff', ok:false,
+        why:'见面句用在了道别上，方向正好反过来。' },
+      { text:'See you tomorrow!', note:'原句还回去，最自然', badge:'地道', kind:'native', ok:true,
+        why:'道别同样是"你说什么我回什么"，只说 See you! 或 Bye! 也完全可以。' }
+    ],
+    explain:'💡 See you 就是"回头见"，后面能接不同的时间：See you later（待会儿见）、See you tomorrow（明天见）、See you next week（下周见）。',
+    takeaway:'See you tomorrow! → 把原句还回去就对了。'
+  },
+
+  /* ---------- 🏫 课堂篇 ---------- */
+  {
+    id:'kc-01', pack:'class', level:1, type:'listening',
+    scene:'🏫 老师点名',
+    situation:'第一节课老师拿着名单点名，念到了你的名字：',
+    quote:'Amy? ... Amy?',
+    note:'全班都安静下来看着你。',
+    ask:'你要怎么应"到"？',
+    options:[
+      { text:'Here!', note:'一个词就够，最标准', badge:'地道', kind:'native', ok:true,
+        why:'英语课堂点名答"到"就是 Here!，正式一点也可以说 Present!' },
+      { text:'Me too.', note:'这是"我也是"', badge:'用错了', kind:'trap', ok:false,
+        why:'Me too 是别人说完某句话，你表示"我也一样"，点名时说会让老师一头雾水。' },
+      { text:'Yes, I am Amy, I am here.', note:'太长了，像在写作文', badge:'啰嗦', kind:'stiff', ok:false,
+        why:'意思没错但太长，课堂上没人会说这么一大串。' }
+    ],
+    explain:'💡 点名答到只要一个词：Here!（或 Present!）。英语里很多场合都是"越短越自然"，不用把整句话说完整。',
+    takeaway:'点名喊到 → Here!'
+  },
+  {
+    id:'kc-02', pack:'class', level:2, type:'phrase',
+    scene:'🏫 上课想上厕所',
+    situation:'课上到一半你实在憋不住了，举手想跟老师请假。',
+    quote:'',
+    note:'老师停下来，看向你。',
+    ask:'最礼貌的说法是？',
+    options:[
+      { text:'Toilet!', note:'只蹦一个词，很没礼貌', badge:'太冲', kind:'trap', ok:false,
+        why:'单蹦一个名词像在喊口令，而且 toilet 在英语里更多指马桶本身。' },
+      { text:'May I go to the restroom, please?', note:'标准的请求句', badge:'礼貌', kind:'native', ok:true,
+        why:'May I…? 是最礼貌的请求句式，句尾加 please 更客气。美式英语里厕所常说 restroom 或 bathroom。' },
+      { text:'I want to go to the toilet.', note:'像在通知老师，不是请求', badge:'生硬', kind:'stiff', ok:false,
+        why:'I want… 是在陈述你的愿望，听起来像通知而不是请假。' }
+    ],
+    explain:'💡 想请老师同意，用 May I…? 或 Can I…?，句尾加 please。比如 May I come in?（我可以进来吗）、Can I have a pencil, please?（能给我一支铅笔吗）。',
+    takeaway:'请求老师 → May I ... , please?'
+  },
+  {
+    id:'kc-03', pack:'class', level:2, type:'phrase',
+    scene:'🏫 没听懂老师的话',
+    situation:'外教说了一长串英语，还笑着看你，可你一个字都没听明白。',
+    quote:'',
+    note:'教室安静了三秒，你得说点什么。',
+    ask:'想告诉老师"我没听懂"，该说？',
+    options:[
+      { text:"I don't know.", note:'这是"我不知道答案"', badge:'意思差一点', kind:'stiff', ok:false,
+        why:'这句回答的是问题的答案，老师会以为你听懂了只是答不上来。' },
+      { text:'What?', note:'只说 What? 语气有点冲', badge:'不礼貌', kind:'trap', ok:false,
+        why:'单说一个 What? 在英语里挺不客气的，想请对方再说一遍要用 Sorry? 或 Pardon?' },
+      { text:"Sorry, I don't understand.", note:'又礼貌又清楚', badge:'地道', kind:'native', ok:true,
+        why:'understand 是"听懂、理解"，这句准确说出了你的情况，老师会放慢速度再讲一遍。' }
+    ],
+    explain:'💡 没听懂说 Sorry, I don\'t understand.；没听清说 Sorry? 或 Could you say that again, please?（能再说一遍吗）。这两句是新手最该先背下来的救命句。',
+    takeaway:'没听懂 → Sorry, I don\'t understand.'
+  },
+
+  /* ---------- 🏠 生活篇 ---------- */
+  {
+    id:'kl-01', pack:'life', level:1, type:'word',
+    scene:'🏠 认物品和颜色',
+    situation:'外教举起一根香蕉，指了指它的皮，问全班：',
+    quote:'What color is it?',
+    note:'她等着有人举手回答。',
+    ask:'你要怎么回答？',
+    options:[
+      { text:'Banana.', note:'这是名字，不是颜色', badge:'名字', kind:'stiff', ok:false,
+        why:'回答名字用在 What is it? 上面：It\'s a banana.' },
+      { text:'Yellow.', note:'香蕉是黄色的', badge:'颜色', kind:'stiff', ok:true,
+        why:'What color…? 问的就是颜色，回一个颜色词即可，说完整一点是 It\'s yellow.' },
+      { text:'Sweet.', note:'这是味道', badge:'味道', kind:'stiff', ok:false,
+        why:'sweet 是"甜的"，回答的是 How does it taste?（尝起来怎么样）。' }
+    ],
+    explain:'💡 问句开头那个词决定你该回答什么：What color…? 回颜色，What…? 回名字，How many…? 回数字。先听清开头，再张嘴。',
+    takeaway:'What color is it? → 回颜色：It\'s yellow.'
+  },
+  {
+    id:'kl-02', pack:'life', level:2, type:'listening',
+    scene:'🏠 生日会上',
+    situation:'在同学的生日会上，他妈妈端着一盘果汁走过来问你：',
+    quote:'Would you like some juice?',
+    note:'你正好口渴，想要一杯。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'Yes, please.', note:'又短又礼貌', badge:'地道', kind:'native', ok:true,
+        why:'Would you like…? 的标准回答就是 Yes, please.（要）或 No, thank you.（不要）。' },
+      { text:'I like juice.', note:'答成了"我喜欢果汁"', badge:'答偏了', kind:'stiff', ok:false,
+        why:'这句没有回答"要不要"，阿姨还得再问你一次。' },
+      { text:'Of course I want.', note:'典型的直译腔', badge:'中式', kind:'trap', ok:false,
+        why:'把"当然想要"逐词翻译过来的，英语里没人这么说，语气还有点冲。' }
+    ],
+    explain:'💡 Would you like…? = 要不要…？要就 Yes, please.，不要就 No, thank you.。这两句在国外一天能用十次，比背多少单词都实用。',
+    takeaway:'要 → Yes, please. 不要 → No, thank you.'
+  },
+  {
+    id:'kl-03', pack:'life', level:3, type:'manners',
+    scene:'🏠 被外教夸奖',
+    situation:'你鼓起勇气用英语做了自我介绍，外教眼睛一亮，对你说：',
+    quote:'Wow! Your English is very good!',
+    note:'全班都看过来了，你有点不好意思。',
+    ask:'这时候最好的回答是？',
+    options:[
+      { text:'No, no. My English is bad.', note:'中文式谦虚，英语里会让人尴尬', badge:'别否认', kind:'trap', ok:false,
+        why:'一直否认等于说对方看走了眼，夸你的人反而不知道怎么接话。' },
+      { text:"Thank you! I'm still learning.", note:'大方接受，还很谦虚', badge:'地道', kind:'native', ok:true,
+        why:'先道谢，再加一句"我还在学"，既不失礼也不显得自满。' },
+      { text:'I know.', note:'有点太自信了', badge:'小骄傲', kind:'stiff', ok:false,
+        why:'意思是"我知道（我很棒）"，听起来有些自满。' }
+    ],
+    explain:'💡 中文习惯说"哪里哪里"，英语里被夸就大方说 Thank you!。想谦虚一点，可以接一句 I\'m still learning.（我还在学）或 Thanks, I practice every day.',
+    takeaway:'被夸就说 Thank you!，别急着否认。'
+  },
+
+  /* ---------- 🎈 交朋友篇 ---------- */
+  {
+    id:'kf-01', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 想一起玩',
+    situation:'课间，几个外国小朋友在操场上踢球，你也很想加入。',
+    quote:'',
+    note:'你走过去，他们停下来看着你。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'Give me the ball.', note:'像在命令别人', badge:'太冲', kind:'trap', ok:false,
+        why:'没有 please 的祈使句听起来是在抢球，而不是想一起玩。' },
+      { text:'I play with you.', note:'变成了通知，不是请求', badge:'生硬', kind:'stiff', ok:false,
+        why:'陈述句听起来像"我要跟你玩"，少了商量的语气。' },
+      { text:'Can I play with you?', note:'一句话就交到朋友', badge:'地道', kind:'native', ok:true,
+        why:'Can I…? 是最简单的请求句，对方一般会说 Sure! 或 Of course!' }
+    ],
+    explain:'💡 想加入别人说 Can I join you? / Can I play with you?；想邀请别人就反过来说 Do you want to play with us?（要不要跟我们一起玩）。',
+    takeaway:'想一起玩 → Can I play with you?'
+  },
+  {
+    id:'kf-02', pack:'friend', level:2, type:'manners',
+    scene:'🎈 撞到同学了',
+    situation:'走廊上你跑得太快，一不小心撞到了迎面走来的同学。',
+    quote:'',
+    note:'他手里的书掉了一地。',
+    ask:'这时候该说哪一句？',
+    options:[
+      { text:"I'm sorry!", note:'做错事要道歉', badge:'道歉', kind:'stiff', ok:true,
+        why:'Sorry 用在自己做错了、给别人添了麻烦的时候，撞到人正是它。' },
+      { text:'Excuse me.', note:'这是"劳驾、借过"', badge:'借过', kind:'stiff', ok:false,
+        why:'Excuse me 用在想从别人身边过去、想打断别人说话之前，是提前打招呼，不是道歉。' },
+      { text:'Never mind.', note:'这是别人道歉后你说的', badge:'回应', kind:'stiff', ok:false,
+        why:'Never mind 意思是"没关系"，是用来回应道歉的，说反了角色。' }
+    ],
+    explain:'💡 三句话别搞混：做错事说 Sorry；想借过、想打断说 Excuse me；别人跟你道歉，你回 That\'s OK. 或 Never mind.',
+    takeaway:'撞到人说 Sorry，想借过说 Excuse me。'
+  },
+  {
+    id:'kf-03', pack:'friend', level:3, type:'listening',
+    scene:'🎈 同学借你铅笔',
+    situation:'你的铅笔断了，同桌从文具盒里抽出一支递给你，说了一句：',
+    quote:'Here you are.',
+    note:'笔已经递到你手上了。',
+    ask:'你接过笔，应该说？',
+    options:[
+      { text:'Here you are.', note:'这是给东西的人说的', badge:'给出', kind:'stiff', ok:false,
+        why:'Here you are 意思是"给你"，你是接的那一方，说这句就反了。' },
+      { text:'Thank you!', note:'收到东西先道谢', badge:'道谢', kind:'stiff', ok:true,
+        why:'拿到别人递来的东西，第一反应就是 Thank you.（或 Thanks!）' },
+      { text:"You're welcome.", note:'这是别人谢你之后才说的', badge:'回应', kind:'stiff', ok:false,
+        why:'You\'re welcome 是"不客气"，要等对方先说 Thank you 才轮到你说。' }
+    ],
+    explain:'💡 记住这条链：给东西的人说 Here you are.（给你）→ 收的人说 Thank you.（谢谢）→ 给的人再回 You\'re welcome.（不客气）。三句话一环扣一环，别插错位置。',
+    takeaway:'Here you are → Thank you → You\'re welcome，顺序别搞反。'
+  }
+
+];
+
+
+/* ============================================================
+   🧑‍💼 成人地道题库（4 题 · 四大类各 1 题）
+   ============================================================ */
+const BANK_ADULT = [
 
   /* ---------- 🏪 点餐生存篇 ---------- */
   {
@@ -880,13 +1171,93 @@ const BANK = [
 
 
 /* ============================================================
-   ★ 第三段：引擎 ★
+   ★ 第三段：模式装配 ★
+   每个模式 = 一套分类 PACKS + 一套称号 RANKS + 一套题库 + 一套文案
+   想再加一个模式（比如「初中生」），照抄一份改内容即可，引擎不用动
+   ============================================================ */
+const MODES = {
+
+  kids: {
+    key:'kids',
+    emoji:'🧒',
+    name:'小学生入门',
+    sub:'打招呼 / 课堂 / 生活 / 交朋友',
+    chip:'🧒 小学生入门',
+    BANK: BANK_KIDS,
+    PACKS: {
+      hello:  { label:'👋 打招呼篇', cn:'打招呼' },
+      class:  { label:'🏫 课堂篇',   cn:'课堂用语' },
+      life:   { label:'🏠 生活篇',   cn:'生活常识' },
+      friend: { label:'🎈 交朋友篇', cn:'交朋友' }
+    },
+    /* 小学生模式的文案：答错也不打击 */
+    impactOk: ['GREAT JOB!', '答对啦！'],
+    impactNg: ['OOPS!', '没关系，看看解析～'],
+    verdictOk: '答对了 ・ 太棒了',
+    verdictNg: '答错了 ・ 记住它就赚到了',
+    RANKS: [
+      { min:3, rank:'英语小达人', win:true,
+        en:'You did it! Perfect!',
+        note:'三题全对！这几句话已经是你的了，下次真的遇到外国朋友，你也能张口就来。' },
+      { min:2, rank:'进步小明星', win:true,
+        en:'Great job! Almost perfect!',
+        note:'只差一点点。把错的那句大声念三遍，明天就忘不掉了。' },
+      { min:1, rank:'努力小学员', win:false,
+        en:'Good try! Keep going!',
+        note:'答对一题也很棒！英语就是这样一句一句学会的，看完解析再来一次，一定更好。' },
+      { min:0, rank:'英语小新手', win:false,
+        en:"Don't worry. Try again!",
+        note:'第一次见到这些句子都会懵，一点也不丢人。把解析读一遍再玩一次，你会发现它们突然变简单了。' }
+    ]
+  },
+
+  adult: {
+    key:'adult',
+    emoji:'🧑‍💼',
+    name:'成人地道',
+    sub:'点餐 / 旅途 / 职场 / 生活',
+    chip:'🧑‍💼 成人地道',
+    BANK: BANK_ADULT,
+    PACKS: {
+      order:  { label:'🏪 点餐生存篇', cn:'点餐生存' },
+      travel: { label:'☕ 机场旅途篇', cn:'旅途口语' },
+      office: { label:'💼 外企职场篇', cn:'职场情商' },
+      life:   { label:'🛒 生活日常篇', cn:'生活常识' }
+    },
+    impactOk: ['NAILED IT!', '答得地道！'],
+    impactNg: ['AWKWARD!', '空气突然安静…'],
+    verdictOk: '答对了 ・ 空气很安全',
+    verdictNg: '答错了 ・ 空气凝固了',
+    RANKS: [
+      { min:3, rank:'地道口语达人', win:true,
+        en:'You sound like a local.',
+        note:'三个场面零失误。你已经能把课本英语留在课本里，把真实反应带到现场——这正是"能不能用"的分界线。' },
+      { min:2, rank:'半熟留学生', win:true,
+        en:'Almost there. Keep going.',
+        note:'大方向没错，偶尔会漏出直译腔。记住：地道 = 短句 + 场景默契，不是把中文一个词一个词换成英文。' },
+      { min:1, rank:'教科书选手', win:false,
+        en:'Textbook English, real-world gap.',
+        note:'语法满分，语感扣分。先把 "Yes, please." / "I brought my own." / "I see your point, but..." 这几句练成条件反射。' },
+      { min:0, rank:'字面直译爱好者', win:false,
+        en:'Lost in translation.',
+        note:'你的英语都是逐词翻译过来的——写下来能看懂，说出口全是尴尬。好消息是：地道表达就那么几十句，套路可以速成。再来一次。' }
+    ]
+  }
+
+};
+
+
+/* ============================================================
+   ★ 第四段：引擎 ★
    洗牌抽题 / 血量 / 判定 / 特效 / 结算 —— 加题时不用动这一段
    ============================================================ */
 (() => {
   "use strict";
 
-  const { PACKS, TYPES, ROUND, MAX_HP, RANKS } = CONFIG;
+  const { ROUND, MAX_HP, TYPES } = CORE;
+
+  /* 当前模式：封面选完才定。之后 M.BANK / M.PACKS / M.RANKS / M.文案 全从这里取 */
+  let M = MODES.kids;
 
   const $ = (id) => document.getElementById(id);
   const app = $("app"), screen = $("screen"), hud = $("hud"), flash = $("flash");
@@ -918,12 +1289,14 @@ const BANK = [
     return a;
   }
 
-  let lastIds = new Set();   // 上一局出过的题，这局尽量避开
+  /* 上一局出过的题，这局尽量避开（两个模式各记一份） */
+  const lastIds = { kids:new Set(), adult:new Set() };
 
   function drawSet(){
-    const pool = shuffle(BANK);                       // ① 整个题库彻底打乱
-    const fresh = pool.filter(q => !lastIds.has(q.id));
-    const ordered = [...fresh, ...pool.filter(q => lastIds.has(q.id))];  // ② 没出过的排前面
+    const seen = lastIds[M.key];
+    const pool = shuffle(M.BANK);                     // ① 整个题库彻底打乱
+    const fresh = pool.filter(q => !seen.has(q.id));
+    const ordered = [...fresh, ...pool.filter(q => seen.has(q.id))];     // ② 没出过的排前面
 
     // ③ 依次取题，同一大类先只取 1 道，保证一局里场景不重样
     const picked = [], usedPacks = new Set();
@@ -939,15 +1312,16 @@ const BANK = [
     }
 
     picked.sort((a, b) => a.level - b.level);         // ⑤ 难度由浅入深
-    lastIds = new Set(picked.map(q => q.id));
+    lastIds[M.key] = new Set(picked.map(q => q.id));
     return picked;
   }
 
   /* ========== 题库自检：写错题当场报红条，而不是白屏 ========== */
-  function validateBank(bank){
+  function validateBank(mode){
+    const bank = mode.BANK, PACKS = mode.PACKS;
     const errs = [], ids = new Set(), KINDS = new Set(["trap", "native", "stiff"]);
     bank.forEach((q, i) => {
-      const at = `第${i + 1}题（${q.id || "缺 id"}）`;
+      const at = `${mode.name} 第${i + 1}题（${q.id || "缺 id"}）`;
       ["id", "pack", "scene", "situation", "ask", "explain", "takeaway"].forEach(f => {
         if (!q[f]) errs.push(`${at}：缺字段 ${f}`);
       });
@@ -988,9 +1362,20 @@ const BANK = [
     bar.setAttribute("aria-valuenow", String(state.index));
   }
 
-  /* ========== 封面 ========== */
+  /* ========== 封面 ＝ 模式选择 ========== */
   function renderCover(){
     hud.hidden = true;
+
+    const modes = Object.values(MODES).map(m => `
+      <button class="mode-btn mode-btn--${m.key}" data-mode="${m.key}" type="button">
+        <span class="mode-btn__emoji">${m.emoji}</span>
+        <span class="mode-btn__box">
+          <span class="mode-btn__name">${m.name}</span>
+          <span class="mode-btn__sub">${m.BANK.length} 题 · ${m.sub}</span>
+        </span>
+        <span class="mode-btn__go">GO</span>
+      </button>`).join("");
+
     screen.innerHTML = `
       <div class="card card--center">
         <div class="sub-lang-title">Real-life English Quiz</div>
@@ -1000,24 +1385,26 @@ const BANK = [
           <div class="main-title blue-title">地道英语</div>
         </div>
         <p class="desc-text">
-          雅思考了 7 分，点个三明治全靠比划。<br>
-          三个真实场面，三条命——说错一句，空气就凉一次。
+          同一个场面，课本教一种说法，老外用另一种。<br>
+          ${ROUND} 道题，三条命——说错一句，空气就凉一次。
         </p>
         <div class="rules-card">
           <div class="rule-item">共 ${ROUND} 题，每答错一题失去一颗心</div>
           <div class="rule-item">血量归零直接 GG，别指望硬刚</div>
-          <div class="rule-item">每局从 ${BANK.length} 道题里洗牌随机抽 ${ROUND} 题，场景不重样</div>
-          <div class="rule-item">每题都有避坑解析，可以用键盘 A / B / C 作答</div>
+          <div class="rule-item">每局洗牌随机抽题，同一局里场景不重样</div>
+          <div class="rule-item">每题都有解析，可以用键盘 A / B / C 作答</div>
         </div>
-        <button class="start-btn start-btn--pulse" id="startBtn" type="button">
-          <span class="en-text">Let's go</span>
-          <span>开始挑战 👇</span>
-        </button>
+        <div class="mode-label">选一个模式开始</div>
+        <div class="mode-list">${modes}</div>
       </div>`;
-    $("startBtn").addEventListener("click", startGame);
+
+    screen.querySelectorAll(".mode-btn").forEach(b => {
+      b.addEventListener("click", () => startGame(b.dataset.mode));
+    });
   }
 
-  function startGame(){
+  function startGame(modeKey){
+    M = MODES[modeKey] || M;
     SET = drawSet();
     state.index = 0; state.hp = MAX_HP; state.correct = 0; state.log = []; state.locked = false;
     hud.hidden = false;
@@ -1041,6 +1428,7 @@ const BANK = [
         <div class="scene-row">
           <span class="scene">${q.scene}</span>
           <span class="qtype">${TYPES[q.type].label}</span>
+          <span class="mode-chip">${M.chip}</span>
         </div>
 
         <div class="question-box">
@@ -1107,12 +1495,12 @@ const BANK = [
 
     if (ok){
       state.correct++;
-      impact("NAILED IT!", "答得地道！", "ok");
+      impact(M.impactOk[0], M.impactOk[1], "ok");
       confetti();
     } else {
       state.hp = Math.max(0, state.hp - 1);
       renderHearts(state.hp);
-      impact("AWKWARD!", "空气突然安静…", "ng");
+      impact(M.impactNg[0], M.impactNg[1], "ng");
       redFlash();
       app.classList.remove("is-hit");
       void app.offsetWidth;
@@ -1139,7 +1527,7 @@ const BANK = [
         <span class="verdict__watermark">${mark}</span>
         <div class="verdict__head-row">
           <span class="verdict__icon">${mark}</span>
-          <h3 class="verdict__head">${ok ? "答对了 ・ 空气很安全" : "答错了 ・ 空气凝固了"}</h3>
+          <h3 class="verdict__head">${ok ? M.verdictOk : M.verdictNg}</h3>
         </div>
         ${body}
         <div class="bonus-box">
@@ -1163,7 +1551,7 @@ const BANK = [
   /* ========== 结算 ========== */
   function renderResult(){
     const wiped = state.hp === 0;
-    const r = RANKS.find(x => state.correct >= x.min);
+    const r = M.RANKS.find(x => state.correct >= x.min);
     renderProgress();
 
     /* 带走清单：每题一条金句 */
@@ -1185,7 +1573,7 @@ const BANK = [
       const tally = {};
       missed.forEach(x => { tally[x.pack] = (tally[x.pack] || 0) + 1; });
       const worst = Object.entries(tally).sort((a, b) => b[1] - a[1]);
-      diagnosis = "弱项：" + worst.map(([p, n]) => `<b>${PACKS[p].cn}</b> ${n} 次`).join(" ・ ");
+      diagnosis = "弱项：" + worst.map(([p, n]) => `<b>${M.PACKS[p].cn}</b> ${n} 次`).join(" ・ ");
     }
 
     screen.innerHTML = `
@@ -1205,10 +1593,12 @@ const BANK = [
           <span class="en-text">One more</span>
           <span>再来一次 🔁</span>
         </button>
+        <div><button class="text-btn" id="backBtn" type="button">← 换个模式</button></div>
       </div>`;
 
     if (state.correct === ROUND) confetti(150);
-    $("againBtn").addEventListener("click", () => { renderCover(); window.scrollTo({ top:0 }); });
+    $("againBtn").addEventListener("click", () => { startGame(M.key); window.scrollTo({ top:0 }); });
+    $("backBtn").addEventListener("click", () => { renderCover(); window.scrollTo({ top:0 }); });
   }
 
   /* ========== 特效 ========== */
@@ -1296,7 +1686,7 @@ const BANK = [
   });
 
   /* ---- 启动自检：题库写错时页面顶部报红条 ---- */
-  const bankErrors = validateBank(BANK);
+  const bankErrors = Object.values(MODES).flatMap(m => validateBank(m));
   if (bankErrors.length){
     const box = $("alert");
     box.hidden = false;
