@@ -46,6 +46,97 @@
 
   const MODES = {
 
+    /* ---------- 🐣 启蒙三档：L1 认单词 → L2 短句子 → L3 小对话 ---------- */
+    starter1: {
+      key:'starter1',
+      emoji:'🐣',
+      name:'启蒙 L1 · 认单词',
+      sub:'看图选词，不用读句子',
+      chip:'🐣 启蒙 L1',
+      shuffleOptions: true,
+      speak: true,          // 显示 🔊 朗读按钮（浏览器不支持时自动不显示）
+      BANK: [],   // 题目由 data/starter-l1.js 注册进来
+      PACKS: {
+        things: { label:'🍎 认物篇',     cn:'认物' },
+        color:  { label:'🎨 颜色数字篇', cn:'颜色数字' },
+        animal: { label:'🐶 动物篇',     cn:'动物' }
+      },
+      impactOk: ['YAY!', '答对啦！'],
+      impactNg: ['OOPS!', '没关系，再记一次～'],
+      verdictOk: '答对了 ・ 记住这个词啦',
+      verdictNg: '答错了 ・ 再看一眼就记住了',
+      RANKS: [
+        { min:3, rank:'单词小达人', win:true, en:'Perfect! Well done!',
+          note:'三个词全认对！明天再玩一次，它们就真的是你的了。' },
+        { min:2, rank:'记得真快', win:true, en:'Great job!',
+          note:'只错了一个。把那个词大声念三遍，下次一定认得出来。' },
+        { min:1, rank:'努力小新手', win:false, en:'Nice try!',
+          note:'认对一个也很棒！这些词第一次见都会认错，多玩几次就熟啦。' },
+        { min:0, rank:'刚发芽的小种子', win:false, en:'Keep trying!',
+          note:'一个都没对也别灰心——你才刚开始学英语。看完解析再玩一次，会容易很多。' }
+      ]
+    },
+
+    starter2: {
+      key:'starter2',
+      emoji:'🐤',
+      name:'启蒙 L2 · 短句子',
+      sub:'最短的交际句，会说就能用',
+      chip:'🐤 启蒙 L2',
+      shuffleOptions: true,
+      speak: true,
+      BANK: [],   // 题目由 data/starter-l2.js 注册进来
+      PACKS: {
+        hello:  { label:'👋 打招呼篇',   cn:'打招呼' },
+        polite: { label:'🙏 礼貌用语篇', cn:'礼貌用语' },
+        daily:  { label:'🗣️ 日常短句篇', cn:'日常短句' }
+      },
+      impactOk: ['NICE!', '说对啦！'],
+      impactNg: ['OOPS!', '没关系，换一句就好～'],
+      verdictOk: '答对了 ・ 这句能直接用',
+      verdictNg: '答错了 ・ 记住该说哪句就好',
+      RANKS: [
+        { min:3, rank:'开口小能手', win:true, en:'Perfect! You can talk!',
+          note:'三句全对！这几句话在真的场合里张口就能用了。' },
+        { min:2, rank:'越说越顺', win:true, en:'Great job!',
+          note:'只差一句。把错的那句连着场景一起记：什么时候说、说给谁听。' },
+        { min:1, rank:'敢开口的小勇士', win:false, en:'Nice try!',
+          note:'说对一句就是进步。英语这些短句就那么十几条，多玩两次全记住。' },
+        { min:0, rank:'还在热身', win:false, en:'Keep trying!',
+          note:'这些句子长得像、用处不同，第一次分不清很正常。看完解析再来一次。' }
+      ]
+    },
+
+    starter3: {
+      key:'starter3',
+      emoji:'🐥',
+      name:'启蒙 L3 · 小对话',
+      sub:'一问一答，听懂再回答',
+      chip:'🐥 启蒙 L3',
+      shuffleOptions: true,
+      speak: true,
+      BANK: [],   // 题目由 data/starter-l3.js 注册进来
+      PACKS: {
+        class:  { label:'🏫 课堂小对话', cn:'课堂对话' },
+        home:   { label:'🏠 家里小对话', cn:'家里对话' },
+        school: { label:'🎒 校园小对话', cn:'校园对话' }
+      },
+      impactOk: ['GREAT!', '答得漂亮！'],
+      impactNg: ['OOPS!', '没关系，看看解析～'],
+      verdictOk: '答对了 ・ 对话接上了',
+      verdictNg: '答错了 ・ 看看该怎么接',
+      RANKS: [
+        { min:3, rank:'对话小高手', win:true, en:'Perfect! Keep going!',
+          note:'三题全对！你已经能接住一问一答了，可以去挑战「🧒 小学生入门」啦。' },
+        { min:2, rank:'接得很稳', win:true, en:'Great job!',
+          note:'只差一点点。回答要跟着问句走：问 Can 就用 can 答，问 Are 就用 am 答。' },
+        { min:1, rank:'正在上道', win:false, en:'Nice try!',
+          note:'能答对一题说明你听懂了问句。剩下的是"怎么接"，多练两次就顺了。' },
+        { min:0, rank:'再听一遍', win:false, en:'Keep trying!',
+          note:'一问一答比认单词难一些，答错很正常。先把解析读一遍，再玩一次试试。' }
+      ]
+    },
+
     kids: {
       key:'kids',
       emoji:'🧒',

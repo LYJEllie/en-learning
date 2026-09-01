@@ -4,12 +4,17 @@
 
 **在线试玩 → https://lyjellie.github.io/en-learning/**
 
-两个模式，共用一个引擎：
+五个难度档，共用一个引擎，从零基础一路接到成人：
 
 | 模式 | 面向 | 题量 | 内容 |
 |---|---|---|---|
-| 🧒 小学生入门 | 刚学英语的小学生 | 76 题 | 打招呼 / 课堂 / 生活 / 交朋友 / 出门在外 |
+| 🐣 启蒙 L1 · 认单词 | 零基础，还读不了句子 | 12 题 | 认物 / 颜色数字 / 动物 |
+| 🐤 启蒙 L2 · 短句子 | 认得几个词了 | 12 题 | 打招呼 / 礼貌用语 / 日常短句 |
+| 🐥 启蒙 L3 · 小对话 | 能听懂一问一答 | 12 题 | 课堂 / 家里 / 校园小对话 |
+| 🧒 小学生入门 | 三四年级、能读整句 | 76 题 | 打招呼 / 课堂 / 生活 / 交朋友 / 出门在外 |
 | 🧑‍💼 成人地道 | 出国、外企、留学 | 4 题 | 点餐 / 旅途 / 职场 / 生活 |
+
+启蒙三档是**梯子**：L1 只看图选词，不用读句子；L2 出现最短的英文句；L3 要听懂问句再选回答，顺带把 a/an、单复数、have 与 am、短答配对这些最基础的语法点带出来。过了 L3 就可以去玩「🧒 小学生入门」。
 
 无依赖、无框架。仓库根目录的 `index.html` 是构建好的**单文件成品**，双击就能玩，拷走也能跑。
 
@@ -23,6 +28,11 @@
 - 每题都有逐项解析 + 黄色「避坑解析」框
 - 结算给称号、弱项诊断和「带走清单」；可以「再来一次」（同模式）或「换个模式」
 - 支持键盘 A / B / C 作答；`prefers-reduced-motion` 下自动关动效
+
+启蒙三档还多两样东西：
+
+- **大号 emoji 图示**（题目写 `emoji` 字段）——还不认字的小朋友光看图也知道在问什么
+- **🔊 听一遍**（模式写 `speak: true`）——用浏览器自带的语音合成念英文，不联网、不加库、不用注册。放慢到 0.8 倍速；浏览器不支持就自动不显示按钮，选项是中文释义时也不显示（用英文嗓子念中文只会更糊涂）
 
 两个模式的文案是分开的：成人版答错弹 `AWKWARD! 空气突然安静…`，小学生版弹 `OOPS! 没关系，看看解析～`；称号也从「字面直译爱好者」换成「英语小新手」，答错不打击。
 
@@ -55,6 +65,20 @@
 - **加载不出来时（离线、被广告拦截插件屏蔽）整行自动隐藏**，不会在页面底部留一个裂图
 
 ## 题库
+
+### 🐣 启蒙三档（各 12 题，三大类各 4 题）
+
+| 档位 | 大类 | id | 考什么 |
+|---|---|---|---|
+| **L1 认单词** | 🍎 认物 / 🎨 颜色数字 / 🐶 动物 | `a-` | apple / pencil / egg 与 leg / hat 与 cat / red / green / two / five / dog / monkey 与 donkey / fish / rabbit |
+| **L2 短句子** | 👋 打招呼 / 🙏 礼貌用语 / 🗣️ 日常短句 | `b-` | Hello / Good morning / Bye, See you / How are you / Thank you / Sorry / You're welcome / Excuse me / Yes, please / No, thank you / Sit down / Wash your hands |
+| **L3 小对话** | 🏫 课堂 / 🏠 家里 / 🎒 校园 | `c-` | It's a book（冠词）/ How many 回数字 / Can you…→Yes, I can / Open your book / have 与 am / Are you…→Yes, I am / Can I have…please / on 与 in 与 under / This is my mom / this 与 that / two cats（复数 s）/ Hurry up |
+
+出启蒙题的三条原则（和小学生档不一样）：
+
+1. **不考文化坑**。零基础的孩子还没到"会说错"的阶段，他只是不知道，所以考的是"记住了没"
+2. **干扰项按记混设计**：形近（hat / cat）、音近（egg / leg、rice / nice）、同类混淆（apple / orange / banana）
+3. **L1 三个选项一律同色**——纯认词题，颜色不该泄题
 
 ### 🧒 小学生入门（76 题，五大类，除交朋友篇 16 题外各 15 题）
 
@@ -91,6 +115,9 @@ index.html          ← 构建产物：单文件成品，GitHub Pages 跑的就�
 src/index.html      开发版：样式 + 引擎 + <script src="../data/*.js">
 data/
   _core.js          全局设置 CORE / 模式定义 MODES / 注册器 EN.add / 自检 / 抽题
+  starter-l1.js     🐣 启蒙 L1 · 认单词（三个大类都在一个文件里）
+  starter-l2.js     🐤 启蒙 L2 · 短句子
+  starter-l3.js     🐥 启蒙 L3 · 小对话
   kids-hello.js     🧒 打招呼篇
   kids-class.js     🧒 课堂篇
   kids-life.js      🧒 生活篇
@@ -149,6 +176,7 @@ node build.mjs        # → 根目录 index.html
 | `level` | 难度 1~3，决定它在一局里的出场顺序 |
 | `type` | `listening` 听力 / `phrase` 说法 / `culture` 习惯 / `social` 情商 / `word` 单词 / `manners` 礼貌 |
 | `scene` | 场景名，显示在顶部黑胶囊里 |
+| `emoji` | 选填，题面上方的大号 emoji 图示（启蒙档靠它撑住题意），不写就不显示 |
 | `heat` | 选填，场景标签旁的红色热度激将文案（如 `🔥 10个做题家9个都翻车的地道俚语`）。**是氛围文案，不是真实统计**，不写就不显示 |
 | `situation` / `note` | 情景铺垫 / 灰色补充小字 |
 | `quote` | 老外说的原话；听力题必填，纯情景题可留空 |
@@ -183,7 +211,18 @@ node build.mjs        # → 根目录 index.html
 
 ## 加一个模式
 
-比如想加「初中生」模式：在 `data/_core.js` 的 `MODES` 里照抄一份，改 `key` / `emoji` / `name` / `sub` / `chip` / `PACKS` / `RANKS` / `shuffleOptions` / 文案，`BANK` 留 `[]`；再建对应的 `data/teen-*.js`，用 `EN.add('teen', ...)` 注册。封面按钮、抽题、结算全部自动适配，引擎一行都不用动。
+比如想加「初中生」模式：在 `data/_core.js` 的 `MODES` 里照抄一份，改 `key` / `emoji` / `name` / `sub` / `chip` / `PACKS` / `RANKS` / `shuffleOptions` / `speak` / 文案，`BANK` 留 `[]`；再建对应的 `data/teen-*.js`，用 `EN.add('teen', ...)` 注册。封面按钮、抽题、结算全部自动适配，引擎一行都不用动。
+
+模式在 `MODES` 里的**书写顺序就是封面上的排列顺序**，所以新档要放在难度序列里合适的位置。
+
+### 模式级开关
+
+| 字段 | 作用 |
+|---|---|
+| `shuffleOptions` | 每题随机打乱三个选项。题库越大越该开；`adult` 关掉了，因为 `w-01` 的解析写死了"用 C 选项" |
+| `speak` | 显示 🔊 朗读按钮（启蒙三档开着）。浏览器不支持语音合成时自动不渲染 |
+| `impactOk` / `impactNg` | 答对 / 答错时的大字冲击文案，`[英文, 中文]` |
+| `verdictOk` / `verdictNg` | 解析框标题 |
 
 ## 题库能存多少？
 

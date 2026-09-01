@@ -324,6 +324,46 @@ body{
   border-radius:99px;
   padding:5px 14px;
 }
+/* 大号 emoji 图示：给还不认字的小朋友撑住题意（题目里写 emoji 字段才出现） */
+.emoji-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  font-size:clamp(48px,14vw,76px);
+  line-height:1.25;
+  background-color:var(--white);
+  border:3px solid var(--ink);
+  border-radius:12px;
+  box-shadow:var(--shadow-sm);
+  padding:14px 12px;
+  margin-bottom:18px;
+  user-select:none;
+}
+
+/* 🔊 朗读按钮：启蒙档才出现，浏览器不支持语音合成时自动不渲染 */
+.speak-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  font-family:var(--cn);
+  font-size:12px;
+  font-weight:700;
+  color:var(--ink);
+  background-color:var(--yellow);
+  border:2px solid var(--ink);
+  border-radius:99px;
+  box-shadow:2px 2px 0px var(--ink);
+  padding:4px 10px;
+  margin-left:8px;
+  cursor:pointer;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.speak-btn:hover{ transform:translate(-1px,-1px); box-shadow:3px 3px 0px var(--ink); }
+.speak-btn:active{ transform:translate(1px,1px); box-shadow:1px 1px 0px var(--ink); }
+.speak-btn:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+
 /* 热度标签：激将文案，勾好胜心（题目里写 heat 字段才出现） */
 .heat-tag{
   font-size:11px;
@@ -844,6 +884,9 @@ body{
 </div>
 
 <script src="../data/_core.js"></script>
+<script src="../data/starter-l1.js"></script>
+<script src="../data/starter-l2.js"></script>
+<script src="../data/starter-l3.js"></script>
 <script src="../data/kids-hello.js"></script>
 <script src="../data/kids-class.js"></script>
 <script src="../data/kids-life.js"></script>
@@ -892,6 +935,27 @@ body{
   /* ========== 状态 ========== */
   let SET = [];   // 本局抽中的 3 道题
   const state = { index:0, hp:MAX_HP, correct:0, log:[], locked:false, opts:[] };
+
+  /* ========== 🔊 朗读：启蒙档专用，点一下把英文念一遍 ==========
+     用浏览器自带的语音合成，不联网、不加库；不支持的浏览器直接不渲染按钮。
+     选项是中文释义（理解题）时也不渲染——用英文嗓子念中文只会更糊涂。 */
+  const canSpeak = () => Boolean(M.speak) && "speechSynthesis" in window;
+
+  function speakBtn(text){
+    if (!canSpeak() || !/[A-Za-z]/.test(text)) return "";
+    const say = String(text).replace(/"/g, "&quot;");
+    return `<button class="speak-btn" type="button" data-say="${say}">🔊 听一遍</button>`;
+  }
+
+  screen.addEventListener("click", (e) => {
+    const btn = e.target.closest && e.target.closest(".speak-btn");
+    if (!btn) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(btn.dataset.say);
+    u.lang = "en-US";
+    u.rate = 0.8;          // 放慢一点，给刚起步的小朋友听清每个音
+    speechSynthesis.speak(u);
+  });
 
   /* ========== HUD ========== */
   function renderHearts(breakIndex = -1){
@@ -964,8 +1028,9 @@ body{
     renderProgress();
 
     const quoteHtml = q.quote
-      ? `<div class="quote"><small>对方说</small>『${q.quote}』</div>`
+      ? `<div class="quote"><small>对方说</small>『${q.quote}』${speakBtn(q.quote)}</div>`
       : "";
+    const emojiHtml = q.emoji ? `<div class="emoji-card" aria-hidden="true">${q.emoji}</div>` : "";
     const noteHtml = q.note ? `<p class="note-line">${q.note}</p>` : "";
 
     screen.innerHTML = `
@@ -982,6 +1047,7 @@ body{
           ${noteHtml}
         </div>
 
+        ${emojiHtml}
         ${quoteHtml}
 
         <h2 class="ask">${q.ask}</h2>
@@ -1064,9 +1130,9 @@ body{
     const end = state.hp === 0 || last;
 
     const body = ok
-      ? `<p><span class="en">${right.text}</span> —— ${right.why}</p>`
+      ? `<p><span class="en">${right.text}</span>${speakBtn(right.text)} —— ${right.why}</p>`
       : `<p>你选的 <span class="en">${picked.text}</span>：${picked.why}</p>
-         <p>正解是 <span class="en">${right.text}</span> —— ${right.why}</p>`;
+         <p>正解是 <span class="en">${right.text}</span>${speakBtn(right.text)} —— ${right.why}</p>`;
 
     const mark = ok ? MARK.ok : MARK.ng;
     const gg = state.hp === 0;
