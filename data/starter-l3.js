@@ -1,5 +1,5 @@
 /* ============================================================
-   🐥 启蒙 L3 · 小对话（60 题 · 课堂 / 家里 / 校园 各 20 题）
+   🐥 启蒙 L3 · 小对话（72 题 · 课堂 / 家里 / 校园 各 24 题）
    ------------------------------------------------------------
    启蒙的最后一档：一问一答，要先听懂问句，再选出配得上的回答。
    顺带把最基础的语法点带出来：a / an、单复数、have 和 am、
@@ -1201,6 +1201,153 @@
     explain:'💡 How many … do you have?（你有几个）→ I have + 数字：I have three (apples).',
     takeaway:'How many … do you have? → I have three.'
   }
+
+  ]);
+
+  /* ---------- 🏫 课堂小对话（加餐 5） ---------- */
+  EN.add('starter3', 'class', [
+
+  { id:'c-61', pack:'class', level:3, type:'phrase', scene:'🏫 课堂小对话', emoji:'📖',
+    situation:'自习课上外教走过来，看见你正低头看书，问你：', quote:'What are you doing?',
+    note:'你正在读一本英语书。', ask:'该怎么回答？',
+    options:[
+      { text:"I'm reading.", note:'正在读书', badge:'地道', kind:'native', ok:true, why:"正在做的事用 I'm + 动词-ing：I'm reading（正在读）。" },
+      { text:'I read.', note:'少了正在进行的样子', badge:'时态不对', kind:'stiff', ok:false, why:"I read 是“我平时读书”；此刻正在读要用 I'm reading." },
+      { text:"I'm read.", note:'动词忘了加 -ing', badge:'语法错', kind:'stiff', ok:false, why:"be 后面的动词要加 -ing：I'm reading." }
+    ],
+    explain:"💡 问此刻在做什么 What are you doing? → I'm + 动词-ing：I'm reading / writing / eating.",
+    takeaway:"What are you doing? → I'm reading." },
+
+  { id:'c-62', pack:'class', level:3, type:'phrase', scene:'🏫 课堂小对话', emoji:'🖊️',
+    situation:'外教捡到一支笔，举起来问是不是你的，可那支不是你的。', quote:'Is this your pen?',
+    note:'你的笔好好地在笔袋里。', ask:'该怎么短答？',
+    options:[
+      { text:"No, it isn't.", note:'用 isn’t 回 Is', badge:'地道', kind:'native', ok:true, why:"Is this…? 的否定短答是 No, it isn't.（it is not）。" },
+      { text:"No, it doesn't.", note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false, why:"doesn't 是回答 Does…? 的，这句是 Is 开头。" },
+      { text:'No, not mine.', note:'话没说完', badge:'不完整', kind:'stiff', ok:false, why:"短答要说 No, it isn't.，才是完整的一句。" }
+    ],
+    explain:"💡 Is this…? 的一对短答：Yes, it is. / No, it isn't.。Is 问就用 is 答。",
+    takeaway:"Is this…? → No, it isn't." },
+
+  { id:'c-63', pack:'class', level:2, type:'listening', scene:'🏫 课堂小对话', emoji:'🗣️',
+    situation:'你脱口说了个中文词，外教笑着指指自己的嘴说：', quote:'Say it in English.',
+    note:'她想让你用英语再说一遍。', ask:'她让你做什么？',
+    options:[
+      { text:'用英语说', note:'in English = 用英语', badge:'用英语', kind:'stiff', ok:true, why:'Say it in English 就是用英语把它说出来。' },
+      { text:'大声说出来', note:'那是 say it loudly', badge:'大声说', kind:'stiff', ok:false, why:'大声说是 say it loudly，这句是让你用英语说。' },
+      { text:'跟着我说', note:'那是 say after me', badge:'跟着说', kind:'stiff', ok:false, why:'跟着说是 say after me，这句是让你自己用英语说。' }
+    ],
+    explain:'💡 in + 语言 = 用某种语言：in English（用英语）、in Chinese（用中文）。',
+    takeaway:'Say it in English. = 用英语说。' },
+
+  { id:'c-64', pack:'class', level:1, type:'phrase', scene:'🏫 课堂小对话', emoji:'🙌',
+    situation:'你把生词全念对了，外教冲你竖起大拇指说：', quote:'Good job!',
+    note:'她在表扬你做得好。', ask:'你该怎么回？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true, why:'被老师表扬，大方地说声谢谢就好。' },
+      { text:'Good job!', note:'干得好', badge:'反了', kind:'trap', ok:false, why:'是老师在夸你，别把这句还回去。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false, why:'被表扬是好事，用不着道歉。' }
+    ],
+    explain:'💡 老师夸你 Good job! / Well done! / Great!，你都回一句 Thank you! 就好。',
+    takeaway:'Good job! → Thank you!' }
+
+  ]);
+
+  /* ---------- 🏠 家里小对话（加餐 5） ---------- */
+  EN.add('starter3', 'home', [
+
+  { id:'c-65', pack:'home', level:3, type:'phrase', scene:'🏠 家里小对话', emoji:'👧',
+    situation:'同学看着你的全家福，指着一个扎马尾的女孩问你：', quote:'Is she your sister?',
+    note:'那正是你妹妹。', ask:'该怎么短答？',
+    options:[
+      { text:'Yes, she is.', note:'用 is 回 Is', badge:'地道', kind:'native', ok:true, why:'Is she…? 开头，用 Yes, she is. 来短答。' },
+      { text:'Yes, she does.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false, why:'does 是回答 Does she…? 的，这句是 Is 开头。' },
+      { text:'Yes, she do.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false, why:'she 不能配 do，Is 问就用 is 答。' }
+    ],
+    explain:'💡 配对短答换成“她”：Is she…? → Yes, she is.；换成“他”：Is he…? → Yes, he is.',
+    takeaway:'Is she…? → Yes, she is.' },
+
+  { id:'c-66', pack:'home', level:3, type:'phrase', scene:'🏠 家里小对话', emoji:'🍽️',
+    situation:'你放下碗筷，阿姨想知道你吃饱没有，问你：', quote:'Are you full?',
+    note:'你已经吃得饱饱的了。', ask:'该怎么回答？',
+    options:[
+      { text:'Yes, I am.', note:'用 am 回 Are', badge:'地道', kind:'native', ok:true, why:"Are you full? 用 Yes, I am. 短答，表示吃饱了。" },
+      { text:'Yes, I do.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false, why:'do 是回答 Do you…? 的，这句是 Are 开头。' },
+      { text:"I'm hungry.", note:'意思正好反了', badge:'反了', kind:'trap', ok:false, why:'hungry 是“饿”，full 才是“饱”，别说反。' }
+    ],
+    explain:"💡 full 是“饱”，hungry 是“饿”。Are you full? → Yes, I am. / No, I'm still hungry.",
+    takeaway:'Are you full? → Yes, I am.' },
+
+  { id:'c-67', pack:'home', level:3, type:'word', scene:'🏠 家里小对话', emoji:'🧸',
+    situation:'玩具散了一地，阿姨问你玩具都放哪儿了。你把它们收进了箱子。', quote:'Where are the toys?',
+    note:'玩具全都装在箱子里面。', ask:'该怎么回答？',
+    options:[
+      { text:"They're in the box.", note:'在箱子里', badge:'in', kind:'stiff', ok:true, why:"toys 不止一个用 They're；in 是“在……里面”。" },
+      { text:"It's in the box.", note:'好几个说成了一个', badge:'单复数错', kind:'stiff', ok:false, why:"玩具不止一个，要用 They're，不是 It's。" },
+      { text:"They're on the box.", note:'位置词用错了', badge:'on/in 错', kind:'stiff', ok:false, why:'on 是箱子上面，收进箱子里要用 in。' }
+    ],
+    explain:"💡 好几个东西用 They're；装在里面用 in：They're in the box.（都在箱子里）。",
+    takeaway:"Where are …? → They're in the box." },
+
+  { id:'c-68', pack:'home', level:1, type:'listening', scene:'🏠 家里小对话', emoji:'🎒',
+    situation:'早饭吃完了，阿姨看看表，帮你背上书包说：', quote:"It's time for school.",
+    note:'再不走上学要迟到了。', ask:'她的意思是？',
+    options:[
+      { text:'该上学了', note:'time for school = 该上学', badge:'上学', kind:'stiff', ok:true, why:"It's time for school 就是该去上学了。" },
+      { text:'该睡觉了', note:'那是 time for bed', badge:'睡觉', kind:'stiff', ok:false, why:'睡觉是 time for bed，这会儿是上学。' },
+      { text:'该吃饭了', note:'那是 time for dinner', badge:'吃饭', kind:'stiff', ok:false, why:'早饭已经吃完了，现在是上学。' }
+    ],
+    explain:"💡 It's time for + 事情 = 该做某事了：time for school（上学）、time for bed（睡觉）、time for lunch（午饭）。",
+    takeaway:"It's time for school. = 该上学了。" }
+
+  ]);
+
+  /* ---------- 🎒 校园小对话（加餐 5） ---------- */
+  EN.add('starter3', 'school', [
+
+  { id:'c-69', pack:'school', level:2, type:'phrase', scene:'🎒 校园小对话', emoji:'🗺️',
+    situation:'一个新同学找不到图书馆，问你在哪儿。图书馆就在不远的那头。', quote:"Where's the library?",
+    note:'图书馆在走廊那一头，看得见。', ask:'该怎么回答？',
+    options:[
+      { text:"It's over there.", note:'在那边', badge:'地道', kind:'native', ok:true, why:"指着不远处的地方，说 It's over there.（在那边）。" },
+      { text:'There is.', note:'话没说完', badge:'不完整', kind:'stiff', ok:false, why:"There is 后面得跟东西，指方向要说 It's over there." },
+      { text:"It's there is.", note:'两个说法搅一起了', badge:'语法错', kind:'stiff', ok:false, why:"It's 和 there is 不能叠在一起，选一个：It's over there." }
+    ],
+    explain:"💡 指远处的地方：It's over there.（在那边）；指近处：It's here. / It's right here.",
+    takeaway:"Where's …? → It's over there." },
+
+  { id:'c-70', pack:'school', level:3, type:'phrase', scene:'🎒 校园小对话', emoji:'📚',
+    situation:'新同学想多了解你，问你最喜欢哪门课：', quote:"What's your favorite subject?",
+    note:'你最喜欢上英语课。', ask:'该怎么回答？',
+    options:[
+      { text:'I like English.', note:'我喜欢英语', badge:'地道', kind:'native', ok:true, why:'问你最喜欢哪门课，用 I like + 科目来回答。' },
+      { text:"I'm English.", note:'把“喜欢”说成了“是”', badge:'差很远', kind:'trap', ok:false, why:"I'm English 是“我是英国人”，喜欢要用 I like。" },
+      { text:"It's Monday.", note:'答成了星期', badge:'答偏了', kind:'stiff', ok:false, why:'那是回答 What day is it? 的。' }
+    ],
+    explain:"💡 favorite 是“最喜欢的”。What's your favorite subject? → I like English. / My favorite subject is English.",
+    takeaway:"favorite subject? → I like English." },
+
+  { id:'c-71', pack:'school', level:2, type:'phrase', scene:'🎒 校园小对话', emoji:'🖐️',
+    situation:'跳绳比赛就要开始，老师看着你问：', quote:'Are you ready?',
+    note:'你准备好了。', ask:'该怎么回答？',
+    options:[
+      { text:'Yes, I am.', note:'用 am 回 Are', badge:'地道', kind:'native', ok:true, why:"Are you ready? 用 Yes, I am. 短答，表示准备好了。" },
+      { text:'Yes, I do.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false, why:'do 是回答 Do you…? 的，这句是 Are 开头。' },
+      { text:'Ready yes.', note:'词序乱了', badge:'语序错', kind:'stiff', ok:false, why:"要说 Yes, I am. 或 Yes, I'm ready.，别把词打乱。" }
+    ],
+    explain:'💡 Are you ready?（准备好了吗）→ Yes, I am. / No, not yet.（还没）。老师常喊 Ready? Go!',
+    takeaway:'Are you ready? → Yes, I am.' },
+
+  { id:'c-72', pack:'school', level:2, type:'phrase', scene:'🎒 校园小对话', emoji:'🎉',
+    situation:'周五放学，外教在门口跟每个同学道别，对你说：', quote:'Have a good weekend!',
+    note:'接下来是两天周末。', ask:'你该怎么回？',
+    options:[
+      { text:'You too!', note:'你也是', badge:'地道', kind:'native', ok:true, why:'别人祝你周末愉快，回一句 You too! 最自然。' },
+      { text:'Me too.', note:'我也是', badge:'不地道', kind:'trap', ok:false, why:'这里习惯说 You too.，而不是 Me too.。' },
+      { text:'Good morning!', note:'早上好', badge:'答偏了', kind:'stiff', ok:false, why:'这是放学道别，不是早上问好。' }
+    ],
+    explain:'💡 Have a good weekend!（周末愉快）、Have a nice day!（今天愉快）都回一句 You too!',
+    takeaway:'Have a good weekend! → You too!' }
 
   ]);
 

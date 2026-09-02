@@ -1,5 +1,5 @@
 /* ============================================================
-   🐤 启蒙 L2 · 短句子（60 题 · 打招呼 / 礼貌用语 / 日常短句 各 20 题）
+   🐤 启蒙 L2 · 短句子（72 题 · 打招呼 / 礼貌用语 / 日常短句 各 24 题）
    ------------------------------------------------------------
    比 L1 难一点：题面出现一句最短的英文，选项是三到四个词的短句。
    考的是"这个场合该说哪一句"，干扰项都是别的常用短句（用错场合）。
@@ -1199,6 +1199,153 @@
     explain:'💡 提醒当心用 Be careful!（小心）、Watch out!（当心）、Look out!（快躲开）。',
     takeaway:'Be careful! = 小心点！'
   }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐 5） ---------- */
+  EN.add('starter2', 'hello', [
+
+  { id:'b-61', pack:'hello', level:2, type:'phrase', scene:'👋 打招呼篇', emoji:'🙋',
+    situation:'一个陌生人走过来，想确认你是不是叫 Tom：', quote:'Are you Tom?',
+    note:'你正是 Tom。', ask:'你该怎么回答？',
+    options:[
+      { text:'Yes, I am.', note:'用 am 回 Are', badge:'地道', kind:'native', ok:true, why:'Are you…? 开头，用 Yes, I am. 来短答。' },
+      { text:'Yes, I do.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false, why:'do 是回答 Do you…? 的，这句是 Are 开头。' },
+      { text:"Yes, I'm Tom yes.", note:'又乱又重复', badge:'啰嗦', kind:'stiff', ok:false, why:'一句 Yes, I am. 就够了，不用重复。' }
+    ],
+    explain:"💡 确认身份：Are you Tom? → Yes, I am. / No, I'm not.。跟着 Are 用 am 答。",
+    takeaway:'Are you Tom? → Yes, I am.' },
+
+  { id:'b-62', pack:'hello', level:2, type:'phrase', scene:'👋 打招呼篇', emoji:'👩‍🏫',
+    situation:'早上在校门口遇到你的英语老师，她姓 Li。', quote:'',
+    note:'对老师要用尊称，不能直呼名字。', ask:'该怎么问好最有礼貌？',
+    options:[
+      { text:'Good morning, Miss Li!', note:'早上好，李老师', badge:'地道', kind:'native', ok:true, why:'称呼老师用 Miss / Mr. + 姓，礼貌又得体。' },
+      { text:'Good morning, Li!', note:'直呼姓氏', badge:'不礼貌', kind:'trap', ok:false, why:'直接叫姓 Li 不够尊重，要加 Miss。' },
+      { text:'Hey, you!', note:'喂，你', badge:'太没礼貌', kind:'stiff', ok:false, why:'这样叫老师非常不礼貌。' }
+    ],
+    explain:'💡 称呼大人加尊称：男老师 Mr. Li、女老师 Miss Li / Mrs. Li。别直接叫名字。',
+    takeaway:'称呼老师 → Miss / Mr. + 姓' },
+
+  { id:'b-63', pack:'hello', level:1, type:'phrase', scene:'👋 打招呼篇', emoji:'👋',
+    situation:'中午你去打饭，跟同学说等会儿回来，他挥挥手说：', quote:'See you later!',
+    note:'你们过一会儿还会见面。', ask:'你该回哪一句？',
+    options:[
+      { text:'See you later!', note:'待会儿见', badge:'地道', kind:'native', ok:true, why:'一会儿还见面，原样还回去就对了。' },
+      { text:'Nice to meet you.', note:'很高兴认识你', badge:'用错了', kind:'stiff', ok:false, why:'那是第一次认识才说的，你们早认识了。' },
+      { text:'Good morning!', note:'早上好', badge:'答偏了', kind:'stiff', ok:false, why:'这是道别，不是早上问好。' }
+    ],
+    explain:'💡 道别看时间：马上还见 See you later!；明天见 See you tomorrow!；不知何时见 See you!',
+    takeaway:'待会儿见 → See you later!' },
+
+  { id:'b-64', pack:'hello', level:2, type:'phrase', scene:'👋 打招呼篇', emoji:'🧣',
+    situation:'天冷了，你要出门，寄宿家庭的阿姨叮嘱你：', quote:'Take care!',
+    note:'她让你路上当心、照顾好自己。', ask:'你该怎么回？',
+    options:[
+      { text:'You too!', note:'你也是', badge:'地道', kind:'native', ok:true, why:'别人让你保重，回一句 You too! 最自然。' },
+      { text:'Me too.', note:'我也是', badge:'不地道', kind:'trap', ok:false, why:'这里习惯说 You too.，而不是 Me too.。' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'答偏了', kind:'stiff', ok:false, why:'她在关心你，不是问你要不要东西。' }
+    ],
+    explain:'💡 Take care!（保重）、Have a nice day!（过得愉快）都回一句 You too! / Thanks, you too!',
+    takeaway:'Take care! → You too!' }
+
+  ]);
+
+  /* ---------- 🙏 礼貌用语篇（加餐 5） ---------- */
+  EN.add('starter2', 'polite', [
+
+  { id:'b-65', pack:'polite', level:2, type:'manners', scene:'🙏 礼貌用语篇', emoji:'🎁',
+    situation:'你给寄宿家庭的阿姨准备了一份小礼物，双手递过去。', quote:'',
+    note:'你想说这是送给她的。', ask:'递礼物时该说什么？',
+    options:[
+      { text:'This is for you.', note:'这是给你的', badge:'地道', kind:'native', ok:true, why:'送东西时说 This is for you.，又清楚又得体。' },
+      { text:'Give you.', note:'给你（不通顺）', badge:'不通顺', kind:'stiff', ok:false, why:'Give you 不成句，送东西说 This is for you. 或 Here you are.' },
+      { text:'Take it!', note:'拿去！', badge:'太冲', kind:'trap', ok:false, why:'Take it! 像在命令，送礼要客气点。' }
+    ],
+    explain:'💡 送礼物说 This is for you.（这是给你的）；对方会回 Thank you! / For me?',
+    takeaway:'送礼物 → This is for you.' },
+
+  { id:'b-66', pack:'polite', level:2, type:'manners', scene:'🙏 礼貌用语篇', emoji:'⏳',
+    situation:'同学来找你出去玩，可你还差一道题没写完，想请他稍等。', quote:'',
+    note:'你马上就好。', ask:'该怎么请他等一下？',
+    options:[
+      { text:'Just a moment, please.', note:'请稍等一下', badge:'地道', kind:'native', ok:true, why:'请人稍等说 Just a moment, please. 或 Wait a moment, please.' },
+      { text:'Wait!', note:'等着！', badge:'太冲', kind:'trap', ok:false, why:'光一个 Wait! 像在命令，加 please 才礼貌。' },
+      { text:'Quick, quick!', note:'快快快', badge:'用错了', kind:'stiff', ok:false, why:'那是催别人快，你是想请他等一等。' }
+    ],
+    explain:'💡 请人稍等：Just a moment, please. / One moment, please. / Wait a minute, please.',
+    takeaway:'请人稍等 → Just a moment, please.' },
+
+  { id:'b-67', pack:'polite', level:2, type:'manners', scene:'🙏 礼貌用语篇', emoji:'🤲',
+    situation:'你看见阿姨手里抱着一大摞东西，快拿不动了。', quote:'',
+    note:'你想主动搭把手。', ask:'该怎么开口最合适？',
+    options:[
+      { text:'Can I help you?', note:'需要我帮忙吗', badge:'地道', kind:'native', ok:true, why:'主动帮忙说 Can I help you?，热心又礼貌。' },
+      { text:'You need help.', note:'你需要帮助', badge:'像命令', kind:'stiff', ok:false, why:'这是在替她下判断，不像在问要不要帮忙。' },
+      { text:'Help you!', note:'帮你！', badge:'不通顺', kind:'trap', ok:false, why:'Help you! 不成句，主动帮忙说 Can I help you?' }
+    ],
+    explain:'💡 请别人帮你用 Can you help me?；你主动帮别人用 Can I help you?。一 me 一 you，别弄反。',
+    takeaway:'主动帮忙 → Can I help you?' },
+
+  { id:'b-68', pack:'polite', level:2, type:'manners', scene:'🙏 礼貌用语篇', emoji:'🚻',
+    situation:'在商场里你想找洗手间，得向一位陌生的叔叔打听。', quote:'',
+    note:'你要先叫住他，再问路。', ask:'该怎么开口最有礼貌？',
+    options:[
+      { text:"Excuse me, where's the toilet?", note:'打扰一下，洗手间在哪儿', badge:'地道', kind:'native', ok:true, why:'先说 Excuse me 叫住对方，再问路，最礼貌。' },
+      { text:'Where toilet?', note:'厕所哪', badge:'不通顺', kind:'stiff', ok:false, why:'少了词，句子不完整也不礼貌。' },
+      { text:'Hey! Toilet!', note:'喂！厕所！', badge:'太冲', kind:'trap', ok:false, why:'这样喊很没礼貌，要用 Excuse me 开头。' }
+    ],
+    explain:"💡 问路先说 Excuse me（打扰一下），再问 Where's the …?：Excuse me, where's the toilet?",
+    takeaway:"问路 → Excuse me, where's the …?" }
+
+  ]);
+
+  /* ---------- 🗣️ 日常短句篇（加餐 5） ---------- */
+  EN.add('starter2', 'daily', [
+
+  { id:'b-69', pack:'daily', level:2, type:'listening', scene:'🗣️ 日常短句篇', emoji:'💡',
+    situation:'天黑了教室里看不清，外教指了指墙上的开关说：', quote:'Turn on the light.',
+    note:'她想让屋里亮起来。', ask:'她让大家做什么？',
+    options:[
+      { text:'把灯打开', note:'turn on = 打开（电器）', badge:'开灯', kind:'stiff', ok:true, why:'Turn on the light 就是把灯打开。' },
+      { text:'把灯关掉', note:'那是 turn off', badge:'关灯', kind:'stiff', ok:false, why:'关掉是 turn off，和 turn on 正好相反。' },
+      { text:'把门打开', note:'那是 open the door', badge:'开门', kind:'stiff', ok:false, why:'开电器用 turn on，开门开窗才用 open。' }
+    ],
+    explain:'💡 电器开关用 turn on / turn off：灯、电视、电脑都这么说；门窗才用 open / close。',
+    takeaway:'Turn on the light. = 把灯打开。' },
+
+  { id:'b-70', pack:'daily', level:2, type:'listening', scene:'🗣️ 日常短句篇', emoji:'🔌',
+    situation:'看电视看太久了，阿姨拿起遥控器对你说：', quote:'Turn off the TV.',
+    note:'该让眼睛歇歇了。', ask:'她让你做什么？',
+    options:[
+      { text:'把电视关掉', note:'turn off = 关掉（电器）', badge:'关电视', kind:'stiff', ok:true, why:'Turn off the TV 就是把电视关掉。' },
+      { text:'把电视打开', note:'那是 turn on', badge:'开电视', kind:'stiff', ok:false, why:'打开是 turn on，和 turn off 正好相反。' },
+      { text:'把声音调大', note:'那是 turn it up', badge:'调大声', kind:'stiff', ok:false, why:'调大声是 turn up，关掉是 turn off。' }
+    ],
+    explain:'💡 一对反义：turn on（开）↔ turn off（关）。灯、电视、水龙头都能用。',
+    takeaway:'Turn off the TV. = 把电视关掉。' },
+
+  { id:'b-71', pack:'daily', level:1, type:'listening', scene:'🗣️ 日常短句篇', emoji:'🐢',
+    situation:'你说话太快外教听不清，她笑着摆摆手说：', quote:'Slow down.',
+    note:'她希望你说慢一点。', ask:'她让你做什么？',
+    options:[
+      { text:'慢一点', note:'slow down = 慢下来', badge:'慢点', kind:'stiff', ok:true, why:'Slow down 就是慢一点、别那么急。' },
+      { text:'快一点', note:'那是 hurry up', badge:'快点', kind:'stiff', ok:false, why:'快一点是 Hurry up!，和 slow down 正好相反。' },
+      { text:'停下来', note:'那是 stop', badge:'停下', kind:'stiff', ok:false, why:'停下是 Stop，slow down 只是让你慢点。' }
+    ],
+    explain:'💡 一快一慢记一对：Slow down.（慢点）↔ Hurry up!（快点）。说话、走路都能用。',
+    takeaway:'Slow down. = 慢一点。' },
+
+  { id:'b-72', pack:'daily', level:2, type:'listening', scene:'🗣️ 日常短句篇', emoji:'🛑',
+    situation:'在商场里，妈妈要去旁边拿个东西，指着长椅对你说：', quote:'Wait here, please.',
+    note:'她一会儿就回来。', ask:'她让你做什么？',
+    options:[
+      { text:'在这儿等', note:'wait here = 在这里等', badge:'在这等', kind:'stiff', ok:true, why:'Wait here 就是待在这儿别走，等她回来。' },
+      { text:'跟我来', note:'那是 follow me', badge:'跟着', kind:'stiff', ok:false, why:'跟我来是 Follow me，这句是让你留在原地。' },
+      { text:'过来这儿', note:'那是 come here', badge:'过来', kind:'stiff', ok:false, why:'过来是 Come here，这句是让你在这儿等。' }
+    ],
+    explain:'💡 Wait here.（在这儿等）、Wait for me.（等等我）、Wait a moment.（稍等）都带 wait。',
+    takeaway:'Wait here, please. = 在这儿等。' }
 
   ]);
 

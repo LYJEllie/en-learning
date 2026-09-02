@@ -1,5 +1,5 @@
 /* ============================================================
-   🐣 启蒙 L1 · 认单词（60 题 · 认物 / 颜色数字 / 动物 各 20 题）
+   🐣 启蒙 L1 · 认单词（72 题 · 认物 / 颜色数字 / 动物 各 24 题）
    ------------------------------------------------------------
    最低门槛的一档：题面不需要读英文句子，只有一个大号 emoji，
    选项就是三个单词。干扰项按"形近 / 音近 / 同类混淆"设计。
@@ -1200,6 +1200,153 @@
     explain:'💡 三个 b 开头凑齐：bee 蜜蜂（小）、bird 鸟（会飞）、bear 熊（大）。',
     takeaway:'bee = 蜜蜂 🐝'
   }
+
+  ]);
+
+  /* ---------- 🍎 认物篇（加餐 5） ---------- */
+  EN.add('starter1', 'things', [
+
+  { id:'a-61', pack:'things', level:1, type:'word', scene:'🍎 认物篇', emoji:'🪟',
+    situation:'墙上那个能透光、能看见外面的地方，热了可以打开透气。', quote:'',
+    note:'玻璃做的，白天光从这儿照进来。', ask:'这个用英语怎么说？',
+    options:[
+      { text:'window', note:'窗户', badge:'窗户', kind:'stiff', ok:true, why:'window 是窗户，用来透光看外面。' },
+      { text:'door', note:'门', badge:'门', kind:'stiff', ok:false, why:'door 是门，用来进出。' },
+      { text:'wall', note:'墙', badge:'墙', kind:'stiff', ok:false, why:'wall 是墙，围在房间四周，不透光。' }
+    ],
+    explain:'💡 房间三样：window 窗（透光）、door 门（进出）、wall 墙（围挡）。',
+    takeaway:'window = 窗户 🪟' },
+
+  { id:'a-62', pack:'things', level:1, type:'word', scene:'🍎 认物篇', emoji:'🛏️',
+    situation:'晚上困了，你会躺到它上面盖好被子睡觉。', quote:'',
+    note:'软软的，上面有枕头和被子。', ask:'这个用英语怎么说？',
+    options:[
+      { text:'bed', note:'床', badge:'床', kind:'stiff', ok:true, why:'bed 是床，躺着睡觉的。' },
+      { text:'desk', note:'书桌', badge:'书桌', kind:'stiff', ok:false, why:'desk 是书桌，坐着写作业的。' },
+      { text:'box', note:'盒子', badge:'盒子', kind:'stiff', ok:false, why:'box 是盒子，装东西的。' }
+    ],
+    explain:'💡 房间里：bed 床（睡觉）、desk 书桌（写字）、chair 椅子（坐）。',
+    takeaway:'bed = 床 🛏️' },
+
+  { id:'a-63', pack:'things', level:2, type:'word', scene:'🍎 认物篇', emoji:'🚂',
+    situation:'长长的一节一节连在一起，在铁轨上呜呜地跑，能带很多人去远方。', quote:'',
+    note:'它走的是铁轨，不是马路。', ask:'这个用英语怎么说？',
+    options:[
+      { text:'train', note:'火车', badge:'火车', kind:'stiff', ok:true, why:'train 是火车，在铁轨上跑。' },
+      { text:'rain', note:'雨', badge:'雨', kind:'stiff', ok:false, why:'rain 是雨，从天上落下来，比 train 少个 t。' },
+      { text:'bus', note:'公交车', badge:'公交', kind:'stiff', ok:false, why:'bus 是公交车，走马路不走铁轨。' }
+    ],
+    explain:'💡 train（火车）就是 rain（雨）前面加个 t，别看漏那个 t。',
+    takeaway:'train = 火车 🚂' },
+
+  { id:'a-64', pack:'things', level:2, type:'word', scene:'🍎 认物篇', emoji:'✈️',
+    situation:'有两只大翅膀，在天上飞，坐着它能飞到很远的城市。', quote:'',
+    note:'它飞在云朵上面。', ask:'这个用英语怎么说？',
+    options:[
+      { text:'plane', note:'飞机', badge:'飞机', kind:'stiff', ok:true, why:'plane 是飞机，在天上飞。' },
+      { text:'plate', note:'盘子', badge:'盘子', kind:'stiff', ok:false, why:'plate 是盘子，装菜用的，和 plane 长得像。' },
+      { text:'train', note:'火车', badge:'火车', kind:'stiff', ok:false, why:'train 是火车，在地上的铁轨跑。' }
+    ],
+    explain:'💡 交通工具：plane 飞机（天上）、train 火车（铁轨）、bus 公交（马路）。plane 和 plate 别看混。',
+    takeaway:'plane = 飞机 ✈️' }
+
+  ]);
+
+  /* ---------- 🎨 颜色数字篇（加餐 5） ---------- */
+  EN.add('starter1', 'color', [
+
+  { id:'a-65', pack:'color', level:2, type:'word', scene:'🎨 颜色数字篇', emoji:'🩶',
+    situation:'外教指着阴天灰蒙蒙的天空，让大家说出这个颜色。', quote:'',
+    note:'大象和石头也是这个颜色。', ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'gray', note:'灰色', badge:'灰', kind:'stiff', ok:true, why:'gray 是灰色，阴天和大象的颜色。' },
+      { text:'black', note:'黑色', badge:'黑', kind:'stiff', ok:false, why:'black 是黑色，比灰色更深。' },
+      { text:'white', note:'白色', badge:'白', kind:'stiff', ok:false, why:'white 是白色，比灰色更浅。' }
+    ],
+    explain:'💡 gray（灰）正好在 black（黑）和 white（白）中间：黑加白就成了灰。',
+    takeaway:'gray = 灰色 🩶' },
+
+  { id:'a-66', pack:'color', level:3, type:'word', scene:'🎨 颜色数字篇', emoji:'👕',
+    situation:'外教说一支足球队上场的球员，让大家数一数一共几个人。', quote:'',
+    note:'比十多一个。', ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'eleven', note:'十一', badge:'11', kind:'stiff', ok:true, why:'eleven 是十一，比十多一个。' },
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:false, why:'ten 是十，比十一少一个。' },
+      { text:'twelve', note:'十二', badge:'12', kind:'stiff', ok:false, why:'twelve 是十二，比十一多一个。' }
+    ],
+    explain:'💡 过了十就是 eleven（11）、twelve（12）。一支足球队上场正好 eleven 人。',
+    takeaway:'eleven = 十一 👕' },
+
+  { id:'a-67', pack:'color', level:3, type:'word', scene:'🎨 颜色数字篇', emoji:'🕛',
+    situation:'外教指着钟面，说一年有几个月，让大家用英语说出这个数。', quote:'',
+    note:'一年有这么多个月，钟面上也有这么多个数。', ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'twelve', note:'十二', badge:'12', kind:'stiff', ok:true, why:'twelve 是十二，一年十二个月。' },
+      { text:'twenty', note:'二十', badge:'20', kind:'stiff', ok:false, why:'twenty 是二十，和 twelve 开头像，但大多了。' },
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:false, why:'ten 是十，比十二少两个。' }
+    ],
+    explain:'💡 twelve（12）和 twenty（20）都是 tw 开头，最容易记混：十二个月、二十可不一样大。',
+    takeaway:'twelve = 十二 🕛' },
+
+  { id:'a-68', pack:'color', level:2, type:'word', scene:'🎨 颜色数字篇', emoji:'0️⃣',
+    situation:'篮子里的苹果被吃光了，一个都不剩，外教问现在有几个。', quote:'',
+    note:'什么都没有，一个也没有。', ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'zero', note:'零', badge:'0', kind:'stiff', ok:true, why:'zero 是零，一个都没有。' },
+      { text:'one', note:'一', badge:'1', kind:'stiff', ok:false, why:'one 是一，至少还有一个。' },
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:false, why:'ten 是十，那可有不少呢。' }
+    ],
+    explain:'💡 一个都没有就是 zero（零）。比分 0 比 0 就是 zero-zero。',
+    takeaway:'zero = 零 0️⃣' }
+
+  ]);
+
+  /* ---------- 🐶 动物篇（加餐 5） ---------- */
+  EN.add('starter1', 'animal', [
+
+  { id:'a-69', pack:'animal', level:2, type:'word', scene:'🐶 动物篇', emoji:'🦒',
+    situation:'照片上的动物脖子特别特别长，能吃到大树最高处的叶子。', quote:'',
+    note:'它是世界上最高的动物。', ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'giraffe', note:'长颈鹿', badge:'长颈鹿', kind:'stiff', ok:true, why:'giraffe 是长颈鹿，脖子最长。' },
+      { text:'elephant', note:'大象', badge:'大象', kind:'stiff', ok:false, why:'elephant 是大象，鼻子长，但脖子不长。' },
+      { text:'horse', note:'马', badge:'马', kind:'stiff', ok:false, why:'horse 是马，跑得快，脖子没那么长。' }
+    ],
+    explain:'💡 长脖子的是 giraffe 长颈鹿；长鼻子的是 elephant 大象。',
+    takeaway:'giraffe = 长颈鹿 🦒' },
+
+  { id:'a-70', pack:'animal', level:2, type:'word', scene:'🐶 动物篇', emoji:'🐧',
+    situation:'照片上的动物穿着“黑白礼服”，走路一摇一摆，住在很冷的地方。', quote:'',
+    note:'它有翅膀，却不会飞，但很会游泳。', ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'penguin', note:'企鹅', badge:'企鹅', kind:'stiff', ok:true, why:'penguin 是企鹅，会游泳不会飞。' },
+      { text:'duck', note:'鸭子', badge:'鸭子', kind:'stiff', ok:false, why:'duck 是鸭子，也会游泳，但会飞，住在池塘。' },
+      { text:'bird', note:'鸟', badge:'鸟', kind:'stiff', ok:false, why:'bird 是鸟，大多会飞，企鹅是特别的那种。' }
+    ],
+    explain:'💡 penguin（企鹅）是不会飞的鸟：有翅膀，却用来游泳。',
+    takeaway:'penguin = 企鹅 🐧' },
+
+  { id:'a-71', pack:'animal', level:1, type:'word', scene:'🐶 动物篇', emoji:'🐭',
+    situation:'照片上灰灰的小动物，尖嘴巴、长尾巴，最爱偷东西吃，见了猫就跑。', quote:'',
+    note:'它个头很小，吱吱叫。', ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'mouse', note:'老鼠', badge:'老鼠', kind:'stiff', ok:true, why:'mouse 是老鼠，小小的怕猫。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false, why:'cat 是猫，正是老鼠最怕的那个。' },
+      { text:'rabbit', note:'兔子', badge:'兔子', kind:'stiff', ok:false, why:'rabbit 是兔子，耳朵长，比老鼠大。' }
+    ],
+    explain:'💡 一小一天敌：mouse 老鼠（小、会跑）和 cat 猫（专抓老鼠）。',
+    takeaway:'mouse = 老鼠 🐭' },
+
+  { id:'a-72', pack:'animal', level:1, type:'word', scene:'🐶 动物篇', emoji:'🐢',
+    situation:'照片上的动物背着一个硬硬的壳，走得慢吞吞，一有危险就缩进壳里。', quote:'',
+    note:'龟兔赛跑里跑赢的就是它。', ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'turtle', note:'乌龟', badge:'乌龟', kind:'stiff', ok:true, why:'turtle 是乌龟，背着壳走得慢。' },
+      { text:'rabbit', note:'兔子', badge:'兔子', kind:'stiff', ok:false, why:'rabbit 是兔子，跑得快，龟兔赛跑里输了的那个。' },
+      { text:'frog', note:'青蛙', badge:'青蛙', kind:'stiff', ok:false, why:'frog 是青蛙，会跳，没有壳。' }
+    ],
+    explain:'💡 龟兔赛跑：turtle 乌龟（慢、有壳）赢了 rabbit 兔子（快、贪睡）。',
+    takeaway:'turtle = 乌龟 🐢' }
 
   ]);
 
