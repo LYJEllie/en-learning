@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏠 生活篇（30 题）
+   🧒 小学生入门 · 🏠 生活篇（35 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -564,6 +564,102 @@
     ],
     explain:'💡 在别人家想做什么先问 Can I…?：Can I open the window?（开窗）、Can I sit here?（坐这儿）、Can I use the bathroom?（用洗手间）。',
     takeaway:"想开窗 → It's hot. Can I open the window?"
+  }
+
+  ]);
+
+  /* ---------- 🏠 生活篇（加餐 4） ---------- */
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-31', pack:'life', level:2, type:'phrase',
+    scene:'🏠 想洗个澡',
+    situation:'在寄宿家庭玩了一天，你出了一身汗，想去洗个澡。',
+    quote:'',
+    note:'用别人家的浴室，先问一声更礼貌。',
+    ask:'该怎么问阿姨？',
+    options:[
+      { text:'Can I take a shower?', note:'洗澡的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'冲淋浴用 take a shower：Can I take a shower?（我能洗个澡吗），先问一声最有礼貌。' },
+      { text:'Can I wash my body?', note:'逐字硬翻', badge:'中式', kind:'stiff', ok:false,
+        why:'"洗澡"是 take a shower / take a bath，别一个字一个字地翻成 wash my body。' },
+      { text:'I want water on me.', note:'谁也听不懂', badge:'不通顺', kind:'trap', ok:false,
+        why:'这句读不通，洗澡就说 take a shower。' }
+    ],
+    explain:'💡 洗漱相关：take a shower（冲淋浴）、take a bath（泡澡）、brush my teeth（刷牙）、wash my hands（洗手）。',
+    takeaway:'想洗澡 → Can I take a shower?'
+  },
+  {
+    id:'kl-32', pack:'life', level:2, type:'listening',
+    scene:'🏠 阿姨请你跑个腿',
+    situation:'做饭做到一半，阿姨发现面包没了，掏出钱递给你说：',
+    quote:'Can you go and get some bread?',
+    note:'楼下就有家小超市。',
+    ask:'她请你做什么？',
+    options:[
+      { text:'去买点面包回来', note:'go and get = 去买/去拿', badge:'地道', kind:'native', ok:true,
+        why:'go and get some bread 就是"去买点面包"，你回一句 Sure! 再下楼就好。' },
+      { text:'去把面包做出来', note:'不是让你做面包', badge:'理解偏', kind:'trap', ok:false,
+        why:'get 是"去拿/去买"，不是让你自己烤面包。' },
+      { text:'把面包扔掉', note:'想歪了', badge:'想歪了', kind:'stiff', ok:false,
+        why:'get some bread 是买面包回来，不是扔面包。' }
+    ],
+    explain:'💡 跑腿常听：Can you go and get some…?（去买点…）、Can you bring me…?（帮我拿…）。答应就说 Sure! / No problem!',
+    takeaway:'Can you go and get some bread? = 去买点面包。'
+  },
+  {
+    id:'kl-33', pack:'life', level:1, type:'phrase',
+    scene:'🏠 找不到鞋子了',
+    situation:'早上要出门了，你却怎么也找不到自己的另一只鞋。',
+    quote:'',
+    note:'时间快来不及了，得赶紧问阿姨。',
+    ask:'该怎么求助最清楚？',
+    options:[
+      { text:"I can't find my shoe. Have you seen it?", note:'说明情况＋求助', badge:'地道', kind:'native', ok:true,
+        why:'I can\'t find …（我找不到…）说清了问题，再问 Have you seen it?（你看见了吗），阿姨就能帮你找。' },
+      { text:'My shoe is lost forever!', note:'太夸张', badge:'太夸张', kind:'stiff', ok:false,
+        why:'只是暂时找不到，说 lost forever（永远丢了）太夸张，用 I can\'t find it.' },
+      { text:'Shoe? Shoe?', note:'光念名词', badge:'说不清', kind:'trap', ok:false,
+        why:'光念 shoe 别人不知道你要干嘛，要说 I can\'t find my shoe.' }
+    ],
+    explain:'💡 找不到东西：I can\'t find my …（我找不到我的…）、Where is my …?（我的…在哪）、Have you seen it?（你看见了吗）。',
+    takeaway:"找不到 → I can't find my shoe."
+  },
+  {
+    id:'kl-34', pack:'life', level:2, type:'phrase',
+    scene:'🏠 早餐想吃什么',
+    situation:'寄宿家庭的早晨，阿姨打开冰箱，回头问你：',
+    quote:'What would you like for breakfast?',
+    note:'冰箱里有鸡蛋、面包和牛奶。',
+    ask:'该怎么回答最自然礼貌？',
+    options:[
+      { text:'Bread and milk, please.', note:'说出想吃的＋please', badge:'地道', kind:'native', ok:true,
+        why:'点吃的用"东西 + please"：Bread and milk, please.，又清楚又客气。' },
+      { text:'I want eat egg.', note:'两个动词还漏词', badge:'语法错', kind:'stiff', ok:false,
+        why:'want 后面要加 to：I want to eat…；更简单的是直接说 An egg, please.' },
+      { text:'Anything is anything.', note:'谁也听不懂', badge:'不通顺', kind:'trap', ok:false,
+        why:'想说"随便"可以讲 Anything is fine.，别硬拼词。' }
+    ],
+    explain:'💡 在家点餐：… , please.（要什么就说什么）、Anything is fine.（都行）、I\'m not hungry, thanks.（我不饿）。',
+    takeaway:'早餐想吃 → Bread and milk, please.'
+  },
+  {
+    id:'kl-35', pack:'life', level:1, type:'manners',
+    scene:'🏠 寄宿家庭的睡前',
+    situation:'在寄宿家庭住的晚上，睡觉前阿姨来到你房间，帮你关好灯。',
+    quote:'Good night! Sleep well.',
+    note:'她笑着轻轻带上门。',
+    ask:'你该回哪一句最暖？',
+    options:[
+      { text:'Good night! You too.', note:'道晚安＋回祝', badge:'地道', kind:'native', ok:true,
+        why:'互道 Good night!，再加句 You too.（你也是），温馨又礼貌。' },
+      { text:'Good morning!', note:'时间说反了', badge:'说反了', kind:'trap', ok:false,
+        why:'这会儿是睡前，要说 Good night，不是 Good morning。' },
+      { text:'OK.', note:'太冷淡', badge:'冷场', kind:'stiff', ok:false,
+        why:'人家来道晚安，只回一个 OK 有点冷，回 Good night! 才暖。' }
+    ],
+    explain:'💡 睡前互道：Good night!（晚安）、Sleep well.（睡个好觉）、Sweet dreams.（做个好梦）。回一句 You too. 就很贴心。',
+    takeaway:'睡前 → Good night! You too.'
   }
 
   ]);

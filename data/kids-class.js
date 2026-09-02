@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏫 课堂篇（30 题）
+   🧒 小学生入门 · 🏫 课堂篇（35 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -564,6 +564,102 @@
     ],
     explain:'💡 收发东西的口令：Pass … forward.（往前传）、Pass … back.（往后传）、Hand it in.（上交）。',
     takeaway:'Pass your papers forward. = 把卷子往前传。'
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂篇（加餐 4） ---------- */
+  EN.add('kids', 'class', [
+
+  {
+    id:'kc-31', pack:'class', level:2, type:'phrase',
+    scene:'🏫 铅笔断了想削',
+    situation:'写着写着铅笔尖断了，你想去教室后面的卷笔刀那儿削一下。',
+    quote:'',
+    note:'得先跟老师说一声。',
+    ask:'该怎么请示最有礼貌？',
+    options:[
+      { text:'May I sharpen my pencil?', note:'请示＋说清要做什么', badge:'地道', kind:'native', ok:true,
+        why:'sharpen 是"削（尖）"，May I sharpen my pencil? 就是请老师同意你去削铅笔。' },
+      { text:'My pencil is broken. I go.', note:'没在请示，是在通知', badge:'不礼貌', kind:'stiff', ok:false,
+        why:'说完就走没征求同意，应该问 May I sharpen my pencil?' },
+      { text:'Pencil sharp!', note:'蹦词，说不清', badge:'不通顺', kind:'trap', ok:false,
+        why:'蹦两个词老师得猜，要说完整的 May I sharpen my pencil?' }
+    ],
+    explain:'💡 铅笔相关：sharpen my pencil（削铅笔）、My pencil is broken.（笔断了）、Can I borrow a pencil?（借支笔）。',
+    takeaway:'想削铅笔 → May I sharpen my pencil?'
+  },
+  {
+    id:'kc-32', pack:'class', level:2, type:'listening',
+    scene:'🏫 老师要听写',
+    situation:'上课铃响后，外教合上课本，对全班说：',
+    quote:'Take out a piece of paper.',
+    note:'同学们都开始翻书包找纸。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'拿出一张纸', note:'a piece of paper = 一张纸', badge:'地道', kind:'native', ok:true,
+        why:'Take out a piece of paper. 就是拿出一张纸，通常接下来要听写或做题。' },
+      { text:'把纸撕成一片片', note:'想歪了', badge:'理解偏', kind:'trap', ok:false,
+        why:'a piece of paper 是"一张纸"，不是让你撕纸。' },
+      { text:'把书本收起来', note:'那是 put away your books', badge:'听岔了', kind:'stiff', ok:false,
+        why:'收书是 put away，这句是让你拿出纸来。' }
+    ],
+    explain:'💡 听写前常听：Take out a piece of paper.（拿出一张纸）、Write your name.（写名字）、Number one…（第一题）。',
+    takeaway:'Take out a piece of paper. = 拿出一张纸。'
+  },
+  {
+    id:'kc-33', pack:'class', level:2, type:'social',
+    scene:'🏫 同桌上课一直讲话',
+    situation:'老师在讲课，同桌却一直凑过来跟你聊天，你都听不清老师说什么了。',
+    quote:'',
+    note:'你想让他安静下来，又不想吵起来。',
+    ask:'该怎么提醒他最合适？',
+    options:[
+      { text:"Shh, let's listen.", note:'轻声提醒一起听', badge:'地道', kind:'native', ok:true,
+        why:'轻轻一句 Shh, let\'s listen.（嘘，我们听讲吧），既提醒了他又不伤和气。' },
+      { text:'Shut up!', note:'太粗鲁', badge:'太冲', kind:'trap', ok:false,
+        why:'Shut up!（闭嘴）非常不礼貌，会让同桌很生气。' },
+      { text:'（自己也跟着聊起来）', note:'一起违纪', badge:'带偏了', kind:'stiff', ok:false,
+        why:'跟着聊两个人都要挨批，提醒他一起听讲才对。' }
+    ],
+    explain:'💡 想让人小声点：Shh.（嘘）、Let\'s listen.（我们听讲吧）、Be quiet, please.。别用 Shut up!，那句太伤人。',
+    takeaway:"提醒同桌 → Shh, let's listen."
+  },
+  {
+    id:'kc-34', pack:'class', level:2, type:'phrase',
+    scene:'🏫 想请老师看看对不对',
+    situation:'一道题你做完了，但不确定对不对，想请老师帮你看一眼。',
+    quote:'',
+    note:'老师正好在教室里走动。',
+    ask:'该怎么请老师检查？',
+    options:[
+      { text:'Could you check this for me, please?', note:'礼貌请老师检查', badge:'地道', kind:'native', ok:true,
+        why:'check 是"检查、核对"，Could you check this for me, please? 客气又清楚。' },
+      { text:'Look my answer right?', note:'又漏词又不通', badge:'不通顺', kind:'stiff', ok:false,
+        why:'句子不成形，要说 Could you check this for me?' },
+      { text:'Is my answer right? Tell me!', note:'后半句像命令', badge:'太冲', kind:'trap', ok:false,
+        why:'Tell me! 太冲，礼貌地说 Could you check this, please? 更好。' }
+    ],
+    explain:'💡 请老师帮看：Could you check this, please?（帮我看看对吗）、Is this right?（这样对吗）、Did I do it right?（我做对了吗）。',
+    takeaway:'请老师检查 → Could you check this for me, please?'
+  },
+  {
+    id:'kc-35', pack:'class', level:1, type:'phrase',
+    scene:'🏫 老师问谁想读',
+    situation:'读课文时，外教举着书问全班：',
+    quote:'Who wants to read?',
+    note:'你很想试试，举起了手。',
+    ask:'被点到前，举手时说哪句最好？',
+    options:[
+      { text:'I do! / Can I try?', note:'主动又礼貌', badge:'地道', kind:'native', ok:true,
+        why:'想自愿就说 I do!（我想）或 Can I try?（我能试试吗），老师最喜欢主动的学生。' },
+      { text:'Me me me!', note:'太吵，像抢', badge:'太急', kind:'stiff', ok:false,
+        why:'连声喊 Me 会显得毛躁，安静举手说 I do! 更稳。' },
+      { text:'（想读却不敢举手）', note:'机会溜走了', badge:'太腼腆', kind:'trap', ok:false,
+        why:'想读就大胆举手，多开口才进步得快。' }
+    ],
+    explain:'💡 自愿回答/朗读：I do!（我来）、Can I try?（我能试试吗）、Let me try!（让我试试）。举手比喊叫更受欢迎。',
+    takeaway:'想读 → I do! / Can I try?'
   }
 
   ]);

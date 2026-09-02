@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🎈 交朋友篇（31 题）
+   🧒 小学生入门 · 🎈 交朋友篇（36 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -583,6 +583,102 @@
     ],
     explain:'💡 答应保密：Can you keep a secret? → Sure!、I won\'t tell anyone.（我谁都不告诉）、Your secret is safe with me.（放心，我不说）。',
     takeaway:"保守秘密 → Sure! I won't tell anyone."
+  }
+
+  ]);
+
+  /* ---------- 🎈 交朋友篇（加餐 4） ---------- */
+  EN.add('kids', 'friend', [
+
+  {
+    id:'kf-32', pack:'friend', level:1, type:'social',
+    scene:'🎈 朋友上场前很紧张',
+    situation:'好朋友马上要上台表演，紧张得手心冒汗，脸都白了。',
+    quote:'',
+    note:'你想给他鼓鼓劲。',
+    ask:'该说哪句最能打气？',
+    options:[
+      { text:'You can do it! Good luck!', note:'鼓励＋祝好运', badge:'地道', kind:'native', ok:true,
+        why:'You can do it!（你行的）＋ Good luck!（祝好运）是最给力的打气话。' },
+      { text:"Don't be so nervous!", note:'越说越紧张', badge:'帮倒忙', kind:'stiff', ok:false,
+        why:'一直提"别紧张"反而让人更紧张，正面鼓励 You can do it! 更好。' },
+      { text:'What if you forget?', note:'泼冷水', badge:'扎心', kind:'trap', ok:false,
+        why:'问"忘词了怎么办"会让朋友更慌，这时候只该打气。' }
+    ],
+    explain:'💡 给朋友打气：You can do it!（你能行）、Good luck!（好运）、Don\'t worry, you\'ll be great!（别怕，你会很棒）。',
+    takeaway:'打气 → You can do it! Good luck!'
+  },
+  {
+    id:'kf-33', pack:'friend', level:2, type:'social',
+    scene:'🎈 玩笑开过头了',
+    situation:'你跟外国同学开了个玩笑，没想到他脸一沉，好像有点生气了。',
+    quote:'',
+    note:'你不是故意惹他的。',
+    ask:'该怎么赶紧打圆场？',
+    options:[
+      { text:'Sorry, I was just kidding.', note:'道歉＋说明是玩笑', badge:'地道', kind:'native', ok:true,
+        why:'just kidding 是"开玩笑的"，加一句 Sorry，让他知道你没有恶意。' },
+      { text:'It was funny!', note:'还在坚持自己好笑', badge:'火上浇油', kind:'trap', ok:false,
+        why:'他都不高兴了你还说"很好笑"，只会更气人。' },
+      { text:"You can't take a joke.", note:'反过来怪他', badge:'太冲', kind:'stiff', ok:false,
+        why:'怪他"开不起玩笑"是推卸，先道歉 Sorry, I was just kidding. 才对。' }
+    ],
+    explain:'💡 玩笑过头补救：Sorry, I was just kidding.（开玩笑的）、I didn\'t mean it.（我不是故意的）、No offense.（没有恶意）。',
+    takeaway:'玩笑过头 → Sorry, I was just kidding.'
+  },
+  {
+    id:'kf-34', pack:'friend', level:1, type:'social',
+    scene:'🎈 想表达友情',
+    situation:'外国同学总在你需要时帮你，你心里把他当成最好的朋友，想告诉他。',
+    quote:'',
+    note:'一句暖心话能让友谊更牢。',
+    ask:'该怎么表达最自然？',
+    options:[
+      { text:"You're my best friend!", note:'直接又真诚', badge:'地道', kind:'native', ok:true,
+        why:'You\'re my best friend!（你是我最好的朋友）简单一句，暖到心里。' },
+      { text:'You are my number one people.', note:'逐字硬翻', badge:'中式', kind:'stiff', ok:false,
+        why:'想说"你是我最重要的人"，地道说法是 You\'re my best friend.，别硬拼。' },
+      { text:'You must be my friend.', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'must 是"必须"，这么说像强迫，表达友情用 You\'re my best friend.' }
+    ],
+    explain:'💡 表达友情：You\'re my best friend!（你是我最好的朋友）、I\'m glad we\'re friends.（很高兴和你做朋友）、Thanks for being my friend.',
+    takeaway:"表达友情 → You're my best friend!"
+  },
+  {
+    id:'kf-35', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 提议一起做',
+    situation:'老师留了个手工作业，你和好朋友都觉得一个人做太难。',
+    quote:'',
+    note:'你想提议两个人一起做。',
+    ask:'该怎么开口最自然？',
+    options:[
+      { text:"Let's do it together!", note:'提议合作的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'Let\'s do it together!（我们一起做吧）既是提议也是鼓劲，朋友多半会答应。' },
+      { text:'You do, I watch.', note:'只想让人替你做', badge:'太自私', kind:'trap', ok:false,
+        why:'让别人做你在旁边看可不是合作，一起做才叫 together。' },
+      { text:'Together do we.', note:'词序全乱了', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，要说 Let\'s do it together.' }
+    ],
+    explain:'💡 提议一起做：Let\'s do it together!（一起做吧）、Let\'s work together.、Can we be partners?（我们搭档吧）。',
+    takeaway:"一起做 → Let's do it together!"
+  },
+  {
+    id:'kf-36', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 想看看朋友的新玩具',
+    situation:'外国同学带来一个很酷的新玩具，你很好奇，想凑近看看。',
+    quote:'',
+    note:'别人的东西，先问一声再看。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'Can I have a look?', note:'看一下的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'have a look 是"看一看"，Can I have a look?（我能看看吗）比直接上手拿礼貌多了。' },
+      { text:'（一把抢过来看）', note:'太没礼貌', badge:'太冲', kind:'trap', ok:false,
+        why:'不问就抢会让人不高兴，先问 Can I have a look? 再看。' },
+      { text:'Give it to me.', note:'像在要东西', badge:'太冲', kind:'stiff', ok:false,
+        why:'Give it to me 像命令人交出来，想看就说 Can I have a look?' }
+    ],
+    explain:'💡 想看别人的东西：Can I have a look?（能看看吗）、Can I see it?（能给我看看吗）。看完记得说 Thanks! 再还回去。',
+    takeaway:'想看看 → Can I have a look?'
   }
 
   ]);

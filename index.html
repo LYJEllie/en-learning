@@ -5257,7 +5257,7 @@ body{
 <script>
 /* ===== inlined: data/kids-hello.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 👋 打招呼篇（30 题）
+   🧒 小学生入门 · 👋 打招呼篇（35 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -5826,12 +5826,108 @@ body{
 
   ]);
 
+  /* ---------- 👋 打招呼篇（加餐 4） ---------- */
+  EN.add('kids', 'hello', [
+
+  {
+    id:'kh-31', pack:'hello', level:2, type:'culture',
+    scene:'👋 外国朋友张开了手臂',
+    situation:'久别重逢，外国好朋友一见你就张开双臂朝你走来。',
+    quote:'',
+    note:'在他们那儿，好朋友见面常常抱一下。',
+    ask:'这时候最自然的反应是？',
+    options:[
+      { text:'笑着回抱一下，说 Good to see you!', note:'入乡随俗', badge:'地道', kind:'native', ok:true,
+        why:'西方好友重逢常拥抱（a hug），大方回抱、说句 Good to see you! 最自然。' },
+      { text:'赶紧后退一步躲开', note:'会让对方很尴尬', badge:'太见外', kind:'trap', ok:false,
+        why:'一下子躲开会让热情的朋友愣住，以为你不高兴见他。' },
+      { text:'伸手要跟他握手鞠躬', note:'场合不太搭', badge:'太生分', kind:'stiff', ok:false,
+        why:'握手偏正式，好朋友之间抱一下或击个掌更亲切。' }
+    ],
+    explain:'💡 西方打招呼的身体语言：初次见面多是握手（handshake），好朋友之间常拥抱（hug）或击掌（high five）。不习惯拥抱，笑着挥挥手也行。',
+    takeaway:'好友重逢 → 回抱一下，Good to see you!'
+  },
+  {
+    id:'kh-32', pack:'hello', level:3, type:'phrase',
+    scene:'👋 用天气开场聊天',
+    situation:'排队时旁边的外国老爷爷望着大晴天，笑着对你说：',
+    quote:"Nice day, isn't it?",
+    note:'他只是想友好地搭句话。',
+    ask:'最自然的回应是？',
+    options:[
+      { text:'Yes, it is! Beautiful!', note:'顺着话头接下去', badge:'地道', kind:'native', ok:true,
+        why:'这是句"闲聊开场白"，顺着说 Yes, it is! 再夸一句，气氛一下就轻松了。' },
+      { text:'（愣住，不知道说啥）', note:'冷场了', badge:'冷场', kind:'stiff', ok:false,
+        why:'他只是随口聊天，回一句 Yes, it is! 就好，不用紧张。' },
+      { text:'Why do you ask?', note:'把闲聊当成了盘问', badge:'会错意', kind:'trap', ok:false,
+        why:'Nice day, isn\'t it? 不是真在问问题，是想跟你聊两句。' }
+    ],
+    explain:'💡 老外爱用天气开启闲聊：Nice day, isn\'t it?（天气真好，是吧）、It\'s cold today.（今天真冷）。顺着接一句 Yes, it is! 就很友好。',
+    takeaway:"Nice day, isn't it? → Yes, it is!"
+  },
+  {
+    id:'kh-33', pack:'hello', level:2, type:'phrase',
+    scene:'👋 电话打错了',
+    situation:'你拨了个号码，对面是个陌生的外国人，你这才发现号码按错了。',
+    quote:'',
+    note:'总不能一句话不说就挂掉。',
+    ask:'该怎么礼貌地收场？',
+    options:[
+      { text:'Sorry, wrong number.', note:'打错电话的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'号码拨错了，说一句 Sorry, wrong number.（抱歉，打错了）再挂，礼貌又干脆。' },
+      { text:'（一句不说直接挂断）', note:'有点没礼貌', badge:'太冷', kind:'stiff', ok:false,
+        why:'哪怕打错了，说声 Sorry 也比闷不吭声挂掉体面。' },
+      { text:'Who are you?', note:'像在盘问对方', badge:'太冲', kind:'trap', ok:false,
+        why:'是你打错了，还反问人家是谁很没道理，应该道歉。' }
+    ],
+    explain:'💡 电话打错了：Sorry, wrong number.（抱歉打错了）。接到打错的电话，你也可以回 That\'s OK. / No problem.',
+    takeaway:'打错电话 → Sorry, wrong number.'
+  },
+  {
+    id:'kh-34', pack:'hello', level:3, type:'phrase',
+    scene:'👋 别人问你喜不喜欢这儿',
+    situation:'你来到国外的新学校，外教关心地问你适应得怎么样：',
+    quote:'How do you like it here?',
+    note:'她想知道你喜不喜欢这里。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'I like it a lot!', note:'直接说出感受', badge:'地道', kind:'native', ok:true,
+        why:'How do you like…? 是问"你觉得…怎么样、喜不喜欢"，回 I like it a lot! 又热情又清楚。' },
+      { text:'How do I like it?', note:'把问题重复了一遍', badge:'没接住', kind:'stiff', ok:false,
+        why:'她是在问你的感受，把问题原样念回去等于没回答。' },
+      { text:'Yes, I like.', note:'like 后面缺了东西', badge:'语法错', kind:'trap', ok:false,
+        why:'like 后面要跟 it：I like it (a lot).，不能光说 I like。' }
+    ],
+    explain:'💡 How do you like …? 是问喜不喜欢、觉得怎么样：How do you like China?（喜欢中国吗）→ I like it a lot! / It\'s great!',
+    takeaway:'How do you like it? → I like it a lot!'
+  },
+  {
+    id:'kh-35', pack:'hello', level:1, type:'phrase',
+    scene:'👋 主动认识新朋友',
+    situation:'夏令营里你看见一个外国小朋友一个人坐着，你想过去主动认识他。',
+    quote:'',
+    note:'先迈出第一步，往往就交到朋友了。',
+    ask:'开口第一句怎么说最好？',
+    options:[
+      { text:"Hi, I'm Lily. What's your name?", note:'先报名，再问对方', badge:'地道', kind:'native', ok:true,
+        why:'先自我介绍 I\'m Lily.，再问 What\'s your name?，一来一回就聊上了。' },
+      { text:'What are you doing here alone?', note:'像在盘问', badge:'太直接', kind:'stiff', ok:false,
+        why:'一上来就问"你怎么一个人在这"有点冒失，先友好地报个名。' },
+      { text:'（站旁边看着，不说话）', note:'错过了机会', badge:'太腼腆', kind:'trap', ok:false,
+        why:'光站着不开口，友谊就没法开始，勇敢说句 Hi 吧。' }
+    ],
+    explain:'💡 主动交朋友的黄金开场：Hi, I\'m Lily. What\'s your name?。报名字＋问名字，简单一句就破了冰。',
+    takeaway:"主动认识 → Hi, I'm Lily. What's your name?"
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-class.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🏫 课堂篇（30 题）
+   🧒 小学生入门 · 🏫 课堂篇（35 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -6400,12 +6496,108 @@ body{
 
   ]);
 
+  /* ---------- 🏫 课堂篇（加餐 4） ---------- */
+  EN.add('kids', 'class', [
+
+  {
+    id:'kc-31', pack:'class', level:2, type:'phrase',
+    scene:'🏫 铅笔断了想削',
+    situation:'写着写着铅笔尖断了，你想去教室后面的卷笔刀那儿削一下。',
+    quote:'',
+    note:'得先跟老师说一声。',
+    ask:'该怎么请示最有礼貌？',
+    options:[
+      { text:'May I sharpen my pencil?', note:'请示＋说清要做什么', badge:'地道', kind:'native', ok:true,
+        why:'sharpen 是"削（尖）"，May I sharpen my pencil? 就是请老师同意你去削铅笔。' },
+      { text:'My pencil is broken. I go.', note:'没在请示，是在通知', badge:'不礼貌', kind:'stiff', ok:false,
+        why:'说完就走没征求同意，应该问 May I sharpen my pencil?' },
+      { text:'Pencil sharp!', note:'蹦词，说不清', badge:'不通顺', kind:'trap', ok:false,
+        why:'蹦两个词老师得猜，要说完整的 May I sharpen my pencil?' }
+    ],
+    explain:'💡 铅笔相关：sharpen my pencil（削铅笔）、My pencil is broken.（笔断了）、Can I borrow a pencil?（借支笔）。',
+    takeaway:'想削铅笔 → May I sharpen my pencil?'
+  },
+  {
+    id:'kc-32', pack:'class', level:2, type:'listening',
+    scene:'🏫 老师要听写',
+    situation:'上课铃响后，外教合上课本，对全班说：',
+    quote:'Take out a piece of paper.',
+    note:'同学们都开始翻书包找纸。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'拿出一张纸', note:'a piece of paper = 一张纸', badge:'地道', kind:'native', ok:true,
+        why:'Take out a piece of paper. 就是拿出一张纸，通常接下来要听写或做题。' },
+      { text:'把纸撕成一片片', note:'想歪了', badge:'理解偏', kind:'trap', ok:false,
+        why:'a piece of paper 是"一张纸"，不是让你撕纸。' },
+      { text:'把书本收起来', note:'那是 put away your books', badge:'听岔了', kind:'stiff', ok:false,
+        why:'收书是 put away，这句是让你拿出纸来。' }
+    ],
+    explain:'💡 听写前常听：Take out a piece of paper.（拿出一张纸）、Write your name.（写名字）、Number one…（第一题）。',
+    takeaway:'Take out a piece of paper. = 拿出一张纸。'
+  },
+  {
+    id:'kc-33', pack:'class', level:2, type:'social',
+    scene:'🏫 同桌上课一直讲话',
+    situation:'老师在讲课，同桌却一直凑过来跟你聊天，你都听不清老师说什么了。',
+    quote:'',
+    note:'你想让他安静下来，又不想吵起来。',
+    ask:'该怎么提醒他最合适？',
+    options:[
+      { text:"Shh, let's listen.", note:'轻声提醒一起听', badge:'地道', kind:'native', ok:true,
+        why:'轻轻一句 Shh, let\'s listen.（嘘，我们听讲吧），既提醒了他又不伤和气。' },
+      { text:'Shut up!', note:'太粗鲁', badge:'太冲', kind:'trap', ok:false,
+        why:'Shut up!（闭嘴）非常不礼貌，会让同桌很生气。' },
+      { text:'（自己也跟着聊起来）', note:'一起违纪', badge:'带偏了', kind:'stiff', ok:false,
+        why:'跟着聊两个人都要挨批，提醒他一起听讲才对。' }
+    ],
+    explain:'💡 想让人小声点：Shh.（嘘）、Let\'s listen.（我们听讲吧）、Be quiet, please.。别用 Shut up!，那句太伤人。',
+    takeaway:"提醒同桌 → Shh, let's listen."
+  },
+  {
+    id:'kc-34', pack:'class', level:2, type:'phrase',
+    scene:'🏫 想请老师看看对不对',
+    situation:'一道题你做完了，但不确定对不对，想请老师帮你看一眼。',
+    quote:'',
+    note:'老师正好在教室里走动。',
+    ask:'该怎么请老师检查？',
+    options:[
+      { text:'Could you check this for me, please?', note:'礼貌请老师检查', badge:'地道', kind:'native', ok:true,
+        why:'check 是"检查、核对"，Could you check this for me, please? 客气又清楚。' },
+      { text:'Look my answer right?', note:'又漏词又不通', badge:'不通顺', kind:'stiff', ok:false,
+        why:'句子不成形，要说 Could you check this for me?' },
+      { text:'Is my answer right? Tell me!', note:'后半句像命令', badge:'太冲', kind:'trap', ok:false,
+        why:'Tell me! 太冲，礼貌地说 Could you check this, please? 更好。' }
+    ],
+    explain:'💡 请老师帮看：Could you check this, please?（帮我看看对吗）、Is this right?（这样对吗）、Did I do it right?（我做对了吗）。',
+    takeaway:'请老师检查 → Could you check this for me, please?'
+  },
+  {
+    id:'kc-35', pack:'class', level:1, type:'phrase',
+    scene:'🏫 老师问谁想读',
+    situation:'读课文时，外教举着书问全班：',
+    quote:'Who wants to read?',
+    note:'你很想试试，举起了手。',
+    ask:'被点到前，举手时说哪句最好？',
+    options:[
+      { text:'I do! / Can I try?', note:'主动又礼貌', badge:'地道', kind:'native', ok:true,
+        why:'想自愿就说 I do!（我想）或 Can I try?（我能试试吗），老师最喜欢主动的学生。' },
+      { text:'Me me me!', note:'太吵，像抢', badge:'太急', kind:'stiff', ok:false,
+        why:'连声喊 Me 会显得毛躁，安静举手说 I do! 更稳。' },
+      { text:'（想读却不敢举手）', note:'机会溜走了', badge:'太腼腆', kind:'trap', ok:false,
+        why:'想读就大胆举手，多开口才进步得快。' }
+    ],
+    explain:'💡 自愿回答/朗读：I do!（我来）、Can I try?（我能试试吗）、Let me try!（让我试试）。举手比喊叫更受欢迎。',
+    takeaway:'想读 → I do! / Can I try?'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-life.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🏠 生活篇（30 题）
+   🧒 小学生入门 · 🏠 生活篇（35 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -6974,12 +7166,108 @@ body{
 
   ]);
 
+  /* ---------- 🏠 生活篇（加餐 4） ---------- */
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-31', pack:'life', level:2, type:'phrase',
+    scene:'🏠 想洗个澡',
+    situation:'在寄宿家庭玩了一天，你出了一身汗，想去洗个澡。',
+    quote:'',
+    note:'用别人家的浴室，先问一声更礼貌。',
+    ask:'该怎么问阿姨？',
+    options:[
+      { text:'Can I take a shower?', note:'洗澡的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'冲淋浴用 take a shower：Can I take a shower?（我能洗个澡吗），先问一声最有礼貌。' },
+      { text:'Can I wash my body?', note:'逐字硬翻', badge:'中式', kind:'stiff', ok:false,
+        why:'"洗澡"是 take a shower / take a bath，别一个字一个字地翻成 wash my body。' },
+      { text:'I want water on me.', note:'谁也听不懂', badge:'不通顺', kind:'trap', ok:false,
+        why:'这句读不通，洗澡就说 take a shower。' }
+    ],
+    explain:'💡 洗漱相关：take a shower（冲淋浴）、take a bath（泡澡）、brush my teeth（刷牙）、wash my hands（洗手）。',
+    takeaway:'想洗澡 → Can I take a shower?'
+  },
+  {
+    id:'kl-32', pack:'life', level:2, type:'listening',
+    scene:'🏠 阿姨请你跑个腿',
+    situation:'做饭做到一半，阿姨发现面包没了，掏出钱递给你说：',
+    quote:'Can you go and get some bread?',
+    note:'楼下就有家小超市。',
+    ask:'她请你做什么？',
+    options:[
+      { text:'去买点面包回来', note:'go and get = 去买/去拿', badge:'地道', kind:'native', ok:true,
+        why:'go and get some bread 就是"去买点面包"，你回一句 Sure! 再下楼就好。' },
+      { text:'去把面包做出来', note:'不是让你做面包', badge:'理解偏', kind:'trap', ok:false,
+        why:'get 是"去拿/去买"，不是让你自己烤面包。' },
+      { text:'把面包扔掉', note:'想歪了', badge:'想歪了', kind:'stiff', ok:false,
+        why:'get some bread 是买面包回来，不是扔面包。' }
+    ],
+    explain:'💡 跑腿常听：Can you go and get some…?（去买点…）、Can you bring me…?（帮我拿…）。答应就说 Sure! / No problem!',
+    takeaway:'Can you go and get some bread? = 去买点面包。'
+  },
+  {
+    id:'kl-33', pack:'life', level:1, type:'phrase',
+    scene:'🏠 找不到鞋子了',
+    situation:'早上要出门了，你却怎么也找不到自己的另一只鞋。',
+    quote:'',
+    note:'时间快来不及了，得赶紧问阿姨。',
+    ask:'该怎么求助最清楚？',
+    options:[
+      { text:"I can't find my shoe. Have you seen it?", note:'说明情况＋求助', badge:'地道', kind:'native', ok:true,
+        why:'I can\'t find …（我找不到…）说清了问题，再问 Have you seen it?（你看见了吗），阿姨就能帮你找。' },
+      { text:'My shoe is lost forever!', note:'太夸张', badge:'太夸张', kind:'stiff', ok:false,
+        why:'只是暂时找不到，说 lost forever（永远丢了）太夸张，用 I can\'t find it.' },
+      { text:'Shoe? Shoe?', note:'光念名词', badge:'说不清', kind:'trap', ok:false,
+        why:'光念 shoe 别人不知道你要干嘛，要说 I can\'t find my shoe.' }
+    ],
+    explain:'💡 找不到东西：I can\'t find my …（我找不到我的…）、Where is my …?（我的…在哪）、Have you seen it?（你看见了吗）。',
+    takeaway:"找不到 → I can't find my shoe."
+  },
+  {
+    id:'kl-34', pack:'life', level:2, type:'phrase',
+    scene:'🏠 早餐想吃什么',
+    situation:'寄宿家庭的早晨，阿姨打开冰箱，回头问你：',
+    quote:'What would you like for breakfast?',
+    note:'冰箱里有鸡蛋、面包和牛奶。',
+    ask:'该怎么回答最自然礼貌？',
+    options:[
+      { text:'Bread and milk, please.', note:'说出想吃的＋please', badge:'地道', kind:'native', ok:true,
+        why:'点吃的用"东西 + please"：Bread and milk, please.，又清楚又客气。' },
+      { text:'I want eat egg.', note:'两个动词还漏词', badge:'语法错', kind:'stiff', ok:false,
+        why:'want 后面要加 to：I want to eat…；更简单的是直接说 An egg, please.' },
+      { text:'Anything is anything.', note:'谁也听不懂', badge:'不通顺', kind:'trap', ok:false,
+        why:'想说"随便"可以讲 Anything is fine.，别硬拼词。' }
+    ],
+    explain:'💡 在家点餐：… , please.（要什么就说什么）、Anything is fine.（都行）、I\'m not hungry, thanks.（我不饿）。',
+    takeaway:'早餐想吃 → Bread and milk, please.'
+  },
+  {
+    id:'kl-35', pack:'life', level:1, type:'manners',
+    scene:'🏠 寄宿家庭的睡前',
+    situation:'在寄宿家庭住的晚上，睡觉前阿姨来到你房间，帮你关好灯。',
+    quote:'Good night! Sleep well.',
+    note:'她笑着轻轻带上门。',
+    ask:'你该回哪一句最暖？',
+    options:[
+      { text:'Good night! You too.', note:'道晚安＋回祝', badge:'地道', kind:'native', ok:true,
+        why:'互道 Good night!，再加句 You too.（你也是），温馨又礼貌。' },
+      { text:'Good morning!', note:'时间说反了', badge:'说反了', kind:'trap', ok:false,
+        why:'这会儿是睡前，要说 Good night，不是 Good morning。' },
+      { text:'OK.', note:'太冷淡', badge:'冷场', kind:'stiff', ok:false,
+        why:'人家来道晚安，只回一个 OK 有点冷，回 Good night! 才暖。' }
+    ],
+    explain:'💡 睡前互道：Good night!（晚安）、Sleep well.（睡个好觉）、Sweet dreams.（做个好梦）。回一句 You too. 就很贴心。',
+    takeaway:'睡前 → Good night! You too.'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-friend.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🎈 交朋友篇（31 题）
+   🧒 小学生入门 · 🎈 交朋友篇（36 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -7567,12 +7855,108 @@ body{
 
   ]);
 
+  /* ---------- 🎈 交朋友篇（加餐 4） ---------- */
+  EN.add('kids', 'friend', [
+
+  {
+    id:'kf-32', pack:'friend', level:1, type:'social',
+    scene:'🎈 朋友上场前很紧张',
+    situation:'好朋友马上要上台表演，紧张得手心冒汗，脸都白了。',
+    quote:'',
+    note:'你想给他鼓鼓劲。',
+    ask:'该说哪句最能打气？',
+    options:[
+      { text:'You can do it! Good luck!', note:'鼓励＋祝好运', badge:'地道', kind:'native', ok:true,
+        why:'You can do it!（你行的）＋ Good luck!（祝好运）是最给力的打气话。' },
+      { text:"Don't be so nervous!", note:'越说越紧张', badge:'帮倒忙', kind:'stiff', ok:false,
+        why:'一直提"别紧张"反而让人更紧张，正面鼓励 You can do it! 更好。' },
+      { text:'What if you forget?', note:'泼冷水', badge:'扎心', kind:'trap', ok:false,
+        why:'问"忘词了怎么办"会让朋友更慌，这时候只该打气。' }
+    ],
+    explain:'💡 给朋友打气：You can do it!（你能行）、Good luck!（好运）、Don\'t worry, you\'ll be great!（别怕，你会很棒）。',
+    takeaway:'打气 → You can do it! Good luck!'
+  },
+  {
+    id:'kf-33', pack:'friend', level:2, type:'social',
+    scene:'🎈 玩笑开过头了',
+    situation:'你跟外国同学开了个玩笑，没想到他脸一沉，好像有点生气了。',
+    quote:'',
+    note:'你不是故意惹他的。',
+    ask:'该怎么赶紧打圆场？',
+    options:[
+      { text:'Sorry, I was just kidding.', note:'道歉＋说明是玩笑', badge:'地道', kind:'native', ok:true,
+        why:'just kidding 是"开玩笑的"，加一句 Sorry，让他知道你没有恶意。' },
+      { text:'It was funny!', note:'还在坚持自己好笑', badge:'火上浇油', kind:'trap', ok:false,
+        why:'他都不高兴了你还说"很好笑"，只会更气人。' },
+      { text:"You can't take a joke.", note:'反过来怪他', badge:'太冲', kind:'stiff', ok:false,
+        why:'怪他"开不起玩笑"是推卸，先道歉 Sorry, I was just kidding. 才对。' }
+    ],
+    explain:'💡 玩笑过头补救：Sorry, I was just kidding.（开玩笑的）、I didn\'t mean it.（我不是故意的）、No offense.（没有恶意）。',
+    takeaway:'玩笑过头 → Sorry, I was just kidding.'
+  },
+  {
+    id:'kf-34', pack:'friend', level:1, type:'social',
+    scene:'🎈 想表达友情',
+    situation:'外国同学总在你需要时帮你，你心里把他当成最好的朋友，想告诉他。',
+    quote:'',
+    note:'一句暖心话能让友谊更牢。',
+    ask:'该怎么表达最自然？',
+    options:[
+      { text:"You're my best friend!", note:'直接又真诚', badge:'地道', kind:'native', ok:true,
+        why:'You\'re my best friend!（你是我最好的朋友）简单一句，暖到心里。' },
+      { text:'You are my number one people.', note:'逐字硬翻', badge:'中式', kind:'stiff', ok:false,
+        why:'想说"你是我最重要的人"，地道说法是 You\'re my best friend.，别硬拼。' },
+      { text:'You must be my friend.', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'must 是"必须"，这么说像强迫，表达友情用 You\'re my best friend.' }
+    ],
+    explain:'💡 表达友情：You\'re my best friend!（你是我最好的朋友）、I\'m glad we\'re friends.（很高兴和你做朋友）、Thanks for being my friend.',
+    takeaway:"表达友情 → You're my best friend!"
+  },
+  {
+    id:'kf-35', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 提议一起做',
+    situation:'老师留了个手工作业，你和好朋友都觉得一个人做太难。',
+    quote:'',
+    note:'你想提议两个人一起做。',
+    ask:'该怎么开口最自然？',
+    options:[
+      { text:"Let's do it together!", note:'提议合作的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'Let\'s do it together!（我们一起做吧）既是提议也是鼓劲，朋友多半会答应。' },
+      { text:'You do, I watch.', note:'只想让人替你做', badge:'太自私', kind:'trap', ok:false,
+        why:'让别人做你在旁边看可不是合作，一起做才叫 together。' },
+      { text:'Together do we.', note:'词序全乱了', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，要说 Let\'s do it together.' }
+    ],
+    explain:'💡 提议一起做：Let\'s do it together!（一起做吧）、Let\'s work together.、Can we be partners?（我们搭档吧）。',
+    takeaway:"一起做 → Let's do it together!"
+  },
+  {
+    id:'kf-36', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 想看看朋友的新玩具',
+    situation:'外国同学带来一个很酷的新玩具，你很好奇，想凑近看看。',
+    quote:'',
+    note:'别人的东西，先问一声再看。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'Can I have a look?', note:'看一下的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'have a look 是"看一看"，Can I have a look?（我能看看吗）比直接上手拿礼貌多了。' },
+      { text:'（一把抢过来看）', note:'太没礼貌', badge:'太冲', kind:'trap', ok:false,
+        why:'不问就抢会让人不高兴，先问 Can I have a look? 再看。' },
+      { text:'Give it to me.', note:'像在要东西', badge:'太冲', kind:'stiff', ok:false,
+        why:'Give it to me 像命令人交出来，想看就说 Can I have a look?' }
+    ],
+    explain:'💡 想看别人的东西：Can I have a look?（能看看吗）、Can I see it?（能给我看看吗）。看完记得说 Thanks! 再还回去。',
+    takeaway:'想看看 → Can I have a look?'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-trip.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🧳 出门在外篇（30 题）
+   🧒 小学生入门 · 🧳 出门在外篇（35 题）
    出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
@@ -8138,6 +8522,102 @@ body{
     ],
     explain:'💡 问路后追问：Is it far?（远吗）、How far is it?（多远）、Can I walk there?（能走过去吗）。',
     takeaway:'问远近 → Is it far from here?'
+  }
+
+  ]);
+
+  /* ---------- 🧳 出门在外篇（加餐 4） ---------- */
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-31', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 上了出租车',
+    situation:'一家人上了出租车，司机回头问你们去哪儿，你们要去动物园。',
+    quote:'Where to?',
+    note:'司机在等你说目的地。',
+    ask:'该怎么说目的地最简单地道？',
+    options:[
+      { text:'To the zoo, please.', note:'去哪儿用 to + 地方', badge:'地道', kind:'native', ok:true,
+        why:'告诉司机去哪儿用 To + 地方, please：To the zoo, please.，又短又清楚。' },
+      { text:'I go zoo.', note:'漏词，也不礼貌', badge:'不通顺', kind:'stiff', ok:false,
+        why:'漏了 to 和冠词，礼貌说法是 To the zoo, please.' },
+      { text:'Zoo! Fast!', note:'像在催命', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Zoo! Fast! 很不礼貌，说 To the zoo, please. 就好。' }
+    ],
+    explain:'💡 打车必备：To the zoo, please.（去动物园）、How much is it?（多少钱）、Stop here, please.（在这儿停）。',
+    takeaway:'说目的地 → To the zoo, please.'
+  },
+  {
+    id:'kt-32', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 博物馆里想拍照',
+    situation:'博物馆里有件很酷的展品，你想拍张照，可又看见墙上贴着看不懂的牌子。',
+    quote:'',
+    note:'有的展馆不让拍照，最好先问一下。',
+    ask:'该怎么问工作人员？',
+    options:[
+      { text:'Excuse me, can I take photos here?', note:'先问能不能拍', badge:'地道', kind:'native', ok:true,
+        why:'拿不准就先问 Can I take photos here?（这儿能拍照吗），不让拍就收起相机。' },
+      { text:'（不管三七二十一先拍了）', note:'可能违规', badge:'鲁莽', kind:'trap', ok:false,
+        why:'有的地方禁止拍照或不许开闪光灯，先问一声更稳妥。' },
+      { text:'I take photo, OK?', note:'不太通顺', badge:'中式', kind:'stiff', ok:false,
+        why:'更地道的是 Can I take photos here?，别用中式的 I take photo, OK?' }
+    ],
+    explain:'💡 拍照前先问：Can I take photos here?（能拍照吗）。有时会看到 No photos.（禁止拍照）、No flash.（禁用闪光灯）。',
+    takeaway:'拍照前 → Can I take photos here?'
+  },
+  {
+    id:'kt-33', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 结账想刷卡',
+    situation:'在纪念品店买完东西，你们身上现金不够，想用银行卡付。',
+    quote:'',
+    note:'收银台前，店员在等你付钱。',
+    ask:'该怎么问能不能刷卡？',
+    options:[
+      { text:'Can I pay by card?', note:'问付款方式的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'刷卡付款用 pay by card：Can I pay by card?（能刷卡吗），付现金是 pay in cash。' },
+      { text:'I use card money.', note:'谁也听不懂', badge:'不通顺', kind:'stiff', ok:false,
+        why:'card money 不是说法，问刷卡就说 Can I pay by card?' },
+      { text:'Card! Card!', note:'光挥卡不说话', badge:'太随便', kind:'trap', ok:false,
+        why:'光喊 Card 不够清楚也不礼貌，问一句 Can I pay by card?' }
+    ],
+    explain:'💡 付款方式：Can I pay by card?（刷卡）、in cash（付现金）、Do you take cards?（收卡吗）。',
+    takeaway:'想刷卡 → Can I pay by card?'
+  },
+  {
+    id:'kt-34', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 买完东西想要个袋子',
+    situation:'你买了好几样小纪念品，手里拿不下，想跟店员要个袋子。',
+    quote:'',
+    note:'东西太多，快抱不住了。',
+    ask:'该怎么要袋子最礼貌？',
+    options:[
+      { text:'Can I have a bag, please?', note:'要东西的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'要个袋子用 Can I have a bag, please?，客气又清楚。' },
+      { text:'Bag! Give!', note:'蹦词像命令', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Bag! Give! 很不礼貌，要说 Can I have a bag, please?' },
+      { text:'I need bag now.', note:'语气生硬', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但 Can I have a bag, please? 更客气。' }
+    ],
+    explain:'💡 购物小请求：Can I have a bag, please?（要个袋子）、Can I have a receipt?（要张收据）。',
+    takeaway:'要袋子 → Can I have a bag, please?'
+  },
+  {
+    id:'kt-35', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 不会用自动售票机',
+    situation:'地铁站里，你们对着自动售票机不知怎么买票，想找工作人员问问。',
+    quote:'',
+    note:'机器上全是英文，你有点发懵。',
+    ask:'该怎么求助最清楚？',
+    options:[
+      { text:'Excuse me, how do I buy a ticket?', note:'问怎么买票', badge:'地道', kind:'native', ok:true,
+        why:'How do I …? 是问"我该怎么…"，How do I buy a ticket?（怎么买票）一问就有人教你。' },
+      { text:'Ticket how?', note:'蹦词，说不清', badge:'不通顺', kind:'stiff', ok:false,
+        why:'蹦两个词对方要猜，要说 How do I buy a ticket?' },
+      { text:'You buy ticket for me.', note:'把人当售票员使唤', badge:'太冲', kind:'trap', ok:false,
+        why:'这是让人替你买，应该问 How do I buy a ticket? 请人教你。' }
+    ],
+    explain:'💡 坐地铁常用：How do I buy a ticket?（怎么买票）、Which line goes to …?（哪条线去…）、Where do I change?（在哪儿换乘）。',
+    takeaway:'不会买票 → How do I buy a ticket?'
   }
 
   ]);

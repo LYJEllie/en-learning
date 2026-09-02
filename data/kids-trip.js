@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🧳 出门在外篇（30 题）
+   🧒 小学生入门 · 🧳 出门在外篇（35 题）
    出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
@@ -565,6 +565,102 @@
     ],
     explain:'💡 问路后追问：Is it far?（远吗）、How far is it?（多远）、Can I walk there?（能走过去吗）。',
     takeaway:'问远近 → Is it far from here?'
+  }
+
+  ]);
+
+  /* ---------- 🧳 出门在外篇（加餐 4） ---------- */
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-31', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 上了出租车',
+    situation:'一家人上了出租车，司机回头问你们去哪儿，你们要去动物园。',
+    quote:'Where to?',
+    note:'司机在等你说目的地。',
+    ask:'该怎么说目的地最简单地道？',
+    options:[
+      { text:'To the zoo, please.', note:'去哪儿用 to + 地方', badge:'地道', kind:'native', ok:true,
+        why:'告诉司机去哪儿用 To + 地方, please：To the zoo, please.，又短又清楚。' },
+      { text:'I go zoo.', note:'漏词，也不礼貌', badge:'不通顺', kind:'stiff', ok:false,
+        why:'漏了 to 和冠词，礼貌说法是 To the zoo, please.' },
+      { text:'Zoo! Fast!', note:'像在催命', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Zoo! Fast! 很不礼貌，说 To the zoo, please. 就好。' }
+    ],
+    explain:'💡 打车必备：To the zoo, please.（去动物园）、How much is it?（多少钱）、Stop here, please.（在这儿停）。',
+    takeaway:'说目的地 → To the zoo, please.'
+  },
+  {
+    id:'kt-32', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 博物馆里想拍照',
+    situation:'博物馆里有件很酷的展品，你想拍张照，可又看见墙上贴着看不懂的牌子。',
+    quote:'',
+    note:'有的展馆不让拍照，最好先问一下。',
+    ask:'该怎么问工作人员？',
+    options:[
+      { text:'Excuse me, can I take photos here?', note:'先问能不能拍', badge:'地道', kind:'native', ok:true,
+        why:'拿不准就先问 Can I take photos here?（这儿能拍照吗），不让拍就收起相机。' },
+      { text:'（不管三七二十一先拍了）', note:'可能违规', badge:'鲁莽', kind:'trap', ok:false,
+        why:'有的地方禁止拍照或不许开闪光灯，先问一声更稳妥。' },
+      { text:'I take photo, OK?', note:'不太通顺', badge:'中式', kind:'stiff', ok:false,
+        why:'更地道的是 Can I take photos here?，别用中式的 I take photo, OK?' }
+    ],
+    explain:'💡 拍照前先问：Can I take photos here?（能拍照吗）。有时会看到 No photos.（禁止拍照）、No flash.（禁用闪光灯）。',
+    takeaway:'拍照前 → Can I take photos here?'
+  },
+  {
+    id:'kt-33', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 结账想刷卡',
+    situation:'在纪念品店买完东西，你们身上现金不够，想用银行卡付。',
+    quote:'',
+    note:'收银台前，店员在等你付钱。',
+    ask:'该怎么问能不能刷卡？',
+    options:[
+      { text:'Can I pay by card?', note:'问付款方式的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'刷卡付款用 pay by card：Can I pay by card?（能刷卡吗），付现金是 pay in cash。' },
+      { text:'I use card money.', note:'谁也听不懂', badge:'不通顺', kind:'stiff', ok:false,
+        why:'card money 不是说法，问刷卡就说 Can I pay by card?' },
+      { text:'Card! Card!', note:'光挥卡不说话', badge:'太随便', kind:'trap', ok:false,
+        why:'光喊 Card 不够清楚也不礼貌，问一句 Can I pay by card?' }
+    ],
+    explain:'💡 付款方式：Can I pay by card?（刷卡）、in cash（付现金）、Do you take cards?（收卡吗）。',
+    takeaway:'想刷卡 → Can I pay by card?'
+  },
+  {
+    id:'kt-34', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 买完东西想要个袋子',
+    situation:'你买了好几样小纪念品，手里拿不下，想跟店员要个袋子。',
+    quote:'',
+    note:'东西太多，快抱不住了。',
+    ask:'该怎么要袋子最礼貌？',
+    options:[
+      { text:'Can I have a bag, please?', note:'要东西的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'要个袋子用 Can I have a bag, please?，客气又清楚。' },
+      { text:'Bag! Give!', note:'蹦词像命令', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Bag! Give! 很不礼貌，要说 Can I have a bag, please?' },
+      { text:'I need bag now.', note:'语气生硬', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但 Can I have a bag, please? 更客气。' }
+    ],
+    explain:'💡 购物小请求：Can I have a bag, please?（要个袋子）、Can I have a receipt?（要张收据）。',
+    takeaway:'要袋子 → Can I have a bag, please?'
+  },
+  {
+    id:'kt-35', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 不会用自动售票机',
+    situation:'地铁站里，你们对着自动售票机不知怎么买票，想找工作人员问问。',
+    quote:'',
+    note:'机器上全是英文，你有点发懵。',
+    ask:'该怎么求助最清楚？',
+    options:[
+      { text:'Excuse me, how do I buy a ticket?', note:'问怎么买票', badge:'地道', kind:'native', ok:true,
+        why:'How do I …? 是问"我该怎么…"，How do I buy a ticket?（怎么买票）一问就有人教你。' },
+      { text:'Ticket how?', note:'蹦词，说不清', badge:'不通顺', kind:'stiff', ok:false,
+        why:'蹦两个词对方要猜，要说 How do I buy a ticket?' },
+      { text:'You buy ticket for me.', note:'把人当售票员使唤', badge:'太冲', kind:'trap', ok:false,
+        why:'这是让人替你买，应该问 How do I buy a ticket? 请人教你。' }
+    ],
+    explain:'💡 坐地铁常用：How do I buy a ticket?（怎么买票）、Which line goes to …?（哪条线去…）、Where do I change?（在哪儿换乘）。',
+    takeaway:'不会买票 → How do I buy a ticket?'
   }
 
   ]);

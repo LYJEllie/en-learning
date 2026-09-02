@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 👋 打招呼篇（30 题）
+   🧒 小学生入门 · 👋 打招呼篇（35 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -564,6 +564,102 @@
     ],
     explain:'💡 认错人别慌，一句 Sorry, I thought you were someone else. 就化解了。日常小尴尬，Sorry 是万能钥匙。',
     takeaway:'认错人 → Sorry, I thought you were someone else.'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐 4） ---------- */
+  EN.add('kids', 'hello', [
+
+  {
+    id:'kh-31', pack:'hello', level:2, type:'culture',
+    scene:'👋 外国朋友张开了手臂',
+    situation:'久别重逢，外国好朋友一见你就张开双臂朝你走来。',
+    quote:'',
+    note:'在他们那儿，好朋友见面常常抱一下。',
+    ask:'这时候最自然的反应是？',
+    options:[
+      { text:'笑着回抱一下，说 Good to see you!', note:'入乡随俗', badge:'地道', kind:'native', ok:true,
+        why:'西方好友重逢常拥抱（a hug），大方回抱、说句 Good to see you! 最自然。' },
+      { text:'赶紧后退一步躲开', note:'会让对方很尴尬', badge:'太见外', kind:'trap', ok:false,
+        why:'一下子躲开会让热情的朋友愣住，以为你不高兴见他。' },
+      { text:'伸手要跟他握手鞠躬', note:'场合不太搭', badge:'太生分', kind:'stiff', ok:false,
+        why:'握手偏正式，好朋友之间抱一下或击个掌更亲切。' }
+    ],
+    explain:'💡 西方打招呼的身体语言：初次见面多是握手（handshake），好朋友之间常拥抱（hug）或击掌（high five）。不习惯拥抱，笑着挥挥手也行。',
+    takeaway:'好友重逢 → 回抱一下，Good to see you!'
+  },
+  {
+    id:'kh-32', pack:'hello', level:3, type:'phrase',
+    scene:'👋 用天气开场聊天',
+    situation:'排队时旁边的外国老爷爷望着大晴天，笑着对你说：',
+    quote:"Nice day, isn't it?",
+    note:'他只是想友好地搭句话。',
+    ask:'最自然的回应是？',
+    options:[
+      { text:'Yes, it is! Beautiful!', note:'顺着话头接下去', badge:'地道', kind:'native', ok:true,
+        why:'这是句"闲聊开场白"，顺着说 Yes, it is! 再夸一句，气氛一下就轻松了。' },
+      { text:'（愣住，不知道说啥）', note:'冷场了', badge:'冷场', kind:'stiff', ok:false,
+        why:'他只是随口聊天，回一句 Yes, it is! 就好，不用紧张。' },
+      { text:'Why do you ask?', note:'把闲聊当成了盘问', badge:'会错意', kind:'trap', ok:false,
+        why:'Nice day, isn\'t it? 不是真在问问题，是想跟你聊两句。' }
+    ],
+    explain:'💡 老外爱用天气开启闲聊：Nice day, isn\'t it?（天气真好，是吧）、It\'s cold today.（今天真冷）。顺着接一句 Yes, it is! 就很友好。',
+    takeaway:"Nice day, isn't it? → Yes, it is!"
+  },
+  {
+    id:'kh-33', pack:'hello', level:2, type:'phrase',
+    scene:'👋 电话打错了',
+    situation:'你拨了个号码，对面是个陌生的外国人，你这才发现号码按错了。',
+    quote:'',
+    note:'总不能一句话不说就挂掉。',
+    ask:'该怎么礼貌地收场？',
+    options:[
+      { text:'Sorry, wrong number.', note:'打错电话的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'号码拨错了，说一句 Sorry, wrong number.（抱歉，打错了）再挂，礼貌又干脆。' },
+      { text:'（一句不说直接挂断）', note:'有点没礼貌', badge:'太冷', kind:'stiff', ok:false,
+        why:'哪怕打错了，说声 Sorry 也比闷不吭声挂掉体面。' },
+      { text:'Who are you?', note:'像在盘问对方', badge:'太冲', kind:'trap', ok:false,
+        why:'是你打错了，还反问人家是谁很没道理，应该道歉。' }
+    ],
+    explain:'💡 电话打错了：Sorry, wrong number.（抱歉打错了）。接到打错的电话，你也可以回 That\'s OK. / No problem.',
+    takeaway:'打错电话 → Sorry, wrong number.'
+  },
+  {
+    id:'kh-34', pack:'hello', level:3, type:'phrase',
+    scene:'👋 别人问你喜不喜欢这儿',
+    situation:'你来到国外的新学校，外教关心地问你适应得怎么样：',
+    quote:'How do you like it here?',
+    note:'她想知道你喜不喜欢这里。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'I like it a lot!', note:'直接说出感受', badge:'地道', kind:'native', ok:true,
+        why:'How do you like…? 是问"你觉得…怎么样、喜不喜欢"，回 I like it a lot! 又热情又清楚。' },
+      { text:'How do I like it?', note:'把问题重复了一遍', badge:'没接住', kind:'stiff', ok:false,
+        why:'她是在问你的感受，把问题原样念回去等于没回答。' },
+      { text:'Yes, I like.', note:'like 后面缺了东西', badge:'语法错', kind:'trap', ok:false,
+        why:'like 后面要跟 it：I like it (a lot).，不能光说 I like。' }
+    ],
+    explain:'💡 How do you like …? 是问喜不喜欢、觉得怎么样：How do you like China?（喜欢中国吗）→ I like it a lot! / It\'s great!',
+    takeaway:'How do you like it? → I like it a lot!'
+  },
+  {
+    id:'kh-35', pack:'hello', level:1, type:'phrase',
+    scene:'👋 主动认识新朋友',
+    situation:'夏令营里你看见一个外国小朋友一个人坐着，你想过去主动认识他。',
+    quote:'',
+    note:'先迈出第一步，往往就交到朋友了。',
+    ask:'开口第一句怎么说最好？',
+    options:[
+      { text:"Hi, I'm Lily. What's your name?", note:'先报名，再问对方', badge:'地道', kind:'native', ok:true,
+        why:'先自我介绍 I\'m Lily.，再问 What\'s your name?，一来一回就聊上了。' },
+      { text:'What are you doing here alone?', note:'像在盘问', badge:'太直接', kind:'stiff', ok:false,
+        why:'一上来就问"你怎么一个人在这"有点冒失，先友好地报个名。' },
+      { text:'（站旁边看着，不说话）', note:'错过了机会', badge:'太腼腆', kind:'trap', ok:false,
+        why:'光站着不开口，友谊就没法开始，勇敢说句 Hi 吧。' }
+    ],
+    explain:'💡 主动交朋友的黄金开场：Hi, I\'m Lily. What\'s your name?。报名字＋问名字，简单一句就破了冰。',
+    takeaway:"主动认识 → Hi, I'm Lily. What's your name?"
   }
 
   ]);
