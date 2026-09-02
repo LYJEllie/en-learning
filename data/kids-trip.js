@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🧳 出门在外篇（25 题）
+   🧒 小学生入门 · 🧳 出门在外篇（30 题）
    出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
@@ -469,6 +469,102 @@
     ],
     explain:'💡 买衣服常用：Can I try it on?（能试穿吗）、Where\'s the fitting room?（试衣间在哪）、It\'s too big / small.（太大/太小）。',
     takeaway:'试穿 → Can I try it on?'
+  }
+
+  ]);
+
+  /* ---------- 🧳 出门在外篇（加餐 3） ---------- */
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-26', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 餐厅吃完想买单',
+    situation:'一家人在国外餐厅吃完饭，想结账走人。',
+    quote:'',
+    note:'服务员正好走过来。',
+    ask:'该怎么让服务员来结账？',
+    options:[
+      { text:'Excuse me, can we have the bill, please?', note:'要账单的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'结账用 the bill（英式）或 the check（美式）：Can we have the bill, please?' },
+      { text:'I want to pay money.', note:'能懂但生硬', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但地道说法是要账单 Can we have the bill, please?' },
+      { text:'Give me money!', note:'意思全反了', badge:'踩雷', kind:'trap', ok:false,
+        why:'Give me money 是"给我钱"，你是要付钱，不是要钱，别说反。' }
+    ],
+    explain:'💡 餐厅结账：Can we have the bill, please?（英式）/ Check, please.（美式）。想打包剩菜可以说 Can I take this home?',
+    takeaway:'买单 → Can we have the bill, please?'
+  },
+  {
+    id:'kt-27', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 到酒店办入住',
+    situation:'一家人拖着行李到了酒店前台，你们提前订好了房间。',
+    quote:'',
+    note:'前台工作人员抬头看向你们。',
+    ask:'开口办入住，哪句最地道？',
+    options:[
+      { text:'Hello, we have a reservation.', note:'说明订过房', badge:'地道', kind:'native', ok:true,
+        why:'reservation 是"预订"，一句 We have a reservation. 前台就知道帮你找订单。' },
+      { text:'We want to sleep here.', note:'太直白，像临时找地方', badge:'不地道', kind:'stiff', ok:false,
+        why:'办入住说 We have a reservation. 或 We\'d like to check in.，别说"我们想在这儿睡"。' },
+      { text:'Open the room!', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'这么喊很失礼，办入住要说 We have a reservation.' }
+    ],
+    explain:'💡 酒店入住三句：We have a reservation.（订过房）、We\'d like to check in.（办入住）、What time is check-out?（几点退房）。',
+    takeaway:'办入住 → We have a reservation.'
+  },
+  {
+    id:'kt-28', pack:'trip', level:3, type:'listening',
+    scene:'🧳 机场入境检查',
+    situation:'过海关时，工作人员翻着你们的护照，问了一句：',
+    quote:'How long will you stay?',
+    note:'你们这趟打算待两个星期。',
+    ask:'他在问什么？',
+    options:[
+      { text:'你们打算待多久', note:'问停留时间', badge:'地道', kind:'native', ok:true,
+        why:'How long will you stay? 是问你们停留多久，回 For two weeks.（两周）就行。' },
+      { text:'你们有多高', note:'把 long 当成了身高', badge:'太字面', kind:'trap', ok:false,
+        why:'How long 问的是时间长短，不是身高（那是 How tall）。' },
+      { text:'路有多远', note:'想歪了', badge:'理解偏', kind:'stiff', ok:false,
+        why:'这句问的是停留时间，跟路远不远无关。' }
+    ],
+    explain:'💡 入境常被问：How long will you stay?（待多久）→ For two weeks.；Where will you stay?（住哪儿）；Why are you here?（来做什么）→ For travel.',
+    takeaway:'How long will you stay? → For two weeks.'
+  },
+  {
+    id:'kt-29', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 冰淇淋店选口味',
+    situation:'旅途中路过一家冰淇淋店，柜台里花花绿绿好多种，你想问问都有什么味。',
+    quote:'',
+    note:'你还没决定要哪个。',
+    ask:'该怎么问口味最自然？',
+    options:[
+      { text:'What flavors do you have?', note:'问有哪些口味', badge:'地道', kind:'native', ok:true,
+        why:'flavor 是"口味"，What flavors do you have? 就是问都有哪些味儿。' },
+      { text:'What taste you have?', note:'taste 用得别扭', badge:'中式', kind:'stiff', ok:false,
+        why:'冰淇淋的"口味"用 flavor，问法是 What flavors do you have?' },
+      { text:'Give me ice cream taste.', note:'不通顺', badge:'不通顺', kind:'trap', ok:false,
+        why:'这句读不通，问口味就用 What flavors do you have?' }
+    ],
+    explain:'💡 挑口味：What flavors do you have?（有哪些味）→ 想要哪种就说 Strawberry, please.（草莓的）。',
+    takeaway:'问口味 → What flavors do you have?'
+  },
+  {
+    id:'kt-30', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 问完路还想确认远近',
+    situation:'路人告诉你博物馆往前走就到，你想知道到底远不远，要不要坐车。',
+    quote:'',
+    note:'走得动就走过去，太远就打车。',
+    ask:'该怎么追问一句？',
+    options:[
+      { text:'Is it far from here?', note:'问远近的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'Is it far?（远吗）/ Is it far from here?（离这儿远吗）一问，对方会告诉你走路几分钟。' },
+      { text:'How far you?', note:'蹦词，不成句', badge:'语法错', kind:'stiff', ok:false,
+        why:'要么 Is it far?，要么 How far is it?，别把词拼乱。' },
+      { text:'Near or not near?', note:'生硬绕口', badge:'中式', kind:'trap', ok:false,
+        why:'问远近直接说 Is it far? 就好，不用绕。' }
+    ],
+    explain:'💡 问路后追问：Is it far?（远吗）、How far is it?（多远）、Can I walk there?（能走过去吗）。',
+    takeaway:'问远近 → Is it far from here?'
   }
 
   ]);

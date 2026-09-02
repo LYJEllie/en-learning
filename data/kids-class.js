@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏫 课堂篇（25 题）
+   🧒 小学生入门 · 🏫 课堂篇（30 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -468,6 +468,102 @@
     ],
     explain:'💡 关于作业的问句：When is it due?（什么时候交）、Is it for homework?（这是作业吗）、hand it in（上交）。',
     takeaway:'什么时候交 → When is it due?'
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂篇（加餐 3） ---------- */
+  EN.add('kids', 'class', [
+
+  {
+    id:'kc-26', pack:'class', level:2, type:'phrase',
+    scene:'🏫 不会写某个单词',
+    situation:'老师说了个新单词，你会读却不知道怎么拼写，想问问。',
+    quote:'',
+    note:'你想把它记到本子上。',
+    ask:'该怎么问最地道？',
+    options:[
+      { text:'How do you spell it?', note:'问拼写的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'问一个词怎么拼用 How do you spell it?，老师会一个字母一个字母念给你。' },
+      { text:'How to write it?', note:'漏了主语，不完整', badge:'语法错', kind:'stiff', ok:false,
+        why:'How to write 不能单独成问句，完整说法是 How do you spell it?' },
+      { text:'What is the letter?', note:'问偏了', badge:'问错了', kind:'trap', ok:false,
+        why:'那是问"哪个字母"，问整个词怎么拼要用 How do you spell it?' }
+    ],
+    explain:'💡 关于单词的问句：How do you spell it?（怎么拼）、How do you say it?（怎么读）、What does it mean?（什么意思）。',
+    takeaway:'怎么拼 → How do you spell it?'
+  },
+  {
+    id:'kc-27', pack:'class', level:2, type:'phrase',
+    scene:'🏫 有个词不懂意思',
+    situation:'课文里冒出个生词 "amazing"，你不知道啥意思，想问老师。',
+    quote:'',
+    note:'不弄懂意思，后面就跟不上了。',
+    ask:'该怎么问最自然？',
+    options:[
+      { text:'What does "amazing" mean?', note:'问词义的固定句', badge:'地道', kind:'native', ok:true,
+        why:'问一个词是什么意思用 What does … mean?，把不懂的词填进去就行。' },
+      { text:'What is amazing meaning?', note:'语序乱了', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，要说 What does amazing mean?' },
+      { text:'Amazing is what?', note:'蹦词，像倒装', badge:'不通顺', kind:'trap', ok:false,
+        why:'这样问既不通顺也不礼貌，用 What does … mean? 才对。' }
+    ],
+    explain:'💡 遇到生词就问 What does … mean?（…是什么意思）。听懂了老师的解释可以回 Oh, I see!（原来如此）。',
+    takeaway:'问意思 → What does … mean?'
+  },
+  {
+    id:'kc-28', pack:'class', level:2, type:'social',
+    scene:'🏫 上课突然不舒服',
+    situation:'上课上到一半，你觉得头晕、肚子难受，想跟老师说一声。',
+    quote:'',
+    note:'你想去趟医务室歇一歇。',
+    ask:'该怎么跟老师说最合适？',
+    options:[
+      { text:"Excuse me, I don't feel well. May I see the nurse?", note:'说明情况＋请求', badge:'地道', kind:'native', ok:true,
+        why:'先说 I don\'t feel well（我不舒服），再请求 May I see the nurse?（能去医务室吗），清楚又礼貌。' },
+      { text:'I am sick! I am sick!', note:'又急又夸张', badge:'太夸张', kind:'stiff', ok:false,
+        why:'反复大喊会吓到大家，平静说 I don\'t feel well 就好。' },
+      { text:'I go out.', note:'没说原因，也没请求', badge:'不礼貌', kind:'trap', ok:false,
+        why:'不说清楚就要走，老师会担心，应该说明并征得同意。' }
+    ],
+    explain:'💡 身体不舒服跟老师说：I don\'t feel well.（我不舒服）、May I see the nurse?（能去医务室吗）、I have a headache.（我头疼）。',
+    takeaway:"不舒服 → I don't feel well. May I see the nurse?"
+  },
+  {
+    id:'kc-29', pack:'class', level:1, type:'listening',
+    scene:'🏫 小组游戏轮流来',
+    situation:'课堂小游戏轮流发言，前一个同学说完，老师看着你说：',
+    quote:"It's your turn.",
+    note:'大家的目光都转向了你。',
+    ask:'老师的意思是？',
+    options:[
+      { text:'轮到你了', note:'your turn = 你这一轮', badge:'地道', kind:'native', ok:true,
+        why:'It\'s your turn. 就是"轮到你了"，该你上场、你发言。' },
+      { text:'你转个身', note:'把 turn 当成了"转身"', badge:'太字面', kind:'trap', ok:false,
+        why:'turn 在这里是"轮次"，不是让你转身。' },
+      { text:'你该回去了', note:'想歪了', badge:'理解偏', kind:'stiff', ok:false,
+        why:'It\'s your turn 是叫你上，不是叫你回去。' }
+    ],
+    explain:'💡 轮流时常听：It\'s your turn.（轮到你）、It\'s my turn.（轮到我）、Wait for your turn.（等轮到你）。',
+    takeaway:"It's your turn. = 轮到你了。"
+  },
+  {
+    id:'kc-30', pack:'class', level:2, type:'listening',
+    scene:'🏫 收小测验卷子',
+    situation:'小测验结束，老师站在讲台上对大家说：',
+    quote:'Pass your papers forward.',
+    note:'前排同学都伸手往后接卷子。',
+    ask:'她让大家怎么做？',
+    options:[
+      { text:'把卷子往前传', note:'pass forward = 往前传', badge:'地道', kind:'native', ok:true,
+        why:'Pass your papers forward. 就是一排一排把卷子往前递到讲台。' },
+      { text:'把卷子往后传', note:'方向反了', badge:'反了', kind:'trap', ok:false,
+        why:'forward 是"向前"，往后传是 pass back，方向别搞反。' },
+      { text:'在卷子上继续写', note:'考试早结束了', badge:'想歪了', kind:'stiff', ok:false,
+        why:'pass 是"传递"，不是让你接着写。' }
+    ],
+    explain:'💡 收发东西的口令：Pass … forward.（往前传）、Pass … back.（往后传）、Hand it in.（上交）。',
+    takeaway:'Pass your papers forward. = 把卷子往前传。'
   }
 
   ]);

@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🎈 交朋友篇（26 题）
+   🧒 小学生入门 · 🎈 交朋友篇（31 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -487,6 +487,102 @@
     ],
     explain:'💡 和好三句：I\'m sorry.（对不起）、Let\'s forget it.（算了吧）、Are we still friends?（还是朋友吧）。先低头的人更勇敢。',
     takeaway:"想和好 → I'm sorry. Are we still friends?"
+  }
+
+  ]);
+
+  /* ---------- 🎈 交朋友篇（加餐 3） ---------- */
+  EN.add('kids', 'friend', [
+
+  {
+    id:'kf-27', pack:'friend', level:2, type:'culture',
+    scene:'🎈 夏令营要结束了',
+    situation:'夏令营最后一天，要跟认识的外国朋友分别了，你想以后还能联系。',
+    quote:'',
+    note:'你有点舍不得。',
+    ask:'临别想约定"保持联系"，该怎么说？',
+    options:[
+      { text:"Let's keep in touch!", note:'保持联系的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'keep in touch 就是"保持联系"，临别说 Let\'s keep in touch! 又暖又自然。' },
+      { text:'Keep touching me.', note:'意思跑偏了', badge:'中式', kind:'trap', ok:false,
+        why:'keep in touch 是固定短语，少了 in 意思就全变了，别拆开。' },
+      { text:"Don't forget me.", note:'不算错，但有点伤感', badge:'偏消极', kind:'stiff', ok:false,
+        why:'能听懂，但 Let\'s keep in touch! 更积极，是在约定继续联系。' }
+    ],
+    explain:'💡 道别想继续联系：Let\'s keep in touch!（保持联系）、Text me!（给我发消息）、See you online!（网上见）。',
+    takeaway:"保持联系 → Let's keep in touch!"
+  },
+  {
+    id:'kf-28', pack:'friend', level:2, type:'phrase',
+    scene:'🎈 约好一起去玩',
+    situation:'你和朋友约好放学去公园，得说清楚在哪儿、几点碰头。',
+    quote:'',
+    note:'不定清楚，容易等错地方。',
+    ask:'该怎么把时间地点说清楚？',
+    options:[
+      { text:"Let's meet at the gate at three.", note:'地点＋时间都交代了', badge:'地道', kind:'native', ok:true,
+        why:'meet at the gate（在校门口碰头）、at three（三点），地点和时间都用 at，一句说清。' },
+      { text:'We go park.', note:'又漏词又没说清', badge:'不通顺', kind:'stiff', ok:false,
+        why:'漏了 to，也没说几点在哪儿见，应该说 Let\'s meet at … at …。' },
+      { text:'Meet you sometime.', note:'含糊，等于没约', badge:'太模糊', kind:'trap', ok:false,
+        why:'sometime（某个时候）太含糊，约会要说清具体时间地点。' }
+    ],
+    explain:'💡 约见面说清两点：地点 meet at the gate / the park，时间 at three / after school。合起来 Let\'s meet at the gate at three.',
+    takeaway:"约见面 → Let's meet at the gate at three."
+  },
+  {
+    id:'kf-29', pack:'friend', level:1, type:'manners',
+    scene:'🎈 朋友生病请假了',
+    situation:'好朋友感冒发烧，在家休息好几天没来上学。你想给他捎句话。',
+    quote:'',
+    note:'你希望他快点好起来。',
+    ask:'该说哪句最贴心？',
+    options:[
+      { text:'Get well soon!', note:'祝早日康复的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'祝生病的人快点好就说 Get well soon!（早日康复），简单又暖心。' },
+      { text:'You are sick.', note:'只是陈述，没送祝福', badge:'没心意', kind:'stiff', ok:false,
+        why:'说"你病了"是废话，要送祝福 Get well soon!' },
+      { text:'Happy birthday!', note:'场合完全不对', badge:'用错了', kind:'trap', ok:false,
+        why:'人家生病不是过生日，祝福要用 Get well soon!' }
+    ],
+    explain:'💡 关心生病的朋友：Get well soon!（早日康复）、Take care!（多保重）、I hope you feel better.（希望你好起来）。',
+    takeaway:'朋友生病 → Get well soon!'
+  },
+  {
+    id:'kf-30', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 分队做游戏',
+    situation:'体育课分组比赛，你想拉外国同学到自己这队。',
+    quote:'',
+    note:'他还没被别的队选走。',
+    ask:'该怎么邀请他最自然？',
+    options:[
+      { text:'Do you want to be on my team?', note:'邀请入队的常用句', badge:'地道', kind:'native', ok:true,
+        why:'在……队里用 on my team：Do you want to be on my team?（想不想跟我一队）。' },
+      { text:'You in my team!', note:'像命令，介词也不对', badge:'太冲', kind:'stiff', ok:false,
+        why:'既像下令，介词也该用 on（on my team），要问 Do you want to be on my team?' },
+      { text:'Come my team fast!', note:'又急又不通顺', badge:'不通顺', kind:'trap', ok:false,
+        why:'催得又急句子又不对，邀请要客气：Do you want to be on my team?' }
+    ],
+    explain:'💡 邀人入队：Do you want to be on my team?、Let\'s be a team!。注意是 on a team（在队里），介词别用错。',
+    takeaway:'拉人入队 → Do you want to be on my team?'
+  },
+  {
+    id:'kf-31', pack:'friend', level:2, type:'social',
+    scene:'🎈 朋友要跟你说悄悄话',
+    situation:'外国同学神秘兮兮地凑过来，说有件事只告诉你，先问了一句：',
+    quote:'Can you keep a secret?',
+    note:'他想确认你不会说出去。',
+    ask:'该怎么回让他放心？',
+    options:[
+      { text:"Sure! I won't tell anyone.", note:'答应＋保证', badge:'地道', kind:'native', ok:true,
+        why:'keep a secret 是"保守秘密"，回 I won\'t tell anyone.（我不会告诉别人）让他放心。' },
+      { text:'Tell me! Tell me!', note:'只顾着催，没做保证', badge:'太心急', kind:'stiff', ok:false,
+        why:'他是在问你能不能保密，光催他说没回答他的问题。' },
+      { text:'I tell everyone!', note:'开玩笑也别这么说', badge:'踩雷', kind:'trap', ok:false,
+        why:'说"我要告诉所有人"，谁还敢跟你说秘密。' }
+    ],
+    explain:'💡 答应保密：Can you keep a secret? → Sure!、I won\'t tell anyone.（我谁都不告诉）、Your secret is safe with me.（放心，我不说）。',
+    takeaway:"保守秘密 → Sure! I won't tell anyone."
   }
 
   ]);

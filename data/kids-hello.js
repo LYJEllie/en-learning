@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 👋 打招呼篇（25 题）
+   🧒 小学生入门 · 👋 打招呼篇（30 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -468,6 +468,102 @@
     ],
     explain:'💡 送人出远门说 Have a safe trip! / Have a good trip!（一路平安）。听到就回 Thank you!',
     takeaway:'Have a safe trip! = 一路平安！'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐 3） ---------- */
+  EN.add('kids', 'hello', [
+
+  {
+    id:'kh-26', pack:'hello', level:2, type:'phrase',
+    scene:'👋 介绍两个朋友认识',
+    situation:'你的朋友 Anna 和外国朋友 Tom 都在你身边，可他俩还不认识。',
+    quote:'',
+    note:'你想把他们介绍给彼此。',
+    ask:'该怎么开口最自然？',
+    options:[
+      { text:'Tom, this is Anna. Anna, this is Tom.', note:'把两人互相引荐', badge:'地道', kind:'native', ok:true,
+        why:'介绍两个人认识就用 This is …，一人报一次名，他们就能接上 Nice to meet you.' },
+      { text:'You two know each other!', note:'像在下命令', badge:'太冲', kind:'stiff', ok:false,
+        why:'这是在命令他们"认识一下"，不是把人介绍给对方。' },
+      { text:'This is my two friends.', note:'没说出名字', badge:'没到点', kind:'trap', ok:false,
+        why:'介绍要说出名字，光说"这是我两个朋友"对方还是不知道叫什么。' }
+    ],
+    explain:'💡 给两个人牵线：Tom, this is Anna.（报一次），再 Anna, this is Tom.。介绍完他们会互道 Nice to meet you.',
+    takeaway:'牵线搭桥 → Tom, this is Anna.'
+  },
+  {
+    id:'kh-27', pack:'hello', level:1, type:'culture',
+    scene:'👋 别人一直谢你',
+    situation:'你帮外国同学捡了笔、又借他橡皮，他连声说 Thank you。',
+    quote:'Thank you so much!',
+    note:'你想回应得自然点，别老是重复。',
+    ask:'哪句回应最合适？',
+    options:[
+      { text:"You're welcome! / No problem!", note:'两种都地道，换着用', badge:'地道', kind:'native', ok:true,
+        why:'别人道谢，回 You\'re welcome. / No problem. / Anytime. 都行，换着说更自然。' },
+      { text:'Thank you too.', note:'又谢回去，绕圈了', badge:'绕圈', kind:'stiff', ok:false,
+        why:'他谢的是你，你再谢回去就绕住了，回 You\'re welcome 才对。' },
+      { text:'No thanks.', note:'意思变成了"不用了"', badge:'用错了', kind:'trap', ok:false,
+        why:'No thanks 是"不用了、我不要"，不是"不客气"，别搞混。' }
+    ],
+    explain:'💡 回应道谢有一串：You\'re welcome.（最标准）、No problem. / No worries.（轻松）、Anytime.（随时乐意）、My pleasure.（很荣幸）。',
+    takeaway:"别人道谢 → You're welcome! / No problem!"
+  },
+  {
+    id:'kh-28', pack:'hello', level:3, type:'phrase',
+    scene:'👋 周一见到同学',
+    situation:'周一早上见到外国同学，你想找个话题聊两句。',
+    quote:'',
+    note:'刚过完周末，聊这个最自然。',
+    ask:'开个话头，哪句最地道？',
+    options:[
+      { text:'How was your weekend?', note:'周一寒暄的经典问句', badge:'地道', kind:'native', ok:true,
+        why:'How was …? 是问"…怎么样"，聊过去的事用过去式 was。周末过得如何一问就热络了。' },
+      { text:'How is your weekend?', note:'周末已经过完了', badge:'时态错', kind:'stiff', ok:false,
+        why:'周末已经结束，要用过去式 How was your weekend?，不是 is。' },
+      { text:'Your weekend good?', note:'蹦词，不成句', badge:'不通顺', kind:'trap', ok:false,
+        why:'缺了动词，完整问句是 How was your weekend?' }
+    ],
+    explain:'💡 聊过去用 How was …?：How was your weekend?（周末怎么样）、How was your trip?（旅行怎么样）。回答 It was great! / Not bad.',
+    takeaway:'周一寒暄 → How was your weekend?'
+  },
+  {
+    id:'kh-29', pack:'hello', level:2, type:'social',
+    scene:'👋 得先走一步',
+    situation:'你和外国同学聊得正起劲，可上课铃快响了，你得赶去教室。',
+    quote:'',
+    note:'总不能话说一半扭头就走。',
+    ask:'该怎么礼貌地结束聊天？',
+    options:[
+      { text:'Sorry, I have to go now. See you!', note:'先致歉再道别', badge:'地道', kind:'native', ok:true,
+        why:'先说 I have to go now（我得走了），再 See you!，走得干脆又不失礼。' },
+      { text:'（话说一半突然扭头走开）', note:'太突兀', badge:'没礼貌', kind:'trap', ok:false,
+        why:'一句招呼都不打就走，会让对方莫名其妙，还以为自己说错了话。' },
+      { text:'Stop talking. I go.', note:'像在嫌人啰嗦', badge:'太冲', kind:'stiff', ok:false,
+        why:'叫人"别说了"很伤人，要说 Sorry, I have to go now.' }
+    ],
+    explain:'💡 礼貌抽身：Sorry, I have to go now.（我得走了）、Talk to you later!（回头聊）、See you!。先打个招呼再走最得体。',
+    takeaway:'先走一步 → Sorry, I have to go now. See you!'
+  },
+  {
+    id:'kh-30', pack:'hello', level:2, type:'social',
+    scene:'👋 认错了人',
+    situation:'你看见一个背影很像同学 Tom，拍了下肩膀喊他，结果转过来是个陌生人。',
+    quote:'',
+    note:'对方一脸疑惑地看着你。',
+    ask:'这时候该怎么说？',
+    options:[
+      { text:'Oh, sorry! I thought you were someone else.', note:'道歉＋解释', badge:'地道', kind:'native', ok:true,
+        why:'先 Sorry，再说 I thought you were someone else（我以为你是别人），误会一下就解开了。' },
+      { text:'（红着脸一句话不说就跑开）', note:'留下对方一脸懵', badge:'没礼貌', kind:'stiff', ok:false,
+        why:'拍了人家又一声不吭跑掉，会让对方莫名其妙，一句 Sorry 就能化解。' },
+      { text:'You are not Tom!', note:'像在怪对方', badge:'太冲', kind:'trap', ok:false,
+        why:'认错人是你的事，怪对方"你不是 Tom"很没道理，应该道歉。' }
+    ],
+    explain:'💡 认错人别慌，一句 Sorry, I thought you were someone else. 就化解了。日常小尴尬，Sorry 是万能钥匙。',
+    takeaway:'认错人 → Sorry, I thought you were someone else.'
   }
 
   ]);

@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏠 生活篇（25 题）
+   🧒 小学生入门 · 🏠 生活篇（30 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -468,6 +468,102 @@
     ],
     explain:'💡 深深道谢：Thank you for everything!（谢谢所有）、Thank you for having me.（谢谢招待）、I had a great time.（我过得很开心）。',
     takeaway:'临别道谢 → Thank you for everything!'
+  }
+
+  ]);
+
+  /* ---------- 🏠 生活篇（加餐 3） ---------- */
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-26', pack:'life', level:2, type:'phrase',
+    scene:'🏠 寄宿家庭的早晨',
+    situation:'在寄宿家庭住的第一晚过后，早上下楼吃早饭，阿姨笑着问你：',
+    quote:'Did you sleep well?',
+    note:'你昨晚睡得挺香。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'Yes, I did. Thank you!', note:'过去式短答＋道谢', badge:'地道', kind:'native', ok:true,
+        why:'Did you…? 的短答用 Yes, I did.，再谢一句，特别暖。' },
+      { text:'Yes, I do.', note:'时态用错了', badge:'时态错', kind:'stiff', ok:false,
+        why:'她问的是昨晚（过去），要用 did：Yes, I did.，不是 do。' },
+      { text:'I sleep good.', note:'又直译又不对', badge:'中式', kind:'trap', ok:false,
+        why:'"睡得好"是 I slept well.，good 要改成 well，动词也要过去式。' }
+    ],
+    explain:'💡 问昨天的事用 Did you…?：Did you sleep well?（睡得好吗）→ Yes, I did. / I slept well, thanks.',
+    takeaway:'Did you sleep well? → Yes, I did. Thank you!'
+  },
+  {
+    id:'kl-27', pack:'life', level:2, type:'listening',
+    scene:'🏠 帮忙准备晚饭',
+    situation:'快开饭了，寄宿家庭的阿姨端着菜从厨房出来，对你说：',
+    quote:'Can you set the table?',
+    note:'碗筷、盘子还都在柜子里。',
+    ask:'她请你做什么？',
+    options:[
+      { text:'把碗筷、盘子摆到桌上', note:'set the table = 摆餐具', badge:'地道', kind:'native', ok:true,
+        why:'set the table 是"摆好餐具"，把碗、盘、刀叉摆到桌上准备开饭。' },
+      { text:'把桌子搬走', note:'想歪了', badge:'理解偏', kind:'trap', ok:false,
+        why:'set the table 不是搬桌子，是把吃饭的家伙摆好。' },
+      { text:'坐到桌子边去', note:'那是 sit at the table', badge:'听岔了', kind:'stiff', ok:false,
+        why:'坐到桌边是 sit at the table，摆餐具是 set the table。' }
+    ],
+    explain:'💡 饭前家务：set the table（摆餐具）；饭后 clear the table（收桌子）、wash the dishes（洗碗）。答应就说 Sure!',
+    takeaway:'Can you set the table? = 帮忙摆餐具。'
+  },
+  {
+    id:'kl-28', pack:'life', level:2, type:'social',
+    scene:'🏠 打翻了牛奶',
+    situation:'吃早饭时你胳膊一碰，一整杯牛奶洒了一桌子。',
+    quote:'',
+    note:'牛奶正顺着桌沿往下滴。',
+    ask:'该怎么说、怎么做最得体？',
+    options:[
+      { text:"I'm sorry! I'll clean it up.", note:'道歉＋主动收拾', badge:'地道', kind:'native', ok:true,
+        why:'先 I\'m sorry! 道个歉，再 I\'ll clean it up.（我来擦干净），主动担当最好。' },
+      { text:"It's not me!", note:'桌上就你一个还抵赖', badge:'不诚实', kind:'trap', ok:false,
+        why:'明明是自己碰洒的，抵赖只会更尴尬，认了并收拾才对。' },
+      { text:'（假装没看见，继续吃）', note:'装看不见更糟', badge:'没礼貌', kind:'stiff', ok:false,
+        why:'洒了不管，牛奶会流得到处都是，主动说一声、擦一擦才懂事。' }
+    ],
+    explain:'💡 闯了小祸别慌：I\'m sorry!（对不起）、I\'ll clean it up.（我来收拾）、Where\'s the towel?（抹布在哪）。主动收拾比什么都强。',
+    takeaway:"打翻东西 → I'm sorry! I'll clean it up."
+  },
+  {
+    id:'kl-29', pack:'life', level:1, type:'manners',
+    scene:'🏠 实在吃不下了',
+    situation:'饭菜太香你吃了好多，阿姨又要给你添一勺，可你真的饱了。',
+    quote:'Do you want some more?',
+    note:'你一口都吃不下了。',
+    ask:'该怎么礼貌地拒绝？',
+    options:[
+      { text:"I'm full, thank you. It was delicious!", note:'说饱了＋夸好吃', badge:'地道', kind:'native', ok:true,
+        why:'I\'m full（我饱了）说清情况，再夸一句 It was delicious!，拒绝也让人开心。' },
+      { text:'No! No more!', note:'又急又冲', badge:'太冲', kind:'trap', ok:false,
+        why:'连声喊 No 会让阿姨以为你不爱吃，加 thank you 才柔和。' },
+      { text:'My stomach is full water.', note:'逐字硬翻', badge:'中式', kind:'stiff', ok:false,
+        why:'"我饱了"就是 I\'m full.，别一个字一个字地翻。' }
+    ],
+    explain:'💡 吃饱委婉拒绝：I\'m full, thank you.（我饱了）、No more, thanks.（不添了），再夸一句 It was delicious! 最贴心。',
+    takeaway:"吃饱了 → I'm full, thank you. It was delicious!"
+  },
+  {
+    id:'kl-30', pack:'life', level:1, type:'phrase',
+    scene:'🏠 房间有点闷热',
+    situation:'在同学家玩，屋里有点闷热，你想开窗透透气，但这是别人家。',
+    quote:'',
+    note:'开别人家的窗户，得先问一声。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:"It's hot. Can I open the window?", note:'说明原因＋请求', badge:'地道', kind:'native', ok:true,
+        why:'先说 It\'s hot（有点热），再问 Can I open the window?（我能开窗吗），在别人家先问准没错。' },
+      { text:'（自己走过去把窗户拉开）', note:'没打招呼就动手', badge:'不礼貌', kind:'trap', ok:false,
+        why:'在别人家动东西前要先问一声，不然显得没礼貌。' },
+      { text:'Open window!', note:'像在命令主人', badge:'太冲', kind:'stiff', ok:false,
+        why:'光喊 Open window 像下令，要说 Can I open the window?' }
+    ],
+    explain:'💡 在别人家想做什么先问 Can I…?：Can I open the window?（开窗）、Can I sit here?（坐这儿）、Can I use the bathroom?（用洗手间）。',
+    takeaway:"想开窗 → It's hot. Can I open the window?"
   }
 
   ]);
