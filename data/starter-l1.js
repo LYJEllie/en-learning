@@ -1,5 +1,5 @@
 /* ============================================================
-   🐣 启蒙 L1 · 认单词（24 题 · 认物 / 颜色数字 / 动物 各 8 题）
+   🐣 启蒙 L1 · 认单词（36 题 · 认物 / 颜色数字 / 动物 各 12 题）
    ------------------------------------------------------------
    最低门槛的一档：题面不需要读英文句子，只有一个大号 emoji，
    选项就是三个单词。干扰项按"形近 / 音近 / 同类混淆"设计。
@@ -497,6 +497,252 @@
     ],
     explain:'💡 三个 b 开头别记混：bear 熊（大）、bird 鸟（会飞）、bee 蜜蜂（会蜇）。',
     takeaway:'bear = 熊 🐻'
+  }
+
+  ]);
+
+  /* ---------- 🍎 认物篇（加餐 2） ---------- */
+  EN.add('starter1', 'things', [
+
+  {
+    id:'a-25', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🍌',
+    situation:'外教举起一根黄黄的、弯弯的水果，剥了皮就能吃。',
+    quote:'',
+    note:'猴子最爱吃它。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'banana', note:'香蕉', badge:'香蕉', kind:'stiff', ok:true,
+        why:'banana 是香蕉，黄黄弯弯的。' },
+      { text:'apple', note:'苹果', badge:'苹果', kind:'stiff', ok:false,
+        why:'apple 是苹果，红红圆圆的。' },
+      { text:'orange', note:'橙子', badge:'橙子', kind:'stiff', ok:false,
+        why:'orange 是橙子，圆圆的橙色。' }
+    ],
+    explain:'💡 水果三兄弟凑齐啦：apple 🍎 苹果、orange 🍊 橙子、banana 🍌 香蕉。',
+    takeaway:'banana = 香蕉 🍌'
+  },
+  {
+    id:'a-26', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'👟',
+    situation:'出门前妈妈让你穿上它，穿好了才能出去走路。',
+    quote:'',
+    note:'它成双成对，穿在脚上。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'shoe', note:'鞋', badge:'鞋', kind:'stiff', ok:true,
+        why:'shoe 是鞋，穿在脚上。' },
+      { text:'sock', note:'袜子', badge:'袜子', kind:'stiff', ok:false,
+        why:'sock 是袜子，先穿袜子再穿鞋。' },
+      { text:'hat', note:'帽子', badge:'帽子', kind:'stiff', ok:false,
+        why:'hat 是帽子，戴在头上，不是脚上。' }
+    ],
+    explain:'💡 从头到脚穿戴：hat 帽子（头）、sock 袜子（脚）、shoe 鞋（脚）。',
+    takeaway:'shoe = 鞋 👟'
+  },
+  {
+    id:'a-27', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🥤',
+    situation:'口渴了，你要用它来装水喝。',
+    quote:'',
+    note:'喝完水放桌上的那个。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'cup', note:'杯子', badge:'杯子', kind:'stiff', ok:true,
+        why:'cup 是杯子，用来喝水。' },
+      { text:'cap', note:'鸭舌帽', badge:'帽子', kind:'stiff', ok:false,
+        why:'cap 是帽子，和 cup 只差中间一个字母。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false,
+        why:'cat 是猫，会喵喵叫。' }
+    ],
+    explain:'💡 cup（杯子）和 cap（帽子）长得太像了，就差中间那个字母 u / a。',
+    takeaway:'cup = 杯子 🥤'
+  },
+  {
+    id:'a-28', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🥄',
+    situation:'喝汤、吃饭的时候，你用它一口一口地舀。',
+    quote:'',
+    note:'圆圆的头，长长的柄。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'spoon', note:'勺子', badge:'勺子', kind:'stiff', ok:true,
+        why:'spoon 是勺子，用来舀汤舀饭。' },
+      { text:'fork', note:'叉子', badge:'叉子', kind:'stiff', ok:false,
+        why:'fork 是叉子，尖尖的用来叉东西。' },
+      { text:'cup', note:'杯子', badge:'杯子', kind:'stiff', ok:false,
+        why:'cup 是杯子，用来喝水的。' }
+    ],
+    explain:'💡 吃饭用的三样：spoon 勺子（舀）、fork 叉子（叉）、knife 刀（切）。',
+    takeaway:'spoon = 勺子 🥄'
+  }
+
+  ]);
+
+  /* ---------- 🎨 颜色数字篇（加餐 2） ---------- */
+  EN.add('starter1', 'color', [
+
+  {
+    id:'a-29', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'⬛',
+    situation:'外教指着夜里没有灯、黑漆漆的天空，让大家说出这个颜色。',
+    quote:'',
+    note:'和乌鸦、墨水一个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'black', note:'黑色', badge:'黑', kind:'stiff', ok:true,
+        why:'black 是黑色，夜空的颜色。' },
+      { text:'white', note:'白色', badge:'白', kind:'stiff', ok:false,
+        why:'white 是白色，雪和牛奶的颜色，和黑正相反。' },
+      { text:'blue', note:'蓝色', badge:'蓝', kind:'stiff', ok:false,
+        why:'blue 是蓝色，白天天空的颜色。' }
+    ],
+    explain:'💡 一对反义色：black 黑 ↔ white 白。夜里黑，雪里白。',
+    takeaway:'black = 黑色 ⬛'
+  },
+  {
+    id:'a-30', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🟠',
+    situation:'外教举起一个橙子，问大家它的皮是什么颜色。',
+    quote:'',
+    note:'比黄色深，比红色浅。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'orange', note:'橙色', badge:'橙', kind:'stiff', ok:true,
+        why:'orange 既是橙子，也是橙色。' },
+      { text:'yellow', note:'黄色', badge:'黄', kind:'stiff', ok:false,
+        why:'yellow 是黄色，比橙色浅一点。' },
+      { text:'red', note:'红色', badge:'红', kind:'stiff', ok:false,
+        why:'red 是红色，比橙色深一点。' }
+    ],
+    explain:'💡 orange 一词两用：一个橙子 an orange，橙色 orange。红黄之间就是橙。',
+    takeaway:'orange = 橙色 🟠'
+  },
+  {
+    id:'a-31', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🎈🎈🎈',
+    situation:'黑板上画了一排气球，外教让大家数一数一共几个。',
+    quote:'',
+    note:'比二多一个，比四少一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'three', note:'三', badge:'3', kind:'stiff', ok:true,
+        why:'three 是三。' },
+      { text:'two', note:'二', badge:'2', kind:'stiff', ok:false,
+        why:'two 是二，比三少一个。' },
+      { text:'eight', note:'八', badge:'8', kind:'stiff', ok:false,
+        why:'eight 是八，比三多好几个。' }
+    ],
+    explain:'💡 接着往下数：one、two、three、four、five。数到第三个就是 three。',
+    takeaway:'three = 三 🎈'
+  },
+  {
+    id:'a-32', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🍎🍎🍎🍎',
+    situation:'盘子里摆着一排苹果，外教让大家数一数。',
+    quote:'',
+    note:'比五少一个，比三多一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'four', note:'四', badge:'4', kind:'stiff', ok:true,
+        why:'four 是四。' },
+      { text:'five', note:'五', badge:'5', kind:'stiff', ok:false,
+        why:'five 是五，比四多一个，两个都是 f 开头。' },
+      { text:'three', note:'三', badge:'3', kind:'stiff', ok:false,
+        why:'three 是三，比四少一个。' }
+    ],
+    explain:'💡 four（四）和 five（五）都是 f 开头，最容易记混：four 竖四根手指，five 一整只手。',
+    takeaway:'four = 四 🍎'
+  }
+
+  ]);
+
+  /* ---------- 🐶 动物篇（加餐 2） ---------- */
+  EN.add('starter1', 'animal', [
+
+  {
+    id:'a-33', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐮',
+    situation:'照片上的大动物正在草地上吃草，我们喝的牛奶就是它产的。',
+    quote:'',
+    note:'它头上有两只角，哞哞叫。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'cow', note:'奶牛', badge:'奶牛', kind:'stiff', ok:true,
+        why:'cow 是奶牛，会产牛奶。' },
+      { text:'horse', note:'马', badge:'马', kind:'stiff', ok:false,
+        why:'horse 是马，跑得快，能骑。' },
+      { text:'pig', note:'猪', badge:'猪', kind:'stiff', ok:false,
+        why:'pig 是猪，胖胖粉粉的。' }
+    ],
+    explain:'💡 农场三样：cow 奶牛（产奶）、horse 马（会跑）、pig 猪（爱睡）。',
+    takeaway:'cow = 奶牛 🐮'
+  },
+  {
+    id:'a-34', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🦆',
+    situation:'池塘里一个小动物扁扁嘴、摇摇摆摆，会游泳也会飞。',
+    quote:'',
+    note:'它嘎嘎叫，脚上有蹼。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'duck', note:'鸭子', badge:'鸭子', kind:'stiff', ok:true,
+        why:'duck 是鸭子，扁嘴会游泳。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false,
+        why:'dog 是狗，和 duck 都是 d 开头，但狗汪汪叫。' },
+      { text:'frog', note:'青蛙', badge:'青蛙', kind:'stiff', ok:false,
+        why:'frog 是青蛙，也爱待在水边，但它会跳。' }
+    ],
+    explain:'💡 两个 d 开头的动物：duck 鸭子（水里游）和 dog 狗（陆上跑）。',
+    takeaway:'duck = 鸭子 🦆'
+  },
+  {
+    id:'a-35', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐯',
+    situation:'动物园里一只大猫身上有一条条花纹，是森林里的大王。',
+    quote:'',
+    note:'它身上黑黄相间，会大吼。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'tiger', note:'老虎', badge:'老虎', kind:'stiff', ok:true,
+        why:'tiger 是老虎，身上有条纹。' },
+      { text:'lion', note:'狮子', badge:'狮子', kind:'stiff', ok:false,
+        why:'lion 是狮子，脖子上有一圈鬃毛。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false,
+        why:'cat 是猫，是老虎的迷你版。' }
+    ],
+    explain:'💡 大猫家族：tiger 老虎（有条纹）、lion 狮子（有鬃毛）、cat 猫（家里养）。',
+    takeaway:'tiger = 老虎 🐯'
+  },
+  {
+    id:'a-36', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐘',
+    situation:'照片上的动物有长长的鼻子和两只大耳朵，是陆地上最大的动物。',
+    quote:'',
+    note:'它用长鼻子喝水、卷东西。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'elephant', note:'大象', badge:'大象', kind:'stiff', ok:true,
+        why:'elephant 是大象，鼻子长长的。' },
+      { text:'mouse', note:'老鼠', badge:'老鼠', kind:'stiff', ok:false,
+        why:'mouse 是老鼠，最小的那个，和大象正好一大一小。' },
+      { text:'pig', note:'猪', badge:'猪', kind:'stiff', ok:false,
+        why:'pig 是猪，也胖，但没有长鼻子。' }
+    ],
+    explain:'💡 一大一小对着记：elephant 大象（最大）↔ mouse 老鼠（最小）。',
+    takeaway:'elephant = 大象 🐘'
   }
 
   ]);

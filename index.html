@@ -1189,7 +1189,7 @@ body{
 <script>
 /* ===== inlined: data/starter-l1.js ===== */
 /* ============================================================
-   🐣 启蒙 L1 · 认单词（24 题 · 认物 / 颜色数字 / 动物 各 8 题）
+   🐣 启蒙 L1 · 认单词（36 题 · 认物 / 颜色数字 / 动物 各 12 题）
    ------------------------------------------------------------
    最低门槛的一档：题面不需要读英文句子，只有一个大号 emoji，
    选项就是三个单词。干扰项按"形近 / 音近 / 同类混淆"设计。
@@ -1691,12 +1691,258 @@ body{
 
   ]);
 
+  /* ---------- 🍎 认物篇（加餐 2） ---------- */
+  EN.add('starter1', 'things', [
+
+  {
+    id:'a-25', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🍌',
+    situation:'外教举起一根黄黄的、弯弯的水果，剥了皮就能吃。',
+    quote:'',
+    note:'猴子最爱吃它。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'banana', note:'香蕉', badge:'香蕉', kind:'stiff', ok:true,
+        why:'banana 是香蕉，黄黄弯弯的。' },
+      { text:'apple', note:'苹果', badge:'苹果', kind:'stiff', ok:false,
+        why:'apple 是苹果，红红圆圆的。' },
+      { text:'orange', note:'橙子', badge:'橙子', kind:'stiff', ok:false,
+        why:'orange 是橙子，圆圆的橙色。' }
+    ],
+    explain:'💡 水果三兄弟凑齐啦：apple 🍎 苹果、orange 🍊 橙子、banana 🍌 香蕉。',
+    takeaway:'banana = 香蕉 🍌'
+  },
+  {
+    id:'a-26', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'👟',
+    situation:'出门前妈妈让你穿上它，穿好了才能出去走路。',
+    quote:'',
+    note:'它成双成对，穿在脚上。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'shoe', note:'鞋', badge:'鞋', kind:'stiff', ok:true,
+        why:'shoe 是鞋，穿在脚上。' },
+      { text:'sock', note:'袜子', badge:'袜子', kind:'stiff', ok:false,
+        why:'sock 是袜子，先穿袜子再穿鞋。' },
+      { text:'hat', note:'帽子', badge:'帽子', kind:'stiff', ok:false,
+        why:'hat 是帽子，戴在头上，不是脚上。' }
+    ],
+    explain:'💡 从头到脚穿戴：hat 帽子（头）、sock 袜子（脚）、shoe 鞋（脚）。',
+    takeaway:'shoe = 鞋 👟'
+  },
+  {
+    id:'a-27', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🥤',
+    situation:'口渴了，你要用它来装水喝。',
+    quote:'',
+    note:'喝完水放桌上的那个。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'cup', note:'杯子', badge:'杯子', kind:'stiff', ok:true,
+        why:'cup 是杯子，用来喝水。' },
+      { text:'cap', note:'鸭舌帽', badge:'帽子', kind:'stiff', ok:false,
+        why:'cap 是帽子，和 cup 只差中间一个字母。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false,
+        why:'cat 是猫，会喵喵叫。' }
+    ],
+    explain:'💡 cup（杯子）和 cap（帽子）长得太像了，就差中间那个字母 u / a。',
+    takeaway:'cup = 杯子 🥤'
+  },
+  {
+    id:'a-28', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🥄',
+    situation:'喝汤、吃饭的时候，你用它一口一口地舀。',
+    quote:'',
+    note:'圆圆的头，长长的柄。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'spoon', note:'勺子', badge:'勺子', kind:'stiff', ok:true,
+        why:'spoon 是勺子，用来舀汤舀饭。' },
+      { text:'fork', note:'叉子', badge:'叉子', kind:'stiff', ok:false,
+        why:'fork 是叉子，尖尖的用来叉东西。' },
+      { text:'cup', note:'杯子', badge:'杯子', kind:'stiff', ok:false,
+        why:'cup 是杯子，用来喝水的。' }
+    ],
+    explain:'💡 吃饭用的三样：spoon 勺子（舀）、fork 叉子（叉）、knife 刀（切）。',
+    takeaway:'spoon = 勺子 🥄'
+  }
+
+  ]);
+
+  /* ---------- 🎨 颜色数字篇（加餐 2） ---------- */
+  EN.add('starter1', 'color', [
+
+  {
+    id:'a-29', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'⬛',
+    situation:'外教指着夜里没有灯、黑漆漆的天空，让大家说出这个颜色。',
+    quote:'',
+    note:'和乌鸦、墨水一个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'black', note:'黑色', badge:'黑', kind:'stiff', ok:true,
+        why:'black 是黑色，夜空的颜色。' },
+      { text:'white', note:'白色', badge:'白', kind:'stiff', ok:false,
+        why:'white 是白色，雪和牛奶的颜色，和黑正相反。' },
+      { text:'blue', note:'蓝色', badge:'蓝', kind:'stiff', ok:false,
+        why:'blue 是蓝色，白天天空的颜色。' }
+    ],
+    explain:'💡 一对反义色：black 黑 ↔ white 白。夜里黑，雪里白。',
+    takeaway:'black = 黑色 ⬛'
+  },
+  {
+    id:'a-30', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🟠',
+    situation:'外教举起一个橙子，问大家它的皮是什么颜色。',
+    quote:'',
+    note:'比黄色深，比红色浅。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'orange', note:'橙色', badge:'橙', kind:'stiff', ok:true,
+        why:'orange 既是橙子，也是橙色。' },
+      { text:'yellow', note:'黄色', badge:'黄', kind:'stiff', ok:false,
+        why:'yellow 是黄色，比橙色浅一点。' },
+      { text:'red', note:'红色', badge:'红', kind:'stiff', ok:false,
+        why:'red 是红色，比橙色深一点。' }
+    ],
+    explain:'💡 orange 一词两用：一个橙子 an orange，橙色 orange。红黄之间就是橙。',
+    takeaway:'orange = 橙色 🟠'
+  },
+  {
+    id:'a-31', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🎈🎈🎈',
+    situation:'黑板上画了一排气球，外教让大家数一数一共几个。',
+    quote:'',
+    note:'比二多一个，比四少一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'three', note:'三', badge:'3', kind:'stiff', ok:true,
+        why:'three 是三。' },
+      { text:'two', note:'二', badge:'2', kind:'stiff', ok:false,
+        why:'two 是二，比三少一个。' },
+      { text:'eight', note:'八', badge:'8', kind:'stiff', ok:false,
+        why:'eight 是八，比三多好几个。' }
+    ],
+    explain:'💡 接着往下数：one、two、three、four、five。数到第三个就是 three。',
+    takeaway:'three = 三 🎈'
+  },
+  {
+    id:'a-32', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🍎🍎🍎🍎',
+    situation:'盘子里摆着一排苹果，外教让大家数一数。',
+    quote:'',
+    note:'比五少一个，比三多一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'four', note:'四', badge:'4', kind:'stiff', ok:true,
+        why:'four 是四。' },
+      { text:'five', note:'五', badge:'5', kind:'stiff', ok:false,
+        why:'five 是五，比四多一个，两个都是 f 开头。' },
+      { text:'three', note:'三', badge:'3', kind:'stiff', ok:false,
+        why:'three 是三，比四少一个。' }
+    ],
+    explain:'💡 four（四）和 five（五）都是 f 开头，最容易记混：four 竖四根手指，five 一整只手。',
+    takeaway:'four = 四 🍎'
+  }
+
+  ]);
+
+  /* ---------- 🐶 动物篇（加餐 2） ---------- */
+  EN.add('starter1', 'animal', [
+
+  {
+    id:'a-33', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐮',
+    situation:'照片上的大动物正在草地上吃草，我们喝的牛奶就是它产的。',
+    quote:'',
+    note:'它头上有两只角，哞哞叫。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'cow', note:'奶牛', badge:'奶牛', kind:'stiff', ok:true,
+        why:'cow 是奶牛，会产牛奶。' },
+      { text:'horse', note:'马', badge:'马', kind:'stiff', ok:false,
+        why:'horse 是马，跑得快，能骑。' },
+      { text:'pig', note:'猪', badge:'猪', kind:'stiff', ok:false,
+        why:'pig 是猪，胖胖粉粉的。' }
+    ],
+    explain:'💡 农场三样：cow 奶牛（产奶）、horse 马（会跑）、pig 猪（爱睡）。',
+    takeaway:'cow = 奶牛 🐮'
+  },
+  {
+    id:'a-34', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🦆',
+    situation:'池塘里一个小动物扁扁嘴、摇摇摆摆，会游泳也会飞。',
+    quote:'',
+    note:'它嘎嘎叫，脚上有蹼。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'duck', note:'鸭子', badge:'鸭子', kind:'stiff', ok:true,
+        why:'duck 是鸭子，扁嘴会游泳。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false,
+        why:'dog 是狗，和 duck 都是 d 开头，但狗汪汪叫。' },
+      { text:'frog', note:'青蛙', badge:'青蛙', kind:'stiff', ok:false,
+        why:'frog 是青蛙，也爱待在水边，但它会跳。' }
+    ],
+    explain:'💡 两个 d 开头的动物：duck 鸭子（水里游）和 dog 狗（陆上跑）。',
+    takeaway:'duck = 鸭子 🦆'
+  },
+  {
+    id:'a-35', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐯',
+    situation:'动物园里一只大猫身上有一条条花纹，是森林里的大王。',
+    quote:'',
+    note:'它身上黑黄相间，会大吼。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'tiger', note:'老虎', badge:'老虎', kind:'stiff', ok:true,
+        why:'tiger 是老虎，身上有条纹。' },
+      { text:'lion', note:'狮子', badge:'狮子', kind:'stiff', ok:false,
+        why:'lion 是狮子，脖子上有一圈鬃毛。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false,
+        why:'cat 是猫，是老虎的迷你版。' }
+    ],
+    explain:'💡 大猫家族：tiger 老虎（有条纹）、lion 狮子（有鬃毛）、cat 猫（家里养）。',
+    takeaway:'tiger = 老虎 🐯'
+  },
+  {
+    id:'a-36', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐘',
+    situation:'照片上的动物有长长的鼻子和两只大耳朵，是陆地上最大的动物。',
+    quote:'',
+    note:'它用长鼻子喝水、卷东西。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'elephant', note:'大象', badge:'大象', kind:'stiff', ok:true,
+        why:'elephant 是大象，鼻子长长的。' },
+      { text:'mouse', note:'老鼠', badge:'老鼠', kind:'stiff', ok:false,
+        why:'mouse 是老鼠，最小的那个，和大象正好一大一小。' },
+      { text:'pig', note:'猪', badge:'猪', kind:'stiff', ok:false,
+        why:'pig 是猪，也胖，但没有长鼻子。' }
+    ],
+    explain:'💡 一大一小对着记：elephant 大象（最大）↔ mouse 老鼠（最小）。',
+    takeaway:'elephant = 大象 🐘'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/starter-l2.js ===== */
 /* ============================================================
-   🐤 启蒙 L2 · 短句子（24 题 · 打招呼 / 礼貌用语 / 日常短句 各 8 题）
+   🐤 启蒙 L2 · 短句子（36 题 · 打招呼 / 礼貌用语 / 日常短句 各 12 题）
    ------------------------------------------------------------
    比 L1 难一点：题面出现一句最短的英文，选项是三到四个词的短句。
    考的是"这个场合该说哪一句"，干扰项都是别的常用短句（用错场合）。
@@ -2197,12 +2443,258 @@ body{
 
   ]);
 
+  /* ---------- 👋 打招呼篇（加餐 2） ---------- */
+  EN.add('starter2', 'hello', [
+
+  {
+    id:'b-25', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🏫',
+    situation:'放学了，明天还要上课，外教朝你挥挥手说：',
+    quote:'See you tomorrow!',
+    note:'明天你们还会再见面。',
+    ask:'你该回哪一句？',
+    options:[
+      { text:'See you tomorrow!', note:'明天见', badge:'地道', kind:'native', ok:true,
+        why:'原样还回去就对了，明天见就说 See you tomorrow!' },
+      { text:'Good morning!', note:'早上好', badge:'时机不对', kind:'stiff', ok:false,
+        why:'现在是放学，不是早上问好。' },
+      { text:'Nice to meet you.', note:'很高兴认识你', badge:'用错了', kind:'stiff', ok:false,
+        why:'那是第一次见面才说的，你们早就认识了。' }
+    ],
+    explain:'💡 道别的几种说法：Bye! / See you! / See you tomorrow!（明天见）。',
+    takeaway:'明天还见面 → See you tomorrow!'
+  },
+  {
+    id:'b-26', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'😊',
+    situation:'你问外教 How are you?，她笑着回答完，又反问你：',
+    quote:"I'm fine. And you?",
+    note:'她想知道你今天怎么样。',
+    ask:'你该怎么接？',
+    options:[
+      { text:"I'm fine, too.", note:'我也很好', badge:'地道', kind:'native', ok:true,
+        why:'她问 And you?（你呢），你就说自己也好，加个 too。' },
+      { text:'And you?', note:'你呢', badge:'绕圈了', kind:'trap', ok:false,
+        why:'她已经问你了，你再问回去就绕圈了。' },
+      { text:"I'm nine.", note:'我九岁', badge:'答偏了', kind:'stiff', ok:false,
+        why:'那是回答 How old are you? 的。' }
+    ],
+    explain:"💡 And you?（你呢）是把问题抛回来。回答 I'm fine, too. 里的 too 就是“也”的意思。",
+    takeaway:"And you? → I'm fine, too."
+  },
+  {
+    id:'b-27', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🌍',
+    situation:'新来的外教想认识大家，指着你问：',
+    quote:'Where are you from?',
+    note:'她想知道你是哪里人。',
+    ask:'你该怎么回答？',
+    options:[
+      { text:"I'm from China.", note:'我来自中国', badge:'地道', kind:'native', ok:true,
+        why:'问你从哪儿来，用 I\'m from + 地方来回答。' },
+      { text:"I'm fine.", note:'我很好', badge:'答偏了', kind:'stiff', ok:false,
+        why:'那是回答 How are you? 的。' },
+      { text:"I'm nine.", note:'我九岁', badge:'答偏了', kind:'stiff', ok:false,
+        why:'那是回答 How old are you? 的。' }
+    ],
+    explain:"💡 Where are you from?（你从哪儿来）→ I'm from China.。把 China 换成你的城市也行。",
+    takeaway:"Where are you from? → I'm from China."
+  },
+  {
+    id:'b-28', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🚪',
+    situation:'第一次去寄宿家庭，阿姨打开门，张开双臂笑着说：',
+    quote:'Welcome!',
+    note:'她很高兴你来。',
+    ask:'你该说什么？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true,
+        why:'别人欢迎你，回一句谢谢最自然。' },
+      { text:'Welcome!', note:'欢迎', badge:'反了', kind:'trap', ok:false,
+        why:'是她欢迎你，不是你欢迎她，别还回去。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false,
+        why:'这是高兴的场合，用不着道歉。' }
+    ],
+    explain:'💡 别人说 Welcome!（欢迎）迎接你，你回 Thank you! 就好。',
+    takeaway:'Welcome! → Thank you!'
+  }
+
+  ]);
+
+  /* ---------- 🙏 礼貌用语篇（加餐 2） ---------- */
+  EN.add('starter2', 'polite', [
+
+  {
+    id:'b-29', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🎨',
+    situation:'美术课上，外教看了看你的画，竖起大拇指说：',
+    quote:'Your picture is nice!',
+    note:'她在夸你画得好。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true,
+        why:'别人夸你，大方地说声谢谢就好。' },
+      { text:'No, no.', note:'不不不', badge:'太见外', kind:'trap', ok:false,
+        why:'中文爱谦虚说“没有没有”，但英语里被夸就直接说 Thank you。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false,
+        why:'被表扬是好事，别道歉。' }
+    ],
+    explain:'💡 被夸奖时，英语里不用谦虚推辞，一句 Thank you! 就是最好的回应。',
+    takeaway:'被表扬 → Thank you!'
+  },
+  {
+    id:'b-30', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🚻',
+    situation:'上课上到一半，你很想上厕所，只能举手问老师。',
+    quote:'',
+    note:'你得先得到老师同意。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'Can I go to the toilet, please?', note:'我可以去厕所吗', badge:'地道', kind:'native', ok:true,
+        why:'请求许可用 Can I…, please?，客气又清楚。' },
+      { text:'I go toilet.', note:'我去厕所', badge:'不通顺', kind:'stiff', ok:false,
+        why:'少了 Can I 和 to，句子不完整也不礼貌。' },
+      { text:'Toilet!', note:'厕所！', badge:'太冲', kind:'trap', ok:false,
+        why:'只喊一个词像在下命令，很不礼貌。' }
+    ],
+    explain:'💡 想做某件事先征得同意：Can I go to the toilet, please? / Can I have some water, please?',
+    takeaway:'请求许可 → Can I …, please?'
+  },
+  {
+    id:'b-31', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'⏰',
+    situation:'你迟到了，轻轻推开教室门，全班都看过来。',
+    quote:'',
+    note:'老师正在讲课。',
+    ask:'进门第一句该说什么？',
+    options:[
+      { text:"Sorry, I'm late.", note:'对不起，我迟到了', badge:'地道', kind:'native', ok:true,
+        why:'迟到打扰了大家，先道个歉最得体。' },
+      { text:'Hello, everyone!', note:'大家好', badge:'不合适', kind:'trap', ok:false,
+        why:'迟到还大声打招呼，会更打扰上课。' },
+      { text:'I late.', note:'我迟到', badge:'不通顺', kind:'stiff', ok:false,
+        why:'少了 am：I\'m late.，前面还要加 Sorry。' }
+    ],
+    explain:"💡 迟到进门先说 Sorry, I'm late.，老师一般会说 Come in.（进来吧）。",
+    takeaway:"迟到 → Sorry, I'm late."
+  },
+  {
+    id:'b-32', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🙌',
+    situation:'你帮同学讲明白了一道题，他特别感激地说：',
+    quote:'Thank you so much!',
+    note:'他谢得特别真诚。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'No problem!', note:'不客气、小事一桩', badge:'地道', kind:'native', ok:true,
+        why:'别人谢你，回 No problem! 又轻松又地道。' },
+      { text:'Thank you so much!', note:'太谢谢你了', badge:'绕圈了', kind:'stiff', ok:false,
+        why:'他谢的是你，你再谢回去就绕圈了。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false,
+        why:'你帮了忙是好事，不用道歉。' }
+    ],
+    explain:"💡 别人道谢，回哪句都行：You're welcome. / No problem. / Sure. / My pleasure.",
+    takeaway:'Thank you so much! → No problem!'
+  }
+
+  ]);
+
+  /* ---------- 🗣️ 日常短句篇（加餐 2） ---------- */
+  EN.add('starter2', 'daily', [
+
+  {
+    id:'b-33', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'👀',
+    situation:'外教在黑板上写了新单词，转过身对大家说：',
+    quote:'Look at the blackboard.',
+    note:'她用手指了指身后的黑板。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'看黑板', note:'look at = 看向', badge:'看黑板', kind:'stiff', ok:true,
+        why:'Look at the blackboard 就是往黑板那儿看。' },
+      { text:'擦黑板', note:'那是 clean the blackboard', badge:'擦黑板', kind:'stiff', ok:false,
+        why:'擦黑板是 clean，这里只是让你看。' },
+      { text:'合上书', note:'那是 close your book', badge:'合书', kind:'stiff', ok:false,
+        why:'合上书是 close your book，跟黑板没关系。' }
+    ],
+    explain:'💡 Look at… 就是“看向……”：Look at me.（看我）、Look at the blackboard.（看黑板）。',
+    takeaway:'Look at the blackboard. = 看黑板。'
+  },
+  {
+    id:'b-34', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🙋',
+    situation:'做游戏时外教喊了一声口令，会的同学都把手举了起来：',
+    quote:'Hands up!',
+    note:'知道答案的就举手。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'把手举起来', note:'up = 往上', badge:'举手', kind:'stiff', ok:true,
+        why:'Hands up! 就是把手举高。' },
+      { text:'把手放下', note:'那是 hands down', badge:'放下', kind:'stiff', ok:false,
+        why:'放下手是 hands down，down 表示往下。' },
+      { text:'拍拍手', note:'那是 clap your hands', badge:'拍手', kind:'stiff', ok:false,
+        why:'拍手是 clap your hands，不是举手。' }
+    ],
+    explain:'💡 和 hands（手）有关的口令：Hands up!（举手）、Hands down!（放下）、Clap your hands!（拍手）。',
+    takeaway:'Hands up! = 把手举起来。'
+  },
+  {
+    id:'b-35', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🍽️',
+    situation:'饭菜都端上桌了，阿姨招呼大家坐下，笑着说：',
+    quote:"Let's eat!",
+    note:'大家都拿起了筷子。',
+    ask:'她在说什么？',
+    options:[
+      { text:'开饭啦', note:"Let's = 一起来", badge:'吃饭', kind:'stiff', ok:true,
+        why:"Let's eat! 就是招呼大家一起开动。" },
+      { text:'去睡觉', note:'那是 go to bed', badge:'睡觉', kind:'stiff', ok:false,
+        why:'睡觉是 go to bed，这会儿是吃饭。' },
+      { text:'洗洗手', note:'那是 wash your hands', badge:'洗手', kind:'stiff', ok:false,
+        why:'洗手是 wash your hands，是吃之前的事，这句是开吃了。' }
+    ],
+    explain:"💡 Let's + 动词 = 我们一起做：Let's eat!（开饭）、Let's go!（走吧）、Let's play!（一起玩）。",
+    takeaway:"Let's eat! = 开饭啦！"
+  },
+  {
+    id:'b-36', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'☀️',
+    situation:'早上七点，阿姨拉开窗帘，轻轻拍拍你说：',
+    quote:'Wake up!',
+    note:'太阳都晒屁股了。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'该起床了', note:'wake up = 醒来', badge:'起床', kind:'stiff', ok:true,
+        why:'Wake up! 就是叫你醒醒、起床了。' },
+      { text:'快睡觉', note:'那是 go to sleep', badge:'睡觉', kind:'stiff', ok:false,
+        why:'睡觉是 go to sleep，这会儿是早上叫你起。' },
+      { text:'站起来', note:'那是 stand up', badge:'起立', kind:'stiff', ok:false,
+        why:'站起来是 stand up，跟起床不是一回事。' }
+    ],
+    explain:'💡 一睡一醒记一对：Wake up!（醒醒、起床）↔ Go to sleep.（睡觉）。',
+    takeaway:'Wake up! = 该起床了！'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/starter-l3.js ===== */
 /* ============================================================
-   🐥 启蒙 L3 · 小对话（24 题 · 课堂 / 家里 / 校园 各 8 题）
+   🐥 启蒙 L3 · 小对话（36 题 · 课堂 / 家里 / 校园 各 12 题）
    ------------------------------------------------------------
    启蒙的最后一档：一问一答，要先听懂问句，再选出配得上的回答。
    顺带把最基础的语法点带出来：a / an、单复数、have 和 am、
@@ -2701,6 +3193,252 @@ body{
     ],
     explain:"💡 Let's + 动词 = 我们一起做：Let's go!（走吧）、Let's play!（一起玩）、Let's eat!（开饭啦）。",
     takeaway:"Let's go! = 我们走吧！"
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂小对话（加餐 2） ---------- */
+  EN.add('starter3', 'class', [
+
+  {
+    id:'c-25', pack:'class', level:3, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🖊️🖊️',
+    situation:'外教手里攥着好几支笔，举到你面前问：',
+    quote:'What are these?',
+    note:'不止一支，是好几支。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're pens.", note:'不止一个用 they', badge:'地道', kind:'native', ok:true,
+        why:'问的是 these（这些，好几个），要用 They\'re + 复数来回答。' },
+      { text:"It's a pen.", note:'把好几支说成了一支', badge:'单复数错', kind:'stiff', ok:false,
+        why:'It\'s a pen 是“一支笔”，可现在有好几支。' },
+      { text:'They pens.', note:'漏了 are', badge:'漏词', kind:'stiff', ok:false,
+        why:'少了 are：They\'re (They are) pens. 才完整。' }
+    ],
+    explain:"💡 一个用 this → It's a pen.；好几个用 these → They're pens.。多了就加 s、用 they。",
+    takeaway:"What are these? → They're pens."
+  },
+  {
+    id:'c-26', pack:'class', level:2, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🍎',
+    situation:'外教举起一个红苹果，明知故问地逗你：',
+    quote:'Is it red?',
+    note:'苹果确实是红的。',
+    ask:'该怎么短答？',
+    options:[
+      { text:'Yes, it is.', note:'用 is 回 Is', badge:'地道', kind:'native', ok:true,
+        why:'Is it…? 开头，就用 Yes, it is. 来短答。' },
+      { text:'Yes, it does.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false,
+        why:'does 是回答 Does it…? 的，这句是 Is 开头。' },
+      { text:'Yes, red.', note:'话没说完', badge:'不完整', kind:'stiff', ok:false,
+        why:'短答要说 Yes, it is.，光一个 red 不成句。' }
+    ],
+    explain:'💡 Is it…? → Yes, it is. / No, it isn\'t.。Is 问就用 is 答，这也是配对短答。',
+    takeaway:'Is it…? → Yes, it is.'
+  },
+  {
+    id:'c-27', pack:'class', level:2, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🧽',
+    situation:'你写错了字，橡皮却忘带了，想借同桌的用一下。',
+    quote:'',
+    note:'他的橡皮就放在桌角。',
+    ask:'该怎么开口最有礼貌？',
+    options:[
+      { text:'Can I use your eraser, please?', note:'我能用一下你的橡皮吗', badge:'地道', kind:'native', ok:true,
+        why:'借用别人的东西，用 Can I use…, please? 最客气。' },
+      { text:'Give me your eraser.', note:'把橡皮给我', badge:'太冲', kind:'trap', ok:false,
+        why:'这是命令的口气，像在抢，不像在借。' },
+      { text:'I use eraser.', note:'我用橡皮', badge:'不通顺', kind:'stiff', ok:false,
+        why:'少了 Can I 和 your，既不完整也不礼貌。' }
+    ],
+    explain:'💡 借东西用 Can I use…, please?；对方递给你会说 Here you are.，你回一句 Thank you。',
+    takeaway:'借东西 → Can I use …, please?'
+  },
+  {
+    id:'c-28', pack:'class', level:1, type:'listening',
+    scene:'🏫 课堂小对话',
+    emoji:'👋',
+    situation:'外教站在讲台边，朝你招招手说：',
+    quote:'Come here, please.',
+    note:'她的手在往自己身前招。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'到这儿来', note:'come here = 过来', badge:'过来', kind:'stiff', ok:true,
+        why:'Come here 就是让你走到她那边去。' },
+      { text:'坐下', note:'那是 sit down', badge:'坐下', kind:'stiff', ok:false,
+        why:'坐下是 sit down，这句是叫你过去。' },
+      { text:'出去', note:'那是 go out', badge:'出去', kind:'stiff', ok:false,
+        why:'出去是 go out，方向正好相反。' }
+    ],
+    explain:'💡 一来一去记一对：Come here.（过来）↔ Go out.（出去）。',
+    takeaway:'Come here, please. = 到这儿来。'
+  }
+
+  ]);
+
+  /* ---------- 🏠 家里小对话（加餐 2） ---------- */
+  EN.add('starter3', 'home', [
+
+  {
+    id:'c-29', pack:'home', level:3, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'👨',
+    situation:'同学翻你的全家福，指着照片上一个戴眼镜的男人问你：',
+    quote:"Who's he?",
+    note:'那是你爸爸。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"He's my dad.", note:'男的用 he', badge:'地道', kind:'native', ok:true,
+        why:'照片上是男的，用 He\'s（He is）来介绍。' },
+      { text:"She's my dad.", note:'男女用错了', badge:'he/she 错', kind:'trap', ok:false,
+        why:'she 指女的，爸爸是男的，得用 he。' },
+      { text:'He my dad.', note:'漏了 is', badge:'漏词', kind:'stiff', ok:false,
+        why:'中间要有 is：He\'s my dad. 才完整。' }
+    ],
+    explain:"💡 男的用 he，女的用 she：He's my dad.（他是我爸爸）／She's my mom.（她是我妈妈）。",
+    takeaway:"Who's he? → He's my dad."
+  },
+  {
+    id:'c-30', pack:'home', level:2, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'🍵',
+    situation:'你坐在客厅，阿姨端着茶壶走过来问你：',
+    quote:'Would you like some tea?',
+    note:'你正好想喝点热的。',
+    ask:'该怎么答应？',
+    options:[
+      { text:'Yes, please.', note:'好的，谢谢', badge:'地道', kind:'native', ok:true,
+        why:'想要就说 Yes, please.，又短又礼貌。' },
+      { text:'Yes, I am.', note:'答非所问', badge:'不配对', kind:'stiff', ok:false,
+        why:'Yes, I am 是回答 Are you…? 的，这里问的是要不要。' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'说反了', kind:'stiff', ok:false,
+        why:'这是不想要时说的，意思正好相反。' }
+    ],
+    explain:'💡 Would you like…?（您要来点……吗）是很客气的问法。要 → Yes, please.；不要 → No, thank you.',
+    takeaway:'Would you like…? → Yes, please.'
+  },
+  {
+    id:'c-31', pack:'home', level:3, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'🧦',
+    situation:'出门前你在找袜子，阿姨看到它们在床上，你想告诉她。',
+    quote:'Where are my socks?',
+    note:'袜子是一双，两只都在床上。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're on the bed.", note:'一双用 they', badge:'地道', kind:'native', ok:true,
+        why:'袜子是一双（好几只），用 They\'re；on 表示在床上面。' },
+      { text:"It's on the bed.", note:'一双说成了一只', badge:'单复数错', kind:'stiff', ok:false,
+        why:'socks 是一双，得用 They\'re，不是 It\'s。' },
+      { text:"They're in the bed.", note:'位置词用错了', badge:'in/on 错', kind:'stiff', ok:false,
+        why:'in the bed 是“在被窝里”，袜子放在床面上，用 on。' }
+    ],
+    explain:"💡 一双、一对都是复数，用 They're：They're on the bed.。别忘了 socks 后面的 s。",
+    takeaway:"Where are my socks? → They're on the bed."
+  },
+  {
+    id:'c-32', pack:'home', level:1, type:'listening',
+    scene:'🏠 家里小对话',
+    emoji:'🏠',
+    situation:'在公园玩了一下午，天快黑了，阿姨牵起你的手说：',
+    quote:"Let's go home.",
+    note:'她指了指回家的方向。',
+    ask:'她在说什么？',
+    options:[
+      { text:'我们回家吧', note:'go home = 回家', badge:'回家', kind:'stiff', ok:true,
+        why:"Let's go home. 就是招呼你一起回家。" },
+      { text:'快点儿', note:'那是 Hurry up', badge:'快点', kind:'stiff', ok:false,
+        why:'催你快是 Hurry up!，这句是说回家。' },
+      { text:'起床啦', note:'那是 Get up', badge:'起床', kind:'stiff', ok:false,
+        why:'起床是 Get up，这会儿是要回家。' }
+    ],
+    explain:'💡 go home 就是回家，前面不加 to：go home（回家）、go to school（去上学）。',
+    takeaway:"Let's go home. = 我们回家吧。"
+  }
+
+  ]);
+
+  /* ---------- 🎒 校园小对话（加餐 2） ---------- */
+  EN.add('starter3', 'school', [
+
+  {
+    id:'c-33', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'👧',
+    situation:'同学看见一个女生跟你打招呼，好奇地指着她问你：',
+    quote:"Who's she?",
+    note:'那是你的好朋友 Lily。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"She's my friend.", note:'女的用 she', badge:'地道', kind:'native', ok:true,
+        why:'那是女生，用 She\'s（She is）来介绍。' },
+      { text:"He's my friend.", note:'男女用错了', badge:'he/she 错', kind:'trap', ok:false,
+        why:'he 指男的，她是女生，得用 she。' },
+      { text:'She my friend.', note:'漏了 is', badge:'漏词', kind:'stiff', ok:false,
+        why:'中间要有 is：She\'s my friend. 才完整。' }
+    ],
+    explain:"💡 女的用 she，男的用 he：She's my friend.（她是我朋友）／He's my friend.（他是我朋友）。",
+    takeaway:"Who's she? → She's my friend."
+  },
+  {
+    id:'c-34', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'🐦🐦',
+    situation:'你和同学在操场上，他指着远处电线上停着的几只鸟问你：',
+    quote:'What are those?',
+    note:'那几只鸟离你们挺远。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're birds.", note:'远处好几个', badge:'地道', kind:'native', ok:true,
+        why:'those（那些，远处好几个）要用 They\'re + 复数来回答。' },
+      { text:"That's a bird.", note:'好几只说成了一只', badge:'单复数错', kind:'stiff', ok:false,
+        why:'那儿有好几只，That\'s a bird 只说了一只。' },
+      { text:'Those birds.', note:'漏了 are', badge:'漏词', kind:'stiff', ok:false,
+        why:'少了 are：They\'re birds. 才成句。' }
+    ],
+    explain:"💡 近的这些 these、远的那些 those，回答都用 They're + 复数：They're birds.",
+    takeaway:"What are those? → They're birds."
+  },
+  {
+    id:'c-35', pack:'school', level:2, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'⚽',
+    situation:'课间同学抱着足球跑过来，兴冲冲地问你：',
+    quote:"Let's play football!",
+    note:'你也正想活动活动。',
+    ask:'想一起玩，该怎么答应？',
+    options:[
+      { text:"OK! Let's go!", note:'好啊，走吧', badge:'地道', kind:'native', ok:true,
+        why:'想一起玩就爽快答应：OK! / Good idea! / Let\'s go!' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'太冷淡', kind:'trap', ok:false,
+        why:'你明明想玩，这么回就把同学推开了。' },
+      { text:'Sorry.', note:'对不起', badge:'答偏了', kind:'stiff', ok:false,
+        why:'这不是道歉的场合，是约你一起玩。' }
+    ],
+    explain:"💡 别人约你 Let's play!，想去就说 OK! / Sure! / Good idea!；实在不想才说 No, thank you.",
+    takeaway:"Let's play! → OK! Let's go!"
+  },
+  {
+    id:'c-36', pack:'school', level:2, type:'listening',
+    scene:'🎒 校园小对话',
+    emoji:'🚸',
+    situation:'放学要一起走出校门，老师拍拍手对大家说：',
+    quote:'Line up, please.',
+    note:'同学们一个跟一个站成一队。',
+    ask:'老师让大家做什么？',
+    options:[
+      { text:'排好队', note:'line up = 排队', badge:'排队', kind:'stiff', ok:true,
+        why:'Line up 就是一个跟一个排成一队。' },
+      { text:'坐下', note:'那是 sit down', badge:'坐下', kind:'stiff', ok:false,
+        why:'坐下是 sit down，排队是要站着排。' },
+      { text:'安静', note:'那是 be quiet', badge:'安静', kind:'stiff', ok:false,
+        why:'安静是 Be quiet，这句是让你们排队。' }
+    ],
+    explain:'💡 集体活动常听：Line up.（排队）、Come here.（过来）、Follow me.（跟我走）。',
+    takeaway:'Line up, please. = 排好队。'
   }
 
   ]);

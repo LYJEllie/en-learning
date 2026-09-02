@@ -1,5 +1,5 @@
 /* ============================================================
-   🐥 启蒙 L3 · 小对话（24 题 · 课堂 / 家里 / 校园 各 8 题）
+   🐥 启蒙 L3 · 小对话（36 题 · 课堂 / 家里 / 校园 各 12 题）
    ------------------------------------------------------------
    启蒙的最后一档：一问一答，要先听懂问句，再选出配得上的回答。
    顺带把最基础的语法点带出来：a / an、单复数、have 和 am、
@@ -498,6 +498,252 @@
     ],
     explain:"💡 Let's + 动词 = 我们一起做：Let's go!（走吧）、Let's play!（一起玩）、Let's eat!（开饭啦）。",
     takeaway:"Let's go! = 我们走吧！"
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂小对话（加餐 2） ---------- */
+  EN.add('starter3', 'class', [
+
+  {
+    id:'c-25', pack:'class', level:3, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🖊️🖊️',
+    situation:'外教手里攥着好几支笔，举到你面前问：',
+    quote:'What are these?',
+    note:'不止一支，是好几支。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're pens.", note:'不止一个用 they', badge:'地道', kind:'native', ok:true,
+        why:'问的是 these（这些，好几个），要用 They\'re + 复数来回答。' },
+      { text:"It's a pen.", note:'把好几支说成了一支', badge:'单复数错', kind:'stiff', ok:false,
+        why:'It\'s a pen 是“一支笔”，可现在有好几支。' },
+      { text:'They pens.', note:'漏了 are', badge:'漏词', kind:'stiff', ok:false,
+        why:'少了 are：They\'re (They are) pens. 才完整。' }
+    ],
+    explain:"💡 一个用 this → It's a pen.；好几个用 these → They're pens.。多了就加 s、用 they。",
+    takeaway:"What are these? → They're pens."
+  },
+  {
+    id:'c-26', pack:'class', level:2, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🍎',
+    situation:'外教举起一个红苹果，明知故问地逗你：',
+    quote:'Is it red?',
+    note:'苹果确实是红的。',
+    ask:'该怎么短答？',
+    options:[
+      { text:'Yes, it is.', note:'用 is 回 Is', badge:'地道', kind:'native', ok:true,
+        why:'Is it…? 开头，就用 Yes, it is. 来短答。' },
+      { text:'Yes, it does.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false,
+        why:'does 是回答 Does it…? 的，这句是 Is 开头。' },
+      { text:'Yes, red.', note:'话没说完', badge:'不完整', kind:'stiff', ok:false,
+        why:'短答要说 Yes, it is.，光一个 red 不成句。' }
+    ],
+    explain:'💡 Is it…? → Yes, it is. / No, it isn\'t.。Is 问就用 is 答，这也是配对短答。',
+    takeaway:'Is it…? → Yes, it is.'
+  },
+  {
+    id:'c-27', pack:'class', level:2, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🧽',
+    situation:'你写错了字，橡皮却忘带了，想借同桌的用一下。',
+    quote:'',
+    note:'他的橡皮就放在桌角。',
+    ask:'该怎么开口最有礼貌？',
+    options:[
+      { text:'Can I use your eraser, please?', note:'我能用一下你的橡皮吗', badge:'地道', kind:'native', ok:true,
+        why:'借用别人的东西，用 Can I use…, please? 最客气。' },
+      { text:'Give me your eraser.', note:'把橡皮给我', badge:'太冲', kind:'trap', ok:false,
+        why:'这是命令的口气，像在抢，不像在借。' },
+      { text:'I use eraser.', note:'我用橡皮', badge:'不通顺', kind:'stiff', ok:false,
+        why:'少了 Can I 和 your，既不完整也不礼貌。' }
+    ],
+    explain:'💡 借东西用 Can I use…, please?；对方递给你会说 Here you are.，你回一句 Thank you。',
+    takeaway:'借东西 → Can I use …, please?'
+  },
+  {
+    id:'c-28', pack:'class', level:1, type:'listening',
+    scene:'🏫 课堂小对话',
+    emoji:'👋',
+    situation:'外教站在讲台边，朝你招招手说：',
+    quote:'Come here, please.',
+    note:'她的手在往自己身前招。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'到这儿来', note:'come here = 过来', badge:'过来', kind:'stiff', ok:true,
+        why:'Come here 就是让你走到她那边去。' },
+      { text:'坐下', note:'那是 sit down', badge:'坐下', kind:'stiff', ok:false,
+        why:'坐下是 sit down，这句是叫你过去。' },
+      { text:'出去', note:'那是 go out', badge:'出去', kind:'stiff', ok:false,
+        why:'出去是 go out，方向正好相反。' }
+    ],
+    explain:'💡 一来一去记一对：Come here.（过来）↔ Go out.（出去）。',
+    takeaway:'Come here, please. = 到这儿来。'
+  }
+
+  ]);
+
+  /* ---------- 🏠 家里小对话（加餐 2） ---------- */
+  EN.add('starter3', 'home', [
+
+  {
+    id:'c-29', pack:'home', level:3, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'👨',
+    situation:'同学翻你的全家福，指着照片上一个戴眼镜的男人问你：',
+    quote:"Who's he?",
+    note:'那是你爸爸。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"He's my dad.", note:'男的用 he', badge:'地道', kind:'native', ok:true,
+        why:'照片上是男的，用 He\'s（He is）来介绍。' },
+      { text:"She's my dad.", note:'男女用错了', badge:'he/she 错', kind:'trap', ok:false,
+        why:'she 指女的，爸爸是男的，得用 he。' },
+      { text:'He my dad.', note:'漏了 is', badge:'漏词', kind:'stiff', ok:false,
+        why:'中间要有 is：He\'s my dad. 才完整。' }
+    ],
+    explain:"💡 男的用 he，女的用 she：He's my dad.（他是我爸爸）／She's my mom.（她是我妈妈）。",
+    takeaway:"Who's he? → He's my dad."
+  },
+  {
+    id:'c-30', pack:'home', level:2, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'🍵',
+    situation:'你坐在客厅，阿姨端着茶壶走过来问你：',
+    quote:'Would you like some tea?',
+    note:'你正好想喝点热的。',
+    ask:'该怎么答应？',
+    options:[
+      { text:'Yes, please.', note:'好的，谢谢', badge:'地道', kind:'native', ok:true,
+        why:'想要就说 Yes, please.，又短又礼貌。' },
+      { text:'Yes, I am.', note:'答非所问', badge:'不配对', kind:'stiff', ok:false,
+        why:'Yes, I am 是回答 Are you…? 的，这里问的是要不要。' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'说反了', kind:'stiff', ok:false,
+        why:'这是不想要时说的，意思正好相反。' }
+    ],
+    explain:'💡 Would you like…?（您要来点……吗）是很客气的问法。要 → Yes, please.；不要 → No, thank you.',
+    takeaway:'Would you like…? → Yes, please.'
+  },
+  {
+    id:'c-31', pack:'home', level:3, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'🧦',
+    situation:'出门前你在找袜子，阿姨看到它们在床上，你想告诉她。',
+    quote:'Where are my socks?',
+    note:'袜子是一双，两只都在床上。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're on the bed.", note:'一双用 they', badge:'地道', kind:'native', ok:true,
+        why:'袜子是一双（好几只），用 They\'re；on 表示在床上面。' },
+      { text:"It's on the bed.", note:'一双说成了一只', badge:'单复数错', kind:'stiff', ok:false,
+        why:'socks 是一双，得用 They\'re，不是 It\'s。' },
+      { text:"They're in the bed.", note:'位置词用错了', badge:'in/on 错', kind:'stiff', ok:false,
+        why:'in the bed 是“在被窝里”，袜子放在床面上，用 on。' }
+    ],
+    explain:"💡 一双、一对都是复数，用 They're：They're on the bed.。别忘了 socks 后面的 s。",
+    takeaway:"Where are my socks? → They're on the bed."
+  },
+  {
+    id:'c-32', pack:'home', level:1, type:'listening',
+    scene:'🏠 家里小对话',
+    emoji:'🏠',
+    situation:'在公园玩了一下午，天快黑了，阿姨牵起你的手说：',
+    quote:"Let's go home.",
+    note:'她指了指回家的方向。',
+    ask:'她在说什么？',
+    options:[
+      { text:'我们回家吧', note:'go home = 回家', badge:'回家', kind:'stiff', ok:true,
+        why:"Let's go home. 就是招呼你一起回家。" },
+      { text:'快点儿', note:'那是 Hurry up', badge:'快点', kind:'stiff', ok:false,
+        why:'催你快是 Hurry up!，这句是说回家。' },
+      { text:'起床啦', note:'那是 Get up', badge:'起床', kind:'stiff', ok:false,
+        why:'起床是 Get up，这会儿是要回家。' }
+    ],
+    explain:'💡 go home 就是回家，前面不加 to：go home（回家）、go to school（去上学）。',
+    takeaway:"Let's go home. = 我们回家吧。"
+  }
+
+  ]);
+
+  /* ---------- 🎒 校园小对话（加餐 2） ---------- */
+  EN.add('starter3', 'school', [
+
+  {
+    id:'c-33', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'👧',
+    situation:'同学看见一个女生跟你打招呼，好奇地指着她问你：',
+    quote:"Who's she?",
+    note:'那是你的好朋友 Lily。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"She's my friend.", note:'女的用 she', badge:'地道', kind:'native', ok:true,
+        why:'那是女生，用 She\'s（She is）来介绍。' },
+      { text:"He's my friend.", note:'男女用错了', badge:'he/she 错', kind:'trap', ok:false,
+        why:'he 指男的，她是女生，得用 she。' },
+      { text:'She my friend.', note:'漏了 is', badge:'漏词', kind:'stiff', ok:false,
+        why:'中间要有 is：She\'s my friend. 才完整。' }
+    ],
+    explain:"💡 女的用 she，男的用 he：She's my friend.（她是我朋友）／He's my friend.（他是我朋友）。",
+    takeaway:"Who's she? → She's my friend."
+  },
+  {
+    id:'c-34', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'🐦🐦',
+    situation:'你和同学在操场上，他指着远处电线上停着的几只鸟问你：',
+    quote:'What are those?',
+    note:'那几只鸟离你们挺远。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're birds.", note:'远处好几个', badge:'地道', kind:'native', ok:true,
+        why:'those（那些，远处好几个）要用 They\'re + 复数来回答。' },
+      { text:"That's a bird.", note:'好几只说成了一只', badge:'单复数错', kind:'stiff', ok:false,
+        why:'那儿有好几只，That\'s a bird 只说了一只。' },
+      { text:'Those birds.', note:'漏了 are', badge:'漏词', kind:'stiff', ok:false,
+        why:'少了 are：They\'re birds. 才成句。' }
+    ],
+    explain:"💡 近的这些 these、远的那些 those，回答都用 They're + 复数：They're birds.",
+    takeaway:"What are those? → They're birds."
+  },
+  {
+    id:'c-35', pack:'school', level:2, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'⚽',
+    situation:'课间同学抱着足球跑过来，兴冲冲地问你：',
+    quote:"Let's play football!",
+    note:'你也正想活动活动。',
+    ask:'想一起玩，该怎么答应？',
+    options:[
+      { text:"OK! Let's go!", note:'好啊，走吧', badge:'地道', kind:'native', ok:true,
+        why:'想一起玩就爽快答应：OK! / Good idea! / Let\'s go!' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'太冷淡', kind:'trap', ok:false,
+        why:'你明明想玩，这么回就把同学推开了。' },
+      { text:'Sorry.', note:'对不起', badge:'答偏了', kind:'stiff', ok:false,
+        why:'这不是道歉的场合，是约你一起玩。' }
+    ],
+    explain:"💡 别人约你 Let's play!，想去就说 OK! / Sure! / Good idea!；实在不想才说 No, thank you.",
+    takeaway:"Let's play! → OK! Let's go!"
+  },
+  {
+    id:'c-36', pack:'school', level:2, type:'listening',
+    scene:'🎒 校园小对话',
+    emoji:'🚸',
+    situation:'放学要一起走出校门，老师拍拍手对大家说：',
+    quote:'Line up, please.',
+    note:'同学们一个跟一个站成一队。',
+    ask:'老师让大家做什么？',
+    options:[
+      { text:'排好队', note:'line up = 排队', badge:'排队', kind:'stiff', ok:true,
+        why:'Line up 就是一个跟一个排成一队。' },
+      { text:'坐下', note:'那是 sit down', badge:'坐下', kind:'stiff', ok:false,
+        why:'坐下是 sit down，排队是要站着排。' },
+      { text:'安静', note:'那是 be quiet', badge:'安静', kind:'stiff', ok:false,
+        why:'安静是 Be quiet，这句是让你们排队。' }
+    ],
+    explain:'💡 集体活动常听：Line up.（排队）、Come here.（过来）、Follow me.（跟我走）。',
+    takeaway:'Line up, please. = 排好队。'
   }
 
   ]);
