@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 👋 打招呼篇（15 题）
+   🧒 小学生入门 · 👋 打招呼篇（20 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -276,6 +276,102 @@
     ],
     explain:'💡 中文里"阿姨""叔叔"可以随便叫，英语里 aunt / uncle 只留给亲戚。对长辈用 Mr. / Mrs. / Ms. + 姓；不知道姓就说 Hello! 或 Excuse me.',
     takeaway:'同学的妈妈叫 Mrs. Smith，不叫 aunt。'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐） ---------- */
+  EN.add('kids', 'hello', [
+
+  {
+    id:'kh-16', pack:'hello', level:2, type:'culture',
+    scene:'👋 帮忙转达问候',
+    situation:'放学时外国同学要回家了，临走前笑着对你说了一句：',
+    quote:'Say hi to your mom for me!',
+    note:'他并没有看见你妈妈，你妈妈也不在场。',
+    ask:'他的意思是？',
+    options:[
+      { text:'让你替他向你妈妈问个好', note:'一句托你带的问候', badge:'地道', kind:'native', ok:true,
+        why:'Say hi to… for me 就是"替我向…问好"，你回一句 OK, I will! 就好。' },
+      { text:'让你现在马上跟妈妈打招呼', note:'你妈妈又不在这儿', badge:'理解偏', kind:'trap', ok:false,
+        why:'妈妈根本不在场，他是让你回家后带句话，不是现在。' },
+      { text:'在问你妈妈好不好', note:'那要说 How is your mom?', badge:'听岔了', kind:'stiff', ok:false,
+        why:'问候近况是 How is your mom?，这句是托你带个好。' }
+    ],
+    explain:'💡 Say hi to … for me. / Give my best to … 都是"替我问好"。回一句 OK, I will!（好的，我会的）就接住了。',
+    takeaway:'Say hi to your mom for me! = 替我向你妈妈问好。'
+  },
+  {
+    id:'kh-17', pack:'hello', level:2, type:'listening',
+    scene:'👋 好久没见的朋友',
+    situation:'放暑假两个月没见，开学第一天外国同学一见你就张开手臂喊：',
+    quote:'Long time no see!',
+    note:'这句听起来"不太合语法"，却是地道说法。',
+    ask:'他在说什么？',
+    options:[
+      { text:'好久不见！', note:'老朋友重逢的常用语', badge:'地道', kind:'native', ok:true,
+        why:'Long time no see 虽然像蹦单词，却是英语里公认的固定说法，就是"好久不见"。' },
+      { text:'这句话说错了，没有意义', note:'它其实是固定短语', badge:'想多了', kind:'stiff', ok:false,
+        why:'别看它不像标准句子，这是约定俗成的地道口语，人人都懂。' },
+      { text:'在说他很久没看见东西了', note:'不是字面意思', badge:'太字面', kind:'trap', ok:false,
+        why:'see 在这儿是"见面"，整句是"我们好久没见面了"。' }
+    ],
+    explain:'💡 Long time no see! 是最出名的一句"像中式却地道"的英语，重逢时用。可以接 How have you been?（你最近怎么样）。',
+    takeaway:'Long time no see! = 好久不见！'
+  },
+  {
+    id:'kh-18', pack:'hello', level:3, type:'culture',
+    scene:'👋 擦身而过的问候',
+    situation:'课间同学从你身边快步走过，边走边随口抛来一句：',
+    quote:'Hey, how are you?',
+    note:'他脚步没停，看样子只是打个招呼。',
+    ask:'最合适的回应是？',
+    options:[
+      { text:'Good, you?', note:'轻轻一句就够', badge:'地道', kind:'native', ok:true,
+        why:'路过式的 How are you? 只是招呼，回一句 Good, you? 或 Fine, thanks! 就完美了。' },
+      { text:'把今天不开心的事一五一十讲给他', note:'他只是随口一问', badge:'会错意', kind:'trap', ok:false,
+        why:'这种场合的 How are you? 不是真在问你的近况，长篇大论会让人尴尬。' },
+      { text:'不理他，继续走', note:'太冷淡', badge:'冷场', kind:'stiff', ok:false,
+        why:'哪怕只回一个 Good! 也比装没听见好，不然显得不友好。' }
+    ],
+    explain:'💡 英语里的 How are you? 很多时候只是"嗨"的加长版，尤其擦身而过时。轻松回一句、再抛回去就行，不用真汇报心情。',
+    takeaway:'路过式 How are you? → Good, you? 就够。'
+  },
+  {
+    id:'kh-19', pack:'hello', level:2, type:'social',
+    scene:'👋 没记住对方名字',
+    situation:'刚认识的外国同学做过自我介绍，可一转身你就把名字忘了，又得叫他。',
+    quote:'',
+    note:'总不能一直用"喂"来叫人。',
+    ask:'该怎么礼貌地再问一次？',
+    options:[
+      { text:"Sorry, what's your name again?", note:'加个 again 很自然', badge:'地道', kind:'native', ok:true,
+        why:'开头说声 Sorry，句末加 again，等于"不好意思，你名字是……来着"，一点都不失礼。' },
+      { text:'Who are you?', note:'像在盘问陌生人', badge:'太冲', kind:'trap', ok:false,
+        why:'Who are you? 语气很重，像质问，刚认识的人这么问会很尴尬。' },
+      { text:'What is you name?', note:'your 写错了', badge:'语法错', kind:'stiff', ok:false,
+        why:'是 your name（你的名字），不是 you name。' }
+    ],
+    explain:'💡 忘了名字别硬撑，一句 Sorry, what\'s your name again? 最自然。那个 again 是关键，暗示"你之前说过，我一时想不起"。',
+    takeaway:"忘了名字 → Sorry, what's your name again?"
+  },
+  {
+    id:'kh-20', pack:'hello', level:2, type:'listening',
+    scene:'👋 又见到老朋友',
+    situation:'去年一起参加夏令营的外国朋友又来了，一见你就笑着说：',
+    quote:'Nice to see you again!',
+    note:'你们不是第一次见面了。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:'Nice to see you, too!', note:'重逢用 see', badge:'地道', kind:'native', ok:true,
+        why:'老朋友再见面用 see，你加个 too 还回去就对了。' },
+      { text:'Nice to meet you!', note:'meet 只留给第一次', badge:'用错了', kind:'trap', ok:false,
+        why:'meet 是"初次认识"，你们早认识了，重逢要用 see。' },
+      { text:'See you!', note:'那是道别时说的', badge:'说反了', kind:'stiff', ok:false,
+        why:'See you! 是"回头见"，这会儿刚见面，不是要走。' }
+    ],
+    explain:'💡 一对最容易混的：初次认识 Nice to meet you.；再次见面 Nice to see you.。一个 meet 一个 see，方向别搞反。',
+    takeaway:'重逢 → Nice to see you, too!'
   }
 
   ]);

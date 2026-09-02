@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏫 课堂篇（15 题）
+   🧒 小学生入门 · 🏫 课堂篇（20 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -276,6 +276,102 @@
     ],
     explain:'💡 主动争取的三句：Let me try!（我来试试）、Can I try?（我能试试吗）、I\'ll do it!（我来做）。老师最喜欢主动举手的学生。',
     takeaway:'想试试 → Let me try!'
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂篇（加餐） ---------- */
+  EN.add('kids', 'class', [
+
+  {
+    id:'kc-16', pack:'class', level:2, type:'culture',
+    scene:'🏫 想回答问题',
+    situation:'外教在黑板上写了个问题，问全班：',
+    quote:'Who knows the answer?',
+    note:'你正好知道答案，激动得差点喊出来。',
+    ask:'最合适的做法是？',
+    options:[
+      { text:'先举手，等老师点你再说', note:'课堂规矩', badge:'地道', kind:'native', ok:true,
+        why:'想发言先举手（put up your hand），被老师点到再回答，这在英语课堂里很重要。' },
+      { text:'直接大声把答案喊出来', note:'没轮到你就抢答', badge:'太冲', kind:'trap', ok:false,
+        why:'不举手就喊答案（calling out）在国外课堂被认为没礼貌，老师会请你先举手。' },
+      { text:'知道也不吭声', note:'太可惜了', badge:'太闷', kind:'stiff', ok:false,
+        why:'会就大方举手，闷着不说老师也不知道你懂了。' }
+    ],
+    explain:'💡 外国课堂讲究"举手—被点名—发言"。老师点你会说 Yes, Lily? 你再开口。抢答（calling out）通常不受欢迎。',
+    takeaway:'想回答 → 先举手，等老师点名。'
+  },
+  {
+    id:'kc-17', pack:'class', level:2, type:'social',
+    scene:'🏫 被点到却没把握',
+    situation:'老师点你回答，可你心里没底，不太确定答案对不对。',
+    quote:'',
+    note:'又不想随便瞎猜，也不想干站着。',
+    ask:'该怎么说最得体？',
+    options:[
+      { text:"I'm not sure, but maybe…", note:'先坦白再试着答', badge:'地道', kind:'native', ok:true,
+        why:'I\'m not sure（我不太确定）先给自己留余地，再说出想法，既诚实又肯尝试。' },
+      { text:'（沉默不说话）', note:'把场面僵在那儿', badge:'冷场', kind:'stiff', ok:false,
+        why:'一直不吭声会让老师和同学都尴尬，说一句 I\'m not sure 也比沉默强。' },
+      { text:"I don't know!（大声、不耐烦）", note:'语气冲', badge:'太生硬', kind:'trap', ok:false,
+        why:'光甩一句 I don\'t know 显得不想动脑，加个 but maybe… 会好很多。' }
+    ],
+    explain:'💡 不确定时的万能开头：I\'m not sure, but…（我不太确定，不过…）、I think…（我觉得…）。它让你在没把握时也能体面地开口。',
+    takeaway:"没把握 → I'm not sure, but maybe…"
+  },
+  {
+    id:'kc-18', pack:'class', level:2, type:'phrase',
+    scene:'🏫 老师说得太快',
+    situation:'外教语速很快，你只听懂了一半，想请她放慢一点。',
+    quote:'',
+    note:'你不想打断得太生硬。',
+    ask:'该怎么说最有礼貌？',
+    options:[
+      { text:'Could you say that again more slowly, please?', note:'既请重说又请放慢', badge:'地道', kind:'native', ok:true,
+        why:'Could you…, please? 是很客气的请求，加上 more slowly 明确说出你希望她慢一点。' },
+      { text:'Slowly! Slowly!', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Slowly 像在下令，加上 Could you…, please? 才礼貌。' },
+      { text:"I can't understand you.", note:'话太重，像怪对方', badge:'太生硬', kind:'stiff', ok:false,
+        why:'这句听起来像在抱怨"我听不懂你"，换成请对方慢点说会舒服得多。' }
+    ],
+    explain:'💡 跟不上语速别急，礼貌三句：Could you say that again?（再说一遍）、more slowly（慢一点）、Sorry?（没听清）。',
+    takeaway:'太快了 → Could you say that again more slowly, please?'
+  },
+  {
+    id:'kc-19', pack:'class', level:1, type:'phrase',
+    scene:'🏫 交作业给老师',
+    situation:'上课了，老师走过来收作业，你把本子递上去。',
+    quote:'',
+    note:'你想边递边说一句。',
+    ask:'该说哪句最自然？',
+    options:[
+      { text:"Here's my homework.", note:'递东西＋说明是什么', badge:'地道', kind:'native', ok:true,
+        why:'Here\'s my homework.（这是我的作业）边递边说，清楚又自然；只说 Here you are. 也行。' },
+      { text:'This is my homework doing.', note:'多了个词还不对', badge:'语法错', kind:'stiff', ok:false,
+        why:'homework 后面不用加 doing，直接说 Here\'s my homework. 就好。' },
+      { text:'Give you homework.', note:'漏了主语，像命令', badge:'不通顺', kind:'trap', ok:false,
+        why:'Give you 不成句，递东西说 Here you are. 或 Here\'s my homework.' }
+    ],
+    explain:'💡 递东西的万能句 Here you are. / Here\'s + 东西：Here\'s my homework.（作业）、Here\'s your pen.（还你笔）。',
+    takeaway:"交作业 → Here's my homework."
+  },
+  {
+    id:'kc-20', pack:'class', level:2, type:'phrase',
+    scene:'🏫 上课想去接水',
+    situation:'上课上到一半你渴得厉害，想出去接杯水，得先问老师。',
+    quote:'',
+    note:'不能一声不吭就走出去。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'May I get some water, please?', note:'先请求许可', badge:'地道', kind:'native', ok:true,
+        why:'离开座位、做别的事之前先用 May I…? / Can I…? 征得同意，最有礼貌。' },
+      { text:'I go to drink water.', note:'没在问，是在通知', badge:'不礼貌', kind:'stiff', ok:false,
+        why:'这是直接宣布"我要去喝水"，上课时应该先征求老师同意。' },
+      { text:'Water! Water!', note:'只蹦名词像在喊', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Water 像在叫喊，要说完整的 May I get some water, please?' }
+    ],
+    explain:'💡 上课想做别的事先请示：May I go to the toilet?（上厕所）、May I get some water?（接水）、May I go out?（出去一下）。',
+    takeaway:'想接水 → May I get some water, please?'
   }
 
   ]);

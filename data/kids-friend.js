@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🎈 交朋友篇（15 题）
+   🧒 小学生入门 · 🎈 交朋友篇（21 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -295,6 +295,102 @@
     ],
     explain:'💡 避坑：‘Sick’除了生病，在美式俚语里高频表示‘Cool / Awesome’（酷毙了）。千万别回‘It is healthy’哦！',
     takeaway:"That's sick! = 太酷了！回一句 Thanks! 就行。"
+  }
+
+  ]);
+
+  /* ---------- 🎈 交朋友篇（加餐） ---------- */
+  EN.add('kids', 'friend', [
+
+  {
+    id:'kf-17', pack:'friend', level:1, type:'social',
+    scene:'🎈 朋友看起来不开心',
+    situation:'课间你发现平时爱笑的外国同学一个人趴在桌上，闷闷不乐。',
+    quote:'',
+    note:'你想过去关心他一下。',
+    ask:'第一句该怎么说？',
+    options:[
+      { text:'Are you OK?', note:'最自然的关心', badge:'地道', kind:'native', ok:true,
+        why:'看到朋友不对劲，一句 Are you OK?（你还好吗）就是最贴心的开场。' },
+      { text:'Why are you so sad?', note:'一上来就追问原因', badge:'太直接', kind:'stiff', ok:false,
+        why:'不算错，但劈头就问"为什么难过"有点突兀，先问 Are you OK? 更柔和。' },
+      { text:'Stop crying!', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'叫人"别哭了"听起来像嫌弃，安慰人要先关心，不是下命令。' }
+    ],
+    explain:'💡 关心朋友的三句：Are you OK?（还好吗）、What\'s wrong?（怎么了）、Don\'t worry.（别担心）。先问一句，再慢慢听他说。',
+    takeaway:'朋友不开心 → Are you OK?'
+  },
+  {
+    id:'kf-18', pack:'friend', level:2, type:'culture',
+    scene:'🎈 被同学夸奖',
+    situation:'你跳绳跳得特别好，外国同学看得一愣一愣，冲你竖起大拇指：',
+    quote:"Wow, you're so good!",
+    note:'你有点不好意思。',
+    ask:'该怎么回最自然？',
+    options:[
+      { text:'Thank you!', note:'大方接受夸奖', badge:'地道', kind:'native', ok:true,
+        why:'英语里被夸就大方说 Thank you!，这不是骄傲，而是对对方好意的礼貌回应。' },
+      { text:"No, no, I'm not good.", note:'中式谦虚，反而尴尬', badge:'中式', kind:'trap', ok:false,
+        why:'连连否认"我不行"在英语里会让夸你的人不知所措，好像他看走了眼。' },
+      { text:"Yes! I'm the best!", note:'又太自满了', badge:'太得意', kind:'stiff', ok:false,
+        why:'大大方方谢一句就好，拍胸脯说"我最棒"又显得太得意。' }
+    ],
+    explain:'💡 中文习惯谦虚说"哪里哪里"，英语里被夸直接 Thank you! 就对了。想更谦虚可以加一句 I practice a lot.（我练了很久）。',
+    takeaway:'被夸 → Thank you!（别一个劲否认）'
+  },
+  {
+    id:'kf-19', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 被约一起玩',
+    situation:'外国同学兴冲冲跑过来，抱着篮球问你：',
+    quote:'Do you want to play basketball?',
+    note:'你也正想活动活动。',
+    ask:'想答应，哪句最热情自然？',
+    options:[
+      { text:'Sure! Sounds fun!', note:'爽快又带点期待', badge:'地道', kind:'native', ok:true,
+        why:'Sure! 表示乐意，Sounds fun!（听起来很好玩）让对方感到你很期待。' },
+      { text:'Yes.', note:'答应了，但太干', badge:'太冷淡', kind:'stiff', ok:false,
+        why:'光一个 Yes 有点冷，加一句 Sounds fun! / Let\'s go! 才热情。' },
+      { text:'Why not you play?', note:'把邀请顶了回去', badge:'不通顺', kind:'trap', ok:false,
+        why:'这句又不通顺又像在推开对方，想去就直接 Sure! 答应。' }
+    ],
+    explain:'💡 答应邀请的热情说法：Sure! / OK! / Sounds fun! / Sounds good! / Let\'s go!。不想去就委婉说 Maybe next time.',
+    takeaway:'想去 → Sure! Sounds fun!'
+  },
+  {
+    id:'kf-20', pack:'friend', level:2, type:'social',
+    scene:'🎈 弄坏了同学的东西',
+    situation:'你借玩同学的玩具车，一不小心把轮子弄掉了。',
+    quote:'',
+    note:'同学看见了，脸色有点不好。',
+    ask:'该怎么处理最得体？',
+    options:[
+      { text:"I'm so sorry. I'll fix it.", note:'先道歉再想办法', badge:'地道', kind:'native', ok:true,
+        why:'先诚恳道歉 I\'m so sorry.，再主动提出补救 I\'ll fix it.（我来修好），最能让人消气。' },
+      { text:"It's not my fault.", note:'急着撇清', badge:'太推卸', kind:'trap', ok:false,
+        why:'明明是自己弄坏的，一句"不怪我"只会让同学更生气。' },
+      { text:'（悄悄放回去，装作没事）', note:'比弄坏更糟', badge:'不诚实', kind:'stiff', ok:false,
+        why:'偷偷藏起来被发现更伤感情，主动认错反而显得可靠。' }
+    ],
+    explain:'💡 弄坏别人东西：先 I\'m so sorry.（真对不起），再 I\'ll fix it. / I\'ll get you a new one.（我赔你一个）。担当比借口更让人信任。',
+    takeaway:"弄坏东西 → I'm so sorry. I'll fix it."
+  },
+  {
+    id:'kf-21', pack:'friend', level:1, type:'manners',
+    scene:'🎈 同学请你吃东西',
+    situation:'外国同学掰了一半巧克力，递到你面前：',
+    quote:'Here, this is for you!',
+    note:'他是真心想分你一块。',
+    ask:'该怎么回最合适？',
+    options:[
+      { text:"Thanks! That's so nice of you.", note:'道谢＋夸对方好', badge:'地道', kind:'native', ok:true,
+        why:'先谢一句，再夸 That\'s so nice of you（你人真好），对方听了会很开心。' },
+      { text:"No, no, I can't take it.", note:'一味推辞反而扫兴', badge:'太见外', kind:'trap', ok:false,
+        why:'朋友真心分享，老推辞会让人觉得见外，大方收下并道谢就好。' },
+      { text:'Give me more!', note:'得寸进尺', badge:'太贪', kind:'stiff', ok:false,
+        why:'人家分你一块已是好意，张口要更多就不礼貌了。' }
+    ],
+    explain:'💡 收下朋友的好意大方一点：Thanks! / That\'s so nice of you! / You\'re so kind!。收下不是贪心，是接住对方的心意。',
+    takeaway:"被分享 → Thanks! That's so nice of you."
   }
 
   ]);

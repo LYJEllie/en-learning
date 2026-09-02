@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏠 生活篇（15 题）
+   🧒 小学生入门 · 🏠 生活篇（20 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -276,6 +276,102 @@
     ],
     explain:'💡 又一次考"听问句开头"：How many…? 回数字，What…? 回名字，What color…? 回颜色。这三个问句练熟，回答就不会跑偏。',
     takeaway:'How many…? → 回数字：Three.'
+  }
+
+  ]);
+
+  /* ---------- 🏠 生活篇（加餐） ---------- */
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-16', pack:'life', level:1, type:'listening',
+    scene:'🏠 有人敲门',
+    situation:'你一个人在寄宿家庭的房间里写作业，忽然有人敲门，门外问了一句：',
+    quote:'Who is it?',
+    note:'看不见门外是谁，声音听着像阿姨。',
+    ask:'这句 Who is it? 是在问什么？',
+    options:[
+      { text:'里面是谁 / 是谁在里面', note:'隔着门确认身份', badge:'地道', kind:'native', ok:true,
+        why:'看不见人时问"是谁"用 Who is it?，你可以回 It\'s me, Lily.' },
+      { text:'这是什么东西', note:'那是 What is it?', badge:'听岔了', kind:'trap', ok:false,
+        why:'问"这是什么"是 What is it?；问"是谁"才是 Who is it?，一词之差。' },
+      { text:'它在哪儿', note:'那是 Where is it?', badge:'听岔了', kind:'stiff', ok:false,
+        why:'Where is it? 是问"在哪儿"，跟敲门认人无关。' }
+    ],
+    explain:'💡 隔着门、隔着电话看不见人时，问"是谁"用 Who is it?，回答用 It\'s me. / It\'s Lily.，而不是 I am Lily.',
+    takeaway:'Who is it? = 是谁呀？回 It\'s me.'
+  },
+  {
+    id:'kl-17', pack:'life', level:2, type:'social',
+    scene:'🏠 看见阿姨在忙',
+    situation:'寄宿家庭的阿姨一个人在厨房里摆碗筷、端菜，忙得团团转。',
+    quote:'',
+    note:'你想搭把手，又不知道能干点啥。',
+    ask:'开口帮忙，哪句最自然？',
+    options:[
+      { text:'Can I help you?', note:'主动提出帮忙', badge:'地道', kind:'native', ok:true,
+        why:'看到别人忙，主动问一句 Can I help you?（要我帮忙吗），既懂事又礼貌。' },
+      { text:'You are tired.', note:'只是评论，没帮上忙', badge:'没接住', kind:'stiff', ok:false,
+        why:'说"你累了"是关心，但没提出实际帮助，不如直接问 Can I help you?' },
+      { text:'I help! I help!', note:'热情但不通顺', badge:'不地道', kind:'trap', ok:false,
+        why:'光喊 I help 不成句，主动帮忙说 Can I help you? 或 Let me help you.' }
+    ],
+    explain:'💡 主动帮忙用 Can I help you? / Let me help you.；对方要是说 It\'s OK, thanks. 也别硬帮，笑一笑就好。',
+    takeaway:'想搭把手 → Can I help you?'
+  },
+  {
+    id:'kl-18', pack:'life', level:3, type:'social',
+    scene:'🏠 遇到不爱吃的菜',
+    situation:'寄宿家庭的阿姨端上一道你不太吃得惯的菜，笑眯眯地问你好不好吃。',
+    quote:'Do you like it?',
+    note:'你不太喜欢，但不想让她伤心。',
+    ask:'怎么回答最得体？',
+    options:[
+      { text:"It's interesting. Thank you.", note:'委婉又不失礼貌', badge:'地道', kind:'native', ok:true,
+        why:'不喜欢也别直说难吃，一句 It\'s interesting（挺特别的）加谢谢，既诚实又给对方留面子。' },
+      { text:"I don't like it. It's bad.", note:'太直，会让人难堪', badge:'太冲', kind:'trap', ok:false,
+        why:'当面说"难吃"很伤人，阿姨是专门为你做的，再不喜欢也要委婉。' },
+      { text:'（皱眉不说话，把盘子推开）', note:'比说错话还失礼', badge:'没礼貌', kind:'stiff', ok:false,
+        why:'一句不说还推开盘子，比说错话更让主人尴尬。' }
+    ],
+    explain:'💡 不喜欢的东西委婉说：It\'s interesting.（挺特别）、It\'s not really my favorite.（不太合我口味），再加句 Thank you。诚实和礼貌可以两全。',
+    takeaway:'不爱吃 → It\'s interesting. Thank you.（委婉）'
+  },
+  {
+    id:'kl-19', pack:'life', level:2, type:'listening',
+    scene:'🏠 阿姨请你帮个忙',
+    situation:'饭后阿姨指了指门口鼓鼓的垃圾袋，对你说：',
+    quote:'Can you take out the trash?',
+    note:'垃圾袋就在门边，装得满满的。',
+    ask:'她在请你做什么？',
+    options:[
+      { text:'把垃圾拿出去扔掉', note:'take out the trash = 倒垃圾', badge:'地道', kind:'native', ok:true,
+        why:'take out the trash 是"把垃圾拿出去扔"，你回一句 Sure! / OK! 再去做就好。' },
+      { text:'把垃圾桶搬进来', note:'方向反了', badge:'听反了', kind:'trap', ok:false,
+        why:'take out 是"拿出去"，不是搬进来。' },
+      { text:'把东西从垃圾里翻出来', note:'想歪了', badge:'想多了', kind:'stiff', ok:false,
+        why:'take out the trash 是固定说法"倒垃圾"，不是去翻找东西。' }
+    ],
+    explain:'💡 家务常用语：take out the trash（倒垃圾）、set the table（摆餐具）、wash the dishes（洗碗）。答应帮忙说 Sure! / No problem!',
+    takeaway:'Can you take out the trash? = 帮忙倒个垃圾。'
+  },
+  {
+    id:'kl-20', pack:'life', level:1, type:'phrase',
+    scene:'🏠 想知道几点了',
+    situation:'在同学家玩得正开心，你想知道几点了，好赶回家吃饭。',
+    quote:'',
+    note:'墙上没有钟，得开口问。',
+    ask:'该怎么问时间？',
+    options:[
+      { text:'What time is it?', note:'问几点的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'问几点用 What time is it?，对方会回 It\'s six.（六点）之类。' },
+      { text:'How much time?', note:'像在问"要多久"', badge:'问错了', kind:'trap', ok:false,
+        why:'How much…? 是问数量或价钱，问几点要用 What time…?' },
+      { text:'What is the clock?', note:'钟不是这么问的', badge:'中式', kind:'stiff', ok:false,
+        why:'不能直译成"钟是什么"，问时间就是固定的 What time is it?' }
+    ],
+    explain:'💡 问时间：What time is it?（几点了）→ It\'s seven o\'clock.（七点）。别跟 How old are you?（几岁）搞混，一个问钟点一个问年龄。',
+    takeaway:'问几点 → What time is it?'
   }
 
   ]);

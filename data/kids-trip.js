@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🧳 出门在外篇（15 题）
+   🧒 小学生入门 · 🧳 出门在外篇（20 题）
    出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
@@ -277,6 +277,102 @@
     ],
     explain:'💡 点餐要东西的万能句：Can I have a hot dog, please? / Can I get a Coke, please?。想问有没有就说 Do you have…?',
     takeaway:'点餐 → Can I have …, please?'
+  }
+
+  ]);
+
+  /* ---------- 🧳 出门在外篇（加餐） ---------- */
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-16', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 快餐店点餐',
+    situation:'在国外的汉堡店，轮到你点餐，店员笑着问：',
+    quote:'What would you like?',
+    note:'你想要一个汉堡。',
+    ask:'该怎么点最地道？',
+    options:[
+      { text:'Can I have a hamburger, please?', note:'点餐的万能句', badge:'地道', kind:'native', ok:true,
+        why:'点餐用 Can I have…, please? 或 I\'d like…，客气又清楚。' },
+      { text:'I want hamburger.', note:'语气直，还漏了 a', badge:'生硬', kind:'stiff', ok:false,
+        why:'I want 的语气比较冲，而且 hamburger 前面要有 a。' },
+      { text:'Give me hamburger!', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'Give me 像下令，点餐要用 Can I have…, please?' }
+    ],
+    explain:'💡 点餐两大句：Can I have a …, please? / I\'d like a …。店员会问 Anything else?（还要别的吗），不要就说 No, thanks.',
+    takeaway:'点餐 → Can I have a hamburger, please?'
+  },
+  {
+    id:'kt-17', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 想请路人拍合影',
+    situation:'一家人站在景点前想拍张合影，可没人帮忙按快门，你想请旁边的路人搭把手。',
+    quote:'',
+    note:'你举着相机，走向一位友好的路人。',
+    ask:'该怎么开口最有礼貌？',
+    options:[
+      { text:'Excuse me, could you take a photo for us?', note:'先打扰一下再请求', badge:'地道', kind:'native', ok:true,
+        why:'先说 Excuse me 叫住对方，再用 could you…? 客气地请他帮忙拍照。' },
+      { text:'You! Take photo!', note:'指着人下命令', badge:'太没礼貌', kind:'trap', ok:false,
+        why:'指着陌生人喊"你！拍照！"非常失礼，要用 Excuse me, could you…?' },
+      { text:'I want a photo.', note:'没说清要人家帮忙', badge:'没到点', kind:'stiff', ok:false,
+        why:'只说"我想要张照片"，对方不知道你是要他帮忙拍。' }
+    ],
+    explain:'💡 请人帮忙拍照：Excuse me, could you take a photo for us, please?。拍完别忘了说 Thank you!',
+    takeaway:'请人拍照 → Could you take a photo for us?'
+  },
+  {
+    id:'kt-18', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 在街上问路',
+    situation:'你和家人找不到地铁站，想拦住一位路人打听一下。',
+    quote:'',
+    note:'对方脚步匆匆，你得先叫住他。',
+    ask:'该怎么开口最自然？',
+    options:[
+      { text:'Excuse me, how do I get to the station?', note:'问路的固定句式', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me，再用 How do I get to…?（怎么去…）问路，最标准。' },
+      { text:'Station where?', note:'蹦词，不礼貌', badge:'不通顺', kind:'stiff', ok:false,
+        why:'只蹦 Station where 既不完整也不礼貌，要用 How do I get to…?' },
+      { text:'Where you go?', note:'问反了，成了问对方', badge:'问错了', kind:'trap', ok:false,
+        why:'Where you go 是在问对方去哪儿，而且语法也不对。' }
+    ],
+    explain:'💡 问路三句：Excuse me（打扰一下）、How do I get to…?（怎么去…）、Is it far?（远吗）。听不懂就说 Sorry?，请对方再说一遍。',
+    takeaway:'问路 → Excuse me, how do I get to…?'
+  },
+  {
+    id:'kt-19', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 想买个纪念品',
+    situation:'纪念品店里你看中一个小挂件，想知道多少钱。',
+    quote:'',
+    note:'价签被别的东西挡住了。',
+    ask:'该怎么问价钱？',
+    options:[
+      { text:'How much is it?', note:'问价的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'问多少钱用 How much is it?，店员会告诉你价格，比如 It\'s five dollars.' },
+      { text:'How many is it?', note:'many 是问数量的', badge:'用错词', kind:'trap', ok:false,
+        why:'How many 问"有几个"，问价钱要用 How much。' },
+      { text:'What is the money?', note:'钱不是这么问的', badge:'中式', kind:'stiff', ok:false,
+        why:'不能直译成"钱是什么"，问价就是固定的 How much is it?' }
+    ],
+    explain:'💡 购物必备：How much is it?（多少钱）→ It\'s ten dollars.；付钱时递上钱说 Here you are.；找零说 Thank you.',
+    takeaway:'问价 → How much is it?'
+  },
+  {
+    id:'kt-20', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 怕博物馆要关门',
+    situation:'快到傍晚了，你担心博物馆要关门，想问问工作人员几点关。',
+    quote:'',
+    note:'门口站着一位工作人员。',
+    ask:'该怎么问最清楚？',
+    options:[
+      { text:'Excuse me, what time do you close?', note:'直接问关门时间', badge:'地道', kind:'native', ok:true,
+        why:'问几点关门用 What time do you close?；问几点开门就是 What time do you open?' },
+      { text:'When you go home?', note:'问成了对方几点下班', badge:'问偏了', kind:'trap', ok:false,
+        why:'你想知道的是博物馆几点关，不是工作人员几点回家。' },
+      { text:'Museum close?', note:'蹦词，说不清', badge:'不通顺', kind:'stiff', ok:false,
+        why:'只蹦两个词对方要猜，要说完整的 What time do you close?' }
+    ],
+    explain:'💡 一对常用问句：What time do you open?（几点开门）、What time do you close?（几点关门）。逛景点、逛店都用得上。',
+    takeaway:'问关门 → What time do you close?'
   }
 
   ]);
