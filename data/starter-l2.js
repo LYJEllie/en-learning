@@ -1,5 +1,5 @@
 /* ============================================================
-   🐤 启蒙 L2 · 短句子（12 题 · 打招呼 / 礼貌用语 / 日常短句 各 4 题）
+   🐤 启蒙 L2 · 短句子（24 题 · 打招呼 / 礼貌用语 / 日常短句 各 8 题）
    ------------------------------------------------------------
    比 L1 难一点：题面出现一句最短的英文，选项是三到四个词的短句。
    考的是"这个场合该说哪一句"，干扰项都是别的常用短句（用错场合）。
@@ -250,6 +250,252 @@
     ],
     explain:'💡 和 hands（手）有关的三句：Wash your hands.（洗手）、Hands up!（举手）、Clap your hands!（拍手）。',
     takeaway:'Wash your hands. = 去洗手。'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐） ---------- */
+  EN.add('starter2', 'hello', [
+
+  {
+    id:'b-13', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🌇',
+    situation:'午休后第一节课，外教走进来对大家说：',
+    quote:'Good afternoon!',
+    note:'现在是下午两点。',
+    ask:'你该回哪一句？',
+    options:[
+      { text:'Good afternoon!', note:'下午好', badge:'地道', kind:'native', ok:true,
+        why:'原样还回去，下午就用这一句。' },
+      { text:'Good morning!', note:'早上好', badge:'时间错', kind:'stiff', ok:false,
+        why:'Good morning 只在早上用，现在是下午了。' },
+      { text:'Good night!', note:'晚安', badge:'说反了', kind:'stiff', ok:false,
+        why:'Good night 是睡觉前才说的。' }
+    ],
+    explain:'💡 按时间打招呼：早上 Good morning、下午 Good afternoon、傍晚 Good evening、睡前 Good night。',
+    takeaway:'下午互道 Good afternoon!'
+  },
+  {
+    id:'b-14', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🌙',
+    situation:'寄宿家庭里，睡觉前阿姨走进房间帮你关灯，轻轻说：',
+    quote:'Good night!',
+    note:'你正要钻进被窝。',
+    ask:'你该回哪一句？',
+    options:[
+      { text:'Good night!', note:'晚安', badge:'地道', kind:'native', ok:true,
+        why:'睡前互道 Good night，最自然。' },
+      { text:'Good morning!', note:'早上好', badge:'说反了', kind:'stiff', ok:false,
+        why:'Good morning 是早上起来才说的。' },
+      { text:'Hello!', note:'你好', badge:'时机不对', kind:'stiff', ok:false,
+        why:'这会儿要道晚安，不是打招呼。' }
+    ],
+    explain:'💡 睡觉前说 Good night（晚安）；早上见面说 Good morning（早上好）。一个进被窝，一个出被窝。',
+    takeaway:'睡前互道 Good night!'
+  },
+  {
+    id:'b-15', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🙋',
+    situation:'新同学好奇地看着你，笑着问：',
+    quote:"What's your name?",
+    note:'她想知道你叫什么。',
+    ask:'你该怎么回答？',
+    options:[
+      { text:'My name is Tom.', note:'我叫 Tom', badge:'地道', kind:'native', ok:true,
+        why:'问名字就用 My name is + 名字来回答。' },
+      { text:"I'm fine.", note:'我很好', badge:'答偏了', kind:'trap', ok:false,
+        why:'那是回答 How are you?（你好吗）的。' },
+      { text:'How are you?', note:'你好吗', badge:'答非所问', kind:'stiff', ok:false,
+        why:'她问的是名字，你却反问回去了。' }
+    ],
+    explain:"💡 问名字：What's your name? → My name is …／I'm …。把 Tom 换成你自己的名字就行。",
+    takeaway:"What's your name? → My name is …"
+  },
+  {
+    id:'b-16', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🎂',
+    situation:'外教想知道你几岁了，指着你笑着问：',
+    quote:'How old are you?',
+    note:'你今年九岁。',
+    ask:'你该怎么回答？',
+    options:[
+      { text:"I'm nine.", note:'我九岁', badge:'地道', kind:'native', ok:true,
+        why:'问年龄用 I\'m + 数字来回答，nine 就是九。' },
+      { text:"I'm fine.", note:'我很好', badge:'听岔了', kind:'trap', ok:false,
+        why:'fine 和 nine 只差一个音，但那是回答 How are you? 的。' },
+      { text:'My name is Tom.', note:'我叫 Tom', badge:'答偏了', kind:'stiff', ok:false,
+        why:'那是回答 What\'s your name? 的。' }
+    ],
+    explain:"💡 How old are you?（你几岁）→ I'm nine.；How are you?（你好吗）→ I'm fine. fine 和 nine 别听混。",
+    takeaway:"How old are you? → I'm nine."
+  }
+
+  ]);
+
+  /* ---------- 🙏 礼貌用语篇（加餐） ---------- */
+  EN.add('starter2', 'polite', [
+
+  {
+    id:'b-17', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'👟',
+    situation:'一个同学不小心踩到了你的脚，红着脸连忙说：',
+    quote:'Sorry!',
+    note:'他正紧张地看着你，等你回话。',
+    ask:'你该怎么回？',
+    options:[
+      { text:"That's OK.", note:'没关系', badge:'地道', kind:'native', ok:true,
+        why:'别人道歉，你就回一句"没关系"，让他别放在心上。' },
+      { text:'Thank you.', note:'谢谢', badge:'答偏了', kind:'stiff', ok:false,
+        why:'他是在道歉，不是给你东西，用不着谢。' },
+      { text:'Sorry.', note:'对不起', badge:'反了', kind:'stiff', ok:false,
+        why:'踩人的是他，该道歉的也是他，你不用说 Sorry。' }
+    ],
+    explain:"💡 完整的一来一回：Sorry.（对不起）→ That's OK.（没关系）。也可以回 It's OK. 或 Never mind.",
+    takeaway:"别人说 Sorry → That's OK."
+  },
+  {
+    id:'b-18', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🎂',
+    situation:'今天是你生日，外国朋友端着蛋糕走过来，笑着对你说：',
+    quote:'Happy birthday!',
+    note:'大家都看着你，等你回话。',
+    ask:'你该说什么？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true,
+        why:'别人祝福你，回一句谢谢最自然。' },
+      { text:'Happy birthday!', note:'生日快乐', badge:'反了', kind:'trap', ok:false,
+        why:'今天是你的生日，不是他的，别祝回去。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false,
+        why:'过生日是好事，用不着道歉。' }
+    ],
+    explain:'💡 别人祝你 Happy birthday!，你回 Thank you! 就好。收到任何祝福都能用 Thank you。',
+    takeaway:'Happy birthday! → Thank you!'
+  },
+  {
+    id:'b-19', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🆘',
+    situation:'行李箱太重，你一个人搬不动，想请旁边的叔叔帮忙。',
+    quote:'',
+    note:'他就站在你旁边。',
+    ask:'该怎么开口最有礼貌？',
+    options:[
+      { text:'Can you help me, please?', note:'你能帮我一下吗', badge:'地道', kind:'native', ok:true,
+        why:'请人帮忙用 Can you help me, please?，客气又清楚。' },
+      { text:'Help me!', note:'帮我！', badge:'太冲', kind:'trap', ok:false,
+        why:'光喊 Help me! 像在命令人，还有点像出事了在呼救。' },
+      { text:'I want help.', note:'我要帮忙', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但 I want 的语气太直，不够客气。' }
+    ],
+    explain:'💡 请人帮忙的万能句：Can you help me, please?。对方帮了你，别忘了说 Thank you。',
+    takeaway:'请人帮忙 → Can you help me, please?'
+  },
+  {
+    id:'b-20', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🤝',
+    situation:'外教把一位新老师介绍给你，新老师笑着伸出手说：',
+    quote:'Nice to meet you.',
+    note:'她在等你回话。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Nice to meet you, too.', note:'我也很高兴认识你', badge:'地道', kind:'native', ok:true,
+        why:'对方说很高兴认识你，你加一个 too 还回去，最标准。' },
+      { text:'Thank you.', note:'谢谢', badge:'答偏了', kind:'stiff', ok:false,
+        why:'这不是道谢的场合，是初次见面互相问好。' },
+      { text:"You're welcome.", note:'不客气', badge:'用错了', kind:'stiff', ok:false,
+        why:"You're welcome 是别人谢你时才回的。" }
+    ],
+    explain:'💡 初次见面：Nice to meet you.（很高兴认识你）→ Nice to meet you, too.（我也是）。加一个 too 就对了。',
+    takeaway:'Nice to meet you. → Nice to meet you, too.'
+  }
+
+  ]);
+
+  /* ---------- 🗣️ 日常短句篇（加餐） ---------- */
+  EN.add('starter2', 'daily', [
+
+  {
+    id:'b-21', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🤫',
+    situation:'教室里太吵了，外教把食指竖在嘴边，说了一句：',
+    quote:'Be quiet, please.',
+    note:'她指了指自己的嘴唇。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'请安静', note:'quiet = 安静', badge:'安静', kind:'stiff', ok:true,
+        why:'Be quiet 就是安静下来、别出声。' },
+      { text:'请坐下', note:'那是 sit down', badge:'坐下', kind:'stiff', ok:false,
+        why:'坐下是 sit down，跟安静不是一回事。' },
+      { text:'请起立', note:'那是 stand up', badge:'起立', kind:'stiff', ok:false,
+        why:'起立是 stand up，让你站起来。' }
+    ],
+    explain:'💡 课堂常听三句：Be quiet.（安静）、Sit down.（坐下）、Stand up.（起立）。手指竖嘴边＝安静。',
+    takeaway:'Be quiet, please. = 请安静。'
+  },
+  {
+    id:'b-22', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🧍',
+    situation:'早读要开始了，外教走进来对坐着的同学说：',
+    quote:'Stand up, please.',
+    note:'同学们都从座位上站了起来。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'请起立', note:'stand up = 起立', badge:'起立', kind:'stiff', ok:true,
+        why:'stand up 是站起来，up 表示往上。' },
+      { text:'请坐下', note:'那是 sit down', badge:'坐下', kind:'stiff', ok:false,
+        why:'坐下是 sit down，down 表示往下，正好相反。' },
+      { text:'请安静', note:'那是 be quiet', badge:'安静', kind:'stiff', ok:false,
+        why:'安静是 Be quiet，不用站起来。' }
+    ],
+    explain:'💡 一上一下记一对：stand up（起立）↔ sit down（坐下）。up 往上站，down 往下坐。',
+    takeaway:'Stand up, please. = 请起立。'
+  },
+  {
+    id:'b-23', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🗣️',
+    situation:'教新单词时，外教先念一遍，然后对大家说：',
+    quote:'Read after me.',
+    note:'她念一句，停一下，等大家跟上。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'跟着我读', note:'after me = 跟在我后面', badge:'跟读', kind:'stiff', ok:true,
+        why:'Read after me 就是她先读，你跟着读一遍。' },
+      { text:'自己看书读', note:'那是 read by yourself', badge:'自己读', kind:'stiff', ok:false,
+        why:'自己读是 read by yourself，这里要跟着老师。' },
+      { text:'听我说', note:'那是 listen to me', badge:'听', kind:'stiff', ok:false,
+        why:'听我说是 Listen to me，这句还要你开口读。' }
+    ],
+    explain:'💡 课堂跟读三连：Listen.（听）→ Read after me.（跟我读）→ Again, please.（再来一遍）。',
+    takeaway:'Read after me. = 跟着我读。'
+  },
+  {
+    id:'b-24', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🤲',
+    situation:'你跟阿姨要一张纸巾，她抽了一张递到你面前，说：',
+    quote:'Here you are.',
+    note:'她把纸巾往你手边送。',
+    ask:'她这句是什么意思？',
+    options:[
+      { text:'给你', note:'递东西时说的', badge:'给你', kind:'stiff', ok:true,
+        why:'Here you are 就是把东西递给你时说的"给你、拿好"。' },
+      { text:'你在哪儿', note:'那是 Where are you?', badge:'在哪', kind:'stiff', ok:false,
+        why:'问你在哪儿是 Where are you?，跟递东西没关系。' },
+      { text:'你好吗', note:'那是 How are you?', badge:'你好吗', kind:'stiff', ok:false,
+        why:'How are you 是问好，这会儿她在给你东西。' }
+    ],
+    explain:'💡 递东西给别人就说 Here you are.（或 Here you go.）。接过来别忘了说 Thank you。',
+    takeaway:'Here you are. = 给你。'
   }
 
   ]);

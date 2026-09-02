@@ -1,5 +1,5 @@
 /* ============================================================
-   🐣 启蒙 L1 · 认单词（12 题 · 认物 / 颜色数字 / 动物 各 4 题）
+   🐣 启蒙 L1 · 认单词（24 题 · 认物 / 颜色数字 / 动物 各 8 题）
    ------------------------------------------------------------
    最低门槛的一档：题面不需要读英文句子，只有一个大号 emoji，
    选项就是三个单词。干扰项按"形近 / 音近 / 同类混淆"设计。
@@ -251,6 +251,252 @@
     ],
     explain:'💡 两个 r 开头的小动物：rabbit（兔子，耳朵长）和 rat（老鼠，尾巴长）。',
     takeaway:'rabbit = 兔子 🐰'
+  }
+
+  ]);
+
+  /* ---------- 🍎 认物篇（加餐） ---------- */
+  EN.add('starter1', 'things', [
+
+  {
+    id:'a-13', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🚗',
+    situation:'外教举起一个玩具，它有四个轮子，会在地上跑。',
+    quote:'',
+    note:'爸爸开的那个大的也是它。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'car', note:'小汽车', badge:'汽车', kind:'stiff', ok:true,
+        why:'car 是小汽车，有四个轮子。' },
+      { text:'bus', note:'公交车', badge:'公交', kind:'stiff', ok:false,
+        why:'bus 是公交车，大大的，能坐好多人。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false,
+        why:'cat 是猫，会喵喵叫，和 car 只差最后一个字母。' }
+    ],
+    explain:'💡 会跑的三样：car 小汽车、bus 公交车、bike 自行车。car 和 cat 只差一个字母，别看错。',
+    takeaway:'car = 小汽车 🚗'
+  },
+  {
+    id:'a-14', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🎒',
+    situation:'上学要背的那个东西，里面装着课本和铅笔。',
+    quote:'',
+    note:'背在肩膀上，有两条带子。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'bag', note:'书包、包', badge:'书包', kind:'stiff', ok:true,
+        why:'bag 是包，书包也用它。' },
+      { text:'box', note:'盒子、箱子', badge:'盒子', kind:'stiff', ok:false,
+        why:'box 是盒子，方方硬硬的。' },
+      { text:'bed', note:'床', badge:'床', kind:'stiff', ok:false,
+        why:'bed 是床，睡觉用的。' }
+    ],
+    explain:'💡 三个 b 开头的东西：bag 包、box 盒子、bed 床。开头都是 b，中间的音不一样。',
+    takeaway:'bag = 书包 🎒'
+  },
+  {
+    id:'a-15', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'⚽',
+    situation:'体育课上外教抱着一个圆圆的东西，能踢能拍能扔。',
+    quote:'',
+    note:'踢它、拍它，它会弹起来。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'ball', note:'球', badge:'球', kind:'stiff', ok:true,
+        why:'ball 是球，圆圆的能弹。' },
+      { text:'doll', note:'洋娃娃', badge:'娃娃', kind:'stiff', ok:false,
+        why:'doll 是洋娃娃，和 ball 听起来有点像。' },
+      { text:'bell', note:'铃铛', badge:'铃铛', kind:'stiff', ok:false,
+        why:'bell 是铃铛，会叮叮响。' }
+    ],
+    explain:'💡 ball（球）、doll（娃娃）、bell（铃铛）听起来像三兄弟，中间的音各不同。',
+    takeaway:'ball = 球 ⚽'
+  },
+  {
+    id:'a-16', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🥛',
+    situation:'早餐桌上有一杯白白的饮料，是从奶牛那儿来的。',
+    quote:'',
+    note:'每天早上喝一杯，长得高。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'milk', note:'牛奶', badge:'牛奶', kind:'stiff', ok:true,
+        why:'milk 是牛奶，白白的。' },
+      { text:'water', note:'水', badge:'水', kind:'stiff', ok:false,
+        why:'water 是水，透明没颜色。' },
+      { text:'juice', note:'果汁', badge:'果汁', kind:'stiff', ok:false,
+        why:'juice 是果汁，用水果榨的。' }
+    ],
+    explain:'💡 三种喝的：milk 牛奶、water 水、juice 果汁。渴了想喝的都能用 Can I have some…?',
+    takeaway:'milk = 牛奶 🥛'
+  }
+
+  ]);
+
+  /* ---------- 🎨 颜色数字篇（加餐） ---------- */
+  EN.add('starter1', 'color', [
+
+  {
+    id:'a-17', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🌊',
+    situation:'外教指着画上的大海和天空，让大家说出这个颜色。',
+    quote:'',
+    note:'晴天的天空也是它。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'blue', note:'蓝色', badge:'蓝', kind:'stiff', ok:true,
+        why:'blue 是蓝色，天空和大海的颜色。' },
+      { text:'green', note:'绿色', badge:'绿', kind:'stiff', ok:false,
+        why:'green 是绿色，树叶的颜色。' },
+      { text:'black', note:'黑色', badge:'黑', kind:'stiff', ok:false,
+        why:'black 是黑色，晚上天空的颜色。' }
+    ],
+    explain:'💡 天上海里都是 blue（蓝）。配着记：sky 天空、sea 大海 → blue。',
+    takeaway:'blue = 蓝色 🌊'
+  },
+  {
+    id:'a-18', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🍋',
+    situation:'外教举起一个酸酸的柠檬，让大家说出它的颜色。',
+    quote:'',
+    note:'太阳和香蕉也是这个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'yellow', note:'黄色', badge:'黄', kind:'stiff', ok:true,
+        why:'yellow 是黄色，柠檬和香蕉的颜色。' },
+      { text:'orange', note:'橙色', badge:'橙', kind:'stiff', ok:false,
+        why:'orange 是橙色，也是"橙子"，比黄色深一点。' },
+      { text:'red', note:'红色', badge:'红', kind:'stiff', ok:false,
+        why:'red 是红色，草莓和消防车的颜色。' }
+    ],
+    explain:'💡 黄和橙最容易看混：yellow（黄，像柠檬）比 orange（橙，像橙子）浅。',
+    takeaway:'yellow = 黄色 🍋'
+  },
+  {
+    id:'a-19', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'☝️',
+    situation:'外教竖起一根手指，让大家用英语说出这个数。',
+    quote:'',
+    note:'最小的那个数，就一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'one', note:'一', badge:'1', kind:'stiff', ok:true,
+        why:'one 是一，就一个。' },
+      { text:'two', note:'二', badge:'2', kind:'stiff', ok:false,
+        why:'two 是二，要竖两根手指。' },
+      { text:'nine', note:'九', badge:'9', kind:'stiff', ok:false,
+        why:'nine 是九，比一多得多。' }
+    ],
+    explain:'💡 从头数起：one、two、three、four、five。伸一根手指就是 one。',
+    takeaway:'one = 一 ☝️'
+  },
+  {
+    id:'a-20', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🙌',
+    situation:'外教把两只手全张开，十根手指都伸出来，让大家数一数。',
+    quote:'',
+    note:'两只手的手指头全加起来。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:true,
+        why:'ten 是十，正好两只手。' },
+      { text:'two', note:'二', badge:'2', kind:'stiff', ok:false,
+        why:'two 是二，才两根手指。' },
+      { text:'three', note:'三', badge:'3', kind:'stiff', ok:false,
+        why:'three 是三，还差得远。' }
+    ],
+    explain:'💡 一只手是 five（五），两只手是 ten（十）。凑满十根手指就是 ten。',
+    takeaway:'ten = 十 🙌'
+  }
+
+  ]);
+
+  /* ---------- 🐶 动物篇（加餐） ---------- */
+  EN.add('starter1', 'animal', [
+
+  {
+    id:'a-21', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐱',
+    situation:'照片上的小动物正在舔爪子，会喵喵叫。',
+    quote:'',
+    note:'它最爱抓老鼠，也爱睡觉。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:true,
+        why:'cat 是猫，会喵喵叫。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false,
+        why:'dog 是狗，会汪汪叫。' },
+      { text:'rat', note:'老鼠', badge:'老鼠', kind:'stiff', ok:false,
+        why:'rat 是老鼠，正是猫要抓的那个。' }
+    ],
+    explain:'💡 猫抓老鼠一起记：cat（猫）追 rat（老鼠）。两个词就差第一个字母。',
+    takeaway:'cat = 猫 🐱'
+  },
+  {
+    id:'a-22', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐷',
+    situation:'照片上的动物胖胖的、粉粉的，鼻子扁扁的。',
+    quote:'',
+    note:'它在泥地里打滚，哼哼叫。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'pig', note:'猪', badge:'猪', kind:'stiff', ok:true,
+        why:'pig 是猪，胖胖粉粉的。' },
+      { text:'cow', note:'奶牛', badge:'奶牛', kind:'stiff', ok:false,
+        why:'cow 是奶牛，会产牛奶。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false,
+        why:'dog 是狗，会看家。' }
+    ],
+    explain:'💡 农场三样：pig 猪、cow 奶牛、duck 鸭子。pig 最胖最粉。',
+    takeaway:'pig = 猪 🐷'
+  },
+  {
+    id:'a-23', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐦',
+    situation:'照片上的小动物有一对翅膀，站在树枝上唱歌。',
+    quote:'',
+    note:'它会飞，还会下蛋。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'bird', note:'鸟', badge:'鸟', kind:'stiff', ok:true,
+        why:'bird 是鸟，有翅膀会飞。' },
+      { text:'fish', note:'鱼', badge:'鱼', kind:'stiff', ok:false,
+        why:'fish 是鱼，在水里游，不会飞。' },
+      { text:'bee', note:'蜜蜂', badge:'蜜蜂', kind:'stiff', ok:false,
+        why:'bee 是蜜蜂，也会飞，但小小的会蜇人。' }
+    ],
+    explain:'💡 会飞的两个 b：bird（鸟，大，会唱歌）和 bee（蜜蜂，小，嗡嗡叫）。',
+    takeaway:'bird = 鸟 🐦'
+  },
+  {
+    id:'a-24', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐻',
+    situation:'外教举起一只毛茸茸的大玩偶，它爱吃蜂蜜，冬天会睡很久。',
+    quote:'',
+    note:'它站起来比人还高，力气很大。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'bear', note:'熊', badge:'熊', kind:'stiff', ok:true,
+        why:'bear 是熊，毛茸茸的爱吃蜂蜜。' },
+      { text:'bird', note:'鸟', badge:'鸟', kind:'stiff', ok:false,
+        why:'bird 是鸟，小小的会飞，和 bear 都是 b 开头。' },
+      { text:'bee', note:'蜜蜂', badge:'蜜蜂', kind:'stiff', ok:false,
+        why:'bee 是蜜蜂，蜂蜜就是它做的。' }
+    ],
+    explain:'💡 三个 b 开头别记混：bear 熊（大）、bird 鸟（会飞）、bee 蜜蜂（会蜇）。',
+    takeaway:'bear = 熊 🐻'
   }
 
   ]);
