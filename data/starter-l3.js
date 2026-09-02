@@ -1,5 +1,5 @@
 /* ============================================================
-   🐥 启蒙 L3 · 小对话（36 题 · 课堂 / 家里 / 校园 各 12 题）
+   🐥 启蒙 L3 · 小对话（48 题 · 课堂 / 家里 / 校园 各 16 题）
    ------------------------------------------------------------
    启蒙的最后一档：一问一答，要先听懂问句，再选出配得上的回答。
    顺带把最基础的语法点带出来：a / an、单复数、have 和 am、
@@ -744,6 +744,252 @@
     ],
     explain:'💡 集体活动常听：Line up.（排队）、Come here.（过来）、Follow me.（跟我走）。',
     takeaway:'Line up, please. = 排好队。'
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂小对话（加餐 3） ---------- */
+  EN.add('starter3', 'class', [
+
+  {
+    id:'c-37', pack:'class', level:3, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'📏',
+    situation:'同桌想借尺子，问你有没有，可你今天没带。',
+    quote:'Do you have a ruler?',
+    note:'你笔袋里没有尺子。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"No, I don't.", note:'用 don’t 回 Do', badge:'地道', kind:'native', ok:true,
+        why:"Do you…? 的否定短答是 No, I don't。" },
+      { text:"No, I'm not.", note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false,
+        why:"I'm not 用来回答 Are you…?，这句是 Do 开头。" },
+      { text:"No, I don't have.", note:'话没说完', badge:'啰嗦', kind:'stiff', ok:false,
+        why:"短答说到 No, I don't 就够了，have 后面本来要跟东西。" }
+    ],
+    explain:"💡 Do you…? 的一对短答：Yes, I do. / No, I don't。有就 do，没有就 don't。",
+    takeaway:"Do you…? → No, I don't."
+  },
+  {
+    id:'c-38', pack:'class', level:2, type:'listening',
+    scene:'🏫 课堂小对话',
+    emoji:'📖',
+    situation:'上课了，外教翻开课本，对全班说：',
+    quote:'Turn to page ten.',
+    note:'同学们哗啦啦地翻起书来。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'翻到第十页', note:'page ten = 第十页', badge:'翻页', kind:'stiff', ok:true,
+        why:'Turn to page ten 就是把书翻到第 10 页。' },
+      { text:'把书合上', note:'那是 close your book', badge:'合书', kind:'stiff', ok:false,
+        why:'合上书是 close your book，这句是让你翻到某一页。' },
+      { text:'读第一页', note:'那是 read page one', badge:'读页', kind:'stiff', ok:false,
+        why:'她说的是 page ten（第十页），不是 page one。' }
+    ],
+    explain:'💡 Turn to page + 数字 = 翻到第几页：Turn to page ten.（翻到第十页）。',
+    takeaway:'Turn to page ten. = 翻到第十页。'
+  },
+  {
+    id:'c-39', pack:'class', level:3, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'✏️',
+    situation:'地上捡到一支铅笔，外教举起来问是谁的，那正是你的。',
+    quote:"Whose pencil is this?",
+    note:'那支铅笔是你掉的。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"It's mine.", note:'我的', badge:'地道', kind:'native', ok:true,
+        why:"东西是自己的，用 mine（我的）来回答，不用再说一遍 pencil。" },
+      { text:"It's my.", note:'my 后面得跟东西', badge:'语法错', kind:'stiff', ok:false,
+        why:"my 后面必须跟名词：It's my pencil.；单独用要说 mine。" },
+      { text:"It's me.", note:'me 是“我”不是“我的”', badge:'词用错', kind:'trap', ok:false,
+        why:"me 是“我”，“我的”东西要用 mine。" }
+    ],
+    explain:"💡 my 后面要跟东西：my pencil；单独说“我的”用 mine：It's mine. = It's my pencil.",
+    takeaway:"Whose …? → It's mine."
+  },
+  {
+    id:'c-40', pack:'class', level:1, type:'listening',
+    scene:'🏫 课堂小对话',
+    emoji:'🧽',
+    situation:'下课了，黑板上写满了字，外教递给值日生一块板擦说：',
+    quote:'Clean the blackboard, please.',
+    note:'黑板得擦干净，好上下一节课。',
+    ask:'她让值日生做什么？',
+    options:[
+      { text:'把黑板擦干净', note:'clean = 弄干净', badge:'擦黑板', kind:'stiff', ok:true,
+        why:'clean the blackboard 就是把黑板擦干净。' },
+      { text:'看黑板', note:'那是 look at the blackboard', badge:'看黑板', kind:'stiff', ok:false,
+        why:'看黑板是 Look at the blackboard，这句是让你擦。' },
+      { text:'在黑板上写字', note:'那是 write on the blackboard', badge:'写字', kind:'stiff', ok:false,
+        why:'写字是 write，clean 是擦干净。' }
+    ],
+    explain:'💡 clean 是“弄干净”：clean the blackboard（擦黑板）、clean your desk（擦桌子）、clean your room（打扫房间）。',
+    takeaway:'Clean the blackboard. = 把黑板擦干净。'
+  }
+
+  ]);
+
+  /* ---------- 🏠 家里小对话（加餐 3） ---------- */
+  EN.add('starter3', 'home', [
+
+  {
+    id:'c-41', pack:'home', level:3, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'👦',
+    situation:'同学看着你的全家福，指着旁边一个大男孩问你：',
+    quote:'Is he your brother?',
+    note:'那正是你哥哥。',
+    ask:'该怎么短答？',
+    options:[
+      { text:'Yes, he is.', note:'用 is 回 Is', badge:'地道', kind:'native', ok:true,
+        why:'Is he…? 开头，用 Yes, he is. 来短答。' },
+      { text:'Yes, he does.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false,
+        why:'does 是回答 Does he…? 的，这句是 Is 开头。' },
+      { text:'Yes, he do.', note:'助动词用错了', badge:'不配对', kind:'stiff', ok:false,
+        why:'he 也不能配 do，Is 问就用 is 答。' }
+    ],
+    explain:'💡 配对短答换成“他”：Is he…? → Yes, he is.；Does he…? → Yes, he does.',
+    takeaway:'Is he…? → Yes, he is.'
+  },
+  {
+    id:'c-42', pack:'home', level:2, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'🍚',
+    situation:'阿姨做的菜太好吃了，你一碗饭很快吃光，还想再来一碗。',
+    quote:'',
+    note:'你的碗已经空了。',
+    ask:'该怎么开口最有礼貌？',
+    options:[
+      { text:'Can I have some more, please?', note:'我能再来一点吗', badge:'地道', kind:'native', ok:true,
+        why:'还想要就说 Can I have some more, please?，客气又清楚。' },
+      { text:'More!', note:'还要！', badge:'太冲', kind:'trap', ok:false,
+        why:'只喊一个 More! 像在命令，很不礼貌。' },
+      { text:'I want more.', note:'我要更多', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但 I want 的语气比较直。' }
+    ],
+    explain:"💡 还想要一点用 Can I have some more, please?；够了就说 No more, thank you. I'm full.",
+    takeaway:'还想要 → Can I have some more, please?'
+  },
+  {
+    id:'c-43', pack:'home', level:2, type:'listening',
+    scene:'🏠 家里小对话',
+    emoji:'🛁',
+    situation:'玩了一天，晚上阿姨放好了热水，对你说：',
+    quote:"It's time for a bath.",
+    note:'浴缸里的水正冒着热气。',
+    ask:'她的意思是？',
+    options:[
+      { text:'该洗澡了', note:'bath = 洗澡', badge:'洗澡', kind:'stiff', ok:true,
+        why:"It's time for a bath 就是该去洗澡了。" },
+      { text:'该睡觉了', note:'那是 time for bed', badge:'睡觉', kind:'stiff', ok:false,
+        why:'睡觉是 time for bed，这句说的是洗澡。' },
+      { text:'该吃饭了', note:'那是 time for dinner', badge:'吃饭', kind:'stiff', ok:false,
+        why:'吃饭是 time for dinner，这句是洗澡。' }
+    ],
+    explain:"💡 It's time for + 事情 = 该做某事了：time for a bath（洗澡）、time for bed（睡觉）、time for school（上学）。",
+    takeaway:"It's time for a bath. = 该洗澡了。"
+  },
+  {
+    id:'c-44', pack:'home', level:2, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'📺',
+    situation:'作业写完了，你想看一会儿动画片，得先问问阿姨。',
+    quote:'',
+    note:'电视遥控器就在旁边。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'Can I watch TV, please?', note:'我可以看电视吗', badge:'地道', kind:'native', ok:true,
+        why:'想做某事先征得同意：Can I watch TV, please?' },
+      { text:'I watch TV.', note:'我看电视', badge:'不通顺', kind:'stiff', ok:false,
+        why:'少了 Can I，像是自说自话，也没在问。' },
+      { text:'Open the TV!', note:'把电视打开！', badge:'词用错', kind:'trap', ok:false,
+        why:'开电视是 turn on the TV，不是 open；这样说也太冲。' }
+    ],
+    explain:'💡 请求许可的万能句：Can I + 做的事 + , please?：Can I watch TV / play games / go out, please?',
+    takeaway:'请求许可 → Can I watch TV, please?'
+  }
+
+  ]);
+
+  /* ---------- 🎒 校园小对话（加餐 3） ---------- */
+  EN.add('starter3', 'school', [
+
+  {
+    id:'c-45', pack:'school', level:2, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'🤝',
+    situation:'你的好朋友带来一个新同学，向你介绍说：',
+    quote:'This is Tom.',
+    note:'新同学朝你笑了笑。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Hi, Tom. Nice to meet you.', note:'你好，很高兴认识你', badge:'地道', kind:'native', ok:true,
+        why:'被介绍认识新朋友，先问好再说 Nice to meet you.。' },
+      { text:'Bye, Tom.', note:'再见，Tom', badge:'说反了', kind:'stiff', ok:false,
+        why:'才刚认识就说再见就太奇怪了。' },
+      { text:'Who is Tom?', note:'Tom 是谁', badge:'答偏了', kind:'trap', ok:false,
+        why:'朋友已经告诉你他是 Tom 了，不用再问。' }
+    ],
+    explain:'💡 别人介绍 This is Tom.，你回 Hi, Tom. Nice to meet you.，对方会说 Nice to meet you, too.',
+    takeaway:'This is Tom. → Nice to meet you.'
+  },
+  {
+    id:'c-46', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'🕘',
+    situation:'快上课了，同学没戴表，转头问你几点了。',
+    quote:'What time is it?',
+    note:'墙上的钟指着九点整。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"It's nine o'clock.", note:'九点整', badge:'地道', kind:'native', ok:true,
+        why:"问几点用 It's + 时间来回答，整点后面加 o'clock。" },
+      { text:"I'm nine.", note:'那是回答年龄的', badge:'答偏了', kind:'trap', ok:false,
+        why:"I'm nine 是“我九岁”，问时间要用 It's。" },
+      { text:"It's Monday.", note:'那是回答星期几的', badge:'答偏了', kind:'stiff', ok:false,
+        why:"It's Monday 是回答 What day is it? 的。" }
+    ],
+    explain:"💡 问时间 What time is it? → It's nine (o'clock)。别跟 How old are you?（几岁）搞混。",
+    takeaway:"What time is it? → It's nine o'clock."
+  },
+  {
+    id:'c-47', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'📅',
+    situation:'外教想考考大家今天星期几，指着日历问：',
+    quote:'What day is it today?',
+    note:'今天是星期一。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"It's Monday.", note:'星期一', badge:'地道', kind:'native', ok:true,
+        why:"问星期几用 It's + 星期来回答，Monday 是星期一。" },
+      { text:"It's nine.", note:'那是回答时间的', badge:'答偏了', kind:'stiff', ok:false,
+        why:"It's nine 是回答 What time is it? 的。" },
+      { text:"It's sunny.", note:'那是回答天气的', badge:'答偏了', kind:'stiff', ok:false,
+        why:"It's sunny 是回答 How's the weather? 的。" }
+    ],
+    explain:"💡 一周七天：Monday、Tuesday、Wednesday、Thursday、Friday、Saturday、Sunday。问哪天用 What day…?",
+    takeaway:"What day is it? → It's Monday."
+  },
+  {
+    id:'c-48', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'☀️',
+    situation:'课间外教望着窗外的大太阳，问大家今天天气怎么样。',
+    quote:"How's the weather?",
+    note:'外面阳光灿烂，一朵云都没有。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"It's sunny.", note:'晴天', badge:'地道', kind:'native', ok:true,
+        why:"问天气用 It's + 天气词，sunny 是晴朗。" },
+      { text:"It's Monday.", note:'那是回答星期的', badge:'答偏了', kind:'stiff', ok:false,
+        why:"It's Monday 是回答 What day is it? 的。" },
+      { text:"I'm fine.", note:'那是回答心情的', badge:'答偏了', kind:'trap', ok:false,
+        why:"I'm fine 是回答 How are you? 的，天气要用 It's。" }
+    ],
+    explain:"💡 问天气 How's the weather? → It's sunny / rainy / cloudy / windy.（晴 / 雨 / 阴 / 风）。",
+    takeaway:"How's the weather? → It's sunny."
   }
 
   ]);

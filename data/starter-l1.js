@@ -1,5 +1,5 @@
 /* ============================================================
-   🐣 启蒙 L1 · 认单词（36 题 · 认物 / 颜色数字 / 动物 各 12 题）
+   🐣 启蒙 L1 · 认单词（48 题 · 认物 / 颜色数字 / 动物 各 16 题）
    ------------------------------------------------------------
    最低门槛的一档：题面不需要读英文句子，只有一个大号 emoji，
    选项就是三个单词。干扰项按"形近 / 音近 / 同类混淆"设计。
@@ -743,6 +743,252 @@
     ],
     explain:'💡 一大一小对着记：elephant 大象（最大）↔ mouse 老鼠（最小）。',
     takeaway:'elephant = 大象 🐘'
+  }
+
+  ]);
+
+  /* ---------- 🍎 认物篇（加餐 3） ---------- */
+  EN.add('starter1', 'things', [
+
+  {
+    id:'a-37', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🚪',
+    situation:'进出房间都要推开它，出门前要记得关好。',
+    quote:'',
+    note:'有把手，能开能关。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'door', note:'门', badge:'门', kind:'stiff', ok:true,
+        why:'door 是门，进出都从这儿走。' },
+      { text:'window', note:'窗户', badge:'窗户', kind:'stiff', ok:false,
+        why:'window 是窗户，用来透光看外面。' },
+      { text:'wall', note:'墙', badge:'墙', kind:'stiff', ok:false,
+        why:'wall 是墙，围在房间四周。' }
+    ],
+    explain:'💡 房间三样：door 门（进出）、window 窗（透光）、wall 墙（围挡）。',
+    takeaway:'door = 门 🚪'
+  },
+  {
+    id:'a-38', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🎂',
+    situation:'过生日时端上来的那个甜甜的东西，上面还插着蜡烛。',
+    quote:'',
+    note:'吹了蜡烛才切开吃。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'cake', note:'蛋糕', badge:'蛋糕', kind:'stiff', ok:true,
+        why:'cake 是蛋糕，过生日吃的。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false,
+        why:'cat 是猫，和 cake 都是 c 开头，但那是小动物。' },
+      { text:'cap', note:'帽子', badge:'帽子', kind:'stiff', ok:false,
+        why:'cap 是帽子，戴在头上。' }
+    ],
+    explain:'💡 三个 c 开头别记混：cake 蛋糕、cat 猫、cap 帽子。',
+    takeaway:'cake = 蛋糕 🎂'
+  },
+  {
+    id:'a-39', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🍚',
+    situation:'一碗白白的、一粒一粒的主食，中国人几乎天天吃。',
+    quote:'',
+    note:'煮成饭，配着菜吃。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'rice', note:'米饭', badge:'米饭', kind:'stiff', ok:true,
+        why:'rice 是米饭，一粒一粒白白的。' },
+      { text:'ice', note:'冰', badge:'冰', kind:'stiff', ok:false,
+        why:'ice 是冰，凉冰冰的，比 rice 少个 r。' },
+      { text:'bread', note:'面包', badge:'面包', kind:'stiff', ok:false,
+        why:'bread 是面包，也是主食，但软软的。' }
+    ],
+    explain:'💡 rice（米饭）就是 ice（冰）前面加个 r，别看漏那个 r。',
+    takeaway:'rice = 米饭 🍚'
+  },
+  {
+    id:'a-40', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🚲',
+    situation:'两个轮子的车，要用脚蹬着才会往前跑。',
+    quote:'',
+    note:'骑上去要自己保持平衡。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'bike', note:'自行车', badge:'自行车', kind:'stiff', ok:true,
+        why:'bike 是自行车，两个轮子用脚蹬。' },
+      { text:'bus', note:'公交车', badge:'公交', kind:'stiff', ok:false,
+        why:'bus 是公交车，大大的坐好多人。' },
+      { text:'car', note:'小汽车', badge:'汽车', kind:'stiff', ok:false,
+        why:'car 是小汽车，四个轮子有发动机。' }
+    ],
+    explain:'💡 会跑的三样凑齐：bike 自行车、bus 公交车、car 小汽车。轮子从两个到四个。',
+    takeaway:'bike = 自行车 🚲'
+  }
+
+  ]);
+
+  /* ---------- 🎨 颜色数字篇（加餐 3） ---------- */
+  EN.add('starter1', 'color', [
+
+  {
+    id:'a-41', pack:'color', level:1, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'⬜',
+    situation:'外教指着窗外刚下的雪，让大家说出这个颜色。',
+    quote:'',
+    note:'牛奶和云也是这个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'white', note:'白色', badge:'白', kind:'stiff', ok:true,
+        why:'white 是白色，雪和牛奶的颜色。' },
+      { text:'black', note:'黑色', badge:'黑', kind:'stiff', ok:false,
+        why:'black 是黑色，和白正相反。' },
+      { text:'blue', note:'蓝色', badge:'蓝', kind:'stiff', ok:false,
+        why:'blue 是蓝色，天空的颜色。' }
+    ],
+    explain:'💡 一对反义色：white 白 ↔ black 黑。雪是白的，夜是黑的。',
+    takeaway:'white = 白色 ⬜'
+  },
+  {
+    id:'a-42', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🌸',
+    situation:'外教指着一朵桃花，让大家说出这个淡淡的颜色。',
+    quote:'',
+    note:'小猪和棉花糖也是这个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'pink', note:'粉红色', badge:'粉', kind:'stiff', ok:true,
+        why:'pink 是粉红色，淡淡的红。' },
+      { text:'red', note:'红色', badge:'红', kind:'stiff', ok:false,
+        why:'red 是红色，比粉色深得多。' },
+      { text:'white', note:'白色', badge:'白', kind:'stiff', ok:false,
+        why:'white 是白色，粉色是白里透红。' }
+    ],
+    explain:'💡 pink（粉）就是浅浅的 red（红）：红加白就成了粉。',
+    takeaway:'pink = 粉红色 🌸'
+  },
+  {
+    id:'a-43', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🥚🥚🥚🥚🥚🥚',
+    situation:'篮子里摆着一排鸡蛋，外教让大家数一数。',
+    quote:'',
+    note:'比五多一个，比七少一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'six', note:'六', badge:'6', kind:'stiff', ok:true,
+        why:'six 是六。' },
+      { text:'seven', note:'七', badge:'7', kind:'stiff', ok:false,
+        why:'seven 是七，比六多一个，两个都是 s 开头。' },
+      { text:'four', note:'四', badge:'4', kind:'stiff', ok:false,
+        why:'four 是四，比六少两个。' }
+    ],
+    explain:'💡 六到十：six、seven、eight、nine、ten。six 和 seven 都是 s 开头，别混。',
+    takeaway:'six = 六 🥚'
+  },
+  {
+    id:'a-44', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🕷️',
+    situation:'外教画了一只蜘蛛，让大家数一数它有几条腿。',
+    quote:'',
+    note:'蜘蛛的腿正好这么多。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'eight', note:'八', badge:'8', kind:'stiff', ok:true,
+        why:'eight 是八，蜘蛛正好八条腿。' },
+      { text:'six', note:'六', badge:'6', kind:'stiff', ok:false,
+        why:'six 是六，比八少两个。' },
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:false,
+        why:'ten 是十，比八多两个。' }
+    ],
+    explain:'💡 记住蜘蛛就记住了 eight（八）：它有 eight legs（八条腿）。',
+    takeaway:'eight = 八 🕷️'
+  }
+
+  ]);
+
+  /* ---------- 🐶 动物篇（加餐 3） ---------- */
+  EN.add('starter1', 'animal', [
+
+  {
+    id:'a-45', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐴',
+    situation:'照片上的大动物跑得飞快，古时候的人骑着它赶路。',
+    quote:'',
+    note:'它有长长的鬃毛，会嘶嘶叫。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'horse', note:'马', badge:'马', kind:'stiff', ok:true,
+        why:'horse 是马，跑得快能骑。' },
+      { text:'cow', note:'奶牛', badge:'奶牛', kind:'stiff', ok:false,
+        why:'cow 是奶牛，慢吞吞地吃草。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false,
+        why:'dog 是狗，会看家。' }
+    ],
+    explain:'💡 农场跑得最快的是 horse（马）；产奶的是 cow（奶牛）。',
+    takeaway:'horse = 马 🐴'
+  },
+  {
+    id:'a-46', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐑',
+    situation:'照片上的动物浑身白白的卷毛，剪下来能织毛衣。',
+    quote:'',
+    note:'它咩咩叫，一群一群地吃草。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'sheep', note:'绵羊', badge:'绵羊', kind:'stiff', ok:true,
+        why:'sheep 是绵羊，身上有卷卷的羊毛。' },
+      { text:'goat', note:'山羊', badge:'山羊', kind:'stiff', ok:false,
+        why:'goat 是山羊，有胡子和尖角，和绵羊是亲戚。' },
+      { text:'cow', note:'奶牛', badge:'奶牛', kind:'stiff', ok:false,
+        why:'cow 是奶牛，比羊大得多。' }
+    ],
+    explain:'💡 sheep 一只是 sheep，一群还是 sheep，跟 fish 一样不加 s。',
+    takeaway:'sheep = 绵羊 🐑'
+  },
+  {
+    id:'a-47', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐍',
+    situation:'照片上的动物长长的、没有腿，在地上扭来扭去地爬。',
+    quote:'',
+    note:'它吐着舌头，会嘶嘶叫。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'snake', note:'蛇', badge:'蛇', kind:'stiff', ok:true,
+        why:'snake 是蛇，长长的没有腿。' },
+      { text:'snail', note:'蜗牛', badge:'蜗牛', kind:'stiff', ok:false,
+        why:'snail 是蜗牛，背着壳慢慢爬，和 snake 都是 sna 开头。' },
+      { text:'frog', note:'青蛙', badge:'青蛙', kind:'stiff', ok:false,
+        why:'frog 是青蛙，会蹦会跳。' }
+    ],
+    explain:'💡 sna 开头的两个：snake 蛇（长、快）和 snail 蜗牛（圆、慢）。',
+    takeaway:'snake = 蛇 🐍'
+  },
+  {
+    id:'a-48', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐼',
+    situation:'照片上的动物黑白相间，最爱抱着竹子啃，是中国的国宝。',
+    quote:'',
+    note:'它眼睛周围有两个大黑圈。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'panda', note:'熊猫', badge:'熊猫', kind:'stiff', ok:true,
+        why:'panda 是熊猫，黑白的爱吃竹子。' },
+      { text:'bear', note:'熊', badge:'熊', kind:'stiff', ok:false,
+        why:'bear 是熊，熊猫长得像熊，但熊不是黑白的。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false,
+        why:'dog 是狗，会汪汪叫。' }
+    ],
+    explain:'💡 panda（熊猫）就是黑白的“熊”，名字里藏着 bear（熊）的影子。',
+    takeaway:'panda = 熊猫 🐼'
   }
 
   ]);

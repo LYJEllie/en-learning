@@ -1,5 +1,5 @@
 /* ============================================================
-   🐤 启蒙 L2 · 短句子（36 题 · 打招呼 / 礼貌用语 / 日常短句 各 12 题）
+   🐤 启蒙 L2 · 短句子（48 题 · 打招呼 / 礼貌用语 / 日常短句 各 16 题）
    ------------------------------------------------------------
    比 L1 难一点：题面出现一句最短的英文，选项是三到四个词的短句。
    考的是"这个场合该说哪一句"，干扰项都是别的常用短句（用错场合）。
@@ -742,6 +742,252 @@
     ],
     explain:'💡 一睡一醒记一对：Wake up!（醒醒、起床）↔ Go to sleep.（睡觉）。',
     takeaway:'Wake up! = 该起床了！'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐 3） ---------- */
+  EN.add('starter2', 'hello', [
+
+  {
+    id:'b-37', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🌆',
+    situation:'傍晚你去朋友家吃饭，一进门朋友的爸爸对你说：',
+    quote:'Good evening!',
+    note:'天刚擦黑，太阳快落山了。',
+    ask:'你该回哪一句？',
+    options:[
+      { text:'Good evening!', note:'晚上好', badge:'地道', kind:'native', ok:true,
+        why:'傍晚见面互道 Good evening，原样还回去。' },
+      { text:'Good morning!', note:'早上好', badge:'时间错', kind:'stiff', ok:false,
+        why:'Good morning 是早上用的，现在天都黑了。' },
+      { text:'Good night!', note:'晚安', badge:'时机不对', kind:'stiff', ok:false,
+        why:'Good night 是睡觉前道别用的，不是见面问好。' }
+    ],
+    explain:'💡 四句时段问候凑齐：早 Good morning、午后 Good afternoon、傍晚 Good evening、睡前 Good night。',
+    takeaway:'傍晚见面 → Good evening!'
+  },
+  {
+    id:'b-38', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'👋',
+    situation:'早上你要去上学，寄宿家庭的阿姨在门口笑着送你：',
+    quote:'Have a nice day!',
+    note:'她祝你今天过得开心。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Thanks, you too!', note:'谢谢，你也是', badge:'地道', kind:'native', ok:true,
+        why:'别人祝你，你回一句 you too（你也是）最自然。' },
+      { text:'Me too.', note:'我也是', badge:'不地道', kind:'trap', ok:false,
+        why:'这里习惯说 You too.，而不是 Me too.。' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'答偏了', kind:'stiff', ok:false,
+        why:'她在祝福你，不是问你要不要东西。' }
+    ],
+    explain:'💡 别人祝你 Have a nice day! / Have a good weekend!，都回一句 Thanks, you too!',
+    takeaway:'Have a nice day! → Thanks, you too!'
+  },
+  {
+    id:'b-39', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🤗',
+    situation:'放假好久没见的外国朋友在街上遇见你，张开手臂说：',
+    quote:'Nice to see you!',
+    note:'你们早就认识，只是好久没见了。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Nice to see you, too!', note:'见到你也很高兴', badge:'地道', kind:'native', ok:true,
+        why:'老朋友重逢用 see；加个 too 还回去就对了。' },
+      { text:'Nice to meet you.', note:'很高兴认识你', badge:'用错了', kind:'trap', ok:false,
+        why:'meet 是第一次认识才用，你们早就认识了，要用 see。' },
+      { text:'See you!', note:'回头见', badge:'说反了', kind:'stiff', ok:false,
+        why:'See you! 是道别时说的，这会儿刚见面。' }
+    ],
+    explain:'💡 第一次认识用 meet：Nice to meet you.；老朋友重逢用 see：Nice to see you.',
+    takeaway:'老朋友重逢 → Nice to see you, too!'
+  },
+  {
+    id:'b-40', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🙋',
+    situation:'开学第一天，老师让每个人站起来做自我介绍，轮到你了。',
+    quote:'',
+    note:'你叫 Lily，想告诉大家。',
+    ask:'开口第一句怎么说？',
+    options:[
+      { text:"Hi, I'm Lily.", note:'你好，我是 Lily', badge:'地道', kind:'native', ok:true,
+        why:"自我介绍用 I'm + 名字，简单又自然。" },
+      { text:'Hi, I Lily.', note:'漏了 am', badge:'漏词', kind:'stiff', ok:false,
+        why:"少了 am：I'm (I am) Lily. 才完整。" },
+      { text:'Hi, my name Lily.', note:'漏了 is', badge:'漏词', kind:'stiff', ok:false,
+        why:"要么 I'm Lily.，要么 My name is Lily.，中间的 is 不能少。" }
+    ],
+    explain:"💡 自我介绍两种说法：I'm Lily. / My name is Lily.。别把 am、is 漏掉。",
+    takeaway:"自我介绍 → Hi, I'm Lily."
+  }
+
+  ]);
+
+  /* ---------- 🙏 礼貌用语篇（加餐 3） ---------- */
+  EN.add('starter2', 'polite', [
+
+  {
+    id:'b-41', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🤧',
+    situation:'旁边的外国同学突然“阿嚏”打了个大喷嚏。',
+    quote:'Achoo!',
+    note:'他打完喷嚏看了看你。',
+    ask:'这时候你该说什么？',
+    options:[
+      { text:'Bless you!', note:'保佑你（打喷嚏时说）', badge:'地道', kind:'native', ok:true,
+        why:'别人打喷嚏，英语里习惯说 Bless you! 送上一句祝福。' },
+      { text:'Thank you.', note:'谢谢', badge:'用错了', kind:'stiff', ok:false,
+        why:'他又没帮你什么，用不着谢。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false,
+        why:'打喷嚏的又不是你，不用道歉。' }
+    ],
+    explain:'💡 别人打喷嚏，你说 Bless you!；对方会回你一句 Thank you.。这是英语里的小默契。',
+    takeaway:'别人打喷嚏 → Bless you!'
+  },
+  {
+    id:'b-42', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🍽️',
+    situation:'饭菜摆上桌，阿姨招呼你先吃，笑着说：',
+    quote:'Enjoy your meal!',
+    note:'她把菜往你面前推了推。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true,
+        why:'别人请你好好吃，回一句谢谢就好。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false,
+        why:'吃饭是开心的事，用不着道歉。' },
+      { text:'No, thank you.', note:'不用了，谢谢', badge:'说反了', kind:'stiff', ok:false,
+        why:'这会儿是要开吃了，不是拒绝。' }
+    ],
+    explain:'💡 Enjoy your meal!（好好吃）是饭前的客气话，回一句 Thank you! 就行。',
+    takeaway:'Enjoy your meal! → Thank you!'
+  },
+  {
+    id:'b-43', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🚪',
+    situation:'你来晚了，教室门关着，你敲了敲门。',
+    quote:'',
+    note:'要先得到老师同意才能进。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'May I come in?', note:'我可以进来吗', badge:'地道', kind:'native', ok:true,
+        why:'进门前问一句 May I come in?，得到同意再进最有礼貌。' },
+      { text:'I come in.', note:'我进来', badge:'不通顺', kind:'stiff', ok:false,
+        why:'少了 May I，像是直接闯进去，不礼貌。' },
+      { text:'Open the door!', note:'开门！', badge:'太冲', kind:'trap', ok:false,
+        why:'这是命令的口气，很不客气。' }
+    ],
+    explain:'💡 请求许可可以用 May I…? 或 Can I…?：May I come in?（我能进来吗）。老师会说 Come in.',
+    takeaway:'进门先问 → May I come in?'
+  },
+  {
+    id:'b-44', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'👂',
+    situation:'外教说了句话，但你没听清，想请她再说一遍。',
+    quote:'',
+    note:'你不太确定她刚才说了什么。',
+    ask:'该怎么说最有礼貌？',
+    options:[
+      { text:'Pardon?', note:'请再说一遍好吗', badge:'地道', kind:'native', ok:true,
+        why:'没听清礼貌地说 Pardon? 或 Sorry?，请对方再说一遍。' },
+      { text:'What?', note:'什么？', badge:'太冲', kind:'trap', ok:false,
+        why:'光一个 What? 听起来有点冲，像不耐烦。' },
+      { text:'Say again.', note:'再说', badge:'生硬', kind:'stiff', ok:false,
+        why:'能听懂，但少了礼貌，最好说 Pardon? 或 Could you say that again?' }
+    ],
+    explain:'💡 没听清别急着说 What?，礼貌的说法是 Pardon? / Sorry? / Could you say that again?',
+    takeaway:'没听清 → Pardon?'
+  }
+
+  ]);
+
+  /* ---------- 🗣️ 日常短句篇（加餐 3） ---------- */
+  EN.add('starter2', 'daily', [
+
+  {
+    id:'b-45', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🚪',
+    situation:'外面有点吵，外教指了指开着的门，对最靠门的同学说：',
+    quote:'Close the door, please.',
+    note:'门正开着，外面的声音传进来。',
+    ask:'她让那个同学做什么？',
+    options:[
+      { text:'把门关上', note:'close = 关', badge:'关门', kind:'stiff', ok:true,
+        why:'close the door 就是把门关起来。' },
+      { text:'把门打开', note:'那是 open the door', badge:'开门', kind:'stiff', ok:false,
+        why:'打开是 open，和 close 正好相反。' },
+      { text:'把窗关上', note:'那是 close the window', badge:'关窗', kind:'stiff', ok:false,
+        why:'那是关窗户 close the window，她说的是门。' }
+    ],
+    explain:'💡 一对反义词到处能用：open（开）↔ close（关）。the door、the window、your book 都能配。',
+    takeaway:'Close the door, please. = 把门关上。'
+  },
+  {
+    id:'b-46', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🪟',
+    situation:'教室里有点闷，外教走到窗边，对同学说：',
+    quote:'Open the window, please.',
+    note:'她想让新鲜空气进来。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'把窗户打开', note:'open = 打开', badge:'开窗', kind:'stiff', ok:true,
+        why:'open the window 就是把窗户打开透气。' },
+      { text:'把窗户关上', note:'那是 close the window', badge:'关窗', kind:'stiff', ok:false,
+        why:'关上是 close，和 open 正好相反。' },
+      { text:'把门打开', note:'那是 open the door', badge:'开门', kind:'stiff', ok:false,
+        why:'那是开门 open the door，她说的是窗户。' }
+    ],
+    explain:'💡 open（开）配上不同的东西：open the window（开窗）、open the door（开门）、open your book（翻开书）。',
+    takeaway:'Open the window, please. = 把窗户打开。'
+  },
+  {
+    id:'b-47', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🚶',
+    situation:'你敲了敲老师办公室的门，里面传来一个声音：',
+    quote:'Come in, please.',
+    note:'老师在里面招呼你。',
+    ask:'老师让你做什么？',
+    options:[
+      { text:'进来', note:'come in = 进来', badge:'进来', kind:'stiff', ok:true,
+        why:'Come in 就是让你推门进去。' },
+      { text:'出去', note:'那是 go out', badge:'出去', kind:'stiff', ok:false,
+        why:'出去是 go out，方向正好相反。' },
+      { text:'等一下', note:'那是 wait a moment', badge:'等等', kind:'stiff', ok:false,
+        why:'等一下是 Wait a moment，这句是让你进去。' }
+    ],
+    explain:'💡 敲门后听到 Come in.（进来）就可以推门进去；反过来是 Go out.（出去）。',
+    takeaway:'Come in, please. = 进来。'
+  },
+  {
+    id:'b-48', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'👣',
+    situation:'参观学校时，外教在前面带路，回头对大家说：',
+    quote:'Follow me.',
+    note:'她招招手，往前走了。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'跟我走', note:'follow = 跟随', badge:'跟着走', kind:'stiff', ok:true,
+        why:'Follow me 就是跟在她后面走。' },
+      { text:'看着我', note:'那是 look at me', badge:'看我', kind:'stiff', ok:false,
+        why:'看我是 Look at me，这句是让你跟上。' },
+      { text:'等等我', note:'那是 wait for me', badge:'等我', kind:'stiff', ok:false,
+        why:'等我是 Wait for me，这句是叫你跟着走。' }
+    ],
+    explain:'💡 带路时常说 Follow me.（跟我走）；跟不上就喊 Wait for me!（等等我）。',
+    takeaway:'Follow me. = 跟我走。'
   }
 
   ]);
