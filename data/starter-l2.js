@@ -1,5 +1,5 @@
 /* ============================================================
-   🐤 启蒙 L2 · 短句子（48 题 · 打招呼 / 礼貌用语 / 日常短句 各 16 题）
+   🐤 启蒙 L2 · 短句子（60 题 · 打招呼 / 礼貌用语 / 日常短句 各 20 题）
    ------------------------------------------------------------
    比 L1 难一点：题面出现一句最短的英文，选项是三到四个词的短句。
    考的是"这个场合该说哪一句"，干扰项都是别的常用短句（用错场合）。
@@ -988,6 +988,216 @@
     ],
     explain:'💡 带路时常说 Follow me.（跟我走）；跟不上就喊 Wait for me!（等等我）。',
     takeaway:'Follow me. = 跟我走。'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐 4） ---------- */
+  EN.add('starter2', 'hello', [
+
+  {
+    id:'b-49', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🤙',
+    situation:'走廊里遇到熟悉的外教，她轻松地问了一句：',
+    quote:"How's it going?",
+    note:'这是很随意的一句“最近怎么样”。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Good, thanks!', note:'挺好的，谢谢', badge:'地道', kind:'native', ok:true, why:"How's it going? 是随口问好，回一句 Good, thanks! 就很自然。" },
+      { text:"I'm nine.", note:'我九岁', badge:'答偏了', kind:'stiff', ok:false, why:'那是回答 How old are you? 的。' },
+      { text:'Good morning!', note:'早上好', badge:'答偏了', kind:'stiff', ok:false, why:'她问的是最近怎么样，不是在道早安。' }
+    ],
+    explain:"💡 How's it going? / How are you? 都是问好，回 Good, thanks! / I'm fine, thanks! 都行。",
+    takeaway:"How's it going? → Good, thanks!"
+  },
+  {
+    id:'b-50', pack:'hello', level:1, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🎉',
+    situation:'新年第一天，外国朋友笑着对你说：',
+    quote:'Happy New Year!',
+    note:'新的一年开始了。',
+    ask:'你该回哪一句？',
+    options:[
+      { text:'Happy New Year!', note:'新年快乐', badge:'地道', kind:'native', ok:true, why:'新年祝福原样还回去，最简单也最热闹。' },
+      { text:'Happy birthday!', note:'生日快乐', badge:'用错了', kind:'trap', ok:false, why:'那是过生日才说的，不是过新年。' },
+      { text:'Good night!', note:'晚安', badge:'答偏了', kind:'stiff', ok:false, why:'这是节日问候，不是道晚安。' }
+    ],
+    explain:"💡 节日互相祝福，原样还回去就行：Happy New Year! / Happy Children's Day!",
+    takeaway:'Happy New Year! → Happy New Year!'
+  },
+  {
+    id:'b-51', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🙌',
+    situation:'生病请假几天，你回到学校，同学高兴地对你说：',
+    quote:'Welcome back!',
+    note:'大家都很想你。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true, why:'别人欢迎你回来，回一句谢谢最自然。' },
+      { text:'Welcome back!', note:'欢迎回来', badge:'反了', kind:'trap', ok:false, why:'回来的是你，不是他，别把这句还回去。' },
+      { text:'Goodbye!', note:'再见', badge:'说反了', kind:'stiff', ok:false, why:'你刚回来，不是要走。' }
+    ],
+    explain:'💡 别人说 Welcome back!（欢迎回来）迎接你，你回 Thank you! 就好。',
+    takeaway:'Welcome back! → Thank you!'
+  },
+  {
+    id:'b-52', pack:'hello', level:2, type:'phrase',
+    scene:'👋 打招呼篇',
+    emoji:'🍀',
+    situation:'马上要考试了，同桌拍拍你的肩说：',
+    quote:'Good luck!',
+    note:'他在祝你考出好成绩。',
+    ask:'你该怎么回？',
+    options:[
+      { text:'Thank you!', note:'谢谢', badge:'地道', kind:'native', ok:true, why:'别人祝你好运，回一句谢谢就好。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false, why:'祝福是好事，用不着道歉。' },
+      { text:'Goodbye!', note:'再见', badge:'答偏了', kind:'stiff', ok:false, why:'他在祝你好运，不是要走。' }
+    ],
+    explain:'💡 别人祝你 Good luck!（祝你好运），回 Thank you!；如果他也要考，可以说 You too!',
+    takeaway:'Good luck! → Thank you!'
+  }
+
+  ]);
+
+  /* ---------- 🙏 礼貌用语篇（加餐 4） ---------- */
+  EN.add('starter2', 'polite', [
+
+  {
+    id:'b-53', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🚪',
+    situation:'你和老师同时走到门口，都想进去。',
+    quote:'',
+    note:'门只够一个人先过。',
+    ask:'有礼貌的话该说什么？',
+    options:[
+      { text:'After you.', note:'您先请', badge:'地道', kind:'native', ok:true, why:'让别人先走，说一句 After you. 又客气又得体。' },
+      { text:'Me first!', note:'我先！', badge:'太自私', kind:'trap', ok:false, why:'抢在老师前面还喊“我先”，很没礼貌。' },
+      { text:'Go go go!', note:'快走快走', badge:'太冲', kind:'stiff', ok:false, why:'这样催人像在赶人，不礼貌。' }
+    ],
+    explain:'💡 让别人先走、先过、先拿，都可以说 After you.；对方会回你一句 Thank you.',
+    takeaway:'让别人先 → After you.'
+  },
+  {
+    id:'b-54', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🧂',
+    situation:'吃饭时你想要盐，可盐罐在桌子另一头，够不着。',
+    quote:'',
+    note:'盐就在阿姨的手边。',
+    ask:'该怎么请别人递给你？',
+    options:[
+      { text:'Can you pass me the salt, please?', note:'能把盐递给我吗', badge:'地道', kind:'native', ok:true, why:'请别人递东西用 Can you pass me…, please?，客气又清楚。' },
+      { text:'Give me the salt!', note:'把盐给我！', badge:'太冲', kind:'trap', ok:false, why:'这是命令的口气，像在下令。' },
+      { text:'I want the salt.', note:'我要盐', badge:'生硬', kind:'stiff', ok:false, why:'能听懂，但 I want 的语气比较直。' }
+    ],
+    explain:'💡 请人递东西：Can you pass me the salt / water / bread, please?。拿到后说 Thank you。',
+    takeaway:'请人递东西 → Can you pass me …, please?'
+  },
+  {
+    id:'b-55', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🙇',
+    situation:'在同学家玩，你一不小心把杯子碰到地上摔碎了。',
+    quote:'',
+    note:'这回闯的祸有点大。',
+    ask:'你该赶紧说什么？',
+    options:[
+      { text:"I'm so sorry!", note:'真对不起', badge:'地道', kind:'native', ok:true, why:"闯了大祸，加个 so 让道歉更诚恳：I'm so sorry!" },
+      { text:"That's OK.", note:'没关系', badge:'反了', kind:'trap', ok:false, why:"That's OK 是原谅别人时说的，做错事的人要道歉。" },
+      { text:'Thank you.', note:'谢谢', badge:'用错了', kind:'stiff', ok:false, why:'摔坏东西可不是好事，该道歉不是道谢。' }
+    ],
+    explain:"💡 小事说 Sorry.，闯了大祸说 I'm so sorry! / I'm really sorry!，语气更诚恳。",
+    takeaway:"闯大祸 → I'm so sorry!"
+  },
+  {
+    id:'b-56', pack:'polite', level:2, type:'manners',
+    scene:'🙏 礼貌用语篇',
+    emoji:'🏆',
+    situation:'同学在比赛中得了第一名，抱着奖杯特别开心。',
+    quote:'',
+    note:'大家都围过来为他高兴。',
+    ask:'你该对他说什么？',
+    options:[
+      { text:'Congratulations!', note:'恭喜你！', badge:'地道', kind:'native', ok:true, why:'别人取得好成绩，说一句 Congratulations! 送上祝贺。' },
+      { text:'Thank you!', note:'谢谢', badge:'反了', kind:'trap', ok:false, why:'得奖的是他，该道谢的也是他，你要祝贺他。' },
+      { text:'Sorry.', note:'对不起', badge:'用错了', kind:'stiff', ok:false, why:'这是高兴的事，别道歉。' }
+    ],
+    explain:'💡 别人得奖、生日、过节都能用 Congratulations!（恭喜）；被祝贺的人回 Thank you!',
+    takeaway:'别人得奖 → Congratulations!'
+  }
+
+  ]);
+
+  /* ---------- 🗣️ 日常短句篇（加餐 4） ---------- */
+  EN.add('starter2', 'daily', [
+
+  {
+    id:'b-57', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🧹',
+    situation:'手工课结束了，桌上到处是纸屑，外教拍拍手说：',
+    quote:'Clean up, please.',
+    note:'该把桌子收拾干净了。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'收拾干净', note:'clean up = 收拾整理', badge:'收拾', kind:'stiff', ok:true, why:'Clean up 就是把乱七八糟的东西收拾整齐。' },
+      { text:'安静下来', note:'那是 be quiet', badge:'安静', kind:'stiff', ok:false, why:'安静是 Be quiet，这句是让你收拾。' },
+      { text:'站起来', note:'那是 stand up', badge:'起立', kind:'stiff', ok:false, why:'up 不一定是“起来”，clean up 是“收拾好”。' }
+    ],
+    explain:'💡 别看见 up 就以为是“往上”：clean up（收拾）、eat up（吃光）、hurry up（快点）。',
+    takeaway:'Clean up, please. = 收拾干净。'
+  },
+  {
+    id:'b-58', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'👂',
+    situation:'要放一段英文录音了，外教把手拢在耳边，说：',
+    quote:'Listen carefully.',
+    note:'她提醒大家竖起耳朵。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'仔细听', note:'listen = 听', badge:'认真听', kind:'stiff', ok:true, why:'Listen carefully 就是仔细地听、认真地听。' },
+      { text:'跟着读', note:'那是 read after me', badge:'跟读', kind:'stiff', ok:false, why:'跟读是 Read after me，这句只让你听。' },
+      { text:'大声说', note:'那是 speak loudly', badge:'大声', kind:'stiff', ok:false, why:'大声说是 speak loudly，这句是让你听。' }
+    ],
+    explain:'💡 听说读看的口令：Listen.（听）、Read.（读）、Say it.（说）、Look.（看）。',
+    takeaway:'Listen carefully. = 仔细听。'
+  },
+  {
+    id:'b-59', pack:'daily', level:2, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'🖐️',
+    situation:'你答对了问题，外教高兴地举起手掌，笑着说：',
+    quote:'Give me five!',
+    note:'她的手掌朝着你，等着你拍。',
+    ask:'她想让你做什么？',
+    options:[
+      { text:'跟她击个掌', note:'give me five = 击掌', badge:'击掌', kind:'stiff', ok:true, why:'Give me five! 是伸手掌让你和她“啪”地击一下掌，表示棒极了。' },
+      { text:'给她五个东西', note:'不是真要五样东西', badge:'字面错', kind:'trap', ok:false, why:'虽然有 five，但这不是真让你拿五样东西，是击掌。' },
+      { text:'举起五根手指', note:'那是 show five fingers', badge:'举手指', kind:'stiff', ok:false, why:'give me five 是击掌，不是让你比数字。' }
+    ],
+    explain:'💡 Give me five! 是高兴时的击掌（five 指五根手指、整个手掌）。答对、赢了都能来一下。',
+    takeaway:'Give me five! = 来击个掌！'
+  },
+  {
+    id:'b-60', pack:'daily', level:1, type:'listening',
+    scene:'🗣️ 日常短句篇',
+    emoji:'⚠️',
+    situation:'地上刚拖过还很滑，阿姨看你跑过来，赶紧喊：',
+    quote:'Be careful!',
+    note:'她怕你滑倒。',
+    ask:'她在提醒你什么？',
+    options:[
+      { text:'小心点', note:'careful = 小心', badge:'小心', kind:'stiff', ok:true, why:'Be careful! 就是提醒你当心、别摔着。' },
+      { text:'快点儿', note:'那是 Hurry up', badge:'快点', kind:'stiff', ok:false, why:'催你快是 Hurry up!，这句是让你当心。' },
+      { text:'安静点', note:'那是 Be quiet', badge:'安静', kind:'stiff', ok:false, why:'安静是 Be quiet，这句是提醒你小心。' }
+    ],
+    explain:'💡 提醒当心用 Be careful!（小心）、Watch out!（当心）、Look out!（快躲开）。',
+    takeaway:'Be careful! = 小心点！'
   }
 
   ]);

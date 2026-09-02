@@ -1,5 +1,5 @@
 /* ============================================================
-   🐥 启蒙 L3 · 小对话（48 题 · 课堂 / 家里 / 校园 各 16 题）
+   🐥 启蒙 L3 · 小对话（60 题 · 课堂 / 家里 / 校园 各 20 题）
    ------------------------------------------------------------
    启蒙的最后一档：一问一答，要先听懂问句，再选出配得上的回答。
    顺带把最基础的语法点带出来：a / an、单复数、have 和 am、
@@ -990,6 +990,216 @@
     ],
     explain:"💡 问天气 How's the weather? → It's sunny / rainy / cloudy / windy.（晴 / 雨 / 阴 / 风）。",
     takeaway:"How's the weather? → It's sunny."
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂小对话（加餐 4） ---------- */
+  EN.add('starter3', 'class', [
+
+  {
+    id:'c-49', pack:'class', level:3, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'🪑',
+    situation:'外教指着教室前排的几把椅子，问大家一共有几把：',
+    quote:'How many chairs are there?',
+    note:'前排摆着四把椅子。',
+    ask:'该怎么回答？',
+    options:[
+      { text:'There are four.', note:'有几个用 there are', badge:'地道', kind:'native', ok:true, why:'问某地有几个，用 There are + 数字来回答。' },
+      { text:"It's four.", note:'数量不用 it is', badge:'句型错', kind:'stiff', ok:false, why:"It's four 更像回答时间；说“有四把”要用 There are four." },
+      { text:'Have four.', note:'漏了主语', badge:'不通顺', kind:'stiff', ok:false, why:'不能光说 Have four，要用 There are four.' }
+    ],
+    explain:"💡 说某个地方“有”几个东西，用 There is（一个）/ There are（好几个）：There are four chairs.",
+    takeaway:'How many … are there? → There are four.'
+  },
+  {
+    id:'c-50', pack:'class', level:3, type:'phrase',
+    scene:'🏫 课堂小对话',
+    emoji:'📚',
+    situation:'讲台上放着几本书，外教举起来问是谁的，那几本都是你的。',
+    quote:'Whose books are these?',
+    note:'好几本都是你的。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"They're mine.", note:'好几本都是我的', badge:'地道', kind:'native', ok:true, why:"不止一本、都是自己的，用 They're mine.。" },
+      { text:"It's mine.", note:'好几本说成了一本', badge:'单复数错', kind:'stiff', ok:false, why:"书不止一本，要用 They're，不是 It's。" },
+      { text:"They're my.", note:'my 后面得跟东西', badge:'语法错', kind:'stiff', ok:false, why:"单独说“我的”要用 mine：They're mine." }
+    ],
+    explain:"💡 一本：It's mine.；好几本：They're mine.。单独说“我的”永远用 mine。",
+    takeaway:"Whose … are these? → They're mine."
+  },
+  {
+    id:'c-51', pack:'class', level:2, type:'listening',
+    scene:'🏫 课堂小对话',
+    emoji:'✏️',
+    situation:'要写生字了，外教对大家说：',
+    quote:'Take out your pencil.',
+    note:'同学们都从笔袋里掏出铅笔。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'把铅笔拿出来', note:'take out = 拿出', badge:'拿出', kind:'stiff', ok:true, why:'Take out your pencil 就是把铅笔从笔袋里拿出来。' },
+      { text:'把铅笔收起来', note:'那是 put away', badge:'收起', kind:'stiff', ok:false, why:'收起来是 put away，和 take out 正好相反。' },
+      { text:'把铅笔借出去', note:'那是 lend it out', badge:'借出', kind:'stiff', ok:false, why:'借出去是 lend，take out 是自己拿出来。' }
+    ],
+    explain:'💡 一对反义动作：take out（拿出来）↔ put away（收起来）。',
+    takeaway:'Take out your pencil. = 把铅笔拿出来。'
+  },
+  {
+    id:'c-52', pack:'class', level:2, type:'listening',
+    scene:'🏫 课堂小对话',
+    emoji:'📕',
+    situation:'要下课了，外教看着摊了一桌的书说：',
+    quote:'Put away your books.',
+    note:'同学们把书一本本收进书包。',
+    ask:'她让大家做什么？',
+    options:[
+      { text:'把书收起来', note:'put away = 收好', badge:'收起', kind:'stiff', ok:true, why:'Put away your books 就是把书收好、放回去。' },
+      { text:'把书拿出来', note:'那是 take out', badge:'拿出', kind:'stiff', ok:false, why:'拿出来是 take out，和 put away 正好相反。' },
+      { text:'把书翻开', note:'那是 open your book', badge:'翻开', kind:'stiff', ok:false, why:'翻开是 open，这句是让你收起来。' }
+    ],
+    explain:'💡 课桌整理：用 take out（拿出来），用完再 put away（收起来）。',
+    takeaway:'Put away your books. = 把书收起来。'
+  }
+
+  ]);
+
+  /* ---------- 🏠 家里小对话（加餐 4） ---------- */
+  EN.add('starter3', 'home', [
+
+  {
+    id:'c-53', pack:'home', level:3, type:'phrase',
+    scene:'🏠 家里小对话',
+    emoji:'🍳',
+    situation:'早上你闻到香味，跑进厨房问阿姨早饭吃什么。',
+    quote:"What's for breakfast?",
+    note:'锅里正煎着鸡蛋。',
+    ask:'阿姨可能怎么回答？',
+    options:[
+      { text:'Eggs and milk.', note:'鸡蛋和牛奶', badge:'地道', kind:'native', ok:true, why:'问吃什么，就报食物的名字：Eggs and milk.' },
+      { text:"It's Monday.", note:'那是回答星期的', badge:'答偏了', kind:'stiff', ok:false, why:'那是回答 What day is it? 的。' },
+      { text:"I'm hungry.", note:'答成了“我饿了”', badge:'答偏了', kind:'trap', ok:false, why:'问的是吃什么，不是饿不饿。' }
+    ],
+    explain:"💡 What's for breakfast / lunch / dinner?（早/午/晚饭吃什么）→ 直接报食物名字。",
+    takeaway:"What's for breakfast? → Eggs and milk."
+  },
+  {
+    id:'c-54', pack:'home', level:2, type:'listening',
+    scene:'🏠 家里小对话',
+    emoji:'🧥',
+    situation:'出门前外面很冷，阿姨拿起你的外套递过来说：',
+    quote:'Put on your coat.',
+    note:'她怕你在外面冻着。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'把外套穿上', note:'put on = 穿上', badge:'穿上', kind:'stiff', ok:true, why:'Put on your coat 就是把外套穿到身上。' },
+      { text:'把外套脱下', note:'那是 take off', badge:'脱下', kind:'stiff', ok:false, why:'脱下是 take off，和 put on 正好相反。' },
+      { text:'把外套挂起来', note:'那是 hang it up', badge:'挂起', kind:'stiff', ok:false, why:'挂起来是 hang up，这句是让你穿上。' }
+    ],
+    explain:'💡 一对反义动作：put on（穿上）↔ take off（脱下）。穿衣穿鞋戴帽都能用。',
+    takeaway:'Put on your coat. = 把外套穿上。'
+  },
+  {
+    id:'c-55', pack:'home', level:2, type:'listening',
+    scene:'🏠 家里小对话',
+    emoji:'👟',
+    situation:'刚进家门，阿姨指了指玄关的拖鞋对你说：',
+    quote:'Take off your shoes.',
+    note:'屋里的地板刚擦得干干净净。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'把鞋脱下来', note:'take off = 脱下', badge:'脱鞋', kind:'stiff', ok:true, why:'Take off your shoes 就是把鞋脱掉，换上拖鞋。' },
+      { text:'把鞋穿上', note:'那是 put on', badge:'穿上', kind:'stiff', ok:false, why:'穿上是 put on，和 take off 正好相反。' },
+      { text:'把鞋系好', note:'那是 tie your shoes', badge:'系鞋带', kind:'stiff', ok:false, why:'系鞋带是 tie，这句是让你脱鞋。' }
+    ],
+    explain:'💡 进门脱鞋 take off your shoes，出门穿鞋 put on your shoes。一脱一穿记一对。',
+    takeaway:'Take off your shoes. = 把鞋脱下来。'
+  },
+  {
+    id:'c-56', pack:'home', level:1, type:'listening',
+    scene:'🏠 家里小对话',
+    emoji:'🛌',
+    situation:'已经很晚了，阿姨关掉电视，摸摸你的头说：',
+    quote:'Go to bed now.',
+    note:'时钟指向了晚上九点。',
+    ask:'她让你做什么？',
+    options:[
+      { text:'去睡觉', note:'go to bed = 上床睡觉', badge:'睡觉', kind:'stiff', ok:true, why:'Go to bed 就是上床睡觉去。' },
+      { text:'起床', note:'那是 get up', badge:'起床', kind:'stiff', ok:false, why:'起床是 get up，和睡觉正好相反。' },
+      { text:'去洗澡', note:'那是 take a bath', badge:'洗澡', kind:'stiff', ok:false, why:'洗澡是 take a bath，这句是让你去睡。' }
+    ],
+    explain:'💡 一睡一起记一对：go to bed（去睡觉）↔ get up（起床）。',
+    takeaway:'Go to bed now. = 现在去睡觉。'
+  }
+
+  ]);
+
+  /* ---------- 🎒 校园小对话（加餐 4） ---------- */
+  EN.add('starter3', 'school', [
+
+  {
+    id:'c-57', pack:'school', level:2, type:'listening',
+    scene:'🎒 校园小对话',
+    emoji:'🚸',
+    situation:'走廊里你跑得飞快，老师皱起眉头喊住你：',
+    quote:"Don't run!",
+    note:'走廊里跑容易撞到人。',
+    ask:'老师让你做什么？',
+    options:[
+      { text:'别跑', note:"Don't + 动词 = 别做", badge:'别跑', kind:'stiff', ok:true, why:"Don't run! 就是叫你别跑，慢点走。" },
+      { text:'快跑', note:'意思正好反了', badge:'反了', kind:'trap', ok:false, why:"Don't 是“别”，加在前面就成了“别跑”。" },
+      { text:'快点儿', note:'那是 Hurry up', badge:'快点', kind:'stiff', ok:false, why:'催你快是 Hurry up!，这句是不让你跑。' }
+    ],
+    explain:"💡 Don't + 动词 = 别做某事：Don't run!（别跑）、Don't talk!（别说话）、Don't worry!（别担心）。",
+    takeaway:"Don't run! = 别跑！"
+  },
+  {
+    id:'c-58', pack:'school', level:2, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'🤝',
+    situation:'几个同学在玩游戏，你也很想加入。',
+    quote:'',
+    note:'你走过去，想问问能不能一起玩。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:'Can I play with you?', note:'我能和你们一起玩吗', badge:'地道', kind:'native', ok:true, why:'想加入用 Can I play with you?，客气又清楚。' },
+      { text:'I play too!', note:'我也玩！', badge:'太冲', kind:'trap', ok:false, why:'直接挤进去喊“我也玩”，不太礼貌。' },
+      { text:'Play with me!', note:'跟我玩！', badge:'像命令', kind:'stiff', ok:false, why:'这是命令的口气，最好先问一句 Can I…?' }
+    ],
+    explain:'💡 想加入用 Can I play with you?；对方同意就回 Sure! / Of course! / Come on!',
+    takeaway:'想加入 → Can I play with you?'
+  },
+  {
+    id:'c-59', pack:'school', level:3, type:'word',
+    scene:'🎒 校园小对话',
+    emoji:'🚪',
+    situation:'体育课要用球，同学问你球在哪儿。你看见球滚到门后面去了。',
+    quote:"Where's the ball?",
+    note:'球正好藏在门的后面。',
+    ask:'该怎么回答？',
+    options:[
+      { text:"It's behind the door.", note:'在门后面', badge:'behind', kind:'stiff', ok:true, why:'behind 是“在……后面”，球滚到门背后就用它。' },
+      { text:"It's on the door.", note:'在门上面', badge:'on', kind:'stiff', ok:false, why:'on 是“在……上面”，球又不能贴在门上。' },
+      { text:"It's under the door.", note:'在门下面', badge:'under', kind:'stiff', ok:false, why:'under 是“在……下面”，门缝底下可藏不下一个球。' }
+    ],
+    explain:"💡 方位词再添一个：on 上面、in 里面、under 下面、behind 后面。behind the door = 门后面。",
+    takeaway:"Where's …? → It's behind the door."
+  },
+  {
+    id:'c-60', pack:'school', level:3, type:'phrase',
+    scene:'🎒 校园小对话',
+    emoji:'🍎',
+    situation:'分享水果时，同学好奇你带了几个苹果，问你：',
+    quote:'How many apples do you have?',
+    note:'你书包里装了三个苹果。',
+    ask:'该怎么回答？',
+    options:[
+      { text:'I have three.', note:'我有三个', badge:'地道', kind:'native', ok:true, why:'问你有几个，用 I have + 数字来回答。' },
+      { text:'There are three.', note:'答偏成“那儿有三个”', badge:'不对应', kind:'stiff', ok:false, why:'他问的是“你有”几个，要用 I have，不是 There are。' },
+      { text:"It's three.", note:'数量不这么说', badge:'句型错', kind:'stiff', ok:false, why:"It's three 更像说时间；说“我有三个”要用 I have three." }
+    ],
+    explain:'💡 How many … do you have?（你有几个）→ I have + 数字：I have three (apples).',
+    takeaway:'How many … do you have? → I have three.'
   }
 
   ]);

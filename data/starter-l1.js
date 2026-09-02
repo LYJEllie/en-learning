@@ -1,5 +1,5 @@
 /* ============================================================
-   🐣 启蒙 L1 · 认单词（48 题 · 认物 / 颜色数字 / 动物 各 16 题）
+   🐣 启蒙 L1 · 认单词（60 题 · 认物 / 颜色数字 / 动物 各 20 题）
    ------------------------------------------------------------
    最低门槛的一档：题面不需要读英文句子，只有一个大号 emoji，
    选项就是三个单词。干扰项按"形近 / 音近 / 同类混淆"设计。
@@ -989,6 +989,216 @@
     ],
     explain:'💡 panda（熊猫）就是黑白的“熊”，名字里藏着 bear（熊）的影子。',
     takeaway:'panda = 熊猫 🐼'
+  }
+
+  ]);
+
+  /* ---------- 🍎 认物篇（加餐 4） ---------- */
+  EN.add('starter1', 'things', [
+
+  {
+    id:'a-49', pack:'things', level:1, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🪑',
+    situation:'累了想坐下来休息，你会坐在它上面。',
+    quote:'',
+    note:'有四条腿，还有靠背。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'chair', note:'椅子', badge:'椅子', kind:'stiff', ok:true, why:'chair 是椅子，坐在上面的。' },
+      { text:'table', note:'桌子', badge:'桌子', kind:'stiff', ok:false, why:'table 是桌子，在上面写字放东西。' },
+      { text:'bed', note:'床', badge:'床', kind:'stiff', ok:false, why:'bed 是床，躺着睡觉的。' }
+    ],
+    explain:'💡 家具三样：chair 椅子（坐）、table 桌子（放东西）、bed 床（睡觉）。',
+    takeaway:'chair = 椅子 🪑'
+  },
+  {
+    id:'a-50', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🧸',
+    situation:'小朋友最爱玩的东西，积木、小熊、小汽车都算。',
+    quote:'',
+    note:'玩具箱里装的全是它。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'toy', note:'玩具', badge:'玩具', kind:'stiff', ok:true, why:'toy 是玩具，用来玩的。' },
+      { text:'boy', note:'男孩', badge:'男孩', kind:'stiff', ok:false, why:'boy 是男孩，和 toy 只差第一个字母，读音也像。' },
+      { text:'ball', note:'球', badge:'球', kind:'stiff', ok:false, why:'ball 是球，只是众多玩具里的一种。' }
+    ],
+    explain:'💡 toy（玩具）和 boy（男孩）读音特别像，就差开头 t / b。',
+    takeaway:'toy = 玩具 🧸'
+  },
+  {
+    id:'a-51', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'🪁',
+    situation:'春天有风的时候，你牵着线让它飞上天。',
+    quote:'',
+    note:'后面还拖着长长的尾巴。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'kite', note:'风筝', badge:'风筝', kind:'stiff', ok:true, why:'kite 是风筝，牵着线在天上飞。' },
+      { text:'bike', note:'自行车', badge:'自行车', kind:'stiff', ok:false, why:'bike 是自行车，和 kite 长得像，但它在地上跑。' },
+      { text:'kid', note:'小孩', badge:'小孩', kind:'stiff', ok:false, why:'kid 是小孩，不是玩具。' }
+    ],
+    explain:'💡 kite（风筝）和 bike（自行车）长得像：都有 -ike，一个天上飞、一个地上跑。',
+    takeaway:'kite = 风筝 🪁'
+  },
+  {
+    id:'a-52', pack:'things', level:2, type:'word',
+    scene:'🍎 认物篇',
+    emoji:'⛵',
+    situation:'在河上、海上漂着往前走的交通工具，用桨划或用帆吹。',
+    quote:'',
+    note:'它浮在水面上，不会沉。',
+    ask:'这个用英语怎么说？',
+    options:[
+      { text:'boat', note:'小船', badge:'小船', kind:'stiff', ok:true, why:'boat 是小船，在水上开。' },
+      { text:'coat', note:'外套', badge:'外套', kind:'stiff', ok:false, why:'coat 是外套，穿在身上，和 boat 只差第一个字母。' },
+      { text:'goat', note:'山羊', badge:'山羊', kind:'stiff', ok:false, why:'goat 是山羊，一种动物，读音和 boat 也像。' }
+    ],
+    explain:'💡 -oat 三兄弟读音都像：boat 船、coat 外套、goat 山羊，就差开头一个字母。',
+    takeaway:'boat = 小船 ⛵'
+  }
+
+  ]);
+
+  /* ---------- 🎨 颜色数字篇（加餐 4） ---------- */
+  EN.add('starter1', 'color', [
+
+  {
+    id:'a-53', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🟤',
+    situation:'外教举起一块巧克力，让大家说出它的颜色。',
+    quote:'',
+    note:'树干和泥土也是这个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'brown', note:'棕色', badge:'棕', kind:'stiff', ok:true, why:'brown 是棕色，巧克力的颜色。' },
+      { text:'black', note:'黑色', badge:'黑', kind:'stiff', ok:false, why:'black 是黑色，比棕色更深更暗。' },
+      { text:'orange', note:'橙色', badge:'橙', kind:'stiff', ok:false, why:'orange 是橙色，比棕色亮。' }
+    ],
+    explain:'💡 brown（棕）像巧克力、像泥土、像树干，是暖暖的深色。',
+    takeaway:'brown = 棕色 🟤'
+  },
+  {
+    id:'a-54', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🟣',
+    situation:'外教举起一串葡萄，让大家说出它的颜色。',
+    quote:'',
+    note:'茄子和薰衣草也是这个颜色。',
+    ask:'这个颜色用英语怎么说？',
+    options:[
+      { text:'purple', note:'紫色', badge:'紫', kind:'stiff', ok:true, why:'purple 是紫色，葡萄和茄子的颜色。' },
+      { text:'pink', note:'粉红色', badge:'粉', kind:'stiff', ok:false, why:'pink 是粉红色，比紫色浅得多。' },
+      { text:'blue', note:'蓝色', badge:'蓝', kind:'stiff', ok:false, why:'blue 是蓝色，紫色是红加蓝调出来的。' }
+    ],
+    explain:'💡 purple（紫）是红和蓝混在一起的颜色，像葡萄、像茄子。',
+    takeaway:'purple = 紫色 🟣'
+  },
+  {
+    id:'a-55', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'🌈',
+    situation:'雨后出了彩虹，外教让大家数一数彩虹有几种颜色。',
+    quote:'',
+    note:'比六多一个，比八少一个。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'seven', note:'七', badge:'7', kind:'stiff', ok:true, why:'seven 是七，彩虹正好七种颜色。' },
+      { text:'six', note:'六', badge:'6', kind:'stiff', ok:false, why:'six 是六，比七少一个，两个都是 s 开头。' },
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:false, why:'ten 是十，比七多好几个。' }
+    ],
+    explain:'💡 记住彩虹就记住了 seven（七）：彩虹有 seven colors（七种颜色）。',
+    takeaway:'seven = 七 🌈'
+  },
+  {
+    id:'a-56', pack:'color', level:2, type:'word',
+    scene:'🎨 颜色数字篇',
+    emoji:'9️⃣',
+    situation:'外教举起一张卡片，上面写着一个数字，让大家读出来。',
+    quote:'',
+    note:'比八多一个，再加一个就是十。',
+    ask:'这个数字用英语怎么说？',
+    options:[
+      { text:'nine', note:'九', badge:'9', kind:'stiff', ok:true, why:'nine 是九，再加一个就到十了。' },
+      { text:'six', note:'六', badge:'6', kind:'stiff', ok:false, why:'six 是六，比九少三个。' },
+      { text:'ten', note:'十', badge:'10', kind:'stiff', ok:false, why:'ten 是十，比九多一个。' }
+    ],
+    explain:'💡 快数到头啦：seven、eight、nine、ten。nine 之后就是 ten。',
+    takeaway:'nine = 九 9️⃣'
+  }
+
+  ]);
+
+  /* ---------- 🐶 动物篇（加餐 4） ---------- */
+  EN.add('starter1', 'animal', [
+
+  {
+    id:'a-57', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🦁',
+    situation:'照片上的大动物脖子上有一圈厚厚的毛，一吼森林都发抖。',
+    quote:'',
+    note:'大家叫它“森林之王”。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'lion', note:'狮子', badge:'狮子', kind:'stiff', ok:true, why:'lion 是狮子，脖子上有鬃毛。' },
+      { text:'tiger', note:'老虎', badge:'老虎', kind:'stiff', ok:false, why:'tiger 是老虎，身上是条纹，没有鬃毛。' },
+      { text:'cat', note:'猫', badge:'猫', kind:'stiff', ok:false, why:'cat 是猫，是狮子的迷你版。' }
+    ],
+    explain:'💡 大猫家族：lion 狮子（有鬃毛）、tiger 老虎（有条纹）、cat 猫（家里养）。',
+    takeaway:'lion = 狮子 🦁'
+  },
+  {
+    id:'a-58', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐸',
+    situation:'池塘边一个绿绿的小动物，一蹦一跳，会捉虫子吃。',
+    quote:'',
+    note:'它呱呱叫，游泳跳跃都在行。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'frog', note:'青蛙', badge:'青蛙', kind:'stiff', ok:true, why:'frog 是青蛙，绿绿的会跳。' },
+      { text:'dog', note:'狗', badge:'狗', kind:'stiff', ok:false, why:'dog 是狗，和 frog 都以 -og 结尾，但狗汪汪叫。' },
+      { text:'fish', note:'鱼', badge:'鱼', kind:'stiff', ok:false, why:'fish 是鱼，只在水里游，不会上岸跳。' }
+    ],
+    explain:'💡 -og 结尾押韵：frog 青蛙（会跳）和 dog 狗（会跑）。',
+    takeaway:'frog = 青蛙 🐸'
+  },
+  {
+    id:'a-59', pack:'animal', level:2, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐔',
+    situation:'农场里咯咯叫的家禽，早上会打鸣，还会下蛋。',
+    quote:'',
+    note:'我们吃的鸡蛋就是它生的。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'chicken', note:'鸡', badge:'鸡', kind:'stiff', ok:true, why:'chicken 是鸡，会下蛋会打鸣。' },
+      { text:'duck', note:'鸭子', badge:'鸭子', kind:'stiff', ok:false, why:'duck 是鸭子，扁嘴会游泳，和鸡都是家禽。' },
+      { text:'bird', note:'鸟', badge:'鸟', kind:'stiff', ok:false, why:'bird 是鸟，鸡也算鸟，但专门指鸡要用 chicken。' }
+    ],
+    explain:'💡 农场里的家禽：chicken 鸡（下蛋）、duck 鸭（游泳）。鸡蛋是 egg。',
+    takeaway:'chicken = 鸡 🐔'
+  },
+  {
+    id:'a-60', pack:'animal', level:1, type:'word',
+    scene:'🐶 动物篇',
+    emoji:'🐝',
+    situation:'花丛里嗡嗡飞的小昆虫，黄黑条纹，会采蜜也会蜇人。',
+    quote:'',
+    note:'我们吃的蜂蜜就是它做的。',
+    ask:'这个动物用英语怎么说？',
+    options:[
+      { text:'bee', note:'蜜蜂', badge:'蜜蜂', kind:'stiff', ok:true, why:'bee 是蜜蜂，会采蜜嗡嗡叫。' },
+      { text:'bird', note:'鸟', badge:'鸟', kind:'stiff', ok:false, why:'bird 是鸟，也会飞，但比蜜蜂大多了。' },
+      { text:'bear', note:'熊', badge:'熊', kind:'stiff', ok:false, why:'bear 是熊，也爱吃蜂蜜，和 bee 都是 b 开头。' }
+    ],
+    explain:'💡 三个 b 开头凑齐：bee 蜜蜂（小）、bird 鸟（会飞）、bear 熊（大）。',
+    takeaway:'bee = 蜜蜂 🐝'
   }
 
   ]);
