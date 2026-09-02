@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏫 课堂篇（20 题）
+   🧒 小学生入门 · 🏫 课堂篇（25 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -372,6 +372,102 @@
     ],
     explain:'💡 上课想做别的事先请示：May I go to the toilet?（上厕所）、May I get some water?（接水）、May I go out?（出去一下）。',
     takeaway:'想接水 → May I get some water, please?'
+  }
+
+  ]);
+
+  /* ---------- 🏫 课堂篇（加餐 2） ---------- */
+  EN.add('kids', 'class', [
+
+  {
+    id:'kc-21', pack:'class', level:2, type:'listening',
+    scene:'🏫 老师安排两人一组',
+    situation:'做游戏前，外教拍拍手对全班说：',
+    quote:'Work in pairs, please.',
+    note:'同学们纷纷转向自己的同桌。',
+    ask:'她让大家怎么做？',
+    options:[
+      { text:'两人一组，一起做', note:'in pairs = 两人一组', badge:'地道', kind:'native', ok:true,
+        why:'work in pairs 就是两个人搭成一组一起做，通常跟同桌一组。' },
+      { text:'一个人单独做', note:'那是 work alone', badge:'听反了', kind:'trap', ok:false,
+        why:'单独做是 work alone / by yourself，in pairs 是两人一起。' },
+      { text:'全班站成一排', note:'和排队无关', badge:'想歪了', kind:'stiff', ok:false,
+        why:'排队是 line up，in pairs 是分成两人小组。' }
+    ],
+    explain:'💡 课堂分组：work in pairs（两人一组）、in groups（分小组）、by yourself / alone（自己做）。',
+    takeaway:'Work in pairs. = 两人一组。'
+  },
+  {
+    id:'kc-22', pack:'class', level:1, type:'phrase',
+    scene:'🏫 有问题想问老师',
+    situation:'老师讲完，问大家还有没有不懂的。你有个问题想问。',
+    quote:'Any questions?',
+    note:'你举起了手。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'Excuse me, I have a question.', note:'礼貌又清楚', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me 引起注意，再说 I have a question（我有个问题），老师就会请你问。' },
+      { text:'I want ask!', note:'漏了 to，语气也急', badge:'语法错', kind:'stiff', ok:false,
+        why:'要说 I want to ask，中间的 to 不能少；更自然的是 I have a question.' },
+      { text:'You! Question!', note:'像在喝令老师', badge:'太没礼貌', kind:'trap', ok:false,
+        why:'指着老师喊很失礼，要说 Excuse me, I have a question.' }
+    ],
+    explain:'💡 有问题时：I have a question.（我有个问题）、Can I ask something?（能问一下吗）。不懂某个词还能问 What does … mean?',
+    takeaway:'有问题 → Excuse me, I have a question.'
+  },
+  {
+    id:'kc-23', pack:'class', level:2, type:'phrase',
+    scene:'🏫 看不清黑板',
+    situation:'你坐在后排，黑板上的字太小看不清，想请老师帮忙。',
+    quote:'',
+    note:'你不想耽误全班，只想小声说一句。',
+    ask:'该怎么说最合适？',
+    options:[
+      { text:"Sorry, I can't see the board.", note:'说明情况，请老师帮忙', badge:'地道', kind:'native', ok:true,
+        why:'一句 I can\'t see the board（我看不清黑板）说清了问题，老师会写大点或让你往前坐。' },
+      { text:'The board is bad.', note:'怪到黑板上了', badge:'不通顺', kind:'stiff', ok:false,
+        why:'不是黑板坏了，是你看不清，要说 I can\'t see the board.' },
+      { text:'I look no clear.', note:'逐字硬翻', badge:'中式', kind:'trap', ok:false,
+        why:'"看不清"不能逐字翻成 look no clear，地道说法是 I can\'t see … clearly.' }
+    ],
+    explain:'💡 看不清、听不清都能用 I can\'t …：I can\'t see the board.（看不清黑板）、I can\'t hear you.（听不清你说话）。',
+    takeaway:"看不清 → Sorry, I can't see the board."
+  },
+  {
+    id:'kc-24', pack:'class', level:2, type:'social',
+    scene:'🏫 老师纠正了你',
+    situation:'你答错了一个词，老师温和地纠正过来，告诉你正确的说法。',
+    quote:'',
+    note:'你意识到自己错了。',
+    ask:'该怎么回应最得体？',
+    options:[
+      { text:'Oh, I see. Thank you!', note:'虚心接受＋道谢', badge:'地道', kind:'native', ok:true,
+        why:'I see（我明白了）表示听懂了，再谢一句，显得虚心又有礼貌。' },
+      { text:'No! I am right!', note:'嘴硬不认错', badge:'太固执', kind:'trap', ok:false,
+        why:'老师帮你改错是好意，硬顶回去既不礼貌也学不到东西。' },
+      { text:'（红着脸不说话）', note:'把气氛僵住', badge:'冷场', kind:'stiff', ok:false,
+        why:'答错很正常，说声 Thank you 大方接受就好，不必难堪。' }
+    ],
+    explain:'💡 被纠正时的高情商回应：Oh, I see.（原来如此）、Thank you!、I\'ll remember that.（我记住了）。答错不丢人，学会才重要。',
+    takeaway:'被纠正 → Oh, I see. Thank you!'
+  },
+  {
+    id:'kc-25', pack:'class', level:3, type:'phrase',
+    scene:'🏫 老师布置作业',
+    situation:'老师留了新作业，你想弄清楚什么时候交。',
+    quote:'',
+    note:'你怕记错了交作业的日子。',
+    ask:'该怎么问最清楚？',
+    options:[
+      { text:'When is it due?', note:'问截止时间的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'due 是"到期、该交"，When is it due? 就是"什么时候交"，最地道。' },
+      { text:'When I give you?', note:'语序乱，还漏词', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，问交作业时间用 When is it due? 或 When should I hand it in?' },
+      { text:'What time homework?', note:'蹦词说不清', badge:'不通顺', kind:'trap', ok:false,
+        why:'蹦两个词对方要猜，要问完整的 When is it due?' }
+    ],
+    explain:'💡 关于作业的问句：When is it due?（什么时候交）、Is it for homework?（这是作业吗）、hand it in（上交）。',
+    takeaway:'什么时候交 → When is it due?'
   }
 
   ]);

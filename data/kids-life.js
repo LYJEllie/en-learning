@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🏠 生活篇（20 题）
+   🧒 小学生入门 · 🏠 生活篇（25 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -372,6 +372,102 @@
     ],
     explain:'💡 问时间：What time is it?（几点了）→ It\'s seven o\'clock.（七点）。别跟 How old are you?（几岁）搞混，一个问钟点一个问年龄。',
     takeaway:'问几点 → What time is it?'
+  }
+
+  ]);
+
+  /* ---------- 🏠 生活篇（加餐 2） ---------- */
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-21', pack:'life', level:2, type:'phrase',
+    scene:'🏠 去看医生',
+    situation:'你头疼得厉害，妈妈带你去看外国医生，医生问你哪里不舒服。',
+    quote:"What's wrong?",
+    note:'你想说"我头疼"。',
+    ask:'该怎么说？',
+    options:[
+      { text:'I have a headache.', note:'说症状的固定句', badge:'地道', kind:'native', ok:true,
+        why:'头疼就说 I have a headache；肚子疼是 I have a stomachache，都用 I have a …。' },
+      { text:'My head is broken.', note:'吓人，还说错了', badge:'中式', kind:'trap', ok:false,
+        why:'broken 是"摔坏了"，头疼要说 I have a headache 或 My head hurts.' },
+      { text:'I am headache.', note:'把"疼"当成了"是"', badge:'语法错', kind:'stiff', ok:false,
+        why:'不能说 I am headache，要用 I have a headache（我有个头疼）。' }
+    ],
+    explain:'💡 说不舒服用 I have a …：a headache（头疼）、a stomachache（肚子疼）、a cold（感冒）、a fever（发烧）。',
+    takeaway:'头疼 → I have a headache.'
+  },
+  {
+    id:'kl-22', pack:'life', level:2, type:'phrase',
+    scene:'🏠 帮忙接电话',
+    situation:'家里电话响了，大人都不在，你拿起听筒，对面找的是爸爸。',
+    quote:'Hello, is your dad there?',
+    note:'爸爸这会儿正好不在家。',
+    ask:'该怎么礼貌地回？',
+    options:[
+      { text:"Sorry, he's not here now. Can I take a message?", note:'告知不在＋帮忙带话', badge:'地道', kind:'native', ok:true,
+        why:'先说人不在 He\'s not here，再问 Can I take a message?（要留言吗），特别得体。' },
+      { text:'No! Bye!', note:'直接挂断太冲', badge:'没礼貌', kind:'trap', ok:false,
+        why:'一句 No 就挂太失礼，应该说明情况、问要不要留言。' },
+      { text:'My dad is disappear.', note:'用词吓人还不对', badge:'中式', kind:'stiff', ok:false,
+        why:'"不在家"是 not here / not in，不是 disappear（消失）。' }
+    ],
+    explain:'💡 接电话找的人不在：He\'s not here right now.（他现在不在）、Can I take a message?（要我带个话吗）。',
+    takeaway:"人不在 → He's not here. Can I take a message?"
+  },
+  {
+    id:'kl-23', pack:'life', level:2, type:'phrase',
+    scene:'🏠 想借同学的东西',
+    situation:'在同学家写作业，你的笔没墨了，想借他一支用。',
+    quote:'',
+    note:'他的笔筒里插着好几支。',
+    ask:'该怎么开口最自然？',
+    options:[
+      { text:'Can I borrow your pen?', note:'我来借，用 borrow', badge:'地道', kind:'native', ok:true,
+        why:'从别人那儿借进来用 borrow：Can I borrow your pen?（能借我用一下你的笔吗）。' },
+      { text:'Can you borrow me your pen?', note:'borrow / lend 用反了', badge:'用反了', kind:'trap', ok:false,
+        why:'别人借给你要用 lend：Can you lend me your pen? 自己借进来才用 borrow。' },
+      { text:'Give me your pen.', note:'像在要，不像在借', badge:'太冲', kind:'stiff', ok:false,
+        why:'Give me 像直接要走，借用要说 Can I borrow …?' }
+    ],
+    explain:'💡 一对容易反的词：borrow 是"借进来"（Can I borrow…?），lend 是"借出去"（Can you lend me…?）。用完记得还并说 Thank you。',
+    takeaway:'借东西 → Can I borrow your pen?'
+  },
+  {
+    id:'kl-24', pack:'life', level:1, type:'phrase',
+    scene:'🏠 在同学家想上厕所',
+    situation:'在外国同学家做客，你想上厕所，可不知道在哪儿。',
+    quote:'',
+    note:'总不好意思自己乱推门找。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:"Excuse me, where's the bathroom?", note:'问洗手间的地道说法', badge:'地道', kind:'native', ok:true,
+        why:'在别人家问厕所，礼貌又常用的是 Where\'s the bathroom? 或 the restroom?' },
+      { text:'Where is the WC?', note:'老外很少这么说', badge:'过时', kind:'stiff', ok:false,
+        why:'WC 是老式说法，英美家里一般说 bathroom / restroom / toilet。' },
+      { text:'I want pee!', note:'太直白了', badge:'不得体', kind:'trap', ok:false,
+        why:'这么说太直白，礼貌的问法是 Where\'s the bathroom, please?' }
+    ],
+    explain:'💡 问厕所用 bathroom / restroom / toilet：Excuse me, where\'s the bathroom?。在别人家先说 Excuse me 更礼貌。',
+    takeaway:"找厕所 → Excuse me, where's the bathroom?"
+  },
+  {
+    id:'kl-25', pack:'life', level:2, type:'manners',
+    scene:'🏠 离开寄宿家庭',
+    situation:'夏令营结束，你要离开住了半个月的寄宿家庭，阿姨一家都来送你。',
+    quote:'',
+    note:'他们照顾了你这么久，你想好好道个谢。',
+    ask:'临别道谢，哪句最真诚得体？',
+    options:[
+      { text:'Thank you for everything!', note:'一句话谢尽所有照顾', badge:'地道', kind:'native', ok:true,
+        why:'Thank you for everything!（谢谢你们所做的一切）是最暖心的告别谢词。' },
+      { text:'Bye.', note:'太轻描淡写', badge:'太冷淡', kind:'stiff', ok:false,
+        why:'人家照顾了你半个月，只说一个 Bye 太单薄，先好好道谢。' },
+      { text:'Thank you for everything money.', note:'多了个词还别扭', badge:'中式', kind:'trap', ok:false,
+        why:'everything 后面不用加 money，直接 Thank you for everything! 就完整了。' }
+    ],
+    explain:'💡 深深道谢：Thank you for everything!（谢谢所有）、Thank you for having me.（谢谢招待）、I had a great time.（我过得很开心）。',
+    takeaway:'临别道谢 → Thank you for everything!'
   }
 
   ]);

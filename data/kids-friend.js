@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🎈 交朋友篇（21 题）
+   🧒 小学生入门 · 🎈 交朋友篇（26 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -391,6 +391,102 @@
     ],
     explain:'💡 收下朋友的好意大方一点：Thanks! / That\'s so nice of you! / You\'re so kind!。收下不是贪心，是接住对方的心意。',
     takeaway:"被分享 → Thanks! That's so nice of you."
+  }
+
+  ]);
+
+  /* ---------- 🎈 交朋友篇（加餐 2） ---------- */
+  EN.add('kids', 'friend', [
+
+  {
+    id:'kf-22', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 想邀朋友来家里',
+    situation:'周末快到了，你想请要好的外国同学来家里一起玩。',
+    quote:'',
+    note:'你想开口邀请他。',
+    ask:'该怎么邀请最自然？',
+    options:[
+      { text:'Do you want to come to my house?', note:'邀请的常用句', badge:'地道', kind:'native', ok:true,
+        why:'邀请别人用 Do you want to …? / Would you like to …?：来我家玩就是 come to my house.' },
+      { text:'You come my house!', note:'像命令，还漏词', badge:'不通顺', kind:'stiff', ok:false,
+        why:'漏了 to，语气也像命令，应该说 Do you want to come to my house?' },
+      { text:'Come or not?', note:'太生硬，有点凶', badge:'太冲', kind:'trap', ok:false,
+        why:'这么问像在逼人表态，邀请要客气：Do you want to come over?' }
+    ],
+    explain:'💡 邀请朋友：Do you want to come over?（来我家玩吗）、Let\'s hang out.（一起玩）。对方答应会说 Sure! / I\'d love to!',
+    takeaway:'邀请 → Do you want to come to my house?'
+  },
+  {
+    id:'kf-23', pack:'friend', level:1, type:'social',
+    scene:'🎈 同学背了个新书包',
+    situation:'外国同学今天背了个很酷的新书包，你很喜欢，想夸他一句。',
+    quote:'',
+    note:'一句真诚的夸奖能拉近距离。',
+    ask:'该怎么夸最自然？',
+    options:[
+      { text:"I like your schoolbag! It's cool!", note:'夸具体的东西', badge:'地道', kind:'native', ok:true,
+        why:'夸别人的东西用 I like your …！再加句 It\'s cool! / It\'s nice! 更真诚。' },
+      { text:'Your schoolbag give me.', note:'夸着夸着变要东西了', badge:'不合适', kind:'trap', ok:false,
+        why:'喜欢不等于要人家的东西，夸一句就好，别开口要。' },
+      { text:'Schoolbag good.', note:'蹦词，不像句子', badge:'不通顺', kind:'stiff', ok:false,
+        why:'蹦两个词不自然，完整说 I like your schoolbag.' }
+    ],
+    explain:'💡 夸人小公式：I like your …！（我喜欢你的…）、It\'s cool / nice / beautiful!。对方会开心地回 Thank you!',
+    takeaway:"夸东西 → I like your schoolbag! It's cool!"
+  },
+  {
+    id:'kf-24', pack:'friend', level:2, type:'phrase',
+    scene:'🎈 有道题不会做',
+    situation:'一道数学题你怎么都想不通，想请旁边的好朋友教你。',
+    quote:'',
+    note:'他这题刚好会。',
+    ask:'该怎么请他帮忙？',
+    options:[
+      { text:'Can you help me with this?', note:'请人帮忙的固定句', badge:'地道', kind:'native', ok:true,
+        why:'请人帮忙做某事用 help me with …：Can you help me with this?（能帮我看看这个吗）。' },
+      { text:'You do it for me.', note:'像让人替你做', badge:'太冲', kind:'stiff', ok:false,
+        why:'这是让他替你做，而不是请他帮你，语气也生硬。' },
+      { text:'Help! Help!', note:'像出了大事', badge:'夸张', kind:'trap', ok:false,
+        why:'光喊 Help! 像遇到危险，请人帮忙说 Can you help me with this?' }
+    ],
+    explain:'💡 请人帮忙：Can you help me?、Can you help me with my homework?（帮我看看作业）。别人帮了记得说 Thank you!',
+    takeaway:'请人帮忙 → Can you help me with this?'
+  },
+  {
+    id:'kf-25', pack:'friend', level:2, type:'social',
+    scene:'🎈 朋友比赛输了',
+    situation:'外国同学参加跑步比赛没拿到名次，垂头丧气地走回来。',
+    quote:'',
+    note:'他看起来很失落。',
+    ask:'该怎么安慰他？',
+    options:[
+      { text:"It's OK. You did great! Maybe next time.", note:'先安慰再鼓励', badge:'地道', kind:'native', ok:true,
+        why:'It\'s OK 让他别自责，You did great 肯定他，Maybe next time 给希望，特别暖。' },
+      { text:'You are too slow.', note:'哪壶不开提哪壶', badge:'扎心', kind:'trap', ok:false,
+        why:'他正难过，说"你太慢了"是往伤口上撒盐。' },
+      { text:'Winning is everything.', note:'火上浇油', badge:'太冷酷', kind:'stiff', ok:false,
+        why:'说"赢才是一切"会让他更难受，安慰要往宽处说。' }
+    ],
+    explain:'💡 安慰失利的朋友：It\'s OK.（没关系）、You did your best.（你尽力了）、Maybe next time.（下次再来）。',
+    takeaway:"朋友输了 → It's OK. Maybe next time."
+  },
+  {
+    id:'kf-26', pack:'friend', level:2, type:'social',
+    scene:'🎈 想跟朋友和好',
+    situation:'昨天你和好朋友闹了别扭，一整天没说话，今天你想主动和好。',
+    quote:'',
+    note:'其实你俩都有点后悔。',
+    ask:'主动和好，哪句最合适？',
+    options:[
+      { text:"I'm sorry about yesterday. Are we still friends?", note:'先道歉再和好', badge:'地道', kind:'native', ok:true,
+        why:'先为昨天道个歉，再问 Are we still friends?（我们还是朋友吧），最容易破冰。' },
+      { text:'It was all your fault.', note:'一开口就翻旧账', badge:'太冲', kind:'trap', ok:false,
+        why:'想和好却先怪对方，只会又吵起来。' },
+      { text:'（继续假装没看见他）', note:'冷战下去更糟', badge:'太别扭', kind:'stiff', ok:false,
+        why:'谁都不开口，别扭会一直僵着，主动一点反而轻松。' }
+    ],
+    explain:'💡 和好三句：I\'m sorry.（对不起）、Let\'s forget it.（算了吧）、Are we still friends?（还是朋友吧）。先低头的人更勇敢。',
+    takeaway:"想和好 → I'm sorry. Are we still friends?"
   }
 
   ]);

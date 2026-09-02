@@ -5257,7 +5257,7 @@ body{
 <script>
 /* ===== inlined: data/kids-hello.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 👋 打招呼篇（20 题）
+   🧒 小学生入门 · 👋 打招呼篇（25 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -5634,12 +5634,108 @@ body{
 
   ]);
 
+  /* ---------- 👋 打招呼篇（加餐 2） ---------- */
+  EN.add('kids', 'hello', [
+
+  {
+    id:'kh-21', pack:'hello', level:3, type:'phrase',
+    scene:'👋 打电话找同学',
+    situation:'你打电话到同学家，接电话的是他爸爸，你想找 Tom。',
+    quote:'',
+    note:'你得说清楚要找谁。',
+    ask:'该怎么说最有礼貌？',
+    options:[
+      { text:'Hello, may I speak to Tom, please?', note:'电话找人的固定句', badge:'地道', kind:'native', ok:true,
+        why:'打电话找人用 May I speak to …, please?，客气又清楚。' },
+      { text:'Where is Tom?', note:'像在追问人在哪', badge:'太直接', kind:'stiff', ok:false,
+        why:'电话里这么问有点冲，应该说 May I speak to Tom?' },
+      { text:'I want Tom.', note:'像在要东西', badge:'不礼貌', kind:'trap', ok:false,
+        why:'I want Tom 听起来怪怪的，找人要说 May I speak to Tom?' }
+    ],
+    explain:'💡 打电话三句：说自己是谁 This is Lily.；找人 May I speak to Tom?；请对方等 Hold on, please.',
+    takeaway:'电话找人 → May I speak to Tom, please?'
+  },
+  {
+    id:'kh-22', pack:'hello', level:2, type:'culture',
+    scene:'👋 在朋友家玩到要走',
+    situation:'在外国同学家玩了一下午，临走时他妈妈笑着对你说：',
+    quote:'Thanks for coming!',
+    note:'她很高兴你来做客。',
+    ask:'你该怎么回最得体？',
+    options:[
+      { text:'Thanks for having me!', note:'谢谢招待，礼尚往来', badge:'地道', kind:'native', ok:true,
+        why:'主人谢你来，你回 Thanks for having me!（谢谢招待），一来一回特别得体。' },
+      { text:'You too!', note:'这里 you too 不合适', badge:'用错了', kind:'trap', ok:false,
+        why:'You too 用在祝福场合，对方谢你来做客，要回 Thanks for having me.' },
+      { text:'No, I come myself.', note:'把客套当真话答了', badge:'会错意', kind:'stiff', ok:false,
+        why:'Thanks for coming 是客套感谢，不是问你怎么来的。' }
+    ],
+    explain:'💡 做客的一对客套话：主人说 Thanks for coming!（谢谢你来），客人回 Thanks for having me!（谢谢招待）。',
+    takeaway:'Thanks for coming! → Thanks for having me!'
+  },
+  {
+    id:'kh-23', pack:'hello', level:2, type:'phrase',
+    scene:'👋 老友问候近况',
+    situation:'很久没见的外国朋友寒暄时，关心地问了一句：',
+    quote:"How's your family?",
+    note:'他在问你家里人都好吗。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:"They're great, thanks!", note:'家人用 they', badge:'地道', kind:'native', ok:true,
+        why:'家里人不止一个，用 They\'re；再加 thanks 就很自然。' },
+      { text:"He's fine.", note:'家人不止一个', badge:'单复数错', kind:'stiff', ok:false,
+        why:'family 指全家人，要用 They\'re，不是 He\'s。' },
+      { text:'I have a family.', note:'答非所问', badge:'没接住', kind:'trap', ok:false,
+        why:'他问的是家人好不好，不是问你有没有家。' }
+    ],
+    explain:'💡 寒暄常用：How\'s your family?（家人好吗）→ They\'re great, thanks.；How\'s school?（学习怎么样）→ It\'s good.',
+    takeaway:"How's your family? → They're great, thanks!"
+  },
+  {
+    id:'kh-24', pack:'hello', level:1, type:'listening',
+    scene:'👋 视频通话开头',
+    situation:'跟国外的朋友视频，画面刚连上，对方皱着眉凑近屏幕问：',
+    quote:'Can you hear me?',
+    note:'他好像担心你听不到声音。',
+    ask:'他在问什么？',
+    options:[
+      { text:'你能听见我说话吗', note:'hear = 听见', badge:'地道', kind:'native', ok:true,
+        why:'Can you hear me? 是问"你听得见我吗"，听得见就回 Yes, I can. / Loud and clear!' },
+      { text:'你能看见我吗', note:'那是 Can you see me?', badge:'看错动词', kind:'trap', ok:false,
+        why:'看见是 see，听见是 hear，这句问的是声音。' },
+      { text:'你在这儿吗', note:'想歪了', badge:'理解偏', kind:'stiff', ok:false,
+        why:'Can you hear me? 只关心你听不听得清，不是问你在不在。' }
+    ],
+    explain:'💡 视频、打电话常用：Can you hear me?（听得见吗）、Can you see me?（看得见吗）。听得清回 Loud and clear!',
+    takeaway:'Can you hear me? = 你听得见我吗？'
+  },
+  {
+    id:'kh-25', pack:'hello', level:2, type:'listening',
+    scene:'👋 送朋友去远行',
+    situation:'外国朋友一家明天要坐飞机回国，临别时他笑着对你说：',
+    quote:'Have a safe trip!',
+    note:'要坐飞机出远门的是他。',
+    ask:'这句是什么意思？',
+    options:[
+      { text:'祝旅途平安（＝一路平安）', note:'送别的祝福', badge:'地道', kind:'native', ok:true,
+        why:'Have a safe trip! 是祝人一路平安，收到就回 Thank you!' },
+      { text:'在说你要出远门', note:'要走的其实是他', badge:'会错意', kind:'stiff', ok:false,
+        why:'这是他在跟你道别祝福，重点是"旅途平安"，不是谁要走。' },
+      { text:'祝你今晚睡个好觉', note:'那是 Good night', badge:'答偏了', kind:'trap', ok:false,
+        why:'trip 是旅行，跟睡觉无关，这是旅途祝福。' }
+    ],
+    explain:'💡 送人出远门说 Have a safe trip! / Have a good trip!（一路平安）。听到就回 Thank you!',
+    takeaway:'Have a safe trip! = 一路平安！'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-class.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🏫 课堂篇（20 题）
+   🧒 小学生入门 · 🏫 课堂篇（25 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -6016,12 +6112,108 @@ body{
 
   ]);
 
+  /* ---------- 🏫 课堂篇（加餐 2） ---------- */
+  EN.add('kids', 'class', [
+
+  {
+    id:'kc-21', pack:'class', level:2, type:'listening',
+    scene:'🏫 老师安排两人一组',
+    situation:'做游戏前，外教拍拍手对全班说：',
+    quote:'Work in pairs, please.',
+    note:'同学们纷纷转向自己的同桌。',
+    ask:'她让大家怎么做？',
+    options:[
+      { text:'两人一组，一起做', note:'in pairs = 两人一组', badge:'地道', kind:'native', ok:true,
+        why:'work in pairs 就是两个人搭成一组一起做，通常跟同桌一组。' },
+      { text:'一个人单独做', note:'那是 work alone', badge:'听反了', kind:'trap', ok:false,
+        why:'单独做是 work alone / by yourself，in pairs 是两人一起。' },
+      { text:'全班站成一排', note:'和排队无关', badge:'想歪了', kind:'stiff', ok:false,
+        why:'排队是 line up，in pairs 是分成两人小组。' }
+    ],
+    explain:'💡 课堂分组：work in pairs（两人一组）、in groups（分小组）、by yourself / alone（自己做）。',
+    takeaway:'Work in pairs. = 两人一组。'
+  },
+  {
+    id:'kc-22', pack:'class', level:1, type:'phrase',
+    scene:'🏫 有问题想问老师',
+    situation:'老师讲完，问大家还有没有不懂的。你有个问题想问。',
+    quote:'Any questions?',
+    note:'你举起了手。',
+    ask:'该怎么开口？',
+    options:[
+      { text:'Excuse me, I have a question.', note:'礼貌又清楚', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me 引起注意，再说 I have a question（我有个问题），老师就会请你问。' },
+      { text:'I want ask!', note:'漏了 to，语气也急', badge:'语法错', kind:'stiff', ok:false,
+        why:'要说 I want to ask，中间的 to 不能少；更自然的是 I have a question.' },
+      { text:'You! Question!', note:'像在喝令老师', badge:'太没礼貌', kind:'trap', ok:false,
+        why:'指着老师喊很失礼，要说 Excuse me, I have a question.' }
+    ],
+    explain:'💡 有问题时：I have a question.（我有个问题）、Can I ask something?（能问一下吗）。不懂某个词还能问 What does … mean?',
+    takeaway:'有问题 → Excuse me, I have a question.'
+  },
+  {
+    id:'kc-23', pack:'class', level:2, type:'phrase',
+    scene:'🏫 看不清黑板',
+    situation:'你坐在后排，黑板上的字太小看不清，想请老师帮忙。',
+    quote:'',
+    note:'你不想耽误全班，只想小声说一句。',
+    ask:'该怎么说最合适？',
+    options:[
+      { text:"Sorry, I can't see the board.", note:'说明情况，请老师帮忙', badge:'地道', kind:'native', ok:true,
+        why:'一句 I can\'t see the board（我看不清黑板）说清了问题，老师会写大点或让你往前坐。' },
+      { text:'The board is bad.', note:'怪到黑板上了', badge:'不通顺', kind:'stiff', ok:false,
+        why:'不是黑板坏了，是你看不清，要说 I can\'t see the board.' },
+      { text:'I look no clear.', note:'逐字硬翻', badge:'中式', kind:'trap', ok:false,
+        why:'"看不清"不能逐字翻成 look no clear，地道说法是 I can\'t see … clearly.' }
+    ],
+    explain:'💡 看不清、听不清都能用 I can\'t …：I can\'t see the board.（看不清黑板）、I can\'t hear you.（听不清你说话）。',
+    takeaway:"看不清 → Sorry, I can't see the board."
+  },
+  {
+    id:'kc-24', pack:'class', level:2, type:'social',
+    scene:'🏫 老师纠正了你',
+    situation:'你答错了一个词，老师温和地纠正过来，告诉你正确的说法。',
+    quote:'',
+    note:'你意识到自己错了。',
+    ask:'该怎么回应最得体？',
+    options:[
+      { text:'Oh, I see. Thank you!', note:'虚心接受＋道谢', badge:'地道', kind:'native', ok:true,
+        why:'I see（我明白了）表示听懂了，再谢一句，显得虚心又有礼貌。' },
+      { text:'No! I am right!', note:'嘴硬不认错', badge:'太固执', kind:'trap', ok:false,
+        why:'老师帮你改错是好意，硬顶回去既不礼貌也学不到东西。' },
+      { text:'（红着脸不说话）', note:'把气氛僵住', badge:'冷场', kind:'stiff', ok:false,
+        why:'答错很正常，说声 Thank you 大方接受就好，不必难堪。' }
+    ],
+    explain:'💡 被纠正时的高情商回应：Oh, I see.（原来如此）、Thank you!、I\'ll remember that.（我记住了）。答错不丢人，学会才重要。',
+    takeaway:'被纠正 → Oh, I see. Thank you!'
+  },
+  {
+    id:'kc-25', pack:'class', level:3, type:'phrase',
+    scene:'🏫 老师布置作业',
+    situation:'老师留了新作业，你想弄清楚什么时候交。',
+    quote:'',
+    note:'你怕记错了交作业的日子。',
+    ask:'该怎么问最清楚？',
+    options:[
+      { text:'When is it due?', note:'问截止时间的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'due 是"到期、该交"，When is it due? 就是"什么时候交"，最地道。' },
+      { text:'When I give you?', note:'语序乱，还漏词', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，问交作业时间用 When is it due? 或 When should I hand it in?' },
+      { text:'What time homework?', note:'蹦词说不清', badge:'不通顺', kind:'trap', ok:false,
+        why:'蹦两个词对方要猜，要问完整的 When is it due?' }
+    ],
+    explain:'💡 关于作业的问句：When is it due?（什么时候交）、Is it for homework?（这是作业吗）、hand it in（上交）。',
+    takeaway:'什么时候交 → When is it due?'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-life.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🏠 生活篇（20 题）
+   🧒 小学生入门 · 🏠 生活篇（25 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -6398,12 +6590,108 @@ body{
 
   ]);
 
+  /* ---------- 🏠 生活篇（加餐 2） ---------- */
+  EN.add('kids', 'life', [
+
+  {
+    id:'kl-21', pack:'life', level:2, type:'phrase',
+    scene:'🏠 去看医生',
+    situation:'你头疼得厉害，妈妈带你去看外国医生，医生问你哪里不舒服。',
+    quote:"What's wrong?",
+    note:'你想说"我头疼"。',
+    ask:'该怎么说？',
+    options:[
+      { text:'I have a headache.', note:'说症状的固定句', badge:'地道', kind:'native', ok:true,
+        why:'头疼就说 I have a headache；肚子疼是 I have a stomachache，都用 I have a …。' },
+      { text:'My head is broken.', note:'吓人，还说错了', badge:'中式', kind:'trap', ok:false,
+        why:'broken 是"摔坏了"，头疼要说 I have a headache 或 My head hurts.' },
+      { text:'I am headache.', note:'把"疼"当成了"是"', badge:'语法错', kind:'stiff', ok:false,
+        why:'不能说 I am headache，要用 I have a headache（我有个头疼）。' }
+    ],
+    explain:'💡 说不舒服用 I have a …：a headache（头疼）、a stomachache（肚子疼）、a cold（感冒）、a fever（发烧）。',
+    takeaway:'头疼 → I have a headache.'
+  },
+  {
+    id:'kl-22', pack:'life', level:2, type:'phrase',
+    scene:'🏠 帮忙接电话',
+    situation:'家里电话响了，大人都不在，你拿起听筒，对面找的是爸爸。',
+    quote:'Hello, is your dad there?',
+    note:'爸爸这会儿正好不在家。',
+    ask:'该怎么礼貌地回？',
+    options:[
+      { text:"Sorry, he's not here now. Can I take a message?", note:'告知不在＋帮忙带话', badge:'地道', kind:'native', ok:true,
+        why:'先说人不在 He\'s not here，再问 Can I take a message?（要留言吗），特别得体。' },
+      { text:'No! Bye!', note:'直接挂断太冲', badge:'没礼貌', kind:'trap', ok:false,
+        why:'一句 No 就挂太失礼，应该说明情况、问要不要留言。' },
+      { text:'My dad is disappear.', note:'用词吓人还不对', badge:'中式', kind:'stiff', ok:false,
+        why:'"不在家"是 not here / not in，不是 disappear（消失）。' }
+    ],
+    explain:'💡 接电话找的人不在：He\'s not here right now.（他现在不在）、Can I take a message?（要我带个话吗）。',
+    takeaway:"人不在 → He's not here. Can I take a message?"
+  },
+  {
+    id:'kl-23', pack:'life', level:2, type:'phrase',
+    scene:'🏠 想借同学的东西',
+    situation:'在同学家写作业，你的笔没墨了，想借他一支用。',
+    quote:'',
+    note:'他的笔筒里插着好几支。',
+    ask:'该怎么开口最自然？',
+    options:[
+      { text:'Can I borrow your pen?', note:'我来借，用 borrow', badge:'地道', kind:'native', ok:true,
+        why:'从别人那儿借进来用 borrow：Can I borrow your pen?（能借我用一下你的笔吗）。' },
+      { text:'Can you borrow me your pen?', note:'borrow / lend 用反了', badge:'用反了', kind:'trap', ok:false,
+        why:'别人借给你要用 lend：Can you lend me your pen? 自己借进来才用 borrow。' },
+      { text:'Give me your pen.', note:'像在要，不像在借', badge:'太冲', kind:'stiff', ok:false,
+        why:'Give me 像直接要走，借用要说 Can I borrow …?' }
+    ],
+    explain:'💡 一对容易反的词：borrow 是"借进来"（Can I borrow…?），lend 是"借出去"（Can you lend me…?）。用完记得还并说 Thank you。',
+    takeaway:'借东西 → Can I borrow your pen?'
+  },
+  {
+    id:'kl-24', pack:'life', level:1, type:'phrase',
+    scene:'🏠 在同学家想上厕所',
+    situation:'在外国同学家做客，你想上厕所，可不知道在哪儿。',
+    quote:'',
+    note:'总不好意思自己乱推门找。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:"Excuse me, where's the bathroom?", note:'问洗手间的地道说法', badge:'地道', kind:'native', ok:true,
+        why:'在别人家问厕所，礼貌又常用的是 Where\'s the bathroom? 或 the restroom?' },
+      { text:'Where is the WC?', note:'老外很少这么说', badge:'过时', kind:'stiff', ok:false,
+        why:'WC 是老式说法，英美家里一般说 bathroom / restroom / toilet。' },
+      { text:'I want pee!', note:'太直白了', badge:'不得体', kind:'trap', ok:false,
+        why:'这么说太直白，礼貌的问法是 Where\'s the bathroom, please?' }
+    ],
+    explain:'💡 问厕所用 bathroom / restroom / toilet：Excuse me, where\'s the bathroom?。在别人家先说 Excuse me 更礼貌。',
+    takeaway:"找厕所 → Excuse me, where's the bathroom?"
+  },
+  {
+    id:'kl-25', pack:'life', level:2, type:'manners',
+    scene:'🏠 离开寄宿家庭',
+    situation:'夏令营结束，你要离开住了半个月的寄宿家庭，阿姨一家都来送你。',
+    quote:'',
+    note:'他们照顾了你这么久，你想好好道个谢。',
+    ask:'临别道谢，哪句最真诚得体？',
+    options:[
+      { text:'Thank you for everything!', note:'一句话谢尽所有照顾', badge:'地道', kind:'native', ok:true,
+        why:'Thank you for everything!（谢谢你们所做的一切）是最暖心的告别谢词。' },
+      { text:'Bye.', note:'太轻描淡写', badge:'太冷淡', kind:'stiff', ok:false,
+        why:'人家照顾了你半个月，只说一个 Bye 太单薄，先好好道谢。' },
+      { text:'Thank you for everything money.', note:'多了个词还别扭', badge:'中式', kind:'trap', ok:false,
+        why:'everything 后面不用加 money，直接 Thank you for everything! 就完整了。' }
+    ],
+    explain:'💡 深深道谢：Thank you for everything!（谢谢所有）、Thank you for having me.（谢谢招待）、I had a great time.（我过得很开心）。',
+    takeaway:'临别道谢 → Thank you for everything!'
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-friend.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🎈 交朋友篇（21 题）
+   🧒 小学生入门 · 🎈 交朋友篇（26 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -6799,12 +7087,108 @@ body{
 
   ]);
 
+  /* ---------- 🎈 交朋友篇（加餐 2） ---------- */
+  EN.add('kids', 'friend', [
+
+  {
+    id:'kf-22', pack:'friend', level:1, type:'phrase',
+    scene:'🎈 想邀朋友来家里',
+    situation:'周末快到了，你想请要好的外国同学来家里一起玩。',
+    quote:'',
+    note:'你想开口邀请他。',
+    ask:'该怎么邀请最自然？',
+    options:[
+      { text:'Do you want to come to my house?', note:'邀请的常用句', badge:'地道', kind:'native', ok:true,
+        why:'邀请别人用 Do you want to …? / Would you like to …?：来我家玩就是 come to my house.' },
+      { text:'You come my house!', note:'像命令，还漏词', badge:'不通顺', kind:'stiff', ok:false,
+        why:'漏了 to，语气也像命令，应该说 Do you want to come to my house?' },
+      { text:'Come or not?', note:'太生硬，有点凶', badge:'太冲', kind:'trap', ok:false,
+        why:'这么问像在逼人表态，邀请要客气：Do you want to come over?' }
+    ],
+    explain:'💡 邀请朋友：Do you want to come over?（来我家玩吗）、Let\'s hang out.（一起玩）。对方答应会说 Sure! / I\'d love to!',
+    takeaway:'邀请 → Do you want to come to my house?'
+  },
+  {
+    id:'kf-23', pack:'friend', level:1, type:'social',
+    scene:'🎈 同学背了个新书包',
+    situation:'外国同学今天背了个很酷的新书包，你很喜欢，想夸他一句。',
+    quote:'',
+    note:'一句真诚的夸奖能拉近距离。',
+    ask:'该怎么夸最自然？',
+    options:[
+      { text:"I like your schoolbag! It's cool!", note:'夸具体的东西', badge:'地道', kind:'native', ok:true,
+        why:'夸别人的东西用 I like your …！再加句 It\'s cool! / It\'s nice! 更真诚。' },
+      { text:'Your schoolbag give me.', note:'夸着夸着变要东西了', badge:'不合适', kind:'trap', ok:false,
+        why:'喜欢不等于要人家的东西，夸一句就好，别开口要。' },
+      { text:'Schoolbag good.', note:'蹦词，不像句子', badge:'不通顺', kind:'stiff', ok:false,
+        why:'蹦两个词不自然，完整说 I like your schoolbag.' }
+    ],
+    explain:'💡 夸人小公式：I like your …！（我喜欢你的…）、It\'s cool / nice / beautiful!。对方会开心地回 Thank you!',
+    takeaway:"夸东西 → I like your schoolbag! It's cool!"
+  },
+  {
+    id:'kf-24', pack:'friend', level:2, type:'phrase',
+    scene:'🎈 有道题不会做',
+    situation:'一道数学题你怎么都想不通，想请旁边的好朋友教你。',
+    quote:'',
+    note:'他这题刚好会。',
+    ask:'该怎么请他帮忙？',
+    options:[
+      { text:'Can you help me with this?', note:'请人帮忙的固定句', badge:'地道', kind:'native', ok:true,
+        why:'请人帮忙做某事用 help me with …：Can you help me with this?（能帮我看看这个吗）。' },
+      { text:'You do it for me.', note:'像让人替你做', badge:'太冲', kind:'stiff', ok:false,
+        why:'这是让他替你做，而不是请他帮你，语气也生硬。' },
+      { text:'Help! Help!', note:'像出了大事', badge:'夸张', kind:'trap', ok:false,
+        why:'光喊 Help! 像遇到危险，请人帮忙说 Can you help me with this?' }
+    ],
+    explain:'💡 请人帮忙：Can you help me?、Can you help me with my homework?（帮我看看作业）。别人帮了记得说 Thank you!',
+    takeaway:'请人帮忙 → Can you help me with this?'
+  },
+  {
+    id:'kf-25', pack:'friend', level:2, type:'social',
+    scene:'🎈 朋友比赛输了',
+    situation:'外国同学参加跑步比赛没拿到名次，垂头丧气地走回来。',
+    quote:'',
+    note:'他看起来很失落。',
+    ask:'该怎么安慰他？',
+    options:[
+      { text:"It's OK. You did great! Maybe next time.", note:'先安慰再鼓励', badge:'地道', kind:'native', ok:true,
+        why:'It\'s OK 让他别自责，You did great 肯定他，Maybe next time 给希望，特别暖。' },
+      { text:'You are too slow.', note:'哪壶不开提哪壶', badge:'扎心', kind:'trap', ok:false,
+        why:'他正难过，说"你太慢了"是往伤口上撒盐。' },
+      { text:'Winning is everything.', note:'火上浇油', badge:'太冷酷', kind:'stiff', ok:false,
+        why:'说"赢才是一切"会让他更难受，安慰要往宽处说。' }
+    ],
+    explain:'💡 安慰失利的朋友：It\'s OK.（没关系）、You did your best.（你尽力了）、Maybe next time.（下次再来）。',
+    takeaway:"朋友输了 → It's OK. Maybe next time."
+  },
+  {
+    id:'kf-26', pack:'friend', level:2, type:'social',
+    scene:'🎈 想跟朋友和好',
+    situation:'昨天你和好朋友闹了别扭，一整天没说话，今天你想主动和好。',
+    quote:'',
+    note:'其实你俩都有点后悔。',
+    ask:'主动和好，哪句最合适？',
+    options:[
+      { text:"I'm sorry about yesterday. Are we still friends?", note:'先道歉再和好', badge:'地道', kind:'native', ok:true,
+        why:'先为昨天道个歉，再问 Are we still friends?（我们还是朋友吧），最容易破冰。' },
+      { text:'It was all your fault.', note:'一开口就翻旧账', badge:'太冲', kind:'trap', ok:false,
+        why:'想和好却先怪对方，只会又吵起来。' },
+      { text:'（继续假装没看见他）', note:'冷战下去更糟', badge:'太别扭', kind:'stiff', ok:false,
+        why:'谁都不开口，别扭会一直僵着，主动一点反而轻松。' }
+    ],
+    explain:'💡 和好三句：I\'m sorry.（对不起）、Let\'s forget it.（算了吧）、Are we still friends?（还是朋友吧）。先低头的人更勇敢。',
+    takeaway:"想和好 → I'm sorry. Are we still friends?"
+  }
+
+  ]);
+
 })(window.EN);
 </script>
 <script>
 /* ===== inlined: data/kids-trip.js ===== */
 /* ============================================================
-   🧒 小学生入门 · 🧳 出门在外篇（20 题）
+   🧒 小学生入门 · 🧳 出门在外篇（25 题）
    出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
@@ -7178,6 +7562,102 @@ body{
     ],
     explain:'💡 一对常用问句：What time do you open?（几点开门）、What time do you close?（几点关门）。逛景点、逛店都用得上。',
     takeaway:'问关门 → What time do you close?'
+  }
+
+  ]);
+
+  /* ---------- 🧳 出门在外篇（加餐 2） ---------- */
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-21', pack:'trip', level:2, type:'listening',
+    scene:'🧳 快餐店点完餐',
+    situation:'在国外的快餐店点完汉堡，店员抬头问了一句：',
+    quote:'For here or to go?',
+    note:'你打算坐下来慢慢吃。',
+    ask:'她在问什么？',
+    options:[
+      { text:'在店里吃还是打包带走', note:'for here / to go', badge:'地道', kind:'native', ok:true,
+        why:'For here or to go? 是问你堂食还是外带，堂食回 For here.，带走回 To go.' },
+      { text:'问你从哪儿来', note:'那是 Where are you from?', badge:'听岔了', kind:'trap', ok:false,
+        why:'这句跟你来自哪儿无关，是问在店里吃还是带走。' },
+      { text:'问你要去哪儿', note:'想歪了', badge:'理解偏', kind:'stiff', ok:false,
+        why:'to go 在这里指"带走的食物"，不是问你去哪儿。' }
+    ],
+    explain:'💡 快餐店必听：For here or to go?（堂食还是外带）。堂食 For here.；带走 To go.；英式店常说 Eat in or take away?',
+    takeaway:'For here or to go? = 店里吃还是带走？'
+  },
+  {
+    id:'kt-22', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 买两张票',
+    situation:'在游乐园售票窗口，你和妹妹要进去玩，需要买两张票。',
+    quote:'',
+    note:'售票员正等你开口。',
+    ask:'该怎么买最简单地道？',
+    options:[
+      { text:'Two tickets, please.', note:'数量＋东西＋please', badge:'地道', kind:'native', ok:true,
+        why:'买东西最简说法：数量 + 东西 + please。两张票就是 Two tickets, please.' },
+      { text:'I want two ticket.', note:'ticket 忘了加 s', badge:'语法错', kind:'stiff', ok:false,
+        why:'两张要用复数 tickets；更自然的是 Two tickets, please.' },
+      { text:'Give me ticket ticket.', note:'重复凑数', badge:'不通顺', kind:'trap', ok:false,
+        why:'重复说 ticket 很奇怪，两张就说 two tickets。' }
+    ],
+    explain:'💡 买东西的万能公式：数字 + 复数 + please：Two tickets, please. / Three ice creams, please.',
+    takeaway:'买两张票 → Two tickets, please.'
+  },
+  {
+    id:'kt-23', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 机场找登机口',
+    situation:'过完安检，你们要找 5 号登机口，可绕来绕去找不到。',
+    quote:'',
+    note:'旁边站着一位机场工作人员。',
+    ask:'该怎么问路最清楚？',
+    options:[
+      { text:'Excuse me, where is Gate 5?', note:'先打扰再问位置', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me，再问 Where is Gate 5?（5 号登机口在哪儿），简单又清楚。' },
+      { text:'Gate 5 go where?', note:'语序乱了', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，要问 Where is Gate 5?' },
+      { text:'I find Gate 5!', note:'像在自言自语', badge:'没在问', kind:'trap', ok:false,
+        why:'这是在说"我找 5 号口"，没有在问人，应该问 Where is Gate 5?' }
+    ],
+    explain:'💡 机场常用：Where is Gate 5?（登机口在哪）、Where is the check-in?（值机在哪）、Is this the way to …?（这是去…的路吗）。',
+    takeaway:'找登机口 → Excuse me, where is Gate 5?'
+  },
+  {
+    id:'kt-24', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 想连店里的 Wi-Fi',
+    situation:'在国外的咖啡店，你想连店里的无线网，得问一下密码。',
+    quote:'',
+    note:'店员就在柜台后面。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:"Excuse me, what's the Wi-Fi password?", note:'礼貌问密码', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me，再问 What\'s the Wi-Fi password?（无线网密码是多少），最自然。' },
+      { text:'Give me Wi-Fi!', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'Wi-Fi 不能"给"，而且语气太冲，要问密码 What\'s the password?' },
+      { text:'Where is Wi-Fi?', note:'问错了，网看不见', badge:'问偏了', kind:'stiff', ok:false,
+        why:'你要的是密码，不是问 Wi-Fi 在哪儿，问 What\'s the password?' }
+    ],
+    explain:'💡 想上网就问：What\'s the Wi-Fi password?（密码是多少）。连不上可以说 It\'s not working.（连不上）。',
+    takeaway:"连网 → What's the Wi-Fi password?"
+  },
+  {
+    id:'kt-25', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 想试穿一件衣服',
+    situation:'在服装店你看中一件外套，想穿上试试合不合身。',
+    quote:'',
+    note:'店员就在旁边整理衣架。',
+    ask:'该怎么问最地道？',
+    options:[
+      { text:'Can I try it on?', note:'试穿的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'试穿衣服用 try … on：Can I try it on?（我能试穿一下吗），店员会带你去试衣间。' },
+      { text:'Can I wear it?', note:'wear 是"穿着"，不是"试穿"', badge:'用错词', kind:'stiff', ok:false,
+        why:'wear 指平时穿着，商店里"试穿"要用 try it on。' },
+      { text:'I put on now?', note:'不通顺，也不礼貌', badge:'中式', kind:'trap', ok:false,
+        why:'试穿别直译，用 Can I try it on? 才地道。' }
+    ],
+    explain:'💡 买衣服常用：Can I try it on?（能试穿吗）、Where\'s the fitting room?（试衣间在哪）、It\'s too big / small.（太大/太小）。',
+    takeaway:'试穿 → Can I try it on?'
   }
 
   ]);

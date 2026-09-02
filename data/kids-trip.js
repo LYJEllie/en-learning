@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 🧳 出门在外篇（20 题）
+   🧒 小学生入门 · 🧳 出门在外篇（25 题）
    出国旅行、坐飞机、问路、买票、走散求助这些真会用上的场面。
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
@@ -373,6 +373,102 @@
     ],
     explain:'💡 一对常用问句：What time do you open?（几点开门）、What time do you close?（几点关门）。逛景点、逛店都用得上。',
     takeaway:'问关门 → What time do you close?'
+  }
+
+  ]);
+
+  /* ---------- 🧳 出门在外篇（加餐 2） ---------- */
+  EN.add('kids', 'trip', [
+
+  {
+    id:'kt-21', pack:'trip', level:2, type:'listening',
+    scene:'🧳 快餐店点完餐',
+    situation:'在国外的快餐店点完汉堡，店员抬头问了一句：',
+    quote:'For here or to go?',
+    note:'你打算坐下来慢慢吃。',
+    ask:'她在问什么？',
+    options:[
+      { text:'在店里吃还是打包带走', note:'for here / to go', badge:'地道', kind:'native', ok:true,
+        why:'For here or to go? 是问你堂食还是外带，堂食回 For here.，带走回 To go.' },
+      { text:'问你从哪儿来', note:'那是 Where are you from?', badge:'听岔了', kind:'trap', ok:false,
+        why:'这句跟你来自哪儿无关，是问在店里吃还是带走。' },
+      { text:'问你要去哪儿', note:'想歪了', badge:'理解偏', kind:'stiff', ok:false,
+        why:'to go 在这里指"带走的食物"，不是问你去哪儿。' }
+    ],
+    explain:'💡 快餐店必听：For here or to go?（堂食还是外带）。堂食 For here.；带走 To go.；英式店常说 Eat in or take away?',
+    takeaway:'For here or to go? = 店里吃还是带走？'
+  },
+  {
+    id:'kt-22', pack:'trip', level:1, type:'phrase',
+    scene:'🧳 买两张票',
+    situation:'在游乐园售票窗口，你和妹妹要进去玩，需要买两张票。',
+    quote:'',
+    note:'售票员正等你开口。',
+    ask:'该怎么买最简单地道？',
+    options:[
+      { text:'Two tickets, please.', note:'数量＋东西＋please', badge:'地道', kind:'native', ok:true,
+        why:'买东西最简说法：数量 + 东西 + please。两张票就是 Two tickets, please.' },
+      { text:'I want two ticket.', note:'ticket 忘了加 s', badge:'语法错', kind:'stiff', ok:false,
+        why:'两张要用复数 tickets；更自然的是 Two tickets, please.' },
+      { text:'Give me ticket ticket.', note:'重复凑数', badge:'不通顺', kind:'trap', ok:false,
+        why:'重复说 ticket 很奇怪，两张就说 two tickets。' }
+    ],
+    explain:'💡 买东西的万能公式：数字 + 复数 + please：Two tickets, please. / Three ice creams, please.',
+    takeaway:'买两张票 → Two tickets, please.'
+  },
+  {
+    id:'kt-23', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 机场找登机口',
+    situation:'过完安检，你们要找 5 号登机口，可绕来绕去找不到。',
+    quote:'',
+    note:'旁边站着一位机场工作人员。',
+    ask:'该怎么问路最清楚？',
+    options:[
+      { text:'Excuse me, where is Gate 5?', note:'先打扰再问位置', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me，再问 Where is Gate 5?（5 号登机口在哪儿），简单又清楚。' },
+      { text:'Gate 5 go where?', note:'语序乱了', badge:'语法错', kind:'stiff', ok:false,
+        why:'语序不对，要问 Where is Gate 5?' },
+      { text:'I find Gate 5!', note:'像在自言自语', badge:'没在问', kind:'trap', ok:false,
+        why:'这是在说"我找 5 号口"，没有在问人，应该问 Where is Gate 5?' }
+    ],
+    explain:'💡 机场常用：Where is Gate 5?（登机口在哪）、Where is the check-in?（值机在哪）、Is this the way to …?（这是去…的路吗）。',
+    takeaway:'找登机口 → Excuse me, where is Gate 5?'
+  },
+  {
+    id:'kt-24', pack:'trip', level:3, type:'phrase',
+    scene:'🧳 想连店里的 Wi-Fi',
+    situation:'在国外的咖啡店，你想连店里的无线网，得问一下密码。',
+    quote:'',
+    note:'店员就在柜台后面。',
+    ask:'该怎么问最有礼貌？',
+    options:[
+      { text:"Excuse me, what's the Wi-Fi password?", note:'礼貌问密码', badge:'地道', kind:'native', ok:true,
+        why:'先 Excuse me，再问 What\'s the Wi-Fi password?（无线网密码是多少），最自然。' },
+      { text:'Give me Wi-Fi!', note:'像在命令', badge:'太冲', kind:'trap', ok:false,
+        why:'Wi-Fi 不能"给"，而且语气太冲，要问密码 What\'s the password?' },
+      { text:'Where is Wi-Fi?', note:'问错了，网看不见', badge:'问偏了', kind:'stiff', ok:false,
+        why:'你要的是密码，不是问 Wi-Fi 在哪儿，问 What\'s the password?' }
+    ],
+    explain:'💡 想上网就问：What\'s the Wi-Fi password?（密码是多少）。连不上可以说 It\'s not working.（连不上）。',
+    takeaway:"连网 → What's the Wi-Fi password?"
+  },
+  {
+    id:'kt-25', pack:'trip', level:2, type:'phrase',
+    scene:'🧳 想试穿一件衣服',
+    situation:'在服装店你看中一件外套，想穿上试试合不合身。',
+    quote:'',
+    note:'店员就在旁边整理衣架。',
+    ask:'该怎么问最地道？',
+    options:[
+      { text:'Can I try it on?', note:'试穿的固定说法', badge:'地道', kind:'native', ok:true,
+        why:'试穿衣服用 try … on：Can I try it on?（我能试穿一下吗），店员会带你去试衣间。' },
+      { text:'Can I wear it?', note:'wear 是"穿着"，不是"试穿"', badge:'用错词', kind:'stiff', ok:false,
+        why:'wear 指平时穿着，商店里"试穿"要用 try it on。' },
+      { text:'I put on now?', note:'不通顺，也不礼貌', badge:'中式', kind:'trap', ok:false,
+        why:'试穿别直译，用 Can I try it on? 才地道。' }
+    ],
+    explain:'💡 买衣服常用：Can I try it on?（能试穿吗）、Where\'s the fitting room?（试衣间在哪）、It\'s too big / small.（太大/太小）。',
+    takeaway:'试穿 → Can I try it on?'
   }
 
   ]);

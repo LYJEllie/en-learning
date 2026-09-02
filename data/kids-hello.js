@@ -1,5 +1,5 @@
 /* ============================================================
-   🧒 小学生入门 · 👋 打招呼篇（20 题）
+   🧒 小学生入门 · 👋 打招呼篇（25 题）
    只放数据。字段说明见 data/_core.js，加题直接往数组里追加对象。
    ============================================================ */
 (function (EN) {
@@ -372,6 +372,102 @@
     ],
     explain:'💡 一对最容易混的：初次认识 Nice to meet you.；再次见面 Nice to see you.。一个 meet 一个 see，方向别搞反。',
     takeaway:'重逢 → Nice to see you, too!'
+  }
+
+  ]);
+
+  /* ---------- 👋 打招呼篇（加餐 2） ---------- */
+  EN.add('kids', 'hello', [
+
+  {
+    id:'kh-21', pack:'hello', level:3, type:'phrase',
+    scene:'👋 打电话找同学',
+    situation:'你打电话到同学家，接电话的是他爸爸，你想找 Tom。',
+    quote:'',
+    note:'你得说清楚要找谁。',
+    ask:'该怎么说最有礼貌？',
+    options:[
+      { text:'Hello, may I speak to Tom, please?', note:'电话找人的固定句', badge:'地道', kind:'native', ok:true,
+        why:'打电话找人用 May I speak to …, please?，客气又清楚。' },
+      { text:'Where is Tom?', note:'像在追问人在哪', badge:'太直接', kind:'stiff', ok:false,
+        why:'电话里这么问有点冲，应该说 May I speak to Tom?' },
+      { text:'I want Tom.', note:'像在要东西', badge:'不礼貌', kind:'trap', ok:false,
+        why:'I want Tom 听起来怪怪的，找人要说 May I speak to Tom?' }
+    ],
+    explain:'💡 打电话三句：说自己是谁 This is Lily.；找人 May I speak to Tom?；请对方等 Hold on, please.',
+    takeaway:'电话找人 → May I speak to Tom, please?'
+  },
+  {
+    id:'kh-22', pack:'hello', level:2, type:'culture',
+    scene:'👋 在朋友家玩到要走',
+    situation:'在外国同学家玩了一下午，临走时他妈妈笑着对你说：',
+    quote:'Thanks for coming!',
+    note:'她很高兴你来做客。',
+    ask:'你该怎么回最得体？',
+    options:[
+      { text:'Thanks for having me!', note:'谢谢招待，礼尚往来', badge:'地道', kind:'native', ok:true,
+        why:'主人谢你来，你回 Thanks for having me!（谢谢招待），一来一回特别得体。' },
+      { text:'You too!', note:'这里 you too 不合适', badge:'用错了', kind:'trap', ok:false,
+        why:'You too 用在祝福场合，对方谢你来做客，要回 Thanks for having me.' },
+      { text:'No, I come myself.', note:'把客套当真话答了', badge:'会错意', kind:'stiff', ok:false,
+        why:'Thanks for coming 是客套感谢，不是问你怎么来的。' }
+    ],
+    explain:'💡 做客的一对客套话：主人说 Thanks for coming!（谢谢你来），客人回 Thanks for having me!（谢谢招待）。',
+    takeaway:'Thanks for coming! → Thanks for having me!'
+  },
+  {
+    id:'kh-23', pack:'hello', level:2, type:'phrase',
+    scene:'👋 老友问候近况',
+    situation:'很久没见的外国朋友寒暄时，关心地问了一句：',
+    quote:"How's your family?",
+    note:'他在问你家里人都好吗。',
+    ask:'最自然的回答是？',
+    options:[
+      { text:"They're great, thanks!", note:'家人用 they', badge:'地道', kind:'native', ok:true,
+        why:'家里人不止一个，用 They\'re；再加 thanks 就很自然。' },
+      { text:"He's fine.", note:'家人不止一个', badge:'单复数错', kind:'stiff', ok:false,
+        why:'family 指全家人，要用 They\'re，不是 He\'s。' },
+      { text:'I have a family.', note:'答非所问', badge:'没接住', kind:'trap', ok:false,
+        why:'他问的是家人好不好，不是问你有没有家。' }
+    ],
+    explain:'💡 寒暄常用：How\'s your family?（家人好吗）→ They\'re great, thanks.；How\'s school?（学习怎么样）→ It\'s good.',
+    takeaway:"How's your family? → They're great, thanks!"
+  },
+  {
+    id:'kh-24', pack:'hello', level:1, type:'listening',
+    scene:'👋 视频通话开头',
+    situation:'跟国外的朋友视频，画面刚连上，对方皱着眉凑近屏幕问：',
+    quote:'Can you hear me?',
+    note:'他好像担心你听不到声音。',
+    ask:'他在问什么？',
+    options:[
+      { text:'你能听见我说话吗', note:'hear = 听见', badge:'地道', kind:'native', ok:true,
+        why:'Can you hear me? 是问"你听得见我吗"，听得见就回 Yes, I can. / Loud and clear!' },
+      { text:'你能看见我吗', note:'那是 Can you see me?', badge:'看错动词', kind:'trap', ok:false,
+        why:'看见是 see，听见是 hear，这句问的是声音。' },
+      { text:'你在这儿吗', note:'想歪了', badge:'理解偏', kind:'stiff', ok:false,
+        why:'Can you hear me? 只关心你听不听得清，不是问你在不在。' }
+    ],
+    explain:'💡 视频、打电话常用：Can you hear me?（听得见吗）、Can you see me?（看得见吗）。听得清回 Loud and clear!',
+    takeaway:'Can you hear me? = 你听得见我吗？'
+  },
+  {
+    id:'kh-25', pack:'hello', level:2, type:'listening',
+    scene:'👋 送朋友去远行',
+    situation:'外国朋友一家明天要坐飞机回国，临别时他笑着对你说：',
+    quote:'Have a safe trip!',
+    note:'要坐飞机出远门的是他。',
+    ask:'这句是什么意思？',
+    options:[
+      { text:'祝旅途平安（＝一路平安）', note:'送别的祝福', badge:'地道', kind:'native', ok:true,
+        why:'Have a safe trip! 是祝人一路平安，收到就回 Thank you!' },
+      { text:'在说你要出远门', note:'要走的其实是他', badge:'会错意', kind:'stiff', ok:false,
+        why:'这是他在跟你道别祝福，重点是"旅途平安"，不是谁要走。' },
+      { text:'祝你今晚睡个好觉', note:'那是 Good night', badge:'答偏了', kind:'trap', ok:false,
+        why:'trip 是旅行，跟睡觉无关，这是旅途祝福。' }
+    ],
+    explain:'💡 送人出远门说 Have a safe trip! / Have a good trip!（一路平安）。听到就回 Thank you!',
+    takeaway:'Have a safe trip! = 一路平安！'
   }
 
   ]);
